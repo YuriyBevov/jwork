@@ -1,0 +1,27 @@
+:root {
+  --line-height: 1.2;
+
+  --fs-xxs: 12px;
+  --fs-xs: 14px;
+  --fs-sm: 16px;
+  --fs-md: 18px;
+  --fs-lg: 24px;
+  --fs-xl: 28px;
+  --fs-xxl: 32px;
+  --fs-xxxl: 56px;
+
+  --main-title: clamp(var(--fs-lg), 3.6vw, var(--fs-xxxl));
+  --base-title: clamp(var(--fs-lg), 3.6vw, var(--fs-xxxl));
+  --main-text: clamp(var(--fs-sm), 2.8vw, var(--fs-md))
+  --base-text: clamp(var(--fs-sm), 2.8vw, var(--fs-md))
+
+  --fw-t: 100;
+  --fw-el: 200;
+  --fw-l: 300;
+  --fw-r: 400;
+  --fw-m: 500;
+  --fw-sb: 600;
+  --fw-b: 700;
+  --fw-eb: 800;
+  --fw-h: 900;
+}

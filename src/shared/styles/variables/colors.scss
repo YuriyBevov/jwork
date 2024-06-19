@@ -1,0 +1,20 @@
+:root {
+  --white: #fff;
+  --black: #000;
+
+  --primary: #1A56DB;
+  --secondary: #A4CAFE;
+  --dark: #111928;
+  --light: var(--white);
+  --lighter: #D1D5DB;
+  // --success: #28a745;
+  // --warning: #ffc107;
+  // --danger: #dc3545;
+  // --info: #A4CAFE;
+  // --muted: #6c757d;
+
+  --site-color: var(--dark);
+  --site-bg-color: var(--white);
+  --site-header-color: var(--white);
+  --site-footer-color: var(--primary);
+}
