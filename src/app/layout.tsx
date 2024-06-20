@@ -3,7 +3,7 @@ import { Roboto } from 'next/font/google';
 import React from 'react';
 
 import '../../node_modules/normalize.css/normalize.css';
-import '../shared/styles/global.scss';
+import '../shared/styles/main.scss';
 import { Footer } from './layout/footer/footer';
 import { Header } from './layout/header/header';
 
