@@ -43,3 +43,13 @@ a {
   padding: 0 var(--container-fuild-offset);
   max-width: var(--container-fluid-width);
 }
+
+.base-text {
+  display: inline-block;
+  font-size: var(--base-text);
+}
+
+.base-title {
+  display: inline-block;
+  font-size: var(--base-title);
+}
