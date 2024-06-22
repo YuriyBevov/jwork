@@ -1,7 +1,10 @@
+import { AdvantagesTypeOne } from '@/components/advantages/advantages-type-1';
+import { ADVANTAGES_TYPE_ONE_LIST } from '@/components/advantages/mock';
+
 export default function Home() {
   return (
     <main>
-      <h1>Главная страница</h1>
+      <AdvantagesTypeOne items={ADVANTAGES_TYPE_ONE_LIST} />
     </main>
   );
 }
