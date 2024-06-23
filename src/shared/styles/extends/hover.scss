@@ -1,0 +1,18 @@
+%main-hover {
+  opacity: 1;
+  transition: var(--base-transition);
+
+  @media (hover: hover) {
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &:focus {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+}

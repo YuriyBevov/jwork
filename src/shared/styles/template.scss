@@ -37,19 +37,28 @@ a {
   max-width: var(--container-width);
 }
 
-.container-fluid {
+.container_fluid {
   width: 100%;
   margin: 0 auto;
   padding: 0 var(--container-fuild-offset);
   max-width: var(--container-fluid-width);
 }
 
-.base-text {
-  display: inline-block;
+.base_text {
+  display: block;
   font-size: var(--base-text);
 }
 
-.base-title {
-  display: inline-block;
+.base_title {
+  display: block;
+  width: 100%;
   font-size: var(--base-title);
+  margin-bottom: var(--gap-xxl);
+}
+
+.base_subtitle {
+  display: block;
+  font-size: var(--base-subtitle);
+  font-weight: var(--fw-b);
+  color: var(--dark);
 }
