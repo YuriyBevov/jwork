@@ -1,0 +1,61 @@
+@import '../../../shared/styles/extends.scss';
+@import '../../../shared/styles/mixins.scss';
+
+.root {
+  @extend %section-offset;
+
+  ul {
+    @extend %list-reset;
+    @extend %flex-wrap;
+    gap: calc(var(--gap-sm) * 4);
+
+    @include media-down($mobile-width) {
+      gap: var(--gap-lg);
+    }
+  }
+}
+
+.base_title {
+  text-align: center;
+  color: var(--primary);
+}
+
+.item {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: calc(var(--gap-sm) * 4);
+  align-items: center;
+
+  @include media-down($tablet-lg-width) {
+    grid-template-columns: 1fr;
+    gap: var(--gap-lg);
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    align-self: flex-start;
+  }
+
+  &_content {
+    @extend %flex-column;
+    gap: var(--gap-sm);
+
+    small {
+      @extend %flex-center;
+      width: fit-content;
+      font-size: 14px;
+      font-weight: var(--fw-sb);
+      border-radius: 5px;
+      padding: 4px 10px;
+      color: var(--black);
+      background-color: transparent;
+      border: 1px solid var(--primary);
+    }
+
+    button {
+      margin-top: auto;
+    }
+  }
+}
