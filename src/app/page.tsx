@@ -3,6 +3,7 @@ import { ADVANTAGES_TYPE_ONE_LIST } from '@/components/advantages/mock';
 import { SERVICES_SECTION_DATA } from '@/components/services/mock';
 import { ServicesTypeOne } from '@/components/services/services-type-1';
 import { ServicesTypeTwo } from '@/components/services/services-type-2';
+import { ServicesTypeTres } from '@/components/services/services-type-3';
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <AdvantagesTypeOne items={ADVANTAGES_TYPE_ONE_LIST} />
       <ServicesTypeOne data={SERVICES_SECTION_DATA} />
       <ServicesTypeTwo data={SERVICES_SECTION_DATA} />
+      <ServicesTypeTres data={SERVICES_SECTION_DATA} />
     </main>
   );
 }

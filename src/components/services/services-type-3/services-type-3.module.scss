@@ -8,7 +8,8 @@
     @extend %list-reset;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: clamp(var(--gap-lg), 4vw, var(--gap-xxl)) var(--gap-lg);
+    grid-gap: calc(var(--gap-sm) * 4)
+      clamp(var(--gap-lg), 4vw, calc(var(--gap-sm) * 4));
 
     @include media-down($desktop-width) {
       grid-template-columns: repeat(2, 1fr);
@@ -21,25 +22,18 @@
 }
 
 .base_title {
-  text-align: center;
   color: var(--primary);
-}
-
-.base_subtitle {
-  margin-bottom: var(--gap-xs);
 }
 
 .item {
   @extend %flex-column;
-  @extend %flex-center;
   height: 100%;
-  text-align: center;
   gap: var(--gap-sm);
 
   img {
     width: 100%;
     height: auto;
-    border-radius: 20px;
+    margin-bottom: var(--gap-sm);
   }
 
   button {
