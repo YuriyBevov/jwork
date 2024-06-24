@@ -1,6 +1,5 @@
-@import './variables/containers.scss';
-@import './variables/gaps.scss';
-@import './variables/typography.scss';
-@import './variables/colors.scss';
+@import './variables.scss';
+@import './mixins.scss';
+@import './extends.scss';
 
 @import './template.scss';
