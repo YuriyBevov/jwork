@@ -1,0 +1,62 @@
+@import '../../../shared/styles/extends.scss';
+@import '../../../shared/styles/mixins.scss';
+
+.root {
+  @extend %section-offset;
+
+  ul {
+    @extend %list-reset;
+    @extend %flex-wrap;
+    gap: calc(var(--gap-sm) * 4);
+
+    @include media-down($mobile-width) {
+      gap: var(--gap-lg);
+    }
+
+    li:nth-of-type(even) img {
+      order: 2;
+
+      @include media-down($laptop-width) {
+        order: initial;
+      }
+    }
+  }
+}
+
+.base_title {
+  text-align: center;
+  color: var(--primary);
+}
+
+.item {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: calc(var(--gap-sm) * 4);
+  align-items: center;
+
+  @include media-down($laptop-width) {
+    grid-template-columns: 1fr;
+    gap: var(--gap-lg);
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  &_content {
+    @extend %flex-column;
+    gap: var(--gap-sm);
+
+    small {
+      font-size: 14px;
+      font-weight: var(--fw-sb);
+      color: var(--primary);
+    }
+
+    button {
+      margin-top: auto;
+    }
+  }
+}
