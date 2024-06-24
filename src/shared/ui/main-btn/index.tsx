@@ -16,7 +16,6 @@ export const MainBtn: React.FC<Props> = ({
   bordered,
   text = 'Подробнее',
 }) => {
-  console.log(outlined, rounded);
   return (
     <button
       className={clsx(
