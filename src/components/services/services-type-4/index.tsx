@@ -4,7 +4,7 @@ import React from 'react';
 
 import { MainBtn } from '@/shared/ui/main-btn';
 
-import styles from './services-type-1.module.scss';
+import styles from './services-type-4.module.scss';
 
 type Props = {
   data: {
@@ -14,7 +14,7 @@ type Props = {
   };
 };
 
-export const ServicesTypeOne: React.FC<Props> = ({ data }) => {
+export const ServicesTypeFour: React.FC<Props> = ({ data }) => {
   return (
     <section className={styles.root}>
       <div className="container">
@@ -32,15 +32,17 @@ export const ServicesTypeOne: React.FC<Props> = ({ data }) => {
                 <Image
                   src={item.image}
                   alt={item.title}
-                  width={440}
+                  width={240}
                   height={240}
                 />
-                <span className={clsx('base_subtitle', styles.base_subtitle)}>
-                  {item.title}
-                </span>
-                <p>{item.description}</p>
+                <div className={styles.item_content}>
+                  <span className={clsx('base_subtitle', styles.base_subtitle)}>
+                    {item.title}
+                  </span>
+                  <p>{item.description}</p>
 
-                <MainBtn outlined={true} rounded={'lg'} />
+                  <MainBtn rounded={'lg'} />
+                </div>
               </div>
             </li>
           ))}

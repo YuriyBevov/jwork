@@ -4,6 +4,7 @@ import { SERVICES_SECTION_DATA } from '@/components/services/mock';
 import { ServicesTypeOne } from '@/components/services/services-type-1';
 import { ServicesTypeTwo } from '@/components/services/services-type-2';
 import { ServicesTypeTres } from '@/components/services/services-type-3';
+import { ServicesTypeFour } from '@/components/services/services-type-4';
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <ServicesTypeOne data={SERVICES_SECTION_DATA} />
       <ServicesTypeTwo data={SERVICES_SECTION_DATA} />
       <ServicesTypeTres data={SERVICES_SECTION_DATA} />
+      <ServicesTypeFour data={SERVICES_SECTION_DATA} />
     </main>
   );
 }
