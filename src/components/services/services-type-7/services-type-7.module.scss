@@ -1,6 +1,11 @@
 @import '../../../shared/styles/extends.scss';
 @import '../../../shared/styles/mixins.scss';
 
+@function toRGBA($color, $opacity) {
+  @return 'rgba(' + red($color) + ', ' + green($color) + ', ' + blue($color) +
+    ', ' + $opacity ')';
+}
+
 .root {
   @extend %section-offset;
 
@@ -47,11 +52,10 @@
       width: fit-content;
       font-size: 14px;
       font-weight: var(--fw-sb);
-      border-radius: 5px;
-      padding: 4px 10px;
       color: var(--black);
       background-color: transparent;
-      border: 1px solid var(--primary);
+
+      @extend %tooltip-frame;
     }
 
     button {

@@ -1,0 +1,65 @@
+@import '../../../shared/styles/extends.scss';
+@import '../../../shared/styles/mixins.scss';
+
+@function toRGBA($color, $opacity) {
+  @return 'rgba(' + red($color) + ', ' + green($color) + ', ' + blue($color) +
+    ', ' + $opacity ')';
+}
+
+.root {
+  @extend %section-offset;
+
+  ul {
+    @extend %list-reset;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: calc(var(--gap-sm) * 4) var(--gap-lg);
+
+    @include media-down($desktop-width) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include media-down($tablet-width) {
+      grid-template-columns: 1fr;
+
+      gap: var(--gap-lg);
+    }
+  }
+}
+
+.base_title {
+  text-align: center;
+  color: var(--primary);
+}
+
+.item {
+  @extend %flex-column;
+  height: 100%;
+  gap: var(--gap-sm);
+
+  &_header {
+    @extend %flex-align;
+    gap: var(--gap-md);
+
+    svg {
+      width: 80px;
+      min-width: 80px;
+      height: 80px;
+    }
+
+    @include media-down($laptop-width) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &_content {
+    @extend %flex-column;
+    gap: var(--gap-sm);
+    flex-grow: 1;
+
+    button {
+      margin-top: auto;
+    }
+  }
+}
