@@ -28,7 +28,12 @@
 }
 
 .item_test {
-  @extend %svg-frame;
+  border: 2px solid var(--primary);
+  border-radius: 50%;
+  width: fit-content;
+  height: fit-content;
+  padding: 20px;
+  aspect-ratio: 1 / 1;
 }
 
 .item {
@@ -41,9 +46,9 @@
     gap: var(--gap-md);
 
     svg {
-      width: 80px;
-      min-width: 80px;
-      height: 80px;
+      width: 100%;
+      max-width: 80px;
+      height: 100%;
     }
 
     @include media-down($laptop-width) {
