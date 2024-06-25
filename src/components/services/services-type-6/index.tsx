@@ -30,9 +30,7 @@ export const ServicesTypeSix: React.FC<Props> = ({ data }) => {
             <li key={item.id}>
               <div className={styles.item}>
                 <div className={styles.item_header}>
-                  <div className={styles.item_test}>
-                    <IconPrinter width={80} height={80} />
-                  </div>
+                  <IconPrinter width={80} height={80} />
 
                   <span className={clsx('base_subtitle', styles.base_subtitle)}>
                     {item.title}

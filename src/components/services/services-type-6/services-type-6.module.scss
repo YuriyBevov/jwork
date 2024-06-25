@@ -27,15 +27,6 @@
   color: var(--primary);
 }
 
-.item_test {
-  border: 2px solid var(--primary);
-  border-radius: 50%;
-  width: fit-content;
-  height: fit-content;
-  padding: 20px;
-  aspect-ratio: 1 / 1;
-}
-
 .item {
   @extend %flex-column;
   height: 100%;
