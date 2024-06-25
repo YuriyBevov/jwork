@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import React from 'react';
 
 import { IconHands } from '../../../shared/icons/icon-hands';
-import styles from './advantages-type-1.module.scss';
+import styles from './advantages-type-3.module.scss';
 
 type Props = {
   data: {
@@ -12,7 +12,7 @@ type Props = {
   };
 };
 
-export const AdvantagesTypeOne: React.FC<Props> = ({ data }) => {
+export const AdvantagesTypeTres: React.FC<Props> = ({ data }) => {
   return (
     <section className={styles.root}>
       <div className="container">
