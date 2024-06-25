@@ -3,7 +3,7 @@ import React from 'react';
 
 import { MainBtn } from '@/shared/ui/main-btn';
 
-import { IconHands } from '../../../shared/icons/icon-hands';
+import { IconPrinter } from '../../../shared/icons/icon-printer';
 import styles from './services-type-6.module.scss';
 
 type Props = {
@@ -30,7 +30,9 @@ export const ServicesTypeSix: React.FC<Props> = ({ data }) => {
             <li key={item.id}>
               <div className={styles.item}>
                 <div className={styles.item_header}>
-                  <IconHands width={80} height={80} />
+                  <div className={styles.item_test}>
+                    <IconPrinter width={80} height={80} />
+                  </div>
 
                   <span className={clsx('base_subtitle', styles.base_subtitle)}>
                     {item.title}

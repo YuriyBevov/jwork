@@ -1,11 +1,6 @@
 @import '../../../shared/styles/extends.scss';
 @import '../../../shared/styles/mixins.scss';
 
-@function toRGBA($color, $opacity) {
-  @return 'rgba(' + red($color) + ', ' + green($color) + ', ' + blue($color) +
-    ', ' + $opacity ')';
-}
-
 .root {
   @extend %section-offset;
 
@@ -30,6 +25,10 @@
 .base_title {
   text-align: center;
   color: var(--primary);
+}
+
+.item_test {
+  @extend %svg-frame;
 }
 
 .item {

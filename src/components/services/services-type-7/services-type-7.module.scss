@@ -1,11 +1,6 @@
 @import '../../../shared/styles/extends.scss';
 @import '../../../shared/styles/mixins.scss';
 
-@function toRGBA($color, $opacity) {
-  @return 'rgba(' + red($color) + ', ' + green($color) + ', ' + blue($color) +
-    ', ' + $opacity ')';
-}
-
 .root {
   @extend %section-offset;
 

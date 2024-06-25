@@ -21,10 +21,10 @@
 
   &::before {
     position: absolute;
-    top: -5px;
-    left: -10px;
-    width: calc(100% + 20px);
-    height: calc(100% + 10px);
+    top: -10%;
+    left: -10%;
+    width: 120%;
+    height: 120%;
     content: '';
     border-radius: 50%;
     background-color: var(--primary);
