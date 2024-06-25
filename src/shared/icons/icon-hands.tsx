@@ -1,8 +1,18 @@
 import React from 'react';
 
-export const IconHands = () => {
+type Props = {
+  width?: number;
+  height?: number;
+};
+
+export const IconHands: React.FC<Props> = ({ width = 50, height = 57 }) => {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width={50} height={57} fill="none">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={width}
+      height={height}
+      fill="none"
+    >
       <path
         fill="#111928"
         d="M38.334 56.713H10.552a.882.882 0 0 1 0-1.763h27.782a.882.882 0 1 1 0 1.763ZM48.536 51.063H34.347a.882.882 0 0 1 0-1.764h14.19a.882.882 0 0 1 0 1.764Z"
