@@ -1,9 +1,13 @@
 import {
+  AdvantagesTypeFour,
   AdvantagesTypeOne,
   AdvantagesTypeTres,
   AdvantagesTypeTwo,
 } from '@/components/advantages';
-import { ADVANTAGES_SECTION_DATA } from '@/components/advantages/mock';
+import {
+  ADVANTAGES_SECTION_DATA,
+  ADVANTAGES_SECTION_DATA_FOUR,
+} from '@/components/advantages/mock';
 import { SERVICES_SECTION_DATA } from '@/components/services/mock';
 import { ServicesTypeOne } from '@/components/services/services-type-1';
 import { ServicesTypeTwo } from '@/components/services/services-type-2';
@@ -19,6 +23,7 @@ export default function Home() {
       <AdvantagesTypeOne data={ADVANTAGES_SECTION_DATA} />
       <AdvantagesTypeTwo data={ADVANTAGES_SECTION_DATA} />
       <AdvantagesTypeTres data={ADVANTAGES_SECTION_DATA} />
+      <AdvantagesTypeFour data={ADVANTAGES_SECTION_DATA_FOUR} />
 
       <ServicesTypeOne data={SERVICES_SECTION_DATA} />
       <ServicesTypeTwo data={SERVICES_SECTION_DATA} />
