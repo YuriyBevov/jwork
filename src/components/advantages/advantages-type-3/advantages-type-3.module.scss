@@ -23,7 +23,7 @@
 .item {
   display: flex;
   flex-direction: column;
-  gap: var(--gap-lg);
+  gap: var(--gap-sm);
 
   &_content {
     @extend %flex-column;

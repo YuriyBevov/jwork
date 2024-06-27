@@ -24,7 +24,7 @@
   @extend %flex-align;
   flex-direction: column;
   text-align: center;
-  gap: var(--gap-lg);
+  gap: var(--gap-sm);
 
   &_icon {
     flex: 0 0 80px;
