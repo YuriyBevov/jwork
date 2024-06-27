@@ -1,0 +1,35 @@
+@import '../../../shared/styles/extends.scss';
+@import '../../../shared/styles/mixins.scss';
+
+.root {
+  @extend %section-offset;
+
+  ul {
+    @extend %list-reset;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: clamp(var(--gap-lg), 4vw, var(--gap-xxl)) var(--gap-lg);
+  }
+}
+
+.item {
+  @extend %flex-column;
+  gap: var(--gap-sm);
+  align-items: center;
+  text-align: center;
+
+  svg {
+    path {
+      fill: var(--primary);
+    }
+  }
+}
+
+.base_title {
+  text-align: center;
+  color: var(--primary);
+}
+
+.base_subtitle {
+  color: var(--primary);
+}
