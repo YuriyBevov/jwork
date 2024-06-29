@@ -1,4 +1,4 @@
-import { AboutTypeOne, AboutTypeTwo } from '@/components/about';
+import { AboutTypeOne, AboutTypeThree, AboutTypeTwo } from '@/components/about';
 import { ABOUT_SECTION_DATA } from '@/components/about/mock';
 import {
   AdvantagesTypeFive,
@@ -45,6 +45,7 @@ export default function Home() {
 
       <AboutTypeOne data={ABOUT_SECTION_DATA} />
       <AboutTypeTwo data={ABOUT_SECTION_DATA} />
+      <AboutTypeThree data={ABOUT_SECTION_DATA} />
     </main>
   );
 }
