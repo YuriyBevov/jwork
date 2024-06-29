@@ -1,0 +1,71 @@
+@import '../../../shared/styles/extends.scss';
+@import '../../../shared/styles/mixins.scss';
+
+.root {
+  @extend %section-offset;
+
+  ul {
+    @extend %list-reset;
+    @extend %flex-column;
+
+    gap: var(--gap-lg);
+    margin-bottom: var(--gap-lg);
+  }
+
+  &_content {
+    @extend %flex-column;
+    height: 100%;
+
+    button {
+      margin-top: auto;
+
+      @include media-down($laptop-width) {
+        margin: 0 auto;
+        margin-bottom: clamp(var(--gap-sm), 4vw, var(--gap-xl));
+      }
+    }
+  }
+
+  &_wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--gap-lg);
+
+    img {
+      width: 100%;
+      height: fit-content;
+      max-height: 500px;
+      border-radius: 20px;
+      object-fit: contain;
+    }
+
+    @include media-down($laptop-width) {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.base_title {
+  color: var(--primary);
+}
+
+.item {
+  position: relative;
+  @extend %flex-column;
+  gap: var(--gap-sm);
+
+  padding-left: 76px;
+
+  svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  @include media-down($tablet-width) {
+    padding-left: 0;
+    svg {
+      position: static;
+    }
+  }
+}
