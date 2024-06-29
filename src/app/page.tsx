@@ -1,20 +1,21 @@
 import { AboutTypeOne } from '@/components/about';
 import { ABOUT_SECTION_DATA } from '@/components/about/mock';
 import {
+  AdvantagesTypeFive,
+  AdvantagesTypeFour,
   AdvantagesTypeOne,
+  AdvantagesTypeSeven,
   AdvantagesTypeTres,
   AdvantagesTypeTwo,
 } from '@/components/advantages';
-import { ADVANTAGES_SECTION_DATA } from '@/components/advantages/mock';
+
 import {
-  ServicesTypeFive,
-  ServicesTypeFour,
-  ServicesTypeOne,
-  ServicesTypeSeven,
-  ServicesTypeSix,
-  ServicesTypeTres,
-  ServicesTypeTwo,
-} from '@/components/services';
+  ADVANTAGES_SECTION_DATA,
+  ADVANTAGES_SECTION_DATA_FOUR,
+  ADVANTAGES_SECTION_DATA_SEVEN,
+  ADVANTAGES_SECTION_DATA_TRES,
+} from '@/components/advantages/mock';
+
 import { SERVICES_SECTION_DATA } from '@/components/services/mock';
 
 export default function Home() {
@@ -22,7 +23,10 @@ export default function Home() {
     <main>
       <AdvantagesTypeOne data={ADVANTAGES_SECTION_DATA} />
       <AdvantagesTypeTwo data={ADVANTAGES_SECTION_DATA} />
-      <AdvantagesTypeTres data={ADVANTAGES_SECTION_DATA} />
+      <AdvantagesTypeTres data={ADVANTAGES_SECTION_DATA_TRES} />
+      <AdvantagesTypeFour data={ADVANTAGES_SECTION_DATA_FOUR} />
+      <AdvantagesTypeFive data={ADVANTAGES_SECTION_DATA_TRES} />
+      <AdvantagesTypeSeven data={ADVANTAGES_SECTION_DATA_SEVEN} />
 
       <ServicesTypeOne data={SERVICES_SECTION_DATA} />
       <ServicesTypeTwo data={SERVICES_SECTION_DATA} />
