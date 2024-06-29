@@ -93,6 +93,38 @@ export const ADVANTAGES_SECTION_DATA_FOUR = {
     },
   ],
 };
+
+export const ADVANTAGES_SECTION_DATA_SIX = {
+  title: 'Наши преимущества',
+  image: {
+    url: '/assets/images/advantages-mock-img.png',
+    alt: 'Наши преимущества',
+    width: 916,
+    height: 480,
+  },
+  list: [
+    {
+      id: '1',
+      title: '45 мин',
+      description: 'среднее время обслуживания клиента',
+    },
+    {
+      id: '2',
+      title: '7000+',
+      description: 'конструкций изготовлено за 15 лет',
+    },
+    {
+      id: '3',
+      title: '95%',
+      description: 'клиентов готовы нас рекомендовать',
+    },
+    {
+      id: '4',
+      title: '2005 г.',
+      description: 'год основания компании',
+    },
+  ],
+};
 export const ADVANTAGES_SECTION_DATA_SEVEN = {
   title: 'Наши преимущества',
   list: [

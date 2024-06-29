@@ -18,6 +18,7 @@ import {
   ADVANTAGES_SECTION_DATA,
   ADVANTAGES_SECTION_DATA_FOUR,
   ADVANTAGES_SECTION_DATA_SEVEN,
+  ADVANTAGES_SECTION_DATA_SIX,
   ADVANTAGES_SECTION_DATA_TRES,
 } from '@/components/advantages/mock';
 import {
@@ -39,7 +40,7 @@ export default function Home() {
       <AdvantagesTypeTres data={ADVANTAGES_SECTION_DATA_TRES} />
       <AdvantagesTypeFour data={ADVANTAGES_SECTION_DATA_FOUR} />
       <AdvantagesTypeFive data={ADVANTAGES_SECTION_DATA_TRES} />
-      <AdvantagesTypeSix data={ADVANTAGES_SECTION_DATA_FOUR} />
+      <AdvantagesTypeSix data={ADVANTAGES_SECTION_DATA_SIX} />
       <AdvantagesTypeSeven data={ADVANTAGES_SECTION_DATA_SEVEN} />
 
       <ServicesTypeOne data={SERVICES_SECTION_DATA} />
