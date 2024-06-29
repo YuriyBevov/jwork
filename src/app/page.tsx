@@ -3,6 +3,7 @@ import {
   AdvantagesTypeFour,
   AdvantagesTypeOne,
   AdvantagesTypeSeven,
+  AdvantagesTypeSix,
   AdvantagesTypeTres,
   AdvantagesTypeTwo,
 } from '@/components/advantages';
@@ -29,6 +30,7 @@ export default function Home() {
       <AdvantagesTypeTres data={ADVANTAGES_SECTION_DATA_TRES} />
       <AdvantagesTypeFour data={ADVANTAGES_SECTION_DATA_FOUR} />
       <AdvantagesTypeFive data={ADVANTAGES_SECTION_DATA_TRES} />
+      <AdvantagesTypeSix data={ADVANTAGES_SECTION_DATA_FOUR} />
       <AdvantagesTypeSeven data={ADVANTAGES_SECTION_DATA_SEVEN} />
 
       <ServicesTypeOne data={SERVICES_SECTION_DATA} />
