@@ -31,6 +31,8 @@ import {
   ServicesTypeTwo,
 } from '@/components/services';
 import { SERVICES_SECTION_DATA } from '@/components/services/mock';
+import { StaffTypeOne } from '@/components/staff';
+import { STAFF_SECTION_DATA } from '@/components/staff/mock';
 
 export default function Home() {
   return (
@@ -55,6 +57,8 @@ export default function Home() {
       <AboutTypeTwo data={ABOUT_SECTION_DATA} />
       <AboutTypeThree data={ABOUT_SECTION_DATA} />
       <AboutTypeFour data={ABOUT_SECTION_DATA} />
+
+      <StaffTypeOne data={STAFF_SECTION_DATA} />
     </main>
   );
 }
