@@ -3,7 +3,7 @@ export const STAFF_SECTION_DATA = {
   list: [
     {
       id: '1',
-      name: 'Константинов Константин Константинович',
+      name: 'Константинов Константин Константинович!',
       label: 'Генеральный директор',
       image: {
         url: '/assets/images/staff/staff-1.png',
