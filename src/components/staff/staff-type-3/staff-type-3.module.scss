@@ -1,0 +1,62 @@
+@import '../../../shared/styles/extends.scss';
+@import '../../../shared/styles/mixins.scss';
+
+.root {
+  @extend %section-offset;
+
+  &_wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: clamp(var(--gap-lg), 4vw, var(--gap-xxl)) var(--gap-lg);
+
+    @include media-down($laptop-width) {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.base_title {
+  color: var(--primary);
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 42% 1fr;
+  gap: var(--gap-lg);
+
+  @include media-down($mobile-width) {
+    grid-template-columns: 1fr;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  &_line {
+    @extend %flex-column;
+    gap: var(--gap-sm);
+  }
+
+  &_name {
+    font-size: clamp(var(--fs-md), 2vw, 20px);
+    font-weight: var(--fw-b);
+  }
+
+  &_label {
+    color: var(--primary);
+    font-size: var(--main-text);
+  }
+
+  &_property {
+    @extend %list-reset;
+    @extend %flex-column;
+    gap: var(--gap-xs);
+  }
+}
+
+.base_text {
+  margin-bottom: var(--gap-xxl);
+}
