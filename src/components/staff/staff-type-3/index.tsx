@@ -2,34 +2,17 @@ import clsx from 'clsx';
 import Image from 'next/image';
 import React from 'react';
 
+import { getLocalData } from '@/lib/localdata';
 import { MainBtn } from '@/shared/ui/main-btn';
 
 import styles from './staff-type-3.module.scss';
+import { StaffDTO } from './types';
 
-type Props = {
-  data: {
-    title: string;
-    description?: string;
-    list: {
-      id: string;
-      name: string;
-      label: string;
-      image: {
-        url: string;
-        alt: string;
-        width: number;
-        height: number;
-      };
-      property: {
-        id: string;
-        name: string;
-        value: string;
-      }[];
-    }[];
-  };
-};
+export const StaffTypeThree = async () => {
+  const data: StaffDTO = await getLocalData(
+    'src/components/staff/staff-type-3/data.json',
+  );
 
-export const StaffTypeThree: React.FC<Props> = ({ data }) => {
   return (
     <section className={styles.root}>
       <div className="container">
@@ -54,7 +37,7 @@ export const StaffTypeThree: React.FC<Props> = ({ data }) => {
                 <ul className={styles.item_property}>
                   {item.property.map((property) => (
                     <li key={property.id} className={styles.item_property_item}>
-                      <span>{property.name}</span> -{' '}
+                      <span>{property.name}</span> -
                       <span>{property.value}</span>
                     </li>
                   ))}
@@ -62,9 +45,8 @@ export const StaffTypeThree: React.FC<Props> = ({ data }) => {
               </div>
             </div>
           ))}
-
-          <MainBtn rounded={'xs'} text="Больше сотрудников" />
         </div>
+        <MainBtn rounded={'xs'} text="Больше сотрудников" />
       </div>
     </section>
   );

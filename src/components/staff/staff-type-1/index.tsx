@@ -1,33 +1,18 @@
+// 'use client';
 import clsx from 'clsx';
 import Image from 'next/image';
 import React from 'react';
 
+import { getLocalData } from '@/lib/localdata';
+
 import styles from './staff-type-1.module.scss';
+import { StaffDTO } from './types';
 
-type Props = {
-  data: {
-    title: string;
-    description?: string;
-    list: {
-      id: string;
-      name: string;
-      label: string;
-      image: {
-        url: string;
-        alt: string;
-        width: number;
-        height: number;
-      };
-      property: {
-        id: string;
-        name: string;
-        value: string;
-      }[];
-    }[];
-  };
-};
+export const StaffTypeOne = async () => {
+  const data: StaffDTO = await getLocalData(
+    'src/components/staff/staff-type-1/data.json',
+  );
 
-export const StaffTypeOne: React.FC<Props> = ({ data }) => {
   return (
     <section className={styles.root}>
       <div className="container">
