@@ -1,6 +1,9 @@
 import {
+  AboutTypeFive,
   AboutTypeFour,
   AboutTypeOne,
+  AboutTypeSeven,
+  AboutTypeSix,
   AboutTypeThree,
   AboutTypeTwo,
 } from '@/components/about';
@@ -13,6 +16,9 @@ export default function About() {
       <AboutTypeTwo data={ABOUT_SECTION_DATA} />
       <AboutTypeThree data={ABOUT_SECTION_DATA} />
       <AboutTypeFour data={ABOUT_SECTION_DATA} />
+      <AboutTypeFive data={ABOUT_SECTION_DATA} />
+      <AboutTypeSix data={ABOUT_SECTION_DATA} />
+      <AboutTypeSeven data={ABOUT_SECTION_DATA} />
     </>
   );
 }

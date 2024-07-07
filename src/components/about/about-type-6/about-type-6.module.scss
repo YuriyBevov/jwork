@@ -1,0 +1,76 @@
+@import '../../../shared/styles/extends.scss';
+@import '../../../shared/styles/mixins.scss';
+
+.root {
+  @extend %section-offset;
+
+  ul {
+    @extend %flex-column;
+
+    gap: var(--gap-sm);
+    margin-left: var(--gap-sm);
+  }
+
+  &_content {
+    @extend %flex-column;
+    height: 100%;
+    gap: var(--gap-lg);
+    padding: var(--gap-lg) 0;
+
+    @include media-down(1360px) {
+      padding: 0;
+    }
+
+    small {
+      @extend %flex-center;
+      width: fit-content;
+      font-size: 14px;
+      font-weight: var(--fw-sb);
+      color: var(--black);
+      background-color: transparent;
+
+      @extend %tooltip-frame;
+    }
+  }
+
+  &_wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--gap-lg);
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+
+      @include media-down(1360px) {
+        order: 2;
+      }
+    }
+
+    @include media-down(1360px) {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.base_title {
+  color: var(--primary);
+}
+
+.item {
+  position: relative;
+  @extend %flex-column;
+  gap: var(--gap-sm);
+
+  svg {
+    fill: var(--primary);
+  }
+
+  @include media-down($tablet-width) {
+    padding-left: 0;
+    svg {
+      position: static;
+    }
+  }
+}
