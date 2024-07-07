@@ -8,8 +8,9 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: clamp(var(--gap-lg), 4vw, var(--gap-xxl)) var(--gap-lg);
+    margin-bottom: var(--gap-xxl);
 
-    @include media-down($laptop-width) {
+    @include media-down(1390px) {
       grid-template-columns: 1fr;
     }
   }
@@ -21,10 +22,10 @@
 
 .item {
   display: grid;
-  grid-template-columns: 42% 1fr;
+  grid-template-columns: 328px 1fr;
   gap: var(--gap-lg);
 
-  @include media-down($mobile-width) {
+  @include media-down(650px) {
     grid-template-columns: 1fr;
   }
 
@@ -32,7 +33,10 @@
     max-width: 100%;
     height: auto;
     object-fit: cover;
-    width: 100%;
+
+    @include media-down(650px) {
+      width: 100%;
+    }
   }
 
   &_line {

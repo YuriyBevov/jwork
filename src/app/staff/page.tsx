@@ -1,14 +1,17 @@
+import { Suspense } from 'react';
+
 import { StaffTypeOne, StaffTypeThree } from '@/components/staff';
-import {
-  STAFF_SECTION_DATA,
-  STAFF_SECTION_THREE,
-} from '@/components/staff/mock';
+import { SkeletonStaffTypeThree } from '@/components/staff/staff-type-3/skeleton';
 
 export default function Staff() {
   return (
     <>
-      <StaffTypeOne data={STAFF_SECTION_DATA} />
-      <StaffTypeThree data={STAFF_SECTION_THREE} />
+      <Suspense fallback={<p>Loading</p>}>
+        <StaffTypeOne />
+      </Suspense>
+      <Suspense fallback={<SkeletonStaffTypeThree />}>
+        <StaffTypeThree />
+      </Suspense>
     </>
   );
 }
