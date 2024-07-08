@@ -14,7 +14,7 @@ type Props = {
   };
 };
 
-export const ServicesTypeTwo: React.FC<Props> = ({ data }) => {
+export const ServicesType_2: React.FC<Props> = ({ data }) => {
   return (
     <section className={styles.root}>
       <div className="container">
