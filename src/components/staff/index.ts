@@ -1,2 +1,3 @@
-export { StaffTypeOne } from './staff-type-1';
-export { StaffTypeThree } from './staff-type-3';
+export { StaffType_1 } from './staff-type-1';
+export { StaffType_3 } from './staff-type-3';
+export { StaffType_5 } from './staff-type-5';
