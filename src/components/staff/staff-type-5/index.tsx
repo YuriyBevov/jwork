@@ -5,12 +5,12 @@ import React from 'react';
 
 import { getLocalData } from '@/lib/localdata';
 
-import styles from './staff-type-1.module.scss';
+import styles from './staff-type-5.module.scss';
 import { StaffDTO } from './types';
 
-export const StaffType_1 = async () => {
+export const StaffType_5 = async () => {
   const data: StaffDTO = await getLocalData(
-    'src/components/staff/staff-type-1/data.json',
+    'src/components/staff/staff-type-5/data.json',
   );
 
   return (

@@ -4,7 +4,7 @@ import { AdvantagesTypeOne } from '@/components/advantages';
 import { ADVANTAGES_SECTION_DATA } from '@/components/advantages/mock';
 import { ServicesTypeOne } from '@/components/services';
 import { SERVICES_SECTION_DATA } from '@/components/services/mock';
-import { StaffTypeOne } from '@/components/staff';
+import { StaffType_1 } from '@/components/staff';
 
 export default function Home() {
   return (
@@ -12,7 +12,7 @@ export default function Home() {
       <AdvantagesTypeOne data={ADVANTAGES_SECTION_DATA} />
       <ServicesTypeOne data={SERVICES_SECTION_DATA} />
       <AboutTypeOne data={ABOUT_SECTION_DATA} />
-      <StaffTypeOne />
+      <StaffType_1 />
     </main>
   );
 }
