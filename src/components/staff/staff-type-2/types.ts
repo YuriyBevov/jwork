@@ -1,5 +1,6 @@
 export interface StaffDTO {
   title: string;
+  description?: string;
   list: StaffList[];
 }
 

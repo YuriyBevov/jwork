@@ -3,20 +3,6 @@
 
 .root {
   @extend %section-offset;
-
-  &_wrapper {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: clamp(var(--gap-lg), 4vw, var(--gap-xxl)) var(--gap-lg);
-
-    @include media-down($desktop-width) {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    @include media-down(600px) {
-      grid-template-columns: 1fr;
-    }
-  }
 }
 
 .base_title {
@@ -28,6 +14,12 @@
   @extend %flex-column;
   gap: var(--gap-xs);
 
+  img {
+    width: 100%;
+    height: auto;
+    margin-bottom: var(--gap-sm);
+  }
+
   &_name {
     font-size: clamp(var(--fs-md), 2vw, 20px);
     font-weight: var(--fw-b);
@@ -36,11 +28,21 @@
   &_label {
     color: var(--primary);
     font-size: var(--main-text);
+    margin-bottom: var(--gap-sm);
   }
 
   &_property {
     @extend %list-reset;
     @extend %flex-column;
     gap: var(--gap-xs);
+  }
+}
+
+.base_text {
+  text-align: center;
+  margin-bottom: calc(var(--gap-xxl) * 1.5);
+
+  @include media-down(520px) {
+    margin-bottom: var(--gap-md);
   }
 }
