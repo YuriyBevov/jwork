@@ -1,7 +1,7 @@
 {
-  "title": "Подпишитесь на нашу рассылку!",
+  "title": "Оставьте заявку и мы обязательно свяжемся с вами!",
   "text": "Для оформления заявки, пожалуйста, напишите нам ваш контактный номер телефона или адрес электронной почты, и мы обязательно свяжемся с вами в ближайшее время.",
-
+  "backgroundImagePath": "/assets/images/offer-section/offer-section-4-bg.png",
   "form": {
     "id": "offer-form",
     "fields": [
@@ -13,17 +13,17 @@
         "required": true
       },
       {
-        "type": "tel",
-        "placeholder": "Ваш телефон",
-        "id": "offer-form-user-phone",
-        "name": "Номер телефона",
-        "required": true
-      },
-      {
         "type": "text",
         "placeholder": "E-mail",
         "id": "offer-form-user-mail",
         "name": "Электронная почта",
+        "required": true
+      },
+      {
+        "type": "tel",
+        "placeholder": "Ваш телефон",
+        "id": "offer-form-user-phone",
+        "name": "Номер телефона",
         "required": true
       }
     ],

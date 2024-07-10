@@ -1,6 +1,7 @@
 export interface OfferData {
   title: string;
   text: string;
+  backgroundImagePath: string;
   form: FormData[];
 }
 
