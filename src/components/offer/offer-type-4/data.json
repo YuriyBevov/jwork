@@ -1,0 +1,41 @@
+{
+  "title": "Подпишитесь на нашу рассылку!",
+  "text": "Для оформления заявки, пожалуйста, напишите нам ваш контактный номер телефона или адрес электронной почты, и мы обязательно свяжемся с вами в ближайшее время.",
+
+  "form": {
+    "id": "offer-form",
+    "fields": [
+      {
+        "type": "text",
+        "placeholder": "Ваше имя",
+        "id": "offer-form-user-name",
+        "name": "Имя",
+        "required": true
+      },
+      {
+        "type": "tel",
+        "placeholder": "Ваш телефон",
+        "id": "offer-form-user-phone",
+        "name": "Номер телефона",
+        "required": true
+      },
+      {
+        "type": "text",
+        "placeholder": "E-mail",
+        "id": "offer-form-user-mail",
+        "name": "Электронная почта",
+        "required": true
+      }
+    ],
+
+    "submitBtn": {
+      "text": "Отправить"
+    },
+
+    "policy": {
+      "text": "Нажимая кнопку Отправить вы соглашаетесь с",
+      "linkText": "политикой конфиденциальности",
+      "linkUrl": "#"
+    }
+  }
+}
