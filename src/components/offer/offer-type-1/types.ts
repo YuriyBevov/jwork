@@ -1,7 +1,7 @@
 export interface OfferData {
   title: string;
   text: string;
-  form: FormData[];
+  form: FormData;
 }
 
 interface FormData {
