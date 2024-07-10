@@ -62,3 +62,7 @@ a {
   font-weight: var(--fw-b);
   color: var(--dark);
 }
+
+.navigation_line-pagination .swiper-pagination-bullet-active {
+  background: var(--primary);
+}
