@@ -1,24 +1,24 @@
 export interface OfferData {
   title: string;
   text: string;
-  // list: StaffList[];
+  form: FormData[];
 }
 
-// interface StaffList {
-//   id: number;
-//   name: string;
-//   label: string;
-//   image: {
-//     url: string;
-//     alt: string;
-//     width: number;
-//     height: number;
-//   };
-//   property: StaffListProperty[];
-// }
-
-// interface StaffListProperty {
-//   id: string;
-//   name: string;
-//   value: string;
-// }
+interface FormData {
+  id: string;
+  submitBtn: {
+    text: string;
+  };
+  policy: {
+    text: string;
+    linkText: string;
+    linkUrl: string;
+  };
+  fields: {
+    type: string;
+    placeholder: string;
+    id: string;
+    name: string;
+    required: boolean;
+  };
+}

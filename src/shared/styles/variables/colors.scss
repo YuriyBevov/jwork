@@ -1,6 +1,9 @@
 $white: #fff;
 $black: #000;
-$primary: #1a56db;
+$primary: #1a57db;
+$primary-lighten-20: lighten($primary, 20%);
+$primary-darken-20: darken($primary, 20%);
+
 $secondary: #a4cafe;
 $dark: #111928;
 $light: #1a56db;
@@ -10,6 +13,9 @@ $lighter: #d1d5db;
   --white: #{$white};
   --black: #{$black};
   --primary: #{$primary};
+  --primary-lighten-20: #{$primary-lighten-20};
+  --primary-darken-20: #{$primary-darken-20};
+
   --secondary: #{$secondary};
   --dark: #{$dark};
   --light: #{$white};

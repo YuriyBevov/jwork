@@ -1,6 +1,5 @@
 // 'use client';
 import clsx from 'clsx';
-// import Image from 'next/image';
 import React from 'react';
 
 import { getLocalData } from '@/lib/localdata';
@@ -24,16 +23,31 @@ export const OfferType_1 = async () => {
           </h2>
           <p className={clsx('base_text', styles.base_text)}>{data.text}</p>
 
-          <form action="#" method="POST" className={styles.offer_form}>
+          <form
+            id={data.form.id}
+            action="#"
+            method="POST"
+            className={styles.offer_form}
+          >
             <fieldset>
-              <MainInput text="Ваше имя" rounded={'lg'} />
-              <MainInput text="Ваш телефон" rounded={'lg'} />
-              <MainInput text="Е-mail" rounded={'lg'} />
-              <SubmitBtn rounded={'lg'} text="Отправить" />
+              {data.form.fields.map((field) => (
+                <MainInput
+                  key={field.id}
+                  type={field.type}
+                  name={field.name}
+                  placeholder={field.placeholder}
+                  rounded={'lg'}
+                  id={field.id}
+                />
+              ))}
+              <SubmitBtn rounded={'lg'} text={data.form.submitBtn.text} />
             </fieldset>
             <small>
-              Нажимая кнопку “Подписаться” вы соглашаетесь с
-              <a href="#"> политикой конфиденциальности</a>
+              {data.form.policy.text}
+              <a href={data.form.policy.linkUrl}>
+                {' '}
+                {data.form.policy.linkText}
+              </a>
             </small>
           </form>
         </div>

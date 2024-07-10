@@ -6,19 +6,25 @@ import styles from './main-input.module.scss';
 type Props = {
   bordered?: boolean;
   rounded?: 'xs' | 'lg';
-  text?: string;
+  placeholder?: string;
   type?: string;
+  name?: string;
+  id: string;
 };
 
 export const MainInput: React.FC<Props> = ({
   rounded,
   bordered,
-  text = 'Подробнее',
+  placeholder,
+  name,
+  id,
   type = 'text',
 }) => {
   return (
     <input
       type={type}
+      name={name}
+      id={id}
       className={clsx(
         bordered ? styles.bordered : null,
         rounded === 'xs'
@@ -28,7 +34,7 @@ export const MainInput: React.FC<Props> = ({
             : null,
         styles.root,
       )}
-      placeholder={text}
+      placeholder={placeholder}
     />
   );
 };
