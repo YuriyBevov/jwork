@@ -1,0 +1,40 @@
+{
+  "title": "Оставьте заявку и мы обязательно свяжемся с вами!",
+  "backgroundImagePath": "/assets/images/offer-section/offer-section-7-bg.png",
+  "form": {
+    "id": "offer-form",
+    "fields": [
+      {
+        "type": "text",
+        "placeholder": "Ваше имя",
+        "id": "offer-form-user-name",
+        "name": "Имя",
+        "required": true
+      },
+      {
+        "type": "text",
+        "placeholder": "Ваша почта",
+        "id": "offer-form-user-mail",
+        "name": "Электронная почта",
+        "required": true
+      },
+      {
+        "type": "tel",
+        "placeholder": "Ваш телефон",
+        "id": "offer-form-user-phone",
+        "name": "Номер телефона",
+        "required": true
+      }
+    ],
+
+    "submitBtn": {
+      "text": "Оставить заявку"
+    },
+
+    "policy": {
+      "text": "Нажимая кнопку “Оставить заявку” вы соглашаетесь с",
+      "linkText": "политикой конфиденциальности",
+      "linkUrl": "#"
+    }
+  }
+}
