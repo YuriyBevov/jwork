@@ -8,7 +8,7 @@ import { MainBtn } from '@/shared/ui/main-btn';
 import styles from './staff-type-3.module.scss';
 import { StaffDTO } from './types';
 
-export const StaffTypeThree = async () => {
+export const StaffType_3 = async () => {
   const data: StaffDTO = await getLocalData(
     'src/components/staff/staff-type-3/data.json',
   );
