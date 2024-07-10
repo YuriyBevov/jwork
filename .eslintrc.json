@@ -8,7 +8,8 @@
   ],
   "plugins": ["prettier"],
   "rules": {
-    "prettier/prettier": "error"
+    "prettier/prettier": "error",
+    "no-console": "error",
+    "@typescript-eslint/no-unused-vars": "error"
   }
-  // "endOfLine": "auto"
 }
