@@ -16,12 +16,16 @@ export const OfferType_7 = async () => {
 
   return (
     <section className={styles.root}>
-      <div className="container">
-        <div className={styles.root_wrapper}>
+      <div className={clsx('container', styles.container)}>
+        <div
+          className={styles.root_wrapper}
+          style={{
+            backgroundImage: 'url(' + data.backgroundImagePath + ')',
+          }}
+        >
           <h2 className={clsx('base_title', styles.base_title)}>
             {data.title}
           </h2>
-          <p className={clsx('base_text', styles.base_text)}>{data.text}</p>
 
           <form
             id={data.form.id}
@@ -36,11 +40,12 @@ export const OfferType_7 = async () => {
                   type={field.type}
                   name={field.name}
                   placeholder={field.placeholder}
-                  rounded={'lg'}
                   id={field.id}
+                  bordered
+                  rounded={'xs'}
                 />
               ))}
-              <SubmitBtn rounded={'lg'} text={data.form.submitBtn.text} />
+              <SubmitBtn text={data.form.submitBtn.text} rounded={'xs'} />
             </fieldset>
             <small>
               {data.form.policy.text}

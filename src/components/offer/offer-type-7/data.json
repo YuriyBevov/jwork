@@ -1,7 +1,6 @@
 {
-  "title": "Подпишитесь на нашу рассылку!",
-  "text": "Для оформления заявки, пожалуйста, напишите нам ваш контактный номер телефона или адрес электронной почты, и мы обязательно свяжемся с вами в ближайшее время.",
-
+  "title": "Оставьте заявку и мы обязательно свяжемся с вами!",
+  "backgroundImagePath": "/assets/images/offer-section/offer-section-7-bg.png",
   "form": {
     "id": "offer-form",
     "fields": [
@@ -13,27 +12,27 @@
         "required": true
       },
       {
+        "type": "text",
+        "placeholder": "Ваша почта",
+        "id": "offer-form-user-mail",
+        "name": "Электронная почта",
+        "required": true
+      },
+      {
         "type": "tel",
         "placeholder": "Ваш телефон",
         "id": "offer-form-user-phone",
         "name": "Номер телефона",
         "required": true
-      },
-      {
-        "type": "text",
-        "placeholder": "E-mail",
-        "id": "offer-form-user-mail",
-        "name": "Электронная почта",
-        "required": true
       }
     ],
 
     "submitBtn": {
-      "text": "Отправить"
+      "text": "Оставить заявку"
     },
 
     "policy": {
-      "text": "Нажимая кнопку Отправить вы соглашаетесь с",
+      "text": "Нажимая кнопку “Оставить заявку” вы соглашаетесь с",
       "linkText": "политикой конфиденциальности",
       "linkUrl": "#"
     }

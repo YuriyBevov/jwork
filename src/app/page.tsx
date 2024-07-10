@@ -13,7 +13,7 @@ export default function Home() {
       <AdvantagesTypeOne data={ADVANTAGES_SECTION_DATA} />
       <ServicesType_1 data={SERVICES_SECTION_DATA} />
       <AboutTypeOne data={ABOUT_SECTION_DATA} />
-      <StaffTypeOne />
+      <StaffType_1 />
       <OfferType_2 />
     </main>
   );

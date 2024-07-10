@@ -7,12 +7,19 @@
   &_wrapper {
     @extend %flex-column;
     gap: var(--gap-lg);
-    padding: var(--gap-xxl) var(--gap-lg);
-    background-color: var(--primary);
+    padding: calc(var(--gap-lg) * 3.5) var(--gap-lg);
+    background-color: var(--secondary);
     color: var(--white);
-    border-radius: 20px;
-    max-width: 1440px;
     margin: 0 auto;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+
+    @include media-down($desktop-width) {
+      padding: calc(var(--gap-lg) * 2) var(--gap-lg);
+    }
   }
 }
 
@@ -26,9 +33,9 @@
     border: 0;
     padding: 0;
     width: 100%;
-    max-width: 1140px;
-    @extend %flex-align;
-    gap: var(--gap-md);
+    max-width: 500px;
+    @extend %flex-column;
+    gap: var(--gap-sm);
 
     input {
       width: 100%;
@@ -36,26 +43,12 @@
 
     button {
       width: 100%;
-      background-color: var(--primary-lighten-20);
-    }
-
-    @include media-down($tablet-lg-width) {
-      flex-wrap: wrap;
-      input,
-      button {
-        width: calc(50% - (var(--gap-md) / 2));
-      }
-    }
-
-    @include media-down($mobile-width) {
-      input,
-      button {
-        width: 100%;
-      }
+      background-color: var(--primary);
     }
   }
 
   small {
+    text-align: center;
     a {
       text-decoration: underline;
       color: var(--white);
@@ -66,6 +59,8 @@
 .base_title {
   text-align: center;
   margin-bottom: 0;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .base_text {

@@ -7,28 +7,31 @@
   &_wrapper {
     @extend %flex-column;
     gap: var(--gap-lg);
-    padding: var(--gap-xxl) var(--gap-lg);
-    background-color: var(--primary);
+    padding: calc(var(--gap-lg) * 2) var(--gap-lg);
+    background-color: var(--secondary);
     color: var(--white);
-    border-radius: 20px;
-    max-width: 1440px;
     margin: 0 auto;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
   }
 }
 
 .offer_form {
   @extend %flex-column;
   gap: var(--gap-md);
-  align-items: center;
+  max-width: 600px;
 
   fieldset {
     margin: 0;
     border: 0;
     padding: 0;
     width: 100%;
-    max-width: 1140px;
-    @extend %flex-align;
-    gap: var(--gap-md);
+
+    @extend %flex-column;
+    gap: var(--gap-sm);
 
     input {
       width: 100%;
@@ -36,22 +39,7 @@
 
     button {
       width: 100%;
-      background-color: var(--primary-lighten-20);
-    }
-
-    @include media-down($tablet-lg-width) {
-      flex-wrap: wrap;
-      input,
-      button {
-        width: calc(50% - (var(--gap-md) / 2));
-      }
-    }
-
-    @include media-down($mobile-width) {
-      input,
-      button {
-        width: 100%;
-      }
+      background-color: var(--primary);
     }
   }
 
@@ -60,16 +48,14 @@
       text-decoration: underline;
       color: var(--white);
     }
+
+    @include media-down($mobile-width) {
+      text-align: center;
+    }
   }
 }
 
 .base_title {
-  text-align: center;
   margin-bottom: 0;
-}
-
-.base_text {
-  max-width: 900px;
-  text-align: center;
-  margin: 0 auto;
+  max-width: 650px;
 }
