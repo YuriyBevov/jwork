@@ -1,6 +1,12 @@
 export interface OfferData {
   title: string;
   text: string;
+  image: {
+    path: string;
+    width: number;
+    height: number;
+    alt: string;
+  };
   form: FormData;
 }
 
