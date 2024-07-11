@@ -14,11 +14,11 @@ import styles from './slider-ui.module.scss';
 
 export const SliderUi = ({
   children,
-  slidesPerView = 1,
-  spaceBetween = 20,
+  slidesPerView,
+  spaceBetween,
 }: {
   children?: React.ReactNode;
-  slidesPerView?: number;
+  slidesPerView: number;
   spaceBetween?: number;
 }) => {
   return (
@@ -41,7 +41,7 @@ export const SliderUi = ({
           slidesPerView: 2,
         },
         991: {
-          slidesPerView: 3,
+          slidesPerView: slidesPerView,
         },
       }}
     >
