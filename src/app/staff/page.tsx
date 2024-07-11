@@ -2,6 +2,7 @@ import {
   StaffType_1,
   StaffType_2,
   StaffType_3,
+  StaffType_4,
   StaffType_5,
 } from '@/components/staff';
 
@@ -11,6 +12,7 @@ export default function Staff() {
       <StaffType_1 />
       <StaffType_2 />
       <StaffType_3 />
+      <StaffType_4 />
       <StaffType_5 />
     </>
   );
