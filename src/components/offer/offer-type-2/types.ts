@@ -2,7 +2,7 @@ export interface OfferData {
   title: string;
   text: string;
   backgroundImagePath: string;
-  form: FormData[];
+  form: FormData;
 }
 
 interface FormData {
@@ -15,11 +15,13 @@ interface FormData {
     linkText: string;
     linkUrl: string;
   };
-  fields: {
-    type: string;
-    placeholder: string;
-    id: string;
-    name: string;
-    required: boolean;
-  };
+  fields: FormDataFields[];
+}
+
+interface FormDataFields {
+  type: string;
+  placeholder: string;
+  id: string;
+  name: string;
+  required: boolean;
 }
