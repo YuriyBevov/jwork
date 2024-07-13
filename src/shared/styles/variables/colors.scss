@@ -8,6 +8,7 @@ $secondary: #a4cafe;
 $dark: #111928;
 $light: #1a56db;
 $lighter: #d1d5db;
+$gray: #6b7280;
 
 :root {
   --white: #{$white};
@@ -20,6 +21,7 @@ $lighter: #d1d5db;
   --dark: #{$dark};
   --light: #{$white};
   --lighter: #{$lighter};
+  --gray: #{$gray};
 
   // --success: #28a745;
   // --warning: #ffc107;
