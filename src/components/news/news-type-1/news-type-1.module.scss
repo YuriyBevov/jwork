@@ -33,7 +33,7 @@
 .item {
   display: grid;
   grid-template-columns: 480px 1fr;
-  gap: calc(var(--gap-xxl) * 1.35);
+  gap: var(--gap-xxl);
 
   @include media-down(1080px) {
     display: flex;
