@@ -86,4 +86,8 @@
 
 .base_subtitle {
   font-size: clamp(var(--fs-md), 3.2vw, 32px);
+  transition: color var(--base-transition);
+  &:hover {
+    color: var(--primary);
+  }
 }

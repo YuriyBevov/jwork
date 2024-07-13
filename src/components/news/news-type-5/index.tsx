@@ -4,21 +4,22 @@ import Link from 'next/link';
 import React from 'react';
 
 import { getLocalData } from '@/lib/localdata';
-import { MainBtn } from '@/shared/ui/main-btn';
+import { SliderUi } from '@/shared/components/slider-ui';
+import { IconLinkArrow } from '@/shared/icons/icon-link-arrow';
 
-import styles from './news-type-1.module.scss';
+import styles from './news-type-5.module.scss';
 import { NewsDTO } from './types';
 
-export const NewsType_1 = async () => {
+export const NewsType_5 = async () => {
   const data: NewsDTO = await getLocalData(
-    'src/components/news/news-type-1/data.json',
+    'src/components/news/news-type-5/data.json',
   );
 
   return (
     <section className={styles.root}>
       <div className="container">
         <h2 className={clsx('base_title', styles.base_title)}>{data.title}</h2>
-        <div className={styles.root_wrapper}>
+        <SliderUi slidesPerView={3} slidesPerViewTabletLg={2} spaceBetween={40}>
           {data.list.map((item) => (
             <div key={item.id} className={styles.item}>
               <Image
@@ -28,7 +29,24 @@ export const NewsType_1 = async () => {
                 height={item.image.height}
               />
               <div className={styles.item_info}>
-                <span className={styles.item_date}>{item.createdAt}</span>
+                <ul className={styles.item_list}>
+                  <li
+                    className={clsx(
+                      styles.item_list__item,
+                      styles.item_list__category,
+                    )}
+                  >
+                    {item.category}
+                  </li>
+                  <li
+                    className={clsx(
+                      styles.item_list__item,
+                      styles.item_list__date,
+                    )}
+                  >
+                    {item.timeRead}
+                  </li>
+                </ul>
                 <Link
                   href="#"
                   className={clsx('base_subtitle', styles.base_subtitle)}
@@ -40,19 +58,12 @@ export const NewsType_1 = async () => {
                   dangerouslySetInnerHTML={{ __html: item.description }}
                 />
                 <Link className={styles.item_link} href="#">
-                  Читать далее...
+                  Читать подробнее <IconLinkArrow />
                 </Link>
               </div>
             </div>
           ))}
-        </div>
-        <div className={styles.root_button}>
-          <MainBtn
-            rounded="lg"
-            text="Показать больше новостей"
-            outlined={true}
-          />
-        </div>
+        </SliderUi>
       </div>
     </section>
   );
