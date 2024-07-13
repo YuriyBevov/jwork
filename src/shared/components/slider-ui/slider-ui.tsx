@@ -15,17 +15,25 @@ import styles from './slider-ui.module.scss';
 export const SliderUi = ({
   children,
   slidesPerView,
+  slidesPerViewXs = 1,
+  slidesPerViewMobile = 1,
+  slidesPerViewTablet = 2,
+  slidesPerViewTabletLg = 2,
   spaceBetween,
 }: {
   children?: React.ReactNode;
   slidesPerView: number;
+  slidesPerViewXs?: number;
+  slidesPerViewMobile?: number;
+  slidesPerViewTablet?: number;
+  slidesPerViewTabletLg?: number;
+
   spaceBetween?: number;
 }) => {
   return (
     <Swiper
       modules={[Navigation, Pagination]}
       spaceBetween={spaceBetween}
-      slidesPerView={slidesPerView}
       loop={true}
       className={styles.root}
       pagination={{ el: '.navigation_line-pagination', clickable: true }}
@@ -35,18 +43,24 @@ export const SliderUi = ({
       }}
       breakpoints={{
         320: {
-          slidesPerView: 1,
+          slidesPerView: slidesPerViewXs,
         },
-        576: {
-          slidesPerView: 2,
+        534: {
+          slidesPerView: slidesPerViewMobile,
         },
-        991: {
+        768: {
+          slidesPerView: slidesPerViewTablet,
+        },
+        960: {
+          slidesPerView: slidesPerViewTabletLg,
+        },
+        1360: {
           slidesPerView: slidesPerView,
         },
       }}
     >
       {React.Children.map(children, (child: ReactNode) => (
-        <SwiperSlide>{child}</SwiperSlide>
+        <SwiperSlide className={styles.slide}>{child}</SwiperSlide>
       ))}
 
       <div className={styles.navigation}>
