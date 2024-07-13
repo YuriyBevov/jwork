@@ -4,14 +4,13 @@ import Link from 'next/link';
 import React from 'react';
 
 import { getLocalData } from '@/lib/localdata';
-import { MainBtn } from '@/shared/ui/main-btn';
 
-import styles from './news-type-1.module.scss';
+import styles from './news-type-7.module.scss';
 import { NewsDTO } from './types';
 
-export const NewsType_1 = async () => {
+export const NewsType_7 = async () => {
   const data: NewsDTO = await getLocalData(
-    'src/components/news/news-type-1/data.json',
+    'src/components/news/news-type-7/data.json',
   );
 
   return (
@@ -28,7 +27,24 @@ export const NewsType_1 = async () => {
                 height={item.image.height}
               />
               <div className={styles.item_info}>
-                <span className={styles.item_date}>{item.createdAt}</span>
+                <ul className={styles.item_list}>
+                  <li
+                    className={clsx(
+                      styles.item_list__item,
+                      styles.item_list__category,
+                    )}
+                  >
+                    {item.category}
+                  </li>
+                  <li
+                    className={clsx(
+                      styles.item_list__item,
+                      styles.item_list__date,
+                    )}
+                  >
+                    {item.timeRead}
+                  </li>
+                </ul>
                 <Link
                   href="#"
                   className={clsx('base_subtitle', styles.base_subtitle)}
@@ -40,18 +56,11 @@ export const NewsType_1 = async () => {
                   dangerouslySetInnerHTML={{ __html: item.description }}
                 />
                 <Link className={styles.item_link} href="#">
-                  Читать далее...
+                  Читать подробнее...
                 </Link>
               </div>
             </div>
           ))}
-        </div>
-        <div className={styles.root_button}>
-          <MainBtn
-            rounded="lg"
-            text="Показать больше новостей"
-            outlined={true}
-          />
         </div>
       </div>
     </section>

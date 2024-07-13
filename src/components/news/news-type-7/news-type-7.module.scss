@@ -3,6 +3,25 @@
 
 .root {
   @extend %section-offset;
+
+  &_wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gap-xxl);
+    margin-bottom: var(--gap-xxl);
+
+    @include media-down(1080px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include media-down(767px) {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.base_title {
+  text-align: center;
 }
 
 .item {
