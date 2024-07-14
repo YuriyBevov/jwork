@@ -2,31 +2,27 @@ import clsx from 'clsx';
 import Image from 'next/image';
 import React from 'react';
 
+import { getLocalData } from '@/lib/localdata';
 import { MainBtn } from '@/shared/ui/main-btn';
 
 import styles from './services-type-5.module.scss';
+import { ServicesDTO } from './types';
 
-type Props = {
-  data: {
-    title: string;
-    description?: string;
-    list: { id: string; title: string; description: string; image: string }[];
-  };
-};
-
-export const ServicesType_5: React.FC<Props> = ({ data }) => {
+export const ServicesType_5 = async () => {
+  const data: ServicesDTO = await getLocalData(
+    '/src/components/services/services-type-5/data.json',
+  );
   return (
     <section className={styles.root}>
       <div className="container">
         <h2 className={clsx('base_title', styles.base_title)}>{data.title}</h2>
-
         <ul>
           {data.list.map((item) => (
             <li key={item.id}>
               <div className={styles.item}>
                 <Image
-                  src={item.image}
-                  alt={item.title}
+                  src={item.image.url}
+                  alt={item.image.alt}
                   width={560}
                   height={320}
                 />

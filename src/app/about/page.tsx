@@ -1,18 +1,18 @@
 import {
   AboutTypeFive,
   AboutTypeFour,
-  AboutTypeOne,
   AboutTypeSeven,
   AboutTypeSix,
   AboutTypeThree,
   AboutTypeTwo,
+  AboutType_1,
 } from '@/components/about';
 import { ABOUT_SECTION_DATA } from '@/components/about/mock';
 
 export default function About() {
   return (
     <>
-      <AboutTypeOne data={ABOUT_SECTION_DATA} />
+      <AboutType_1 />
       <AboutTypeTwo data={ABOUT_SECTION_DATA} />
       <AboutTypeThree data={ABOUT_SECTION_DATA} />
       <AboutTypeFour data={ABOUT_SECTION_DATA} />

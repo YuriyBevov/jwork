@@ -5,7 +5,6 @@ import React from 'react';
 
 import '../../node_modules/normalize.css/normalize.css';
 import '../shared/styles/main.scss';
-import { Footer } from './layout/footer/footer';
 import { Header } from './layout/header/header';
 
 const roboto = Roboto({
@@ -29,7 +28,6 @@ export default function RootLayout({
         <MantineProvider>
           <Header />
           {children}
-          <Footer />
         </MantineProvider>
       </body>
     </html>

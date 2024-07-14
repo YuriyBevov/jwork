@@ -2,19 +2,16 @@ import clsx from 'clsx';
 import Image from 'next/image';
 import React from 'react';
 
+import { getLocalData } from '@/lib/localdata';
 import { MainBtn } from '@/shared/ui/main-btn';
 
 import styles from './services-type-7.module.scss';
+import { ServicesDTO } from './types';
 
-type Props = {
-  data: {
-    title: string;
-    description?: string;
-    list: { id: string; title: string; description: string; image: string }[];
-  };
-};
-
-export const ServicesType_7: React.FC<Props> = ({ data }) => {
+export const ServicesType_7 = async () => {
+  const data: ServicesDTO = await getLocalData(
+    '/src/components/services/services-type-5/data.json',
+  );
   return (
     <section className={styles.root}>
       <div className="container">
@@ -24,14 +21,13 @@ export const ServicesType_7: React.FC<Props> = ({ data }) => {
             {data.description}
           </p>
         )}
-
         <ul>
           {data.list.map((item) => (
             <li key={item.id}>
               <div className={styles.item}>
                 <Image
-                  src={item.image}
-                  alt={item.title}
+                  src={item.image.url}
+                  alt={item.image.alt}
                   width={420}
                   height={240}
                 />
@@ -41,7 +37,6 @@ export const ServicesType_7: React.FC<Props> = ({ data }) => {
                     {item.title}
                   </span>
                   <p>{item.description}</p>
-
                   <MainBtn rounded={'xs'} />
                 </div>
               </div>
