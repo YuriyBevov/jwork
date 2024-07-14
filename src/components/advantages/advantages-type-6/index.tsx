@@ -2,23 +2,15 @@ import clsx from 'clsx';
 import Image from 'next/image';
 import React from 'react';
 
+import { getLocalData } from '@/lib/localdata';
+
 import styles from './advantages-type-6.module.scss';
+import { AdvantagesDTO } from './types';
 
-type Props = {
-  data: {
-    title: string;
-    description?: string;
-    image: {
-      url: string;
-      alt: string;
-      width: number;
-      height: number;
-    };
-    list: { id: string; title: string; description: string }[];
-  };
-};
-
-export const AdvantagesTypeSix: React.FC<Props> = ({ data }) => {
+export const AdvantagesType_6 = async () => {
+  const data: AdvantagesDTO = await getLocalData(
+    '/src/components/advantages/advantages-type-6/data.json',
+  );
   return (
     <section className={styles.root}>
       <div className="container">

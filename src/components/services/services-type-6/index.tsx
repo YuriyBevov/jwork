@@ -1,20 +1,17 @@
 import clsx from 'clsx';
 import React from 'react';
 
+import { getLocalData } from '@/lib/localdata';
 import { MainBtn } from '@/shared/ui/main-btn';
 
 import { IconPrinter } from '../../../shared/icons/icon-printer';
 import styles from './services-type-6.module.scss';
+import { ServicesDTO } from './types';
 
-type Props = {
-  data: {
-    title: string;
-    description?: string;
-    list: { id: string; title: string; description: string; image: string }[];
-  };
-};
-
-export const ServicesType_6: React.FC<Props> = ({ data }) => {
+export const ServicesType_6 = async () => {
+  const data: ServicesDTO = await getLocalData(
+    '/src/components/services/services-type-5/data.json',
+  );
   return (
     <section className={styles.root}>
       <div className="container">
@@ -24,22 +21,18 @@ export const ServicesType_6: React.FC<Props> = ({ data }) => {
             {data.description}
           </p>
         )}
-
         <ul>
           {data.list.map((item) => (
             <li key={item.id}>
               <div className={styles.item}>
                 <div className={styles.item_header}>
                   <IconPrinter width={80} height={80} />
-
                   <span className={clsx('base_subtitle', styles.base_subtitle)}>
                     {item.title}
                   </span>
                 </div>
-
                 <div className={styles.item_content}>
                   <p>{item.description}</p>
-
                   <MainBtn rounded={'xs'} />
                 </div>
               </div>

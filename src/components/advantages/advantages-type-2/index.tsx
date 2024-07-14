@@ -1,18 +1,16 @@
 import clsx from 'clsx';
 import React from 'react';
 
+import { getLocalData } from '@/lib/localdata';
+
 import { IconHands } from '../../../shared/icons/icon-hands';
 import styles from './advantages-type-2.module.scss';
+import { AdvantagesDTO } from './types';
 
-type Props = {
-  data: {
-    title: string;
-    description?: string;
-    list: { id: string; title: string; description: string }[];
-  };
-};
-
-export const AdvantagesTypeTwo: React.FC<Props> = ({ data }) => {
+export const AdvantagesType_2 = async () => {
+  const data: AdvantagesDTO = await getLocalData(
+    '/src/components/advantages/advantages-type-2/data.json',
+  );
   return (
     <section className={styles.root}>
       <div className="container">

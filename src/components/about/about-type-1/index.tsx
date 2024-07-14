@@ -2,27 +2,18 @@ import clsx from 'clsx';
 import Image from 'next/image';
 import React from 'react';
 
+import { getLocalData } from '@/lib/localdata';
 import { MainBtn } from '@/shared/ui/main-btn';
 
 import { IconPrinter } from '../../../shared/icons/icon-printer';
 import styles from './about-type-1.module.scss';
+import { AboutDTO } from './types';
 
-type Props = {
-  data: {
-    title: string;
-    subtitle?: string;
-    description?: string;
-    image: string;
-    list: {
-      id: string;
-      boldText?: string;
-      simpleText?: string;
-      image?: string;
-    }[];
-  };
-};
+export const AboutType_1 = async () => {
+  const data: AboutDTO = await getLocalData(
+    '/src/components/about/about-type-1/data.json',
+  );
 
-export const AboutTypeOne: React.FC<Props> = ({ data }) => {
   return (
     <section className={styles.root}>
       <div className="container">
@@ -47,7 +38,12 @@ export const AboutTypeOne: React.FC<Props> = ({ data }) => {
             </ul>
             <MainBtn outlined={true} rounded={'lg'} />
           </div>
-          <Image src={data.image} alt={data.title} width={680} height={500} />
+          <Image
+            src={data.image.url}
+            alt={data.title}
+            width={680}
+            height={500}
+          />
         </div>
       </div>
     </section>
