@@ -20,13 +20,6 @@
         "id": "offer-form-user-phone",
         "name": "Номер телефона",
         "required": true
-      },
-      {
-        "type": "text",
-        "placeholder": "E-mail",
-        "id": "offer-form-user-mail",
-        "name": "Электронная почта",
-        "required": true
       }
     ],
 
