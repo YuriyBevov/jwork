@@ -1,3 +1,4 @@
+import { MantineProvider } from '@mantine/core';
 import type { Metadata } from 'next';
 import { Roboto } from 'next/font/google';
 import React from 'react';
@@ -25,9 +26,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={roboto.className}>
-        <Header />
-        {children}
-        <Footer />
+        <MantineProvider>
+          <Header />
+          {children}
+          <Footer />
+        </MantineProvider>
       </body>
     </html>
   );
