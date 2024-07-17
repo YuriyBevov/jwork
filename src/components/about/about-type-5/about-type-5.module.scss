@@ -4,16 +4,17 @@
 .root {
   @extend %section-offset;
 
-  ul {
-    @extend %list-reset;
-    @extend %flex-column;
-
-    gap: var(--gap-lg);
-  }
-
   &_content {
+    @extend %sticky-lg;
     @extend %flex-column;
-    height: 100%;
+    height: fit-content;
+
+    ul {
+      @extend %list-reset;
+      @extend %flex-column;
+
+      gap: var(--gap-lg);
+    }
   }
 
   &_wrapper {
@@ -22,17 +23,24 @@
     gap: var(--gap-lg);
 
     img {
+      @extend %sticky-lg;
       width: 100%;
-      height: 100%;
-      object-fit: cover;
+      height: auto;
+      object-fit: contain;
 
-      @include media-down($laptop-width) {
+      @include media-down($tablet-width) {
         order: 2;
       }
     }
 
-    @include media-down($laptop-width) {
+    @include media-down($tablet-width) {
       grid-template-columns: 1fr;
+
+      img,
+      .root_content {
+        position: relative;
+        top: 0;
+      }
     }
   }
 }
@@ -50,10 +58,10 @@
     fill: var(--primary);
   }
 
-  @include media-down($tablet-width) {
-    padding-left: 0;
-    svg {
-      position: static;
-    }
-  }
+  // @include media-down($tablet-width) {
+  //   padding-left: 0;
+  //   svg {
+  //     position: static;
+  //   }
+  // }
 }

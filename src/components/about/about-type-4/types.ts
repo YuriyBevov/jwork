@@ -12,6 +12,6 @@ export interface AboutDTO {
 
 interface AboutList {
   id: number;
-  boldText: string;
+  label: string;
   simpleText: string;
 }

@@ -2,27 +2,32 @@ import clsx from 'clsx';
 import Image from 'next/image';
 import React from 'react';
 
+import { getLocalData } from '@/lib/localdata';
 import { MainBtn } from '@/shared/ui/main-btn';
 
 import styles from './about-type-4.module.scss';
+import { AboutDTO } from './types';
 
-type Props = {
-  data: {
-    title: string;
-    subtitle?: string;
-    description?: string;
-    image: string;
-    list: {
-      id: string;
-      label?: string;
-      boldText?: string;
-      simpleText?: string;
-      image?: string;
-    }[];
-  };
-};
+// type Props = {
+//   data: {
+//     title: string;
+//     subtitle?: string;
+//     description?: string;
+//     image: string;
+//     list: {
+//       id: string;
+//       label?: string;
+//       boldText?: string;
+//       simpleText?: string;
+//       image?: string;
+//     }[];
+//   };
+// };
 
-export const AboutTypeFour: React.FC<Props> = ({ data }) => {
+export const AboutType_4 = async () => {
+  const data: AboutDTO = await getLocalData(
+    '/src/components/about/about-type-4/data.json',
+  );
   return (
     <section className={styles.root}>
       <div className="container">
@@ -43,7 +48,12 @@ export const AboutTypeFour: React.FC<Props> = ({ data }) => {
             </ul>
             <MainBtn rounded={'lg'} />
           </div>
-          <Image src={data.image} alt={data.title} width={680} height={500} />
+          <Image
+            src={data.image.url}
+            alt={data.title}
+            width={680}
+            height={500}
+          />
         </div>
       </div>
     </section>

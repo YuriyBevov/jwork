@@ -7,11 +7,4 @@ export interface AboutDTO {
     width: number;
     height: number;
   };
-  list: AboutList[];
-}
-
-interface AboutList {
-  id: number;
-  boldText: string;
-  simpleText: string;
 }
