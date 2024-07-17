@@ -4,21 +4,22 @@
 .root {
   @extend %section-offset;
 
-  ul {
-    @extend %list-reset;
-    @extend %flex-column;
-
-    gap: var(--gap-md);
-    margin-bottom: var(--gap-lg);
-  }
-
   &_content {
+    @extend %sticky-lg;
     @extend %flex-column;
     height: 100%;
     gap: var(--gap-md);
 
     button {
       margin-top: auto;
+    }
+
+    ul {
+      @extend %list-reset;
+      @extend %flex-column;
+
+      gap: var(--gap-md);
+      margin-bottom: var(--gap-lg);
     }
   }
 
@@ -28,13 +29,20 @@
     gap: var(--gap-lg);
 
     img {
+      @extend %sticky-lg;
       width: 100%;
-      height: 100%;
-      object-fit: cover;
+      height: auto;
+      object-fit: contain;
     }
 
-    @include media-down(1280px) {
+    @include media-down($tablet-width) {
       grid-template-columns: 1fr;
+
+      img,
+      .root_content {
+        position: relative;
+        top: 0;
+      }
     }
   }
 }
@@ -49,7 +57,7 @@
   gap: var(--gap-sm);
 
   &_label {
-    font-size: 48px;
+    font-size: calc(var(--fs-xxl) * 1.5);
     color: var(--primary);
   }
 }

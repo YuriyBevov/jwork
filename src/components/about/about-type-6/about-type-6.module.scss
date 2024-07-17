@@ -4,22 +4,12 @@
 .root {
   @extend %section-offset;
 
-  ul {
-    @extend %flex-column;
-
-    gap: var(--gap-sm);
-    margin-left: var(--gap-sm);
-  }
-
   &_content {
+    @extend %sticky-lg;
     @extend %flex-column;
-    height: 100%;
+    height: fit-content;
     gap: var(--gap-lg);
-    padding: var(--gap-lg) 0;
-
-    @include media-down(1360px) {
-      padding: 0;
-    }
+    align-self: center;
 
     small {
       @extend %flex-center;
@@ -31,6 +21,13 @@
 
       @extend %tooltip-frame;
     }
+
+    ul {
+      @extend %flex-column;
+
+      gap: var(--gap-sm);
+      margin-left: var(--gap-sm);
+    }
   }
 
   &_wrapper {
@@ -39,17 +36,24 @@
     gap: var(--gap-lg);
 
     img {
+      @extend %sticky-lg;
       width: 100%;
-      height: 100%;
-      object-fit: cover;
+      height: auto;
+      object-fit: contain;
 
-      @include media-down(1360px) {
+      @include media-down($tablet-width) {
         order: 2;
       }
     }
 
-    @include media-down(1360px) {
+    @include media-down($tablet-width) {
       grid-template-columns: 1fr;
+
+      img,
+      .root_content {
+        position: relative;
+        top: 0;
+      }
     }
   }
 }
@@ -62,15 +66,4 @@
   position: relative;
   @extend %flex-column;
   gap: var(--gap-sm);
-
-  svg {
-    fill: var(--primary);
-  }
-
-  @include media-down($tablet-width) {
-    padding-left: 0;
-    svg {
-      position: static;
-    }
-  }
 }

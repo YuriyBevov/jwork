@@ -5,7 +5,7 @@ import React from 'react';
 import { getLocalData } from '@/lib/localdata';
 import { MainBtn } from '@/shared/ui/main-btn';
 
-import { IconPrinter } from '../../../shared/icons/icon-printer';
+import { IconHands } from '../../../shared/icons/icon-hands';
 import styles from './about-type-1.module.scss';
 import { AboutDTO } from './types';
 
@@ -25,7 +25,7 @@ export const AboutType_1 = async () => {
               {data.list.map((item) => (
                 <li key={item.id}>
                   <div className={styles.item}>
-                    <IconPrinter width={60} height={60} />
+                    <IconHands width={60} height={60} />
                     <span
                       className={clsx('base_subtitle', styles.base_subtitle)}
                     >

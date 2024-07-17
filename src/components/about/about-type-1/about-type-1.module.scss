@@ -4,15 +4,8 @@
 .root {
   @extend %section-offset;
 
-  ul {
-    @extend %list-reset;
-    @extend %flex-column;
-
-    gap: var(--gap-lg);
-    margin-bottom: var(--gap-lg);
-  }
-
   &_content {
+    @extend %sticky-lg;
     @extend %flex-column;
     height: 100%;
 
@@ -24,6 +17,15 @@
         margin-bottom: clamp(var(--gap-sm), 4vw, var(--gap-xl));
       }
     }
+
+    ul {
+      @extend %list-reset;
+      @extend %flex-column;
+
+      gap: var(--gap-lg);
+      margin-bottom: var(--gap-lg);
+      container: list-grid / inline-size;
+    }
   }
 
   &_wrapper {
@@ -32,15 +34,21 @@
     gap: var(--gap-lg);
 
     img {
+      @extend %sticky-lg;
       width: 100%;
-      height: fit-content;
-      max-height: 500px;
+      height: auto;
       border-radius: 20px;
       object-fit: contain;
     }
 
     @include media-down($laptop-width) {
       grid-template-columns: 1fr;
+
+      img,
+      .root_content {
+        position: relative;
+        top: 0;
+      }
     }
   }
 }
@@ -62,7 +70,7 @@
     left: 0;
   }
 
-  @include media-down($tablet-width) {
+  @container list-grid (max-width: 600px) {
     padding-left: 0;
     svg {
       position: static;

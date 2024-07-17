@@ -1,5 +1,6 @@
 export interface AboutDTO {
   title: string;
+  subtitle?: string;
   description?: string;
   image: {
     url: string;
@@ -13,5 +14,4 @@ export interface AboutDTO {
 interface AboutList {
   id: number;
   boldText: string;
-  simpleText: string;
 }

@@ -2,26 +2,16 @@ import clsx from 'clsx';
 import Image from 'next/image';
 import React from 'react';
 
+import { getLocalData } from '@/lib/localdata';
 import { MainBtn } from '@/shared/ui/main-btn';
 
 import styles from './about-type-3.module.scss';
+import { AboutDTO } from './types';
 
-type Props = {
-  data: {
-    title: string;
-    subtitle?: string;
-    description?: string;
-    image: string;
-    list: {
-      id: string;
-      boldText?: string;
-      simpleText?: string;
-      image?: string;
-    }[];
-  };
-};
-
-export const AboutTypeThree: React.FC<Props> = ({ data }) => {
+export const AboutType_3 = async () => {
+  const data: AboutDTO = await getLocalData(
+    '/src/components/about/about-type-3/data.json',
+  );
   return (
     <section className={styles.root}>
       <div className="container">
@@ -33,7 +23,12 @@ export const AboutTypeThree: React.FC<Props> = ({ data }) => {
             <p>{data.description}</p>
             <MainBtn outlined={true} />
           </div>
-          <Image src={data.image} alt={data.title} width={720} height={700} />
+          <Image
+            src={data.image.url}
+            alt={data.title}
+            width={720}
+            height={700}
+          />
         </div>
       </div>
     </section>
