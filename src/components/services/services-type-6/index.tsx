@@ -2,15 +2,15 @@ import clsx from 'clsx';
 import React from 'react';
 
 import { getLocalData } from '@/lib/localdata';
+import { IconSet } from '@/shared/ui/icon-set';
 import { MainBtn } from '@/shared/ui/main-btn';
 
-import { IconPrinter } from '../../../shared/icons/icon-printer';
 import styles from './services-type-6.module.scss';
 import { ServicesDTO } from './types';
 
 export const ServicesType_6 = async () => {
   const data: ServicesDTO = await getLocalData(
-    '/src/components/services/services-type-5/data.json',
+    '/src/components/services/services-type-6/data.json',
   );
   return (
     <section className={styles.root}>
@@ -26,7 +26,7 @@ export const ServicesType_6 = async () => {
             <li key={item.id}>
               <div className={styles.item}>
                 <div className={styles.item_header}>
-                  <IconPrinter width={80} height={80} />
+                  <IconSet name={item.icon} width={48} height={48} />
                   <span className={clsx('base_subtitle', styles.base_subtitle)}>
                     {item.title}
                   </span>
