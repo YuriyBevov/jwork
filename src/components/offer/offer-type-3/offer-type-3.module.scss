@@ -20,7 +20,7 @@
       gap: var(--gap-xxs);
     }
 
-    @include media-down($laptop-width) {
+    @include media-down($tablet-width) {
       grid-template-columns: 1fr;
     }
   }
@@ -65,7 +65,7 @@
 
 .base_title {
   margin-bottom: 0;
-  color: var(--primary);
+  color: var(--black);
 }
 
 .base_text {
