@@ -5,7 +5,6 @@ import React from 'react';
 
 import '../../node_modules/normalize.css/normalize.css';
 import '../shared/styles/main.scss';
-import { Header } from './layout/header/header';
 
 const roboto = Roboto({
   weight: ['300', '400', '500', '700', '900'],
@@ -25,10 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={roboto.className}>
-        <MantineProvider>
-          <Header />
-          {children}
-        </MantineProvider>
+        <MantineProvider>{children}</MantineProvider>
       </body>
     </html>
   );

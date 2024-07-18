@@ -4,7 +4,13 @@ export interface NewsDTO {
 }
 
 export interface NewsList {
-  id: number;
+  id: string;
+  title: string;
+  items: NewsListTab[];
+}
+
+export interface NewsListTab {
+  id: string;
   category: string;
   timeRead: string;
   title: string;
