@@ -12,7 +12,7 @@
     button {
       margin-top: auto;
 
-      @include media-down($laptop-width) {
+      @include media-down($tablet-width) {
         margin: 0 auto;
         margin-bottom: clamp(var(--gap-sm), 4vw, var(--gap-xl));
       }
@@ -41,7 +41,7 @@
       object-fit: contain;
     }
 
-    @include media-down($laptop-width) {
+    @include media-down($tablet-width) {
       grid-template-columns: 1fr;
 
       img,
