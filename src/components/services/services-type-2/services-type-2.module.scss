@@ -16,7 +16,7 @@
     li:nth-of-type(even) img {
       order: 2;
 
-      @include media-down($laptop-width) {
+      @include media-down($tablet-width) {
         order: initial;
       }
     }
@@ -31,10 +31,9 @@
 .item {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: calc(var(--gap-sm) * 4);
-  align-items: center;
+  gap: clamp(var(--gap-sm), 4vw, calc(var(--gap-sm) * 4));
 
-  @include media-down($laptop-width) {
+  @include media-down($tablet-width) {
     grid-template-columns: 1fr;
     gap: var(--gap-lg);
   }
@@ -48,6 +47,7 @@
   &_content {
     @extend %flex-column;
     gap: var(--gap-sm);
+    align-self: center;
 
     small {
       font-size: 14px;

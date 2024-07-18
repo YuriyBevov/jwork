@@ -29,8 +29,8 @@ export const ServicesType_4 = async () => {
                 <Image
                   src={item.image.url}
                   alt={item.image.alt}
-                  width={240}
-                  height={240}
+                  width={560}
+                  height={320}
                 />
                 <div className={styles.item_content}>
                   <span className={clsx('base_subtitle', styles.base_subtitle)}>

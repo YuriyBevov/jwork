@@ -8,6 +8,7 @@ interface ServicesList {
   id: number;
   title: string;
   description: string;
+  icon?: string;
   image: {
     url: string;
     alt: string;

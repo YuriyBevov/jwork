@@ -8,7 +8,8 @@
     @extend %list-reset;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: calc(var(--gap-sm) * 4);
+    grid-gap: calc(var(--gap-sm) * 4)
+      clamp(var(--gap-lg), 4vw, var(--gap-sm) * 4);
 
     @include media-down($tablet-width) {
       grid-template-columns: 1fr;
@@ -33,14 +34,14 @@
   }
 
   img {
-    width: 240px;
+    width: 100%;
     height: auto;
-    object-fit: cover;
-    aspect-ratio: 1 / 1;
-    @include media-down($desktop-width) {
-      width: 100%;
-      max-height: 360px;
-    }
+    object-fit: contain;
+
+    // @include media-down($desktop-width) {
+    //   width: 100%;
+    //   max-height: 360px;
+    // }
   }
 
   &_content {
