@@ -57,7 +57,8 @@
   gap: var(--gap-sm);
 
   &_label {
-    font-size: calc(var(--fs-xxl) * 1.5);
+    font-size: clamp(calc(var(--fs-xxl) * 1.2), 6vw, calc(var(--fs-xxl) * 1.5));
+    line-height: 1;
     color: var(--primary);
   }
 }
