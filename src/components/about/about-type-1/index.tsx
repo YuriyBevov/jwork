@@ -3,9 +3,9 @@ import Image from 'next/image';
 import React from 'react';
 
 import { getLocalData } from '@/lib/localdata';
+import { IconSet } from '@/shared/ui/icon-set';
 import { MainBtn } from '@/shared/ui/main-btn';
 
-import { IconHands } from '../../../shared/icons/icon-hands';
 import styles from './about-type-1.module.scss';
 import { AboutDTO } from './types';
 
@@ -18,14 +18,13 @@ export const AboutType_1 = async () => {
     <section className={styles.root}>
       <div className="container">
         <h2 className={clsx('base_title', styles.base_title)}>{data.title}</h2>
-
         <div className={styles.root_wrapper}>
           <div className={styles.root_content}>
             <ul>
               {data.list.map((item) => (
                 <li key={item.id}>
                   <div className={styles.item}>
-                    <IconHands width={60} height={60} />
+                    <IconSet />
                     <span
                       className={clsx('base_subtitle', styles.base_subtitle)}
                     >
