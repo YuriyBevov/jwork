@@ -11,12 +11,12 @@ import {
 } from '@/shared/components/tab-news-ui';
 import { MainBtn } from '@/shared/ui/main-btn';
 
-import styles from './news-type-2.module.scss';
+import styles from './news-type-4.module.scss';
 import { NewsDTO } from './types';
 
-export const NewsType_2 = async () => {
+export const NewsType_4 = async () => {
   const data: NewsDTO = await getLocalData(
-    'src/components/news/news-type-2/data.json',
+    'src/components/news/news-type-3/data.json',
   );
 
   return (
@@ -40,33 +40,20 @@ export const NewsType_2 = async () => {
                       width={item.image.width}
                       height={item.image.height}
                     />
-                    <span className={styles.item_category}>
-                      {item.category}
-                    </span>
-                    <Link
-                      href="#"
-                      className={clsx('base_subtitle', styles.base_subtitle)}
-                    >
-                      {item.title}
-                    </Link>
-                    <p
-                      className={clsx('base_text', styles.base_text)}
-                      dangerouslySetInnerHTML={{ __html: item.description }}
-                    />
-                    <div className={styles.item_footer}>
-                      <Image
-                        src={item.author.image.url}
-                        alt={item.author.image.alt}
-                        width={48}
-                        height={48}
+                    <div className={styles.item_wrapper}>
+                      <span className={styles.item_category}>
+                        {item.category}
+                      </span>
+                      <Link
+                        href="#"
+                        className={clsx('base_subtitle', styles.base_subtitle)}
+                      >
+                        {item.title}
+                      </Link>
+                      <p
+                        className={clsx('base_text', styles.base_text)}
+                        dangerouslySetInnerHTML={{ __html: item.description }}
                       />
-                      <div className={styles.item_footer_info}>
-                        <span>{item.author.name}</span>
-                        <ul>
-                          <li>{item.author.createDate}</li>
-                          <li>{item.author.timeRead}</li>
-                        </ul>
-                      </div>
                     </div>
                   </div>
                 ))}
@@ -75,7 +62,7 @@ export const NewsType_2 = async () => {
           </TabUiContent>
         </TabUi>
         <div className={styles.button}>
-          <MainBtn outlined={true} text="Больше новостей" />
+          <MainBtn rounded="lg" text="Больше новостей" />
         </div>
       </div>
     </section>

@@ -11,12 +11,12 @@ import {
 } from '@/shared/components/tab-news-ui';
 import { MainBtn } from '@/shared/ui/main-btn';
 
-import styles from './news-type-2.module.scss';
+import styles from './news-type-3.module.scss';
 import { NewsDTO } from './types';
 
-export const NewsType_2 = async () => {
+export const NewsType_3 = async () => {
   const data: NewsDTO = await getLocalData(
-    'src/components/news/news-type-2/data.json',
+    'src/components/news/news-type-3/data.json',
   );
 
   return (
@@ -75,7 +75,7 @@ export const NewsType_2 = async () => {
           </TabUiContent>
         </TabUi>
         <div className={styles.button}>
-          <MainBtn outlined={true} text="Больше новостей" />
+          <MainBtn rounded="xs" text="Больше новостей" />
         </div>
       </div>
     </section>
