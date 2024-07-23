@@ -1,0 +1,5 @@
+:root {
+  --base-opacity: 0.1;
+  --tooltip-opacity: var(--base-opacity);
+  --svg-frame-opacity: var(--base-opacity);
+}/*# sourceMappingURL=utils.css.map */

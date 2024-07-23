@@ -1,0 +1,41 @@
+.item {
+  display: flex;
+  flex-direction: column;
+}
+
+.root ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.root {
+  padding: clamp(var(--gap-md), 5vw, var(--gap-xxl)) 0;
+}
+
+/* stylelint-disable */
+/*down*/
+/*up*/
+.root ul {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: clamp(var(--gap-lg), 4vw, var(--gap-xxl)) var(--gap-lg);
+}
+
+.item {
+  gap: var(--gap-sm);
+  align-items: center;
+  text-align: center;
+}
+.item svg path {
+  fill: var(--primary);
+}
+
+.base_title {
+  text-align: center;
+  color: var(--primary);
+}
+
+.base_subtitle {
+  color: var(--primary);
+}/*# sourceMappingURL=advantages-type-7.module.css.map */

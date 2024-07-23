@@ -1,0 +1,16 @@
+:root {
+  --white: #fff;
+  --black: #000;
+  --primary: #1a57db;
+  --primary-lighten-20: #6d96ee;
+  --primary-darken-20: #0f3380;
+  --secondary: #a4cafe;
+  --dark: #111928;
+  --light: #fff;
+  --lighter: #d1d5db;
+  --gray: #6b7280;
+  --site-color: #111928;
+  --site-bg-color: #fff;
+  --site-header-color: #fff;
+  --site-footer-color: #1a57db;
+}/*# sourceMappingURL=colors.css.map */

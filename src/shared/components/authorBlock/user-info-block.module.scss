@@ -1,0 +1,47 @@
+@import '../../styles/extends.scss';
+
+.root {
+  @extend %flex-column;
+  gap: var(--gap-xxs);
+  justify-content: center;
+  min-height: 48px;
+
+  &_footer {
+    @extend %flex-align;
+    gap: var(--gap-xs);
+
+    & span:not(:last-child) {
+      position: relative;
+      padding-right: calc(var(--gap-xs) + 3px);
+
+      &:after {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        content: '';
+        width: 5px;
+        height: 5px;
+        background-color: var(--black);
+        border-radius: 50%;
+      }
+    }
+  }
+
+  &:has(img) {
+    position: relative;
+    padding-left: 64px;
+
+    img {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+      border-radius: 50%;
+      border: 1px solid var(--gray);
+    }
+  }
+}

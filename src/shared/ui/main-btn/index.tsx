@@ -8,6 +8,7 @@ type Props = {
   bordered?: boolean;
   rounded?: 'xs' | 'lg';
   text?: string;
+  type?: 'link' | 'submit' | 'button';
 };
 
 export const MainBtn: React.FC<Props> = ({
