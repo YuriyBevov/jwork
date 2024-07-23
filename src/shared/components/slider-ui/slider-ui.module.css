@@ -1,0 +1,40 @@
+.root {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-xxl);
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navigation_line {
+  display: flex;
+  gap: var(--gap-sm);
+}
+
+.slide {
+  height: auto;
+}
+
+.button {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: transparent;
+  border-radius: 50%;
+  border: 1px solid var(--primary);
+  cursor: pointer;
+  transition: opacity var(--base-transition);
+}
+.button:hover {
+  opacity: 0.8;
+}
+.button_next {
+  transform: rotate(180deg);
+}/*# sourceMappingURL=slider-ui.module.css.map */

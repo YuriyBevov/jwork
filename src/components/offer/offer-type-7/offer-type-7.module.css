@@ -1,0 +1,58 @@
+.offer_form fieldset, .offer_form, .root_wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.root {
+  padding: clamp(var(--gap-md), 5vw, var(--gap-xxl)) 0;
+}
+
+/* stylelint-disable */
+/*down*/
+/*up*/
+.root_wrapper {
+  gap: var(--gap-lg);
+  padding: calc(var(--gap-lg) * 2) var(--gap-lg);
+  background-color: var(--secondary);
+  color: var(--white);
+  margin: 0 auto;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+}
+
+.offer_form {
+  gap: var(--gap-md);
+  max-width: 600px;
+}
+.offer_form fieldset {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  width: 100%;
+  gap: var(--gap-sm);
+}
+.offer_form fieldset input {
+  width: 100%;
+}
+.offer_form fieldset button {
+  width: 100%;
+  background-color: var(--primary);
+}
+.offer_form small a {
+  font-weight: var(--fw-sb);
+  text-decoration: underline;
+  color: var(--white);
+}
+@media (max-width: 533px) {
+  .offer_form small {
+    text-align: center;
+  }
+}
+
+.base_title {
+  margin-bottom: 0;
+  max-width: 650px;
+}/*# sourceMappingURL=offer-type-7.module.css.map */

@@ -1,0 +1,4 @@
+:root {
+  --base-transition: 0.05s 0.25s ease-in;
+  --slow-transition: 0.1s 0.6s ease-in-out;
+}/*# sourceMappingURL=transitions.css.map */

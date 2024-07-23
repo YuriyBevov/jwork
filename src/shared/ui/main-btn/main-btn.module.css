@@ -1,0 +1,50 @@
+.root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.root {
+  opacity: 1;
+  transition: var(--base-transition);
+}
+@media (hover: hover) {
+  .root:hover {
+    opacity: 0.8;
+  }
+}
+.root:focus {
+  opacity: 0.8;
+}
+.root:active {
+  opacity: 0.6;
+}
+
+.root {
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 8px 24px;
+  min-height: 48px;
+  border: 1px solid transparent;
+  background-color: var(--primary);
+  color: var(--white);
+  cursor: pointer;
+}
+
+.bordered {
+  border-color: var(--white);
+}
+
+.outlined {
+  border-color: var(--primary);
+  background-color: transparent;
+  color: var(--primary);
+}
+
+.rounded_xs {
+  border-radius: 5px;
+}
+
+.rounded_lg {
+  border-radius: 30px;
+}/*# sourceMappingURL=main-btn.module.css.map */
