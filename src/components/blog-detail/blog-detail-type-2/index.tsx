@@ -3,7 +3,7 @@ import Image from 'next/image';
 import React from 'react';
 
 import { getLocalData } from '@/lib/localdata';
-import { ContentBlock } from '@/shared/components/contentBlock/contentBlock';
+import { ContentBlock } from '@/shared/components/content-block/content-block';
 
 import styles from './blog-detail-type-2.module.scss';
 import { BlogDetailDTO } from './types';

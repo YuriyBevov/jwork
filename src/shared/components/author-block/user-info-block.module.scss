@@ -6,9 +6,15 @@
   justify-content: center;
   min-height: 48px;
 
+  &_username {
+    font-size: 14px;
+    font-weight: var(--fw-sb);
+  }
+
   &_footer {
     @extend %flex-align;
     gap: var(--gap-xs);
+    font-size: 14px;
 
     & span:not(:last-child) {
       position: relative;
@@ -31,17 +37,22 @@
   &:has(img) {
     position: relative;
     padding-left: 64px;
-
-    img {
+    .root_avatar {
+      background-color: var(--primary-lighten-20);
       position: absolute;
       top: 50%;
       left: 0;
       transform: translateY(-50%);
       width: 48px;
       height: 48px;
-      object-fit: contain;
       border-radius: 50%;
-      border: 1px solid var(--gray);
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+      }
     }
   }
 }
