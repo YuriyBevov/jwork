@@ -1,5 +1,5 @@
-@import '../../../shared/styles/extends.scss';
-@import '../../../shared/styles/mixins.scss';
+@import '../../../../shared/styles/extends.scss';
+@import '../../../../shared/styles/mixins.scss';
 
 .root {
   background-color: var(--primary);
@@ -16,6 +16,13 @@
     gap: var(--gap-lg);
     padding: var(--gap-lg) 0;
     border-top: 1px solid var(--white);
+  }
+}
+
+.main_menu {
+  nav span,
+  ul li a {
+    color: var(--white);
   }
 }
 
@@ -42,13 +49,10 @@
 }
 
 .social {
+  @extend %list-reset;
+  @extend %flex-align;
+  gap: var(--gap-sm);
   @extend %flex-wrap;
-
-  ul {
-    @extend %list-reset;
-    @extend %flex-align;
-    gap: var(--gap-sm);
-  }
 
   a {
     @extend %flex-center;
@@ -107,4 +111,8 @@
       }
     }
   }
+}
+
+.bottom_menu {
+  margin-right: auto;
 }

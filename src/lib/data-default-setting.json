@@ -1,0 +1,14 @@
+{
+  "blocks": [
+    {
+      "id": "1",
+      "type": "about",
+      "layout": "1"
+    },
+    {
+      "id": "2",
+      "type": "footer",
+      "layout": "1"
+    }
+  ]
+}
