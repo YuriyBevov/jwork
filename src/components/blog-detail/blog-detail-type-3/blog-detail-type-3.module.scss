@@ -4,6 +4,15 @@
 .root {
   @extend %section-offset;
 
+  &_header {
+    @extend %flex-column;
+    gap: var(--gap-md);
+  }
+
+  .author_block {
+    margin-bottom: var(--gap-md);
+  }
+
   small {
     display: block;
     font-size: 16px;

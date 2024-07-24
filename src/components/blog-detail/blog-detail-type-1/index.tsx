@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import React from 'react';
 
 import { getLocalData } from '@/lib/localdata';
-import { ContentBlock } from '@/shared/components/contentBlock/contentBlock';
+import { ContentBlock } from '@/shared/components/content-block/content-block';
 
 import styles from './blog-detail-type-1.module.scss';
 import { BlogDetailDTO } from './types';
