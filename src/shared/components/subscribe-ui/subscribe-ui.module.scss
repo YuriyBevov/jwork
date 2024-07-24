@@ -1,0 +1,50 @@
+@import '../../../shared/styles/extends.scss';
+@import '../../../shared/styles/mixins.scss';
+
+.root {
+  @extend %flex-column;
+  width: 100%;
+  max-width: 500px;
+  gap: var(--gap-sm);
+  color: var(--white);
+
+  &_title {
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-sb);
+  }
+
+  &_wrapper {
+    width: fit-content;
+
+    @include media-down($desktop-width) {
+      width: 100%;
+      padding-top: var(--gap-lg);
+      border-top: 1px solid var(--white);
+    }
+  }
+
+  fieldset {
+    @extend %fieldset-reset;
+    @extend %flex-align;
+    flex-wrap: wrap;
+    gap: var(--gap-sm);
+
+    input {
+      flex-grow: 1;
+    }
+
+    *[type='submit'] {
+      color: var(--white);
+      border-color: var(--white);
+    }
+
+    @include media-down($mobile-width) {
+      flex-direction: column;
+
+      input,
+      *[type='submit'] {
+        width: 100%;
+      }
+    }
+  }
+}
