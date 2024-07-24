@@ -2,7 +2,8 @@ import clsx from 'clsx';
 import Link from 'next/link';
 import React from 'react';
 
-import { FooterMenu } from '../../types';
+import { FooterMenu } from '@/components/footer/types';
+
 import styles from './top-menu.module.scss';
 
 export const TopMenu = ({

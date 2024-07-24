@@ -8,15 +8,17 @@ import { SubmitBtn } from '@/shared/ui/submit-btn';
 import styles from './subscribe-ui.module.scss';
 
 export const SubscribeUi = ({
+  title,
   data,
   className,
 }: {
+  title?: string;
   data?: FooterSubscribe;
   className?: string;
 }) => {
   return (
     <div className={clsx(styles.root, className)}>
-      <span className={styles.root_title}>{data?.title}</span>
+      {title && <span className={styles.root_title}>{data?.title}</span>}
       <span className={styles.root_text}>{data?.text}</span>
       <fieldset>
         <MainInput

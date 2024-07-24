@@ -1,5 +1,5 @@
-@import '../../../../shared/styles/extends.scss';
-@import '../../../../shared/styles/mixins.scss';
+@import '../../styles/extends.scss';
+@import '../../styles/mixins.scss';
 
 .root {
   @extend %flex-wrap;
@@ -23,10 +23,10 @@
       @extend %flex-column;
       gap: var(--gap-sm);
 
-      li a {
-        font-size: var(--fs-xs);
-        color: var(--white);
-      }
+      // li a {
+      //   font-size: var(--fs-xs);
+      //   color: var(--white);
+      // }
     }
   }
 }

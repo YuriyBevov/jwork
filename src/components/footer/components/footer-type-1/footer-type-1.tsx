@@ -3,20 +3,21 @@ import Link from 'next/link';
 import React from 'react';
 
 import { getLocalData } from '@/lib/localdata';
+import { BottomMenu } from '@/shared/components/bottom-menu';
 import { SocialUi } from '@/shared/components/social-ui/social-ui';
 import { SubscribeUi } from '@/shared/components/subscribe-ui/subscribe-ui';
+import { TopMenu } from '@/shared/components/top-menu';
 
-import { BottomMenu, TopMenu } from '../components';
-import { FooterDTO } from '../types';
+import { FooterDTO } from '../../types';
 import styles from './footer-type-1.module.scss';
 
 export const FooterType_1 = async () => {
   const data: FooterDTO = await getLocalData(
-    'src/components/footer/footer-type-1/data.json',
+    'src/components/footer/components/footer-type-1/data.json',
   );
 
   return (
-    <section className={styles.root}>
+    <footer className={styles.root}>
       <div className="container">
         <div className={styles.root_top}>
           <Link href="/" className={styles.logo}>
@@ -28,9 +29,13 @@ export const FooterType_1 = async () => {
             />
           </Link>
 
-          <TopMenu data={data.mainMenu} />
+          <TopMenu className={styles.main_menu} data={data.mainMenu} />
 
-          <SubscribeUi data={data?.subscribe} />
+          <SubscribeUi
+            className={styles.subscribe}
+            title="Подписка на рассылку"
+            data={data?.subscribe}
+          />
         </div>
 
         <div className={styles.root_bottom}>
@@ -43,6 +48,6 @@ export const FooterType_1 = async () => {
           <SocialUi data={data.social} className={styles.social} />
         </div>
       </div>
-    </section>
+    </footer>
   );
 };

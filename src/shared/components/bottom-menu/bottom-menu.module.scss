@@ -1,10 +1,9 @@
-@import '../../../../shared/styles/extends.scss';
-@import '../../../../shared/styles/mixins.scss';
+@import '../../styles/extends.scss';
+@import '../../styles/mixins.scss';
 
 .root {
   @extend %flex-wrap;
   gap: var(--gap-lg);
-  margin-right: auto;
 
   @include media-down($mobile-width) {
     width: 100%;
