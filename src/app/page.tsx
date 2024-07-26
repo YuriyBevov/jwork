@@ -1,10 +1,5 @@
-import { AboutType_1 } from '@/components/about';
-import { AdvantagesType_1 } from '@/components/advantages';
+import { Advantages } from '@/components/advantages';
 import { Footer } from '@/components/footer';
-import { NewsType_1 } from '@/components/news';
-import { OfferType_1 } from '@/components/offer';
-import { ServicesType_1 } from '@/components/services';
-import { StaffType_1 } from '@/components/staff';
 import { getLocalData } from '@/lib/localdata';
 
 interface Block {
@@ -15,6 +10,8 @@ interface Block {
 
 function blockRenderer(block: Block) {
   switch (block.type) {
+    case 'advantages':
+      return <Advantages key={block.id} layout={block.layout} />;
     case 'footer':
       return <Footer key={block.id} layout={block.layout} />;
     default:
@@ -28,17 +25,7 @@ const Home = async () => {
   const { blocks } = data;
   if (!blocks) return <div>Блоки не найдены</div>;
 
-  return (
-    <main>
-      <AdvantagesType_1 />
-      <ServicesType_1 />
-      <AboutType_1 />
-      <StaffType_1 />
-      <OfferType_1 />
-      <NewsType_1 />
-      {blocks.map((block: Block) => blockRenderer(block))}
-    </main>
-  );
+  return <main>{blocks.map((block: Block) => blockRenderer(block))}</main>;
 };
 
 export default Home;
