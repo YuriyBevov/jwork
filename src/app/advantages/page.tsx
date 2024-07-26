@@ -6,7 +6,7 @@ import {
   AdvantagesType_5,
   AdvantagesType_6,
   AdvantagesType_7,
-} from '@/components/advantages';
+} from '@/components/advantages/components';
 
 export default function Advantages() {
   return (
