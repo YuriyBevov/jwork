@@ -4,8 +4,8 @@ import React from 'react';
 
 import { getLocalData } from '@/lib/localdata';
 import { BottomMenu } from '@/shared/components/bottom-menu';
-import { SocialUi } from '@/shared/components/social-ui/social-ui';
-import { SubscribeUi } from '@/shared/components/subscribe-ui/subscribe-ui';
+import { Social } from '@/shared/components/social';
+import { Subscribe } from '@/shared/components/subscribe/subscribe';
 import { TopMenu } from '@/shared/components/top-menu';
 
 import { FooterDTO } from '../../types';
@@ -29,12 +29,12 @@ export const FooterType_2 = async () => {
                 alt={data.logo.alt}
               />
             </Link>
-            <SubscribeUi className={styles.subscribe} data={data?.subscribe} />
+            <Subscribe className={styles.subscribe} data={data?.subscribe} />
           </div>
           <TopMenu className={styles.main_menu} data={data.mainMenu} />
           <nav className={styles.social}>
             <span>Соц.сети</span>
-            <SocialUi title data={data?.social} />
+            <Social title data={data?.social} />
           </nav>
         </div>
         <div className={styles.root_bottom}>

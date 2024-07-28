@@ -3,8 +3,8 @@ import Image from 'next/image';
 import React from 'react';
 
 import { getLocalData } from '@/lib/localdata';
-import { IconSet } from '@/shared/ui/icon-set';
-import { MainBtn } from '@/shared/ui/main-btn';
+import { MainBtn } from '@/shared/components/main-btn';
+import { IconSet } from '@/shared/icons';
 
 import styles from './about-type-1.module.scss';
 import { AboutDTO } from './types';

@@ -3,7 +3,7 @@ import Image from 'next/image';
 import React from 'react';
 
 import { getLocalData } from '@/lib/localdata';
-import { MainBtn } from '@/shared/ui/main-btn';
+import { MainBtn } from '@/shared/components/main-btn';
 
 import { IconBox } from '../../../shared/icons/icon-box';
 import styles from './about-type-2.module.scss';
