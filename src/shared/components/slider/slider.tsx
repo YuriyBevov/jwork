@@ -10,9 +10,9 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 import { IconArrow } from '@/shared/icons/icon-arrow';
 
-import styles from './slider-ui.module.scss';
+import styles from './slider.module.scss';
 
-export const SliderUi = ({
+export const Slider = ({
   children,
   slidesPerView,
   slidesPerViewXs = 1,

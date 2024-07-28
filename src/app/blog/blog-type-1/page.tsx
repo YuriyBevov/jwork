@@ -1,5 +1,5 @@
 import { BlogDetail_1 } from '@/components/blog-detail';
-import { FooterType_1 } from '@/components/footer';
+import { FooterType_1 } from '@/components/footer/components';
 import { NewsType_1 } from '@/components/news';
 
 export default function Blog() {

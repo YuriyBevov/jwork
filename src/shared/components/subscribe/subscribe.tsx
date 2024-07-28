@@ -2,12 +2,12 @@ import clsx from 'clsx';
 import React from 'react';
 
 import { FooterSubscribe } from '@/components/footer/types';
-import { MainInput } from '@/shared/ui/main-input';
-import { SubmitBtn } from '@/shared/ui/submit-btn';
+import { MainInput } from '@/shared/components/main-input';
+import { SubmitBtn } from '@/shared/components/submit-btn';
 
-import styles from './subscribe-ui.module.scss';
+import styles from './subscribe.module.scss';
 
-export const SubscribeUi = ({
+export const Subscribe = ({
   title,
   data,
   className,

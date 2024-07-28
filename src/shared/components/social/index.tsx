@@ -6,7 +6,7 @@ import { IconFacebook } from '@/shared/icons/icon-fb';
 import { IconInstagram } from '@/shared/icons/icon-insta';
 import { IconYoutube } from '@/shared/icons/icon-youtube';
 
-export const SocialUi = ({
+export const Social = ({
   title,
   data,
   className,

@@ -3,8 +3,8 @@ import clsx from 'clsx';
 import React from 'react';
 
 import { getLocalData } from '@/lib/localdata';
-import { MainInput } from '@/shared/ui/main-input';
-import { SubmitBtn } from '@/shared/ui/submit-btn';
+import { MainInput } from '@/shared/components/main-input';
+import { SubmitBtn } from '@/shared/components/submit-btn';
 
 import styles from './offer-type-6.module.scss';
 import { OfferData } from './types';
