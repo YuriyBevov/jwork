@@ -3,20 +3,18 @@
 import { Tabs } from '@mantine/core';
 import React, { ReactNode } from 'react';
 
-export const TabUiContent = ({
+export const TabList = ({
   children,
   className,
 }: {
-  children: ReactNode;
+  children: React.ReactNode;
   className?: string;
 }) => {
   return (
-    <>
+    <Tabs.List className={className}>
       {React.Children.map(children, (child: ReactNode, index: number) => (
-        <Tabs.Panel className={className} value={index.toString()}>
-          {child}
-        </Tabs.Panel>
+        <Tabs.Tab value={index.toString()}>{child}</Tabs.Tab>
       ))}
-    </>
+    </Tabs.List>
   );
 };

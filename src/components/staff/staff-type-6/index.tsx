@@ -1,10 +1,9 @@
-// 'use client';
 import clsx from 'clsx';
 import Image from 'next/image';
 import React from 'react';
 
 import { getLocalData } from '@/lib/localdata';
-import { SliderUi } from '@/shared/components/slider-ui';
+import { Slider } from '@/shared/components/slider';
 
 import styles from './staff-type-6.module.scss';
 import { StaffDTO } from './types';
@@ -24,7 +23,7 @@ export const StaffType_6 = async () => {
           </p>
         )}
         <div className={styles.root_wrapper}>
-          <SliderUi slidesPerView={2} spaceBetween={48}>
+          <Slider slidesPerView={2} spaceBetween={48}>
             {data.list.map((item) => (
               <div key={item.id} className={styles.item}>
                 <Image
@@ -51,7 +50,7 @@ export const StaffType_6 = async () => {
                 </div>
               </div>
             ))}
-          </SliderUi>
+          </Slider>
         </div>
       </div>
     </section>

@@ -2,8 +2,8 @@ import clsx from 'clsx';
 import React from 'react';
 
 import { getLocalData } from '@/lib/localdata';
-import { IconSet } from '@/shared/ui/icon-set';
-import { MainBtn } from '@/shared/ui/main-btn';
+import { MainBtn } from '@/shared/components/main-btn';
+import { IconSet } from '@/shared/icons';
 
 import styles from './services-type-6.module.scss';
 import { ServicesDTO } from './types';

@@ -4,7 +4,7 @@ import Link from 'next/link';
 import React from 'react';
 
 import { getLocalData } from '@/lib/localdata';
-import { MainBtn } from '@/shared/ui/main-btn';
+import { MainBtn } from '@/shared/components/main-btn';
 
 import styles from './news-type-1.module.scss';
 import { NewsDTO } from './types';

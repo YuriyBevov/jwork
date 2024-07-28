@@ -4,12 +4,8 @@ import Link from 'next/link';
 import React from 'react';
 
 import { getLocalData } from '@/lib/localdata';
-import {
-  TabUi,
-  TabUiContent,
-  TabUiList,
-} from '@/shared/components/tab-news-ui';
-import { MainBtn } from '@/shared/ui/main-btn';
+import { MainBtn } from '@/shared/components/main-btn';
+import { Tab, TabContent, TabList } from '@/shared/components/tab';
 
 import styles from './news-type-3.module.scss';
 import { NewsDTO } from './types';
@@ -23,13 +19,13 @@ export const NewsType_3 = async () => {
     <section className={styles.root}>
       <div className="container">
         <h2 className={clsx('base_title', styles.base_title)}>{data.title}</h2>
-        <TabUi>
-          <TabUiList className={styles.tab}>
+        <Tab>
+          <TabList className={styles.tab}>
             {data.list.map((item) => (
               <React.Fragment key={item.id}>{item.title}</React.Fragment>
             ))}
-          </TabUiList>
-          <TabUiContent className={styles.root_wrapper}>
+          </TabList>
+          <TabContent className={styles.root_wrapper}>
             {data.list.map((item) => (
               <React.Fragment key={item.id}>
                 {item.items.map((item) => (
@@ -72,8 +68,8 @@ export const NewsType_3 = async () => {
                 ))}
               </React.Fragment>
             ))}
-          </TabUiContent>
-        </TabUi>
+          </TabContent>
+        </Tab>
         <div className={styles.button}>
           <MainBtn rounded="xs" text="Больше новостей" />
         </div>

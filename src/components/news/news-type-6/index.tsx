@@ -4,7 +4,7 @@ import Link from 'next/link';
 import React from 'react';
 
 import { getLocalData } from '@/lib/localdata';
-import { SliderUi } from '@/shared/components/slider-ui';
+import { Slider } from '@/shared/components/slider';
 import { IconLinkArrow } from '@/shared/icons/icon-link-arrow';
 
 import styles from './news-type-6.module.scss';
@@ -19,7 +19,7 @@ export const NewsType_6 = async () => {
     <section className={styles.root}>
       <div className="container">
         <h2 className={clsx('base_title', styles.base_title)}>{data.title}</h2>
-        <SliderUi slidesPerView={2} spaceBetween={40}>
+        <Slider slidesPerView={2} spaceBetween={40}>
           {data.list.map((item) => (
             <div key={item.id} className={styles.item}>
               <Image
@@ -63,7 +63,7 @@ export const NewsType_6 = async () => {
               </div>
             </div>
           ))}
-        </SliderUi>
+        </Slider>
       </div>
     </section>
   );
