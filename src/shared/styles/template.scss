@@ -67,3 +67,13 @@ a {
 .navigation_line-pagination .swiper-pagination-bullet-active {
   background: var(--primary);
 }
+
+.main-section {
+  @extend %section-offset;
+  &.align_center {
+    .main-section__title,
+    .main-section__text {
+      text-align: center;
+    }
+  }
+}

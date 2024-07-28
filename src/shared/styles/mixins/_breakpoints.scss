@@ -1,11 +1,5 @@
 /* stylelint-disable */
-$mobile-width: 534px;
-$tablet-width: 768px;
-$tablet-lg-width: 960px;
-$laptop-width: 1024px;
-$laptop-lg-width: 1360px;
-$desktop-width: 1440px;
-$desktop-lg-width: 1640px;
+@import '../variables/breakpoints';
 
 /*down*/
 @mixin media-down($width) {

@@ -1,0 +1,11 @@
+.root {
+  padding: clamp(var(--gap-md), 5vw, var(--gap-xxl)) 0;
+}
+
+/* stylelint-disable */
+/*down*/
+/*up*/
+.base_title {
+  text-align: center;
+  color: var(--primary);
+}/*# sourceMappingURL=blog-detail-type-7.module.css.map */

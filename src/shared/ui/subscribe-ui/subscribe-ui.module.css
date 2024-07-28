@@ -1,0 +1,60 @@
+.root {
+  display: flex;
+  flex-direction: column;
+}
+
+.root fieldset {
+  display: flex;
+  align-items: center;
+}
+
+.root fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* stylelint-disable */
+/*down*/
+/*up*/
+.root {
+  width: 100%;
+  max-width: 500px;
+  gap: var(--gap-sm);
+  color: var(--white);
+}
+.root_title {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-sb);
+}
+.root_wrapper {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+@media (max-width: 1439px) {
+  .root_wrapper {
+    width: 100%;
+    padding-top: var(--gap-lg);
+    border-top: 1px solid var(--white);
+  }
+}
+.root fieldset {
+  flex-wrap: wrap;
+  gap: var(--gap-sm);
+}
+.root fieldset input {
+  flex-grow: 1;
+}
+.root fieldset *[type=submit] {
+  color: var(--white);
+  border-color: var(--white);
+}
+@media (max-width: 533px) {
+  .root fieldset {
+    flex-direction: column;
+  }
+  .root fieldset input,
+  .root fieldset *[type=submit] {
+    width: 100%;
+  }
+}/*# sourceMappingURL=subscribe-ui.module.css.map */

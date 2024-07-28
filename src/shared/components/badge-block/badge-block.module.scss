@@ -1,0 +1,7 @@
+@import '../../styles/extends.scss';
+
+.root {
+  @extend %flex-wrap;
+  gap: var(--gap-xs);
+  margin: var(--gap-xxs) 0;
+}

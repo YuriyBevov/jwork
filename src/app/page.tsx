@@ -1,19 +1,19 @@
 import { Advantages } from '@/components/advantages';
-import { Footer } from '@/components/footer';
+// import { Footer } from '@/components/footer';
 import { getLocalData } from '@/lib/localdata';
 
 interface Block {
   id: string;
   type: string;
-  layout: string;
+  templateID: string;
 }
 
 function blockRenderer(block: Block) {
   switch (block.type) {
     case 'advantages':
-      return <Advantages key={block.id} layout={block.layout} />;
-    case 'footer':
-      return <Footer key={block.id} layout={block.layout} />;
+      return <Advantages key={block.id} templateID={block.templateID} />;
+    // case 'footer':
+    //   return <Footer key={block.id} layout={block.layout} />;
     default:
       return null;
   }

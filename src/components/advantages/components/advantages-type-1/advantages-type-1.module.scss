@@ -2,58 +2,55 @@
 @import '../../../../shared/styles/mixins.scss';
 
 .root {
-  @extend %section-offset;
+  container: root / inline-size;
+}
 
-  ul {
-    @extend %list-reset;
-    display: grid;
+.list {
+  @extend %list-reset;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: clamp(var(--gap-lg), 4vw, var(--gap-xxl))
+    clamp(var(--gap-lg), 4vw, var(--gap-xxl));
+  container: list / inline-size;
+
+  @include container-down('root', $desktop-width) {
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: clamp(var(--gap-lg), 4vw, var(--gap-xxl)) var(--gap-lg);
+  }
 
-    @include media-down($desktop-width) {
-      grid-template-columns: repeat(2, 1fr);
+  @include container-down('root', $tablet-width) {
+    grid-template-columns: 1fr;
+  }
+
+  &_item {
+    display: flex;
+    gap: clamp(var(--gap-sm), 2vw, var(--gap-lg));
+
+    @include container-down('list', $tablet-width) {
+      flex-direction: column;
+      align-items: flex-start;
     }
 
-    @include media-down($tablet-width) {
-      grid-template-columns: 1fr;
+    &_icon {
+      flex: 0 0 clamp(60px, 6vw, 80px);
+      width: clamp(60px, 6vw, 80px);
+      height: clamp(60px, 6vw, 80px);
+      @extend %flex-center;
+      background-color: var(--primary-lighten-40);
+      border-radius: 50%;
+
+      svg {
+        width: 50%;
+        height: 50%;
+      }
+    }
+
+    &_content {
+      @extend %flex-column;
+      gap: var(--gap-sm);
+
+      &__title {
+        font-size: var(--base-subtitle);
+      }
     }
   }
-}
-
-.item {
-  display: flex;
-  align-items: center;
-  gap: var(--gap-lg);
-
-  @include media-down($tablet-lg-width) {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  &_icon {
-    flex: 0 0 100px;
-    width: 100px;
-    height: 100px;
-    @extend %flex-center;
-    background-color: #e1effe;
-    border-radius: 100px;
-  }
-
-  &_content {
-    @extend %flex-column;
-    gap: var(--gap-sm);
-
-    &__title {
-      font-size: var(--base-subtitle);
-    }
-  }
-}
-
-.base_title {
-  text-align: center;
-  color: var(--primary);
-}
-
-.base_subtitle {
-  margin-bottom: var(--gap-xs);
 }

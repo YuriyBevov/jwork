@@ -1,0 +1,129 @@
+.social, .root_top {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.subscribe {
+  display: flex;
+  flex-direction: column;
+}
+
+.subscribe fieldset, .social, .root_bottom {
+  display: flex;
+  align-items: center;
+}
+
+.social a, .logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.subscribe fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* stylelint-disable */
+/*down*/
+/*up*/
+.root {
+  background-color: var(--primary);
+}
+.root_top {
+  gap: var(--gap-xxl);
+  padding: var(--gap-lg) 0;
+}
+.root_bottom {
+  flex-wrap: wrap;
+  gap: var(--gap-lg);
+  padding: var(--gap-lg) 0;
+  border-top: 1px solid var(--white);
+}
+
+.main_menu nav span,
+.main_menu ul li a {
+  color: var(--white);
+}
+
+.logo {
+  width: 100%;
+  max-width: 180px;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin-right: auto;
+}
+.logo img {
+  width: 100%;
+  border-style: none;
+  height: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.copyright span {
+  font-size: var(--fs-xs);
+  color: var(--white);
+}
+
+.social {
+  gap: var(--gap-sm);
+}
+.social svg {
+  width: 24px;
+  height: 24px;
+  fill: var(--white);
+}
+
+.subscribe {
+  width: 100%;
+  max-width: 500px;
+  gap: var(--gap-sm);
+  color: var(--white);
+}
+.subscribe_title {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-sb);
+}
+.subscribe_wrapper {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+@media (max-width: 1439px) {
+  .subscribe_wrapper {
+    width: 100%;
+    padding-top: var(--gap-lg);
+    border-top: 1px solid var(--white);
+  }
+}
+.subscribe fieldset {
+  flex-wrap: wrap;
+  gap: var(--gap-sm);
+}
+.subscribe fieldset input {
+  flex-grow: 1;
+}
+.subscribe fieldset *[type=submit] {
+  color: var(--white);
+  border-color: var(--white);
+}
+@media (max-width: 533px) {
+  .subscribe fieldset {
+    flex-direction: column;
+  }
+  .subscribe fieldset input,
+  .subscribe fieldset *[type=submit] {
+    width: 100%;
+  }
+}
+
+.bottom_menu {
+  margin-right: auto;
+}/*# sourceMappingURL=footer-type-1.module.css.map */
