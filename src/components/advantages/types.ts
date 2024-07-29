@@ -14,5 +14,6 @@ interface NewsList {
   id: number;
   title: string;
   description: string;
-  icon: string;
+  icon?: string;
+  label?: string;
 }

@@ -3,7 +3,7 @@ import React from 'react';
 // import { IconHands } from '@/shared/icons/icon-hands';
 import { MainSectionLayout } from '@/layouts/main-section-layout';
 import { getLocalData } from '@/lib/localdata';
-import { IconSet } from '@/shared/ui/icon-set';
+import { IconSet } from '@/shared/icons';
 
 // import { LayoutAdvantages } from '../../layout/layout-type-1';
 import { AdvantagesDTO } from '../../types';

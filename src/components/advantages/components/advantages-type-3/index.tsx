@@ -1,9 +1,10 @@
+import clsx from 'clsx';
 import React from 'react';
 
+import { MainSectionLayout } from '@/layouts/main-section-layout';
 import { getLocalData } from '@/lib/localdata';
-import { IconHands } from '@/shared/icons/icon-hands';
+import { IconSet } from '@/shared/icons';
 
-import { LayoutAdvantages } from '../../layout/layout-type-1';
 import { AdvantagesDTO } from '../../types';
 import styles from './advantages-type-3.module.scss';
 
@@ -12,26 +13,26 @@ export const AdvantagesType_3 = async () => {
     '/src/components/advantages/components/advantages-type-3/data.json',
   );
   return (
-    <LayoutAdvantages
-      title={data.title}
-      titleClassName={styles.base_title}
-      rootClassName={styles.root}
-      description={data.description}
-      descriptionClassName={styles.base_text}
-    >
-      <ul>
-        {data.list.map((item) => (
-          <li key={item.id} className={styles.item}>
-            <div className={styles.item_icon}>
-              <IconHands />
-            </div>
-            <div className={styles.item_content}>
-              <span className={'base_subtitle'}>{item.title}</span>
-              <p>{item.description}</p>
-            </div>
-          </li>
-        ))}
-      </ul>
-    </LayoutAdvantages>
+    <MainSectionLayout title={data.title}>
+      <div className={styles.root}>
+        <ul className={styles.list}>
+          {data.list.map((item) => (
+            <li key={item.id} className={styles.list_item}>
+              <div className={styles.list_item_icon}>
+                <IconSet name={item.icon} />
+              </div>
+              <div className={styles.list_item_content}>
+                <span className={clsx('base_subtitle', styles.base_subtitle)}>
+                  {item.title}
+                </span>
+                <p className={clsx('base_text', styles.base_text)}>
+                  {item.description}
+                </p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </MainSectionLayout>
   );
 };

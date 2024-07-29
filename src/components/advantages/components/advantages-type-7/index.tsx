@@ -1,36 +1,38 @@
 import clsx from 'clsx';
 import React from 'react';
 
+import { MainSectionLayout } from '@/layouts/main-section-layout';
 import { getLocalData } from '@/lib/localdata';
 import { IconCheck } from '@/shared/icons/icon-check';
 
-import { LayoutAdvantages } from '../../layout/layout-type-1';
 import { AdvantagesDTO } from '../../types';
 import styles from './advantages-type-7.module.scss';
 
 export const AdvantagesType_7 = async () => {
   const data: AdvantagesDTO = await getLocalData(
-    '/src/components/advantages/components/advantages-type-3/data.json',
+    '/src/components/advantages/components/advantages-type-7/data.json',
   );
   return (
-    <LayoutAdvantages
-      title={data.title}
-      titleClassName={styles.base_title}
-      rootClassName={styles.root}
-      description={data.description}
-      descriptionClassName={styles.base_text}
-    >
-      <ul>
-        {data.list.map((item) => (
-          <li key={item.id} className={styles.item}>
-            <IconCheck />
-            <span className={clsx('base_subtitle', styles.base_subtitle)}>
-              {item.title}
-            </span>
-            <p>{item.description}</p>
-          </li>
-        ))}
-      </ul>
-    </LayoutAdvantages>
+    <MainSectionLayout title={data.title} align={'center'}>
+      <div className={styles.root}>
+        <ul className={styles.list}>
+          {data.list.map((item) => (
+            <li key={item.id} className={styles.list_item}>
+              <div className={styles.list_item_icon}>
+                <IconCheck />
+              </div>
+              <div className={styles.list_item_content}>
+                <span className={clsx('base_subtitle', styles.base_subtitle)}>
+                  {item.title}
+                </span>
+                <p className={clsx('base_text', styles.base_text)}>
+                  {item.description}
+                </p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </MainSectionLayout>
   );
 };

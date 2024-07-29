@@ -1,9 +1,9 @@
 import clsx from 'clsx';
 import React from 'react';
 
+import { MainSectionLayout } from '@/layouts/main-section-layout';
 import { getLocalData } from '@/lib/localdata';
 
-import { LayoutAdvantages } from '../../layout/layout-type-1';
 import { AdvantagesDTO } from '../../types';
 import styles from './advantages-type-5.module.scss';
 
@@ -12,27 +12,27 @@ export const AdvantagesType_5 = async () => {
     '/src/components/advantages/components/advantages-type-5/data.json',
   );
   return (
-    <LayoutAdvantages
-      title={data.title}
-      titleClassName={styles.base_title}
-      rootClassName={styles.root}
-      description={data.description}
-      descriptionClassName={styles.base_text}
-    >
-      <ul>
-        {data.list.map((item) => (
-          <li key={item.id} className={styles.item}>
-            <div className={styles.item_heading}>
-              <div className={styles.item_heading_number}>{item.id}</div>
-              <span className={clsx('base_subtitle', styles.base_subtitle)}>
-                {item.title}
-              </span>
-            </div>
+    <MainSectionLayout title={data.title}>
+      <div className={styles.root}>
+        <ul className={styles.list}>
+          {data.list.map((item) => (
+            <li key={item.id} className={styles.list_item}>
+              <div className={styles.list_item_header}>
+                <span className={styles.list_item_header_num}>{item.id}</span>
+                <span className={clsx('base_subtitle', styles.base_subtitle)}>
+                  {item.title}
+                </span>
+              </div>
 
-            <p>{item.description}</p>
-          </li>
-        ))}
-      </ul>
-    </LayoutAdvantages>
+              <div className={styles.list_item_content}>
+                <p className={clsx('base_text', styles.base_text)}>
+                  {item.description}
+                </p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </MainSectionLayout>
   );
 };
