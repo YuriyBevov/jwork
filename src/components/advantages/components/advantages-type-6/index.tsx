@@ -2,6 +2,7 @@ import clsx from 'clsx';
 import Image from 'next/image';
 import React from 'react';
 
+import { MainSectionLayout } from '@/layouts/main-section-layout';
 import { getLocalData } from '@/lib/localdata';
 
 import { AdvantagesDTO } from '../../types';
@@ -12,39 +13,40 @@ export const AdvantagesType_6 = async () => {
     '/src/components/advantages/components/advantages-type-6/data.json',
   );
   return (
-    <section className={styles.root}>
-      <div className="container">
-        <div className={styles.root_wrapper}>
-          <div className={styles.root_content}>
+    <MainSectionLayout>
+      <div className={styles.root}>
+        <div className={styles.root_content}>
+          <div className={styles.root_content_side}>
             <h2 className={clsx('base_title', styles.base_title)}>
               {data.title}
             </h2>
-            {data.description && (
-              <p className={clsx('base_text', styles.base_text)}>
-                {data.description}
-              </p>
-            )}
-            <ul>
+
+            <ul className={styles.list}>
               {data.list.map((item) => (
-                <li key={item.id} className={styles.item}>
+                <li key={item.id} className={styles.list_item}>
                   <span className={clsx('base_subtitle', styles.base_subtitle)}>
-                    {item.title}
+                    {item.label}
                   </span>
-                  <div className={styles.item_line}></div>
-                  <p>{item.description}</p>
+                  <div className={styles.list_item_content}>
+                    <p className={clsx('base_text', styles.base_text)}>
+                      {item.description}
+                    </p>
+                  </div>
                 </li>
               ))}
             </ul>
           </div>
-          <Image
-            src={data.image?.url ?? ''}
-            alt={data.image?.alt ?? ''}
-            width={data.image?.width}
-            height={data.image?.height}
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          />
+          <div className={styles.root_content_side}>
+            <Image
+              src={data.image?.url ?? ''}
+              alt={data.image?.alt ?? ''}
+              width={data.image?.width}
+              height={data.image?.height}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            />
+          </div>
         </div>
       </div>
-    </section>
+    </MainSectionLayout>
   );
 };

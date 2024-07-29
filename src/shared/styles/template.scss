@@ -53,7 +53,7 @@ a {
   display: block;
   width: 100%;
   font-size: var(--base-title);
-  margin-bottom: clamp(var(--gap-md), 6vw, var(--gap-xxl));
+  margin-bottom: clamp(var(--gap-xl), 6vw, var(--gap-xxl));
   color: var(--primary);
 }
 
@@ -66,4 +66,14 @@ a {
 
 .navigation_line-pagination .swiper-pagination-bullet-active {
   background: var(--primary);
+}
+
+.main-section {
+  @extend %section-offset;
+  &.align_center {
+    .main-section__title,
+    .main-section__text {
+      text-align: center;
+    }
+  }
 }

@@ -1,0 +1,18 @@
+@import '../../styles/extends.scss';
+
+.root {
+  @extend %flex-center;
+  width: fit-content;
+  padding: 4px 8px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  background-color: var(--primary-lighten-20);
+  color: var(--dark);
+  cursor: pointer;
+  @extend %main-hover;
+}
+
+.outlined {
+  background-color: transparent;
+  padding: 4px 0;
+}

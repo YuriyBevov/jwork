@@ -2,59 +2,62 @@
 @import '../../../../shared/styles/mixins.scss';
 
 .root {
-  @extend %section-offset;
-
-  ul {
-    @extend %list-reset;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: clamp(var(--gap-lg), 4vw, var(--gap-xxl)) var(--gap-lg);
-
-    @include media-down($desktop-width) {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    @include media-down($tablet-lg-width) {
-      grid-template-columns: 1fr;
-    }
-  }
+  container: root / inline-size;
 }
 
-.item {
-  @extend %flex-align;
-  flex-direction: column;
-  text-align: center;
-  gap: var(--gap-sm);
+.list {
+  @extend %list-reset;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: clamp(var(--gap-lg), 4vw, var(--gap-xxl))
+    clamp(var(--gap-lg), 4vw, var(--gap-xxl));
+  container: list / inline-size;
 
-  &_icon {
-    flex: 0 0 80px;
-    width: 80px;
-    height: 00px;
-    @extend %flex-center;
-    background-color: #e1effe;
-    border-radius: 100px;
+  @include container-down('root', $laptop-width) {
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  &_content {
+  @include container-down('root', $tablet-width) {
+    grid-template-columns: 1fr;
+  }
+
+  &_item {
     @extend %flex-column;
-    gap: var(--gap-sm);
-    height: 100%;
+    align-items: center;
+    gap: clamp(var(--gap-sm), 2vw, var(--gap-lg));
 
-    &__title {
-      font-size: var(--base-subtitle);
+    &_icon {
+      @extend %flex-center;
+      flex: 0 0 clamp(60px, 6vw, 80px);
+      width: clamp(60px, 6vw, 80px);
+      height: clamp(60px, 6vw, 80px);
+      background-color: var(--primary-lighten-40);
+      border-radius: 50%;
+
+      svg {
+        width: 50%;
+        height: 50%;
+      }
     }
 
-    p {
-      margin-top: auto;
+    &_content {
+      @extend %flex-column;
+      gap: var(--gap-sm);
+      flex-grow: 1;
+
+      .base_subtitle {
+        text-align: center;
+        @include text-truncate(2);
+        min-height: calc(var(--base-subtitle) * 2 * 1.2);
+
+        @include container-down('root', $tablet-width) {
+          min-height: initial;
+        }
+      }
+
+      .base_text {
+        text-align: center;
+      }
     }
   }
-}
-
-.base_title {
-  text-align: center;
-  color: var(--primary);
-}
-
-.base_subtitle {
-  margin-bottom: var(--gap-xs);
 }

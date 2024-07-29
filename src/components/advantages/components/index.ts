@@ -1,4 +1,3 @@
-// export { AdvantagesTypeOne } from './advantages-type-1';
 export { AdvantagesType_1 } from './advantages-type-1';
 export { AdvantagesType_2 } from './advantages-type-2';
 export { AdvantagesType_3 } from './advantages-type-3';

@@ -1,17 +1,15 @@
 import React from 'react';
 
-import {
-  AdvantagesType_1,
-  AdvantagesType_2,
-  AdvantagesType_3,
-  AdvantagesType_4,
-  AdvantagesType_5,
-  AdvantagesType_6,
-  AdvantagesType_7,
-} from './components';
+import { AdvantagesType_1 } from './components';
+import { AdvantagesType_2 } from './components';
+import { AdvantagesType_3 } from './components';
+import { AdvantagesType_4 } from './components';
+import { AdvantagesType_5 } from './components';
+import { AdvantagesType_6 } from './components';
+import { AdvantagesType_7 } from './components';
 
-export const Advantages = ({ layout }: { layout: string }) => {
-  switch (layout) {
+export const Advantages = ({ templateID }: { templateID: string }) => {
+  switch (templateID) {
     case '1':
       return <AdvantagesType_1 />;
     case '2':

@@ -1,0 +1,31 @@
+.root_header {
+  display: flex;
+  flex-direction: column;
+}
+
+.root {
+  padding: clamp(var(--gap-md), 5vw, var(--gap-xxl)) 0;
+}
+
+/* stylelint-disable */
+/*down*/
+/*up*/
+.root_header {
+  align-items: center;
+  gap: var(--gap-md);
+}
+.root_header img {
+  width: 100%;
+  height: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.root_header small {
+  display: block;
+  font-size: 16px;
+  color: var(--gray);
+}
+.root_header .base_title {
+  text-align: center;
+  color: var(--primary);
+}/*# sourceMappingURL=blog-detail-type-2.module.css.map */

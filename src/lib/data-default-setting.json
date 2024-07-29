@@ -3,12 +3,7 @@
     {
       "id": "1",
       "type": "advantages",
-      "layout": "1"
-    },
-    {
-      "id": "2",
-      "type": "footer",
-      "layout": "1"
+      "templateID": "6"
     }
   ]
 }
