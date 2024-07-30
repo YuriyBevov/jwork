@@ -1,0 +1,29 @@
+@import '../../styles/extends.scss';
+@import '../../styles/mixins.scss';
+
+.root {
+  @extend %flex-wrap;
+  gap: var(--gap-lg);
+
+  @include media-down($mobile-width) {
+    width: 100%;
+  }
+
+  ul {
+    @extend %list-reset;
+    @extend %flex-align;
+    flex-wrap: wrap;
+    gap: var(--gap-sm);
+
+    @include media-down($mobile-width) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    li a {
+      text-decoration: underline;
+      font-size: var(--fs-xs);
+      color: var(--white);
+    }
+  }
+}

@@ -1,15 +1,15 @@
 import clsx from 'clsx';
 import React from 'react';
 
-import { FooterBottomMenu } from '@/components/footer/types';
+import { TopMenu } from '@/components/footer/types';
 
-import styles from './bottom-menu.module.scss';
+import styles from './footer-top-menu.module.scss';
 
-export const BottomMenu = ({
+export const FooterTopMenu = ({
   data,
   className,
 }: {
-  data: FooterBottomMenu[];
+  data: TopMenu[];
   className?: string;
 }) => {
   return (

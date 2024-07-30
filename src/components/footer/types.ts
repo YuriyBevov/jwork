@@ -5,6 +5,7 @@ export interface FooterDTO {
   copyright: string;
   bottomMenu: FooterBottomMenu[];
   mainMenu: FooterMenu[];
+  topMenu: TopMenu[];
 }
 
 export interface FooterLogo {
@@ -30,6 +31,11 @@ export interface FooterSubscribe {
 }
 
 export interface FooterBottomMenu {
+  title: string;
+  href: string;
+}
+
+export interface TopMenu {
   title: string;
   href: string;
 }
