@@ -1,4 +1,4 @@
-import { Badge } from '@/shared/ui/badge';
+import { Badge } from '@/shared/components/badge';
 
 import styles from './badge-block.module.scss';
 

@@ -16,7 +16,7 @@ export const AdvantagesType_3 = async () => {
     <MainSectionLayout title={data.title}>
       <div className={styles.root}>
         <ul className={styles.list}>
-          {data.list.map((item) => (
+          {data.content.list.map((item) => (
             <li key={item.id} className={styles.list_item}>
               <div className={styles.list_item_icon}>
                 <IconSet name={item.icon} />

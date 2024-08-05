@@ -4,6 +4,41 @@
       "id": "1",
       "type": "advantages",
       "templateID": "6"
+    },
+    {
+      "id": "2",
+      "type": "about",
+      "templateID": "1"
+    },
+    {
+      "id": "3",
+      "type": "about",
+      "templateID": "2"
+    },
+    {
+      "id": "4",
+      "type": "about",
+      "templateID": "3"
+    },
+    {
+      "id": "5",
+      "type": "about",
+      "templateID": "4"
+    },
+    {
+      "id": "6",
+      "type": "about",
+      "templateID": "5"
+    },
+    {
+      "id": "7",
+      "type": "about",
+      "templateID": "6"
+    },
+    {
+      "id": "8",
+      "type": "about",
+      "templateID": "7"
     }
   ]
 }

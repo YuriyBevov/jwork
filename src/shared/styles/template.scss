@@ -76,4 +76,11 @@ a {
       text-align: center;
     }
   }
+
+  &:has(.main-section__text) {
+    .main-section__text,
+    .main-section__title {
+      margin-bottom: var(--gap-lg);
+    }
+  }
 }
