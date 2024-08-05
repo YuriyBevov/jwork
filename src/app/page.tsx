@@ -1,3 +1,4 @@
+import { About } from '@/components/about';
 import { Advantages } from '@/components/advantages';
 // import { Footer } from '@/components/footer';
 import { getLocalData } from '@/lib/localdata';
@@ -12,6 +13,8 @@ function blockRenderer(block: Block) {
   switch (block.type) {
     case 'advantages':
       return <Advantages key={block.id} templateID={block.templateID} />;
+    case 'about':
+      return <About key={block.id} templateID={block.templateID} />;
     // case 'footer':
     //   return <Footer key={block.id} layout={block.layout} />;
     default:

@@ -15,7 +15,7 @@ export const AdvantagesType_4 = async () => {
     <MainSectionLayout title={data.title}>
       <div className={styles.root}>
         <ul className={styles.list}>
-          {data.list.map((item) => (
+          {data.content.list.map((item) => (
             <li key={item.id} className={styles.list_item}>
               <span className={clsx('base_subtitle', styles.base_subtitle)}>
                 {item.label}

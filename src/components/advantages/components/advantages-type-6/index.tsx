@@ -22,7 +22,7 @@ export const AdvantagesType_6 = async () => {
             </h2>
 
             <ul className={styles.list}>
-              {data.list.map((item) => (
+              {data.content.list.map((item) => (
                 <li key={item.id} className={styles.list_item}>
                   <span className={clsx('base_subtitle', styles.base_subtitle)}>
                     {item.label}
@@ -38,10 +38,10 @@ export const AdvantagesType_6 = async () => {
           </div>
           <div className={styles.root_content_side}>
             <Image
-              src={data.image?.url ?? ''}
-              alt={data.image?.alt ?? ''}
-              width={data.image?.width}
-              height={data.image?.height}
+              src={data.content.image?.url ?? ''}
+              alt={data.content.image?.alt ?? ''}
+              width={data.content.image?.width}
+              height={data.content.image?.height}
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
           </div>
