@@ -3,6 +3,7 @@ import {
   FooterType_2,
   FooterType_4,
   FooterType_6,
+  FooterType_7,
 } from '@/components/footer/components';
 
 export default function Footer() {
@@ -12,6 +13,7 @@ export default function Footer() {
       <FooterType_2 />
       <FooterType_4 />
       <FooterType_6 />
+      <FooterType_7 />
     </>
   );
 }

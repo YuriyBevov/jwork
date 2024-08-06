@@ -1,0 +1,20 @@
+@import './../../../shared/styles/extends.scss';
+@import './../../../shared/styles/mixins.scss';
+
+.root {
+  font-size: 14px;
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-xs);
+
+  ul {
+    @extend %list-reset;
+    @extend %flex-column;
+    gap: var(--gap-xs);
+
+    a {
+      text-decoration: underline;
+    }
+  }
+}
