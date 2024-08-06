@@ -6,6 +6,9 @@ export interface FooterDTO {
   bottomMenu: FooterBottomMenu[];
   mainMenu: FooterMenu[];
   topMenu: TopMenu[];
+  requisites: Requisites;
+  contactAddress: ContactInfo;
+  contactInfo: ContactInfo;
 }
 
 export interface FooterLogo {
@@ -48,4 +51,27 @@ export interface FooterMenu {
 export interface FooterMenuList {
   title: string;
   href: string;
+}
+
+export interface Requisites {
+  title: string;
+  items: RequisitesItem[];
+}
+
+export interface RequisitesItem {
+  id: string;
+  title: string;
+  href: string;
+}
+
+export interface ContactInfo {
+  id: string;
+  title: string;
+  items: ContactInfoItems[];
+}
+
+export interface ContactInfoItems {
+  id: string;
+  type: string;
+  text: string;
 }
