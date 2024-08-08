@@ -1,40 +1,8 @@
 @import '../../../../shared/styles/extends.scss';
 @import '../../../../shared/styles/mixins.scss';
 
-.root {
-  container: root / inline-size;
-}
-
 .grid_layout {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--gap-lg);
-
-  @include container-down('root', $tablet-width) {
-    grid-template-columns: 1fr;
-  }
-
   &_item {
-    @extend %sticky-lg;
-    @extend %flex-column;
-    gap: var(--gap-lg);
-    height: fit-content;
-
-    @include container-down('root', $tablet-width) {
-      position: relative;
-      top: 0;
-    }
-
-    img {
-      width: 100%;
-      height: auto;
-      object-fit: contain;
-    }
-
-    button {
-      margin-top: auto;
-    }
-
     &:first-child {
       @include container-down('root', $tablet-width) {
         order: 2;
@@ -50,8 +18,10 @@
 }
 
 .list {
-  @extend %flex-column;
-
-  gap: var(--gap-sm);
   margin-left: var(--gap-sm);
+
+  &_item {
+    display: list-item;
+    list-style: disc;
+  }
 }

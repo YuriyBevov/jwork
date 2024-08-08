@@ -7,7 +7,8 @@ import { getLocalData } from '@/lib/localdata';
 import { MainBtn } from '@/shared/components/main-btn';
 
 import { AboutDTO } from '../../types';
-import styles from './about-type-4.module.scss';
+import common from '../about.module.scss';
+import custom from './about-type-4.module.scss';
 
 export const AboutType_4 = async () => {
   const data: AboutDTO = await getLocalData(
@@ -15,21 +16,36 @@ export const AboutType_4 = async () => {
   );
   return (
     <MainSectionLayout title={data.title} align={'center'}>
-      <div className={styles.root}>
-        <div className={styles.grid_layout}>
-          <div className={styles.grid_layout_item}>
-            <p className={clsx('base_text', styles.base_text)}>
+      <div className={common.root}>
+        <div className={clsx(common.grid_layout, custom.grid_layout)}>
+          <div
+            className={clsx(common.grid_layout_item, custom.grid_layout_item)}
+          >
+            <p className={clsx('base_text', custom.base_text)}>
               {data.content.description}
             </p>
 
-            <ul className={styles.list}>
+            <ul className={clsx(common.list, custom.list)}>
               {data.content.list.map((item) => (
-                <li key={item.id} className={styles.list_item}>
-                  <div className={styles.list_item_content}>
-                    <strong className={styles.list_item_label}>
+                <li
+                  key={item.id}
+                  className={clsx(common.list_item, custom.list_item)}
+                >
+                  <div
+                    className={clsx(
+                      common.list_item_content,
+                      custom.list_item_content,
+                    )}
+                  >
+                    <strong
+                      className={clsx(
+                        common.list_item_label,
+                        custom.list_item_label,
+                      )}
+                    >
                       {item.label}
                     </strong>
-                    <p className={clsx('base_text', styles.base_text)}>
+                    <p className={clsx('base_text', custom.base_text)}>
                       {item.simpleText}
                     </p>
                   </div>
@@ -39,7 +55,9 @@ export const AboutType_4 = async () => {
 
             <MainBtn rounded={'lg'} />
           </div>
-          <div className={styles.grid_layout_item}>
+          <div
+            className={clsx(common.grid_layout_item, custom.grid_layout_item)}
+          >
             <Image
               src={data.content.image.url}
               alt={data.title}
@@ -50,33 +68,5 @@ export const AboutType_4 = async () => {
         </div>
       </div>
     </MainSectionLayout>
-    // <section className={styles.root}>
-    //   <div className="container">
-    //     <h2 className={clsx('base_title', styles.base_title)}>{data.title}</h2>
-
-    //     <div className={styles.root_wrapper}>
-    //       <div className={styles.root_content}>
-    //         <p>{data.description}</p>
-    //         <ul>
-    //           {data.content.list.map((item) => (
-    //             <li key={item.id}>
-    //               <div className={styles.item}>
-    //                 <strong className={styles.item_label}>{item.label}</strong>
-    //                 <p>{item.simpleText}</p>
-    //               </div>
-    //             </li>
-    //           ))}
-    //         </ul>
-    //         <MainBtn rounded={'lg'} />
-    //       </div>
-    //       <Image
-    //         src={data.content.image.url}
-    //         alt={data.title}
-    //         width={680}
-    //         height={500}
-    //       />
-    //     </div>
-    //   </div>
-    // </section>
   );
 };

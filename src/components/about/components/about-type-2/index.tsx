@@ -9,7 +9,8 @@ import { MainBtn } from '@/shared/components/main-btn';
 import { IconBox } from '@/shared/icons/icon-box';
 
 import { AboutDTO } from '../../types';
-import styles from './about-type-2.module.scss';
+import common from '../about.module.scss';
+import custom from './about-type-2.module.scss';
 
 export const AboutType_2 = async () => {
   const data: AboutDTO = await getLocalData(
@@ -18,9 +19,11 @@ export const AboutType_2 = async () => {
 
   return (
     <MainSectionLayout title={data.title} align={'center'}>
-      <div className={styles.root}>
-        <div className={styles.grid_layout}>
-          <div className={styles.grid_layout_item}>
+      <div className={common.root}>
+        <div className={clsx(common.grid_layout, custom.grid_layout_item)}>
+          <div
+            className={clsx(common.grid_layout_item, custom.grid_layout_item)}
+          >
             <Image
               src={data.content.image.url}
               alt={data.title}
@@ -29,23 +32,43 @@ export const AboutType_2 = async () => {
             />
           </div>
 
-          <div className={styles.grid_layout_item}>
-            <span className={clsx('base_subtitle', styles.base_subtitle)}>
+          <div
+            className={clsx(common.grid_layout_item, custom.grid_layout_item)}
+          >
+            <span className={clsx('base_subtitle', custom.base_subtitle)}>
               {data.content.subtitle}
             </span>
 
-            <p className={clsx('base_text', styles.base_text)}>
+            <p className={clsx('base_text', custom.base_text)}>
               {data.description}
             </p>
 
-            <ul className={styles.list}>
+            <ul className={clsx(common.list, custom.list)}>
               {data.content.list.map((item) => (
-                <li key={item.id} className={styles.list_item}>
-                  <div className={styles.list_item_icon}>
+                <li
+                  key={item.id}
+                  className={clsx(common.list_item, custom.list_item)}
+                >
+                  <div
+                    className={clsx(
+                      common.list_item_icon,
+                      custom.list_item_icon,
+                    )}
+                  >
                     <IconBox width={36} height={40} />
                   </div>
-                  <div className={styles.list_item_content}>
-                    <span className={styles.list_item_title}>
+                  <div
+                    className={clsx(
+                      common.list_item_content,
+                      custom.list_item_content,
+                    )}
+                  >
+                    <span
+                      className={clsx(
+                        common.list_item_title,
+                        custom.list_item_title,
+                      )}
+                    >
                       {item.boldText}
                     </span>
                   </div>
