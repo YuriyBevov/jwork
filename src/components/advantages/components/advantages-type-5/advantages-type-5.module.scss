@@ -1,15 +1,8 @@
 @import '../../../../shared/styles/extends.scss';
 @import '../../../../shared/styles/mixins.scss';
 
-.root {
-  container: root / inline-size;
-}
-
 .list {
-  @extend %list-reset;
-  display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: clamp(var(--gap-lg), 4vw, var(--gap-xxl)) var(--gap-lg);
 
   @include container-down('root', $laptop-width) {
     grid-template-columns: repeat(2, 1fr);
@@ -20,9 +13,6 @@
   }
 
   &_item {
-    @extend %flex-column;
-    gap: var(--gap-sm);
-
     &_header {
       position: relative;
       min-height: 90px;
@@ -45,8 +35,4 @@
       }
     }
   }
-}
-
-.base_title {
-  color: var(--primary);
 }

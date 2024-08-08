@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import Image from 'next/image';
 import React from 'react';
 
@@ -5,7 +6,8 @@ import { MainSectionLayout } from '@/layouts/main-section-layout';
 import { getLocalData } from '@/lib/localdata';
 
 import { AboutDTO } from '../../types';
-import styles from './about-type-7.module.scss';
+import common from '../about.module.scss';
+import custom from './about-type-7.module.scss';
 
 export const AboutType_7 = async () => {
   const data: AboutDTO = await getLocalData(
@@ -17,8 +19,8 @@ export const AboutType_7 = async () => {
       description={data.description}
       align={'center'}
     >
-      <div className={styles.root}>
-        <div className={styles.grid_layout}>
+      <div className={common.root}>
+        <div className={clsx(common.grid_layout, custom.grid_layout)}>
           {data.content.list.map((item) => (
             <Image
               key={item.id}

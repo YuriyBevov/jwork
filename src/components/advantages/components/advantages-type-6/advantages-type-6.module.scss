@@ -2,8 +2,6 @@
 @import '../../../../shared/styles/mixins.scss';
 
 .root {
-  container: root / inline-size;
-
   &_content {
     display: grid;
     grid-template-columns: 3fr 4fr;
@@ -39,20 +37,11 @@
 }
 
 .list {
-  @extend %list-reset;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: clamp(var(--gap-lg), 4vw, var(--gap-xxl)) var(--gap-lg);
-
   @include container-down('root', $mobile-width) {
     grid-template-columns: 1fr;
   }
 
   &_item {
-    display: flex;
-    flex-direction: column;
-    gap: var(--gap-sm);
-
     .base_subtitle {
       width: fit-content;
       font-size: clamp(24px, 4.8vw, 48px);

@@ -7,7 +7,8 @@ import { getLocalData } from '@/lib/localdata';
 import { MainBtn } from '@/shared/components/main-btn';
 
 import { AboutDTO } from '../../types';
-import styles from './about-type-3.module.scss';
+import common from '../about.module.scss';
+import custom from './about-type-3.module.scss';
 
 export const AboutType_3 = async () => {
   const data: AboutDTO = await getLocalData(
@@ -15,19 +16,23 @@ export const AboutType_3 = async () => {
   );
   return (
     <MainSectionLayout title={data.title} align={'center'}>
-      <div className={styles.root}>
-        <div className={styles.grid_layout}>
-          <div className={styles.grid_layout_item}>
-            <h2 className={clsx('base_title', styles.base_title)}>
+      <div className={common.root}>
+        <div className={clsx(common.grid_layout, custom.grid_layout)}>
+          <div
+            className={clsx(common.grid_layout_item, custom.grid_layout_item)}
+          >
+            <h2 className={clsx('base_title', custom.base_title)}>
               {data.content.title}
             </h2>
-            <p className={clsx('base_text', styles.base_text)}>
+            <p className={clsx('base_text', custom.base_text)}>
               {data.content.description}
             </p>
             <MainBtn outlined={true} />
           </div>
 
-          <div className={styles.grid_layout_item}>
+          <div
+            className={clsx(common.grid_layout_item, custom.grid_layout_item)}
+          >
             <Image
               src={data.content.image.url}
               alt={data.title}
@@ -38,24 +43,5 @@ export const AboutType_3 = async () => {
         </div>
       </div>
     </MainSectionLayout>
-    // <section className={styles.root}>
-    //   <div className="container">
-    //     <div className={styles.root_wrapper}>
-    //       <div className={styles.root_content}>
-    //         <h2 className={clsx('base_title', styles.base_title)}>
-    //           {data.title}
-    //         </h2>
-    //         <p>{data.description}</p>
-    //         <MainBtn outlined={true} />
-    //       </div>
-    //       <Image
-    //         src={data.image.url}
-    //         alt={data.title}
-    //         width={720}
-    //         height={700}
-    //       />
-    //     </div>
-    //   </div>
-    // </section>
   );
 };

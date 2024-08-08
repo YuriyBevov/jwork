@@ -1,17 +1,8 @@
 @import '../../../../shared/styles/extends.scss';
 @import '../../../../shared/styles/mixins.scss';
 
-.root {
-  container: root / inline-size;
-}
-
 .list {
-  @extend %list-reset;
-  display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: clamp(var(--gap-lg), 4vw, var(--gap-xxl))
-    clamp(var(--gap-lg), 4vw, var(--gap-xxl));
-  container: list / inline-size;
 
   @include container-down('root', $laptop-width) {
     grid-template-columns: repeat(2, 1fr);
@@ -22,27 +13,9 @@
   }
 
   &_item {
-    @extend %flex-column;
     align-items: center;
-    gap: clamp(var(--gap-sm), 2vw, var(--gap-lg));
-
-    &_icon {
-      @extend %flex-center;
-      flex: 0 0 clamp(60px, 6vw, 80px);
-      width: clamp(60px, 6vw, 80px);
-      height: clamp(60px, 6vw, 80px);
-      background-color: var(--primary-lighten-40);
-      border-radius: 50%;
-
-      svg {
-        width: 50%;
-        height: 50%;
-      }
-    }
 
     &_content {
-      @extend %flex-column;
-      gap: var(--gap-sm);
       flex-grow: 1;
 
       .base_subtitle {
