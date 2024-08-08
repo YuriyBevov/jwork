@@ -3,35 +3,65 @@
     {
       "id": "1",
       "type": "advantages",
-      "templateID": "6"
+      "templateID": "1"
     },
     {
       "id": "2",
+      "type": "advantages",
+      "templateID": "2"
+    },
+    {
+      "id": "3",
+      "type": "advantages",
+      "templateID": "3"
+    },
+    {
+      "id": "4",
+      "type": "advantages",
+      "templateID": "4"
+    },
+    {
+      "id": "5",
+      "type": "advantages",
+      "templateID": "5"
+    },
+    {
+      "id": "6",
+      "type": "advantages",
+      "templateID": "6"
+    },
+    {
+      "id": "7",
+      "type": "advantages",
+      "templateID": "7"
+    },
+    {
+      "id": "12",
       "type": "about",
       "templateID": "1"
     },
     {
-      "id": "3",
+      "id": "13",
       "type": "about",
       "templateID": "2"
     },
     {
-      "id": "4",
+      "id": "14",
       "type": "about",
       "templateID": "3"
     },
     {
-      "id": "5",
+      "id": "15",
       "type": "about",
       "templateID": "4"
     },
     {
-      "id": "6",
+      "id": "16",
       "type": "about",
       "templateID": "5"
     },
     {
-      "id": "7",
+      "id": "17",
       "type": "about",
       "templateID": "6"
     },

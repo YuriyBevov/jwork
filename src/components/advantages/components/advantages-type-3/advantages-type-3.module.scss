@@ -1,15 +1,8 @@
 @import '../../../../shared/styles/extends.scss';
 @import '../../../../shared/styles/mixins.scss';
 
-.root {
-  container: root / inline-size;
-}
-
 .list {
-  @extend %list-reset;
-  display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: clamp(var(--gap-lg), 4vw, var(--gap-xxl)) var(--gap-lg);
 
   @include container-down('root', $laptop-width) {
     grid-template-columns: repeat(2, 1fr);
@@ -20,14 +13,12 @@
   }
 
   &_item {
-    @extend %flex-column;
-    gap: var(--gap-sm);
-
     &_icon {
       @extend %flex-center;
       flex: 0 0 clamp(40px, 3vw, 52px);
       width: clamp(40px, 3vw, 52px);
       height: clamp(40px, 3vw, 52px);
+      background-color: transparent;
 
       svg {
         width: 100%;
@@ -36,7 +27,6 @@
     }
 
     &_content {
-      @extend %flex-column;
       gap: var(--gap-sm);
       height: 100%;
 

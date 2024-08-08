@@ -6,7 +6,8 @@ import { MainSectionLayout } from '@/layouts/main-section-layout';
 import { getLocalData } from '@/lib/localdata';
 
 import { AdvantagesDTO } from '../../types';
-import styles from './advantages-type-6.module.scss';
+import common from '../advantages.module.scss';
+import custom from './advantages-type-6.module.scss';
 
 export const AdvantagesType_6 = async () => {
   const data: AdvantagesDTO = await getLocalData(
@@ -14,21 +15,31 @@ export const AdvantagesType_6 = async () => {
   );
   return (
     <MainSectionLayout>
-      <div className={styles.root}>
-        <div className={styles.root_content}>
-          <div className={styles.root_content_side}>
-            <h2 className={clsx('base_title', styles.base_title)}>
+      <div className={common.root}>
+        <div className={clsx(common.root_content, custom.root_content)}>
+          <div
+            className={clsx(common.root_content_side, custom.root_content_side)}
+          >
+            <h2 className={clsx('base_title', custom.base_title)}>
               {data.title}
             </h2>
 
-            <ul className={styles.list}>
+            <ul className={clsx(common.list, custom.list)}>
               {data.content.list.map((item) => (
-                <li key={item.id} className={styles.list_item}>
-                  <span className={clsx('base_subtitle', styles.base_subtitle)}>
+                <li
+                  key={item.id}
+                  className={clsx(common.list_item, custom.list_item)}
+                >
+                  <span className={clsx('base_subtitle', custom.base_subtitle)}>
                     {item.label}
                   </span>
-                  <div className={styles.list_item_content}>
-                    <p className={clsx('base_text', styles.base_text)}>
+                  <div
+                    className={clsx(
+                      common.list_item_content,
+                      custom.list_item_content,
+                    )}
+                  >
+                    <p className={clsx('base_text', custom.base_text)}>
                       {item.description}
                     </p>
                   </div>
@@ -36,7 +47,9 @@ export const AdvantagesType_6 = async () => {
               ))}
             </ul>
           </div>
-          <div className={styles.root_content_side}>
+          <div
+            className={clsx(common.root_content_side, custom.root_content_side)}
+          >
             <Image
               src={data.content.image?.url ?? ''}
               alt={data.content.image?.alt ?? ''}

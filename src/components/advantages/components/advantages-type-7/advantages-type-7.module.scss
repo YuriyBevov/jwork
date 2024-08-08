@@ -1,27 +1,19 @@
 @import '../../../../shared/styles/extends.scss';
 @import '../../../../shared/styles/mixins.scss';
 
-.root {
-  container: root / inline-size;
-}
-
 .list {
-  @extend %list-reset;
-  display: grid;
   grid-template-columns: 1fr;
-  grid-gap: clamp(var(--gap-lg), 4vw, var(--gap-xxl)) var(--gap-lg);
 
   &_item {
-    @extend %flex-column;
     align-items: center;
     text-align: center;
-    gap: var(--gap-sm);
 
     &_icon {
       @extend %flex-center;
       flex: 0 0 clamp(40px, 3vw, 52px);
       width: clamp(40px, 3vw, 52px);
       height: clamp(40px, 3vw, 52px);
+      background-color: transparent;
 
       svg {
         width: 100%;
@@ -31,7 +23,6 @@
     }
 
     &_content {
-      @extend %flex-column;
       gap: var(--gap-sm);
       height: 100%;
 
