@@ -18,7 +18,7 @@ export const AboutType_2 = async () => {
   );
 
   return (
-    <MainSectionLayout title={data.title} align={'center'}>
+    <MainSectionLayout title={data.title} align={data.titleAlign}>
       <div className={common.root}>
         <div className={clsx(common.grid_layout, custom.grid_layout_item)}>
           <div

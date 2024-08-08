@@ -1,5 +1,6 @@
 {
   "title": "О наc",
+  "titleAlign": "center",
   "content": {
     "image": {
       "url": "/assets/images/about/about-5-mock-img.png",

@@ -1,6 +1,8 @@
 export interface AdvantagesDTO {
   title: string;
   description?: string;
+  titleAlign: string;
+
   content: {
     title?: string;
     description?: string;

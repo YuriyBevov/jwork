@@ -16,7 +16,7 @@ export const MainSectionLayout = ({
   title?: string;
   description?: string;
   children: React.ReactNode;
-  align?: 'center';
+  align?: string;
 }) => {
   return (
     <section

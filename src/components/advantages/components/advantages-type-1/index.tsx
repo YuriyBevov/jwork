@@ -15,7 +15,7 @@ export const AdvantagesType_1 = async () => {
   );
 
   return (
-    <MainSectionLayout title={data.title} align={'center'}>
+    <MainSectionLayout title={data.title} align={data.titleAlign}>
       <div className={common.root}>
         <ul className={clsx(common.list, custom.list)}>
           {data.content.list.map((item) => (

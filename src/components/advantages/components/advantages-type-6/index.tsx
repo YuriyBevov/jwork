@@ -14,14 +14,14 @@ export const AdvantagesType_6 = async () => {
     '/src/components/advantages/components/advantages-type-6/data.json',
   );
   return (
-    <MainSectionLayout>
+    <MainSectionLayout title={data.title} align={data.titleAlign}>
       <div className={common.root}>
         <div className={clsx(common.root_content, custom.root_content)}>
           <div
             className={clsx(common.root_content_side, custom.root_content_side)}
           >
             <h2 className={clsx('base_title', custom.base_title)}>
-              {data.title}
+              {data.content.title}
             </h2>
 
             <ul className={clsx(common.list, custom.list)}>
