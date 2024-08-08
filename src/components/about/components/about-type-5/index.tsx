@@ -15,7 +15,7 @@ export const AboutType_5 = async () => {
     '/src/components/about/components/about-type-5/data.json',
   );
   return (
-    <MainSectionLayout title={data.title} align={'center'}>
+    <MainSectionLayout title={data.title} align={data.titleAlign}>
       <div className={common.root}>
         <div className={clsx(common.grid_layout, custom.grid_layout)}>
           <div
