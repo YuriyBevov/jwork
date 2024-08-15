@@ -9,15 +9,19 @@ import styles from './top-menu.module.scss';
 export const TopMenu = ({
   data,
   className,
+  title,
 }: {
   data: FooterMenu[];
   className?: string;
+  title?: boolean;
 }) => {
   return (
     <div className={clsx(styles.root, className)}>
       {data.map((item) => (
         <nav className={styles.root_nav} key={item.title}>
-          <span className={styles.root_nav__title}>{item.title}</span>
+          {title && (
+            <span className={styles.root_nav__title}>{item.title}</span>
+          )}
           <ul>
             {item.items.map((subItem) => (
               <li key={subItem.title}>

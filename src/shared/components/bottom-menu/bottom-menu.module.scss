@@ -20,10 +20,11 @@
       align-items: flex-start;
     }
 
-    li a {
-      text-decoration: underline;
-      font-size: var(--fs-xs);
-      color: var(--white);
+    li {
+      a {
+        text-decoration: underline;
+        font-size: var(--fs-xs);
+      }
     }
   }
 }

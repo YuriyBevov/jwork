@@ -1,6 +1,7 @@
 import {
   FooterType_1,
   FooterType_2,
+  FooterType_3,
   FooterType_4,
   FooterType_6,
   FooterType_7,
@@ -11,6 +12,7 @@ export default function Footer() {
     <>
       <FooterType_1 />
       <FooterType_2 />
+      <FooterType_3 />
       <FooterType_4 />
       <FooterType_6 />
       <FooterType_7 />
