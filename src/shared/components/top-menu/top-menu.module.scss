@@ -15,18 +15,12 @@
     &__title {
       font-size: var(--fs-sm);
       font-weight: var(--fw-sb);
-      color: var(--white);
     }
 
     ul {
       @extend %list-reset;
       @extend %flex-column;
       gap: var(--gap-sm);
-
-      // li a {
-      //   font-size: var(--fs-xs);
-      //   color: var(--white);
-      // }
     }
   }
 }
