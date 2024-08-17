@@ -19,10 +19,10 @@ interface NavigationSubmenu {
 
 interface ContactInfo {
   id: string;
-  items: Item[];
+  items: ContactInfoItem[];
 }
 
-interface Item {
+interface ContactInfoItem {
   id: string;
   type: string;
   text: string;

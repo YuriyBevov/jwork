@@ -66,7 +66,7 @@ export interface RequisitesItem {
 
 export interface ContactInfo {
   id: string;
-  title: string;
+  title?: string;
   items: ContactInfoItems[];
 }
 

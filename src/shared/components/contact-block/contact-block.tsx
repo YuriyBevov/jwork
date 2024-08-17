@@ -11,13 +11,13 @@ export const ContactBlock = ({
   data,
   className,
 }: {
-  title: string;
+  title?: string;
   data: ContactInfo;
   className?: string;
 }) => {
   return (
     <div className={clsx(styles.root, className)}>
-      <span>{title}:</span>
+      {title && <span>{title}:</span>}
       <ul>
         {data.items.map((item: ContactInfoItems) => (
           <li key={item.id}>
