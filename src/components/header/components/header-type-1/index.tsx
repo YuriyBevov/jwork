@@ -32,6 +32,25 @@ export const HeaderType_1 = async () => {
           <MainBtn text="Кнопка" rounded={'lg'} outlined />
           <MainBtn text="Кнопка заявки" rounded={'lg'} />
         </div>
+
+        <nav className={styles.navigation}>
+          <ul className={styles.navigation_list}>
+            {data.navigation.map((item) => (
+              <li key={item.id}>
+                <Link href="#">{item.title}</Link>
+                {item.items && (
+                  <ul>
+                    {item.items.map((subItem) => (
+                      <li key={subItem.id}>
+                        <Link href="#">{subItem.title}</Link>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </li>
+            ))}
+          </ul>
+        </nav>
       </div>
     </header>
   );
