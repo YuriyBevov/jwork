@@ -32,15 +32,15 @@ a {
 
 .container {
   width: 100%;
-  margin: 0 auto;
-  padding: 0 var(--container-offset);
+  margin-inline: auto;
+  padding-inline: var(--container-offset);
   max-width: var(--container-width);
 }
 
 .container_fluid {
   width: 100%;
-  margin: 0 auto;
-  padding: 0 var(--container-fuild-offset);
+  margin-inline: auto;
+  padding-inline: var(--container-fuild-offset);
   max-width: var(--container-fluid-width);
 }
 

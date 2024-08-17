@@ -1,0 +1,32 @@
+@import '../../../shared/styles/extends.scss';
+@import '../../../shared/styles/mixins.scss';
+
+.root {
+  font-size: var(--fs-sm);
+}
+
+.top {
+  @extend %flex-align;
+  gap: var(--gap-xl);
+  padding: var(--gap-sm) 0;
+  border-bottom: 1px solid var(--primary);
+}
+
+.logo {
+  margin-right: auto;
+}
+
+.contact {
+  ul {
+    flex-direction: row;
+    gap: var(--gap-xl);
+
+    li {
+      a {
+        text-decoration: none;
+        color: var(--primary);
+        font-size: var(--fs-sm);
+      }
+    }
+  }
+}
