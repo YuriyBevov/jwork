@@ -20,8 +20,8 @@ export interface AboutDTO {
 
 interface AboutList {
   id: number;
-  boldText: string;
-  simpleText: string;
+  title: string;
+  text: string;
   label?: string;
   image?: {
     url: string;

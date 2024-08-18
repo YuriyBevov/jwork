@@ -69,7 +69,7 @@ export const AboutType_2 = async () => {
                         custom.list_item_title,
                       )}
                     >
-                      {item.boldText}
+                      {item.title}
                     </span>
                   </div>
                 </li>
