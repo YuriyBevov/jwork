@@ -21,7 +21,7 @@ export interface AboutDTO {
 interface AboutList {
   id: number;
   title: string;
-  text: string;
+  description: string;
   label?: string;
   image?: {
     url: string;
