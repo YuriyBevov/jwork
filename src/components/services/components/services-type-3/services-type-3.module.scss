@@ -1,0 +1,25 @@
+@import '../../../../shared/styles/extends.scss';
+@import '../../../../shared/styles/mixins.scss';
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  @include media-down($desktop-width) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include media-down($tablet-width) {
+    grid-template-columns: 1fr;
+  }
+
+  &_item {
+    @extend %flex-column;
+    height: 100%;
+    gap: var(--gap-sm);
+
+    img {
+      margin-bottom: var(--gap-sm);
+    }
+  }
+}

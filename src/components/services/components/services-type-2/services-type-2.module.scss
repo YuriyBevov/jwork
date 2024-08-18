@@ -1,0 +1,40 @@
+@import '../../../../shared/styles/extends.scss';
+@import '../../../../shared/styles/mixins.scss';
+
+.list {
+  @extend %list-reset;
+  @extend %flex-wrap;
+
+  @include media-down($mobile-width) {
+    gap: var(--gap-lg);
+  }
+
+  li:nth-of-type(even) img {
+    order: 2;
+
+    @include media-down($tablet-width) {
+      order: initial;
+    }
+  }
+
+  &_item {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(var(--gap-sm), 4vw, calc(var(--gap-sm) * 4));
+
+    @include media-down($tablet-width) {
+      grid-template-columns: 1fr;
+      gap: var(--gap-lg);
+    }
+
+    &_content {
+      align-self: center;
+
+      small {
+        font-size: 14px;
+        font-weight: var(--fw-sb);
+        color: var(--primary);
+      }
+    }
+  }
+}

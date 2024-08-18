@@ -56,7 +56,7 @@ export const AboutType_6 = async () => {
                     )}
                   >
                     <p className={clsx('base_text', custom.base_text)}>
-                      {item.simpleText}
+                      {item.text}
                     </p>
                   </div>
                 </li>
