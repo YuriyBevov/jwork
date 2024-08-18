@@ -1,0 +1,52 @@
+@import '../../../shared/styles/extends.scss';
+@import '../../../shared/styles/mixins.scss';
+
+.root {
+  container: root / inline-size;
+}
+
+.list {
+  @extend %list-reset;
+
+  gap: clamp(var(--gap-lg), 4vw, var(--gap-xxl)) var(--gap-lg);
+
+  @include container-down('root', 1360px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include container-down('root', $tablet-width) {
+    grid-template-columns: 1fr;
+  }
+
+  &_item {
+    @extend %flex-column;
+    gap: var(--gap-sm);
+    height: 100%;
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    &_content {
+      @extend %flex-column;
+      flex-grow: 1;
+      gap: var(--gap-xxs);
+
+      .base_subtitle {
+        margin-bottom: auto;
+        @include text-truncate(2);
+      }
+
+      .base_text {
+        font-size: 16px;
+      }
+    }
+
+    &_properties {
+      @extend %list-reset;
+      margin-top: var(--gap-sm);
+    }
+  }
+}

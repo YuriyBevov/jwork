@@ -1,0 +1,72 @@
+{
+  "title": "Наши сотрудники",
+  "titleAlign": "center",
+  "content": {
+    "list": [
+      {
+        "id": "1",
+        "title": "Константинов Константин Константинович",
+        "badge": {
+          "text": "Генеральный директор",
+          "outlined": true,
+          "accent": true
+        },
+        "image": {
+          "url": "/assets/images/staff/staff-1.png",
+          "alt": "Константинов Константин Константинович",
+          "width": 80,
+          "height": 80
+        },
+        "properties": ["Опыт работы в компании - 20 лет", "Общий стаж - 40 лет"]
+      },
+      {
+        "id": "2",
+        "title": "Константинов Константин Константинович",
+        "badge": {
+          "text": "Системный аналитик",
+          "outlined": true,
+          "accent": true
+        },
+        "image": {
+          "url": "/assets/images/staff/staff-2.png",
+          "alt": "Константинов Константин Константинович",
+          "width": 80,
+          "height": 80
+        },
+        "properties": ["Опыт работы в компании - 20 лет", "Общий стаж - 40 лет"]
+      },
+      {
+        "id": "3",
+        "title": "Ионова Валерия Сергеевна",
+        "badge": {
+          "text": "Менеджер по продажам",
+          "outlined": true,
+          "accent": true
+        },
+        "image": {
+          "url": "/assets/images/staff/staff-3.png",
+          "alt": "Ионова Валерия Сергеевна",
+          "width": 80,
+          "height": 80
+        },
+        "properties": ["Опыт работы в компании - 20 лет", "Общий стаж - 40 лет"]
+      },
+      {
+        "id": "4",
+        "title": "Иванов Иван Иванович",
+        "badge": {
+          "text": "Менеджер по продажам",
+          "outlined": true,
+          "accent": true
+        },
+        "image": {
+          "url": "/assets/images/staff/staff-3.png",
+          "alt": "Иванов Иван Иванович",
+          "width": 80,
+          "height": 80
+        },
+        "properties": ["Опыт работы в компании - 20 лет", "Общий стаж - 40 лет"]
+      }
+    ]
+  }
+}
