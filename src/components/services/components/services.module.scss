@@ -24,6 +24,14 @@
       button {
         margin-top: auto;
       }
+
+      .base_subtitle {
+        @include text-truncate(4);
+      }
+
+      .base_text {
+        @include text-truncate(5);
+      }
     }
   }
 }
