@@ -1,0 +1,9 @@
+@import '../../../../shared/styles/extends.scss';
+@import '../../../../shared/styles/mixins.scss';
+
+.list_item {
+  img {
+    aspect-ratio: 3/2;
+    object-position: top;
+  }
+}

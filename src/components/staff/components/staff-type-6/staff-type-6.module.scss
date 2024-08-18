@@ -1,0 +1,22 @@
+@import '../../../../shared/styles/extends.scss';
+@import '../../../../shared/styles/mixins.scss';
+
+.list_item {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  @include container-down('root', 1260px) {
+    grid-template-columns: 1fr;
+  }
+
+  img {
+    aspect-ratio: 3/2;
+    object-position: top;
+  }
+
+  &_content {
+    .base_subtitle {
+      margin-bottom: initial;
+    }
+  }
+}

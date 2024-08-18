@@ -6,11 +6,18 @@ import styles from './badge.module.scss';
 type Props = {
   outlined?: boolean;
   text: string;
+  accent?: boolean;
 };
 
-export const Badge: React.FC<Props> = ({ outlined, text }) => {
+export const Badge: React.FC<Props> = ({ outlined, text, accent }) => {
   return (
-    <div className={clsx(outlined ? styles.outlined : null, styles.root)}>
+    <div
+      className={clsx(
+        outlined ? styles.outlined : null,
+        accent ? styles.color_primary : null,
+        styles.root,
+      )}
+    >
       {text}
     </div>
   );

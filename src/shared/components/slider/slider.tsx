@@ -34,7 +34,7 @@ export const Slider = ({
     <Swiper
       modules={[Navigation, Pagination]}
       spaceBetween={spaceBetween}
-      loop={true}
+      loop={false}
       className={styles.root}
       pagination={{ el: '.navigation_line-pagination', clickable: true }}
       navigation={{

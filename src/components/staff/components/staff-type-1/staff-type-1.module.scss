@@ -1,0 +1,36 @@
+@import '../../../../shared/styles/extends.scss';
+@import '../../../../shared/styles/mixins.scss';
+
+.root {
+  @extend %flex-column;
+  align-items: center;
+  gap: clamp(var(--gap-lg), 4vw, var(--gap-xxl)) var(--gap-lg);
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  @include container-down('root', 1360px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include container-down('root', 640px) {
+    grid-template-columns: 1fr;
+  }
+
+  &_item {
+    align-items: center;
+    text-align: center;
+
+    img {
+      border-radius: 50%;
+      width: 80px;
+      height: 80px;
+    }
+
+    &_content {
+      align-items: center;
+    }
+  }
+}
