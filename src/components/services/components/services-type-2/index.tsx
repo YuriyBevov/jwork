@@ -19,7 +19,7 @@ export const ServicesType_2 = async () => {
     <MainSectionLayout title={data.title} align={data.titleAlign}>
       <div className={common.root}>
         <ul className={clsx(common.list, custom.list)}>
-          {data.list.map((item) => (
+          {data.content.list.map((item) => (
             <li key={item.id}>
               <div className={clsx(common.list_item, custom.list_item)}>
                 <Image
@@ -35,10 +35,22 @@ export const ServicesType_2 = async () => {
                   )}
                 >
                   <small>Категория</small>
-                  <span className={clsx('base_subtitle', custom.base_subtitle)}>
+                  <span
+                    className={clsx(
+                      'base_subtitle',
+                      common.base_subtitle,
+                      custom.base_subtitle,
+                    )}
+                  >
                     {item.title}
                   </span>
-                  <p className={clsx('base_text', custom.base_text)}>
+                  <p
+                    className={clsx(
+                      'base_text',
+                      common.base_text,
+                      custom.base_text,
+                    )}
+                  >
                     {item.description}
                   </p>
 

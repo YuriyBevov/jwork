@@ -2,37 +2,37 @@
   "blocks": [
     {
       "id": "21",
-      "type": "about",
+      "type": "services",
       "templateID": "1"
     },
     {
       "id": "22",
-      "type": "about",
+      "type": "services",
       "templateID": "2"
     },
     {
       "id": "23",
-      "type": "about",
+      "type": "services",
       "templateID": "3"
     },
     {
       "id": "21",
-      "type": "about",
+      "type": "services",
       "templateID": "4"
     },
     {
       "id": "22",
-      "type": "about",
+      "type": "services",
       "templateID": "5"
     },
     {
       "id": "23",
-      "type": "about",
+      "type": "services",
       "templateID": "6"
     },
     {
       "id": "23",
-      "type": "about",
+      "type": "services",
       "templateID": "7"
     }
   ]

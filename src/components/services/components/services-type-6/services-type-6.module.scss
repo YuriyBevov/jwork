@@ -1,60 +1,38 @@
-@import '../../../shared/styles/extends.scss';
-@import '../../../shared/styles/mixins.scss';
+@import '../../../../shared/styles/extends.scss';
+@import '../../../../shared/styles/mixins.scss';
 
-.root {
-  @extend %section-offset;
+.list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 
-  ul {
-    @extend %list-reset;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: calc(var(--gap-sm) * 4) var(--gap-lg);
-
-    @include media-down($desktop-width) {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    @include media-down($tablet-width) {
-      grid-template-columns: 1fr;
-
-      gap: var(--gap-lg);
-    }
-  }
-}
-
-.base_title {
-  text-align: center;
-  color: var(--primary);
-}
-
-.item {
-  @extend %flex-column;
-  height: 100%;
-  gap: var(--gap-sm);
-
-  &_header {
-    @extend %flex-align;
-    gap: var(--gap-md);
-
-    svg {
-      width: 100%;
-      max-width: 48px;
-      height: 100%;
-    }
-
-    @include media-down($laptop-width) {
-      flex-direction: column;
-      align-items: flex-start;
-    }
+  @include container-down('root', 1280px) {
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  &_content {
+  @include container-down('root', 680px) {
+    grid-template-columns: 1fr;
+    gap: var(--gap-lg);
+  }
+
+  &_item {
     @extend %flex-column;
+    height: 100%;
     gap: var(--gap-sm);
-    flex-grow: 1;
 
-    button {
-      margin-top: auto;
+    &_header {
+      @extend %flex-align;
+      gap: var(--gap-sm);
+
+      svg {
+        width: 100%;
+        max-width: 48px;
+        height: 100%;
+      }
+
+      @include container-down('root', $laptop-width) {
+        flex-direction: column;
+        align-items: flex-start;
+      }
     }
   }
 }
