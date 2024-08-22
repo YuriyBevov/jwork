@@ -1,5 +1,6 @@
 import { About } from '@/components/about';
 import { Advantages } from '@/components/advantages';
+import { News } from '@/components/news';
 import { Services } from '@/components/services';
 import { Staff } from '@/components/staff';
 // import { Footer } from '@/components/footer';
@@ -21,6 +22,8 @@ function blockRenderer(block: Block) {
       return <Services key={block.id} templateID={block.templateID} />;
     case 'staff':
       return <Staff key={block.id} templateID={block.templateID} />;
+    case 'news':
+      return <News key={block.id} templateID={block.templateID} />;
     // case 'footer':
     //   return <Footer key={block.id} layout={block.layout} />;
     default:

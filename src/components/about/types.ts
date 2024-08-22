@@ -14,11 +14,11 @@ export interface AboutDTO {
       width: number;
       height: number;
     };
-    list: AboutList[];
+    list: AboutListItem[];
   };
 }
 
-interface AboutList {
+interface AboutListItem {
   id: number;
   title: string;
   description: string;
@@ -33,5 +33,4 @@ interface AboutList {
 
 export interface Badges {
   text: string;
-  outlined?: boolean;
 }

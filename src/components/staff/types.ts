@@ -3,17 +3,15 @@ export interface StaffDTO {
   titleAlign?: string;
   description?: string;
   content: {
-    list: StaffList[];
+    list: StaffListItem[];
   };
 }
 
-interface StaffList {
+interface StaffListItem {
   id: number;
   title: string;
   badge: {
     text: string;
-    outlined?: boolean;
-    accent?: boolean;
   };
   image: {
     url: string;

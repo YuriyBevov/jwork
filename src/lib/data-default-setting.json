@@ -2,37 +2,27 @@
   "blocks": [
     {
       "id": "21",
-      "type": "staff",
+      "type": "news",
       "templateID": "1"
     },
     {
-      "id": "21",
-      "type": "staff",
+      "id": "22",
+      "type": "news",
       "templateID": "2"
     },
     {
-      "id": "21",
-      "type": "staff",
+      "id": "23",
+      "type": "news",
       "templateID": "3"
     },
     {
-      "id": "21",
-      "type": "staff",
+      "id": "24",
+      "type": "news",
       "templateID": "4"
     },
     {
-      "id": "21",
-      "type": "staff",
-      "templateID": "5"
-    },
-    {
-      "id": "21",
-      "type": "staff",
-      "templateID": "6"
-    },
-    {
-      "id": "21",
-      "type": "staff",
+      "id": "27",
+      "type": "news",
       "templateID": "7"
     }
   ]

@@ -1,0 +1,103 @@
+@import '../../../../shared/styles/extends.scss';
+@import '../../../../shared/styles/mixins.scss';
+
+.root {
+  @extend %flex-column;
+  gap: clamp(var(--gap-xl), 3vw, var(--gap-xxl));
+}
+
+.tabs {
+  @extend %flex-wrap;
+  align-items: center;
+  margin-bottom: var(--gap-xxl);
+
+  button {
+    cursor: pointer;
+    padding: 11px 20px;
+    background-color: transparent;
+    font-size: var(--fs-sm);
+    border: none;
+    transition:
+      background-color var(--slow-transition),
+      color var(--slow-transition);
+
+    &:not(.tab_item__active, [aria-selected='true']) {
+      &:hover {
+        color: var(--primary);
+      }
+    }
+
+    &[aria-selected='true'] {
+      color: var(--primary);
+      cursor: default;
+      background-color: var(--primary);
+      color: var(--white);
+      border-radius: 30px;
+    }
+  }
+}
+
+.list {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  @include container-down('root', $tablet-width) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include container-down('root', $mobile-width) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &_item {
+    container: list-item / inline-size;
+
+    &:nth-child(even) {
+      .list_item_content {
+        img {
+          order: 2;
+
+          @include container-down('root', $tablet-width) {
+            order: initial;
+          }
+        }
+      }
+    }
+  }
+
+  &_item_content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(var(--gap-sm), 3vw, var(--gap-xxl));
+    align-items: center;
+    color: var(--site-color);
+
+    @include container-down('list-item', $tablet-width) {
+      display: flex;
+      flex-direction: column;
+    }
+
+    & > img {
+      aspect-ratio: 3/2;
+      object-fit: cover;
+    }
+
+    &_wrapper {
+      .base_subtitle {
+        min-height: calc(
+          clamp(var(--fs-md), 2.2vw, var(--fs-lg)) * var(--line-height) * 2
+        );
+
+        @include text-truncate(2);
+
+        @include container-down('root', $mobile-width) {
+          min-height: initial;
+        }
+      }
+      .base_text {
+        @include text-truncate(5);
+      }
+    }
+  }
+}

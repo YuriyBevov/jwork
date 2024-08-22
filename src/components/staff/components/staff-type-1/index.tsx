@@ -51,11 +51,7 @@ export const StaffType_1 = async () => {
                 >
                   {item.title}
                 </span>
-                <Badge
-                  text={item.badge.text}
-                  outlined={item.badge.outlined}
-                  accent={true}
-                />
+                <Badge text={item.badge.text} outlined={true} accent={true} />
                 <ul
                   className={clsx(
                     common.list_item_properties,

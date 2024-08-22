@@ -41,11 +41,7 @@ export const StaffType_3 = async () => {
                   custom.list_item_content,
                 )}
               >
-                <Badge
-                  text={item.badge.text}
-                  outlined={item.badge.outlined}
-                  accent={true}
-                />
+                <Badge text={item.badge.text} outlined={true} accent={true} />
                 <span
                   className={clsx(
                     'base_subtitle',

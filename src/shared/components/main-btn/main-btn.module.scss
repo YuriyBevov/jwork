@@ -21,6 +21,13 @@
   color: var(--primary);
 }
 
+.simple {
+  border-color: transparent;
+  color: var(--primary);
+  padding: 20px 0;
+  background-color: transparent;
+}
+
 .rounded_xs {
   border-radius: 5px;
 }
