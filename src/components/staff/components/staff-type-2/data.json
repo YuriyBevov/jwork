@@ -9,9 +9,7 @@
         "id": "1",
         "title": "Константинов Константин Константинович!",
         "badge": {
-          "text": "Генеральный директор",
-          "outlined": true,
-          "accent": true
+          "text": "Генеральный директор"
         },
         "image": {
           "url": "/assets/images/staff/staff-1.png",
@@ -25,9 +23,7 @@
         "id": "2",
         "title": "Константинов Константин Константинович",
         "badge": {
-          "text": "Системный аналитик",
-          "outlined": true,
-          "accent": true
+          "text": "Системный аналитик"
         },
         "image": {
           "url": "/assets/images/staff/staff-2.png",
@@ -41,9 +37,7 @@
         "id": "3",
         "title": "Ионова Валерия Сергеевна",
         "badge": {
-          "text": "Менеджер по продажам",
-          "outlined": true,
-          "accent": true
+          "text": "Менеджер по продажам"
         },
         "image": {
           "url": "/assets/images/staff/staff-3.png",
@@ -57,9 +51,7 @@
         "id": "4",
         "title": "Иванов Иван Иванович",
         "badge": {
-          "text": "Менеджер по продажам",
-          "outlined": true,
-          "accent": true
+          "text": "Менеджер по продажам"
         },
         "image": {
           "url": "/assets/images/staff/staff-3.png",
@@ -73,9 +65,7 @@
         "id": "5",
         "title": "Константинов Константин Константинович!",
         "badge": {
-          "text": "Генеральный директор",
-          "outlined": true,
-          "accent": true
+          "text": "Генеральный директор"
         },
         "image": {
           "url": "/assets/images/staff/staff-1.png",

@@ -12,11 +12,11 @@ export interface AdvantagesDTO {
       width: number;
       height: number;
     };
-    list: NewsList[];
+    list: AdvantagesListItem[];
   };
 }
 
-interface NewsList {
+interface AdvantagesListItem {
   id: number;
   title: string;
   description: string;

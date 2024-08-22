@@ -3,11 +3,11 @@ export interface ServicesDTO {
   description?: string;
   titleAlign: string;
   content: {
-    list: ServicesList[];
+    list: ServicesListItem[];
   };
 }
 
-interface ServicesList {
+interface ServicesListItem {
   id: number;
   title: string;
   description: string;
