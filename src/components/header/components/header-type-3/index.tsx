@@ -10,13 +10,13 @@ import { MainBtn } from '@/shared/components/main-btn';
 import styles from '../header.module.scss';
 import { HeaderDTO } from '../types';
 
-export const HeaderType_1 = async () => {
+export const HeaderType_3 = async () => {
   const data: HeaderDTO = await getLocalData(
     'src/components/header/components/data.json',
   );
 
   return (
-    <header className={clsx(styles.root, styles.rounded_lg)}>
+    <header className={clsx(styles.root, styles.rounded_xs)}>
       <div className="container">
         <div className={styles.top}>
           <Link href="/" className={styles.logo}>
@@ -28,9 +28,9 @@ export const HeaderType_1 = async () => {
             />
           </Link>
 
+          <ContactBlock className={styles.contact} data={data.contactAddress} />
           <ContactBlock className={styles.contact} data={data.contactInfo} />
 
-          <MainBtn className={styles.btn} text="Кнопка" outlined />
           <MainBtn className={styles.btn} text="Кнопка заявки" />
         </div>
 
