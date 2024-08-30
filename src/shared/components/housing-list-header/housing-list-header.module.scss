@@ -1,0 +1,54 @@
+@import '../../styles/extends.scss';
+@import '../../styles/mixins.scss';
+
+.root {
+    @extend %flex-align;
+    gap: var(--gap-sm);
+    width: 100%;
+}
+
+.layout {
+  @extend %flex-align;
+  gap: var(--gap-sm);
+
+    @include container-down('root', 1360px) {
+      flex-direction: column;
+    }
+
+    &_item {
+      @extend %flex-align;
+      gap: var(--gap-sm);
+      margin-right: auto;
+
+      .title {
+        font-weight: var(--fw-b);
+        font-size: var(--fs-xxl);
+        color: var(--dark);
+      }
+
+      .note {
+        font-weight: var(--fw-b);
+        font-size: var(--fs-xxl);
+        color: var(--lighter);
+      }
+    }
+
+    &__btn_group {
+      background: var(--white);
+      border: 1px solid var(--primary);
+      margin-left: 32px;
+    }
+
+    &__btn {
+      border: none;
+      padding: 12px;
+      background: transparent;
+      @extend %flex-align;
+      gap: 8px;
+      cursor: pointer;
+    }
+    &__btn.active {
+      background: #E1EFFE;
+    }
+}
+

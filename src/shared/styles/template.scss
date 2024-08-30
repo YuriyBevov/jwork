@@ -57,6 +57,15 @@ a {
   color: var(--primary);
 }
 
+.base_quantity {
+  display: block;
+  width: 100%;
+  font-weight: 700;
+  font-size: var(--fs-xxl);
+  margin-bottom: clamp(var(--gap-xl), 6vw, var(--gap-xxl));
+  color: var(--lighter);
+}
+
 .base_subtitle {
   display: block;
   font-size: var(--base-subtitle);
@@ -79,6 +88,7 @@ a {
 
   &:has(.main-section__text) {
     .main-section__text,
+    .main-section__quantity,
     .main-section__title {
       margin-bottom: var(--gap-lg);
     }
