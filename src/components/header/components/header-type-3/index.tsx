@@ -4,8 +4,11 @@ import Link from 'next/link';
 import React from 'react';
 
 import { getLocalData } from '@/lib/localdata';
-import { ContactBlock } from '@/shared/components/contact-block/contact-block';
 import { MainBtn } from '@/shared/components/main-btn';
+import { HeaderMenu } from '@/shared/components/navigation';
+import { IconEmail } from '@/shared/icons/icon-set-1/icon_email';
+import { IconMarker } from '@/shared/icons/icon-set-1/icon_marker';
+import { IconPhone2 } from '@/shared/icons/icon-set-1/icon_phone_2';
 
 import styles from '../header.module.scss';
 import { HeaderDTO } from '../types';
@@ -28,30 +31,26 @@ export const HeaderType_3 = async () => {
             />
           </Link>
 
-          <ContactBlock className={styles.contact} data={data.contactAddress} />
-          <ContactBlock className={styles.contact} data={data.contactInfo} />
+          <div className={styles.address}>
+            <IconMarker />
+            {data.address}
+          </div>
+
+          <div>
+            <div className={styles.email}>
+              <IconEmail />
+              <a href={`mailto:${data.email}`}>{data.email}</a>
+            </div>
+            <div className={styles.phone}>
+              <IconPhone2 />
+              <a href={`tel:${data.phone.replace(/\s+/g, '')}`}>{data.phone}</a>
+            </div>
+          </div>
 
           <MainBtn className={styles.btn} text="Кнопка заявки" />
         </div>
 
-        <nav className={styles.navigation}>
-          <ul className={styles.navigation_list}>
-            {data.navigation.map((item) => (
-              <li key={item.id}>
-                <Link href="#">{item.title}</Link>
-                {item.items && (
-                  <ul>
-                    {item.items.map((subItem) => (
-                      <li key={subItem.id}>
-                        <Link href="#">{subItem.title}</Link>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </li>
-            ))}
-          </ul>
-        </nav>
+        <HeaderMenu data={data.navigation} />
       </div>
     </header>
   );

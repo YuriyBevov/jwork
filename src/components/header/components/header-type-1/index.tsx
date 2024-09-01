@@ -4,8 +4,8 @@ import Link from 'next/link';
 import React from 'react';
 
 import { getLocalData } from '@/lib/localdata';
-import { ContactBlock } from '@/shared/components/contact-block/contact-block';
 import { MainBtn } from '@/shared/components/main-btn';
+import { HeaderMenu } from '@/shared/components/navigation';
 
 import styles from '../header.module.scss';
 import { HeaderDTO } from '../types';
@@ -28,30 +28,13 @@ export const HeaderType_1 = async () => {
             />
           </Link>
 
-          <ContactBlock className={styles.contact} data={data.contactInfo} />
+          {/* <ContactBlock className={styles.contact} data={data.contactInfo} /> */}
 
           <MainBtn className={styles.btn} text="Кнопка" outlined />
           <MainBtn className={styles.btn} text="Кнопка заявки" />
         </div>
 
-        <nav className={styles.navigation}>
-          <ul className={styles.navigation_list}>
-            {data.navigation.map((item) => (
-              <li key={item.id}>
-                <Link href="#">{item.title}</Link>
-                {item.items && (
-                  <ul>
-                    {item.items.map((subItem) => (
-                      <li key={subItem.id}>
-                        <Link href="#">{subItem.title}</Link>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </li>
-            ))}
-          </ul>
-        </nav>
+        <HeaderMenu data={data.navigation} />
       </div>
     </header>
   );

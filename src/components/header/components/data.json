@@ -5,43 +5,9 @@
     "width": 120,
     "height": 30
   },
-  "contactAddress": {
-    "id": "1",
-    "items": [
-      {
-        "id": "1",
-        "type": "text",
-        "text": "г. Санкт - Петербург, ул. Комсомольская, д.6 ",
-        "icon": {
-          "title": "IconMarker",
-          "icon": "IconMarker",
-          "width": 24,
-          "height": 24
-        }
-      }
-    ]
-  },
-  "contactInfo": {
-    "id": "1",
-    "items": [
-      {
-        "id": "1",
-        "type": "tel",
-        "text": "+7 999 999 99 99",
-        "icon": {
-          "title": "IconPhone",
-          "icon": "IconPhone",
-          "width": 24,
-          "height": 24
-        }
-      },
-      {
-        "id": "2",
-        "type": "email",
-        "text": "info@gmail.com"
-      }
-    ]
-  },
+  "address": "г. Санкт - Петербург, ул. Комсомольская, д.6 ",
+  "phone": "+7 999 999 99 99",
+  "email": "info@gmail.com",
   "navigation": [
     {
       "id": "1",

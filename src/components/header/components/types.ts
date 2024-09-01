@@ -1,11 +1,12 @@
 export interface HeaderDTO {
   logo: Logo;
-  contactInfo: ContactInfo;
-  contactAddress: ContactInfo;
+  address: string;
+  phone: string;
+  email: string;
   navigation: Navigation[];
 }
 
-interface Navigation {
+export interface Navigation {
   id: string;
   title: string;
   link: string;
@@ -16,25 +17,6 @@ interface NavigationSubmenu {
   id: string;
   title: string;
   link: string;
-}
-
-interface ContactInfo {
-  id: string;
-  items: ContactInfoItem[];
-}
-
-interface ContactInfoItem {
-  id: string;
-  type: string;
-  text: string;
-  icon?: IconItem;
-}
-
-interface IconItem {
-  title: string;
-  icon: string;
-  width: number;
-  height: number;
 }
 
 interface Logo {

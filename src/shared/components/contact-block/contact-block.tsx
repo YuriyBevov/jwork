@@ -12,25 +12,17 @@ export const ContactBlock = ({
   title,
   data,
   className,
-  // icon,
 }: {
   title?: string;
   data: ContactInfo;
   className?: string;
-  // icon?: boolean;
 }) => {
   return (
     <div className={clsx(styles.root, className)}>
       {title && <span>{title}:</span>}
       <ul>
         {data.items.map((item: ContactInfoItem) => (
-          <li className={item.icon ? styles.with_icon : ''} key={item.id}>
-            {/* {icon && item.icon && item.icon?.title === 'IconMarker' && (
-              <IconMarker width={item.icon.width} height={item.icon.height} />
-            )}
-            {item.icon?.title === 'IconPhone' && (
-              <IconPhone width={item.icon.width} height={item.icon.height} />
-            )} */}
+          <li key={item.id}>
             <ContactBlockItem type={item.type}>{item.text}</ContactBlockItem>
           </li>
         ))}
