@@ -1,5 +1,6 @@
 'use client';
 
+import clsx from 'clsx';
 import Link from 'next/link';
 import React from 'react';
 
@@ -7,9 +8,15 @@ import { Navigation } from '@/components/header/components/types';
 
 import styles from './navigation.module.scss';
 
-export const HeaderMenu = ({ data }: { data: Navigation[] }) => {
+export const HeaderMenu = ({
+  data,
+  align = 'left',
+}: {
+  data: Navigation[];
+  align?: 'center' | 'right' | 'left';
+}) => {
   return (
-    <nav className={styles.navigation}>
+    <nav className={clsx(styles.root, styles[`root_${align}`])}>
       <ul>
         {data.map((item) => (
           <li key={item.id}>

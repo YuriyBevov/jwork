@@ -13,21 +13,16 @@ import { IconPhone2 } from '@/shared/icons/icon-set-1/icon_phone_2';
 import styles from '../header.module.scss';
 import { HeaderDTO } from '../types';
 
-export const HeaderType_4 = async () => {
+export const HeaderType_6 = async () => {
   const data: HeaderDTO = await getLocalData(
     'src/components/header/components/data.json',
   );
 
   return (
-    <header className={clsx(styles.root, styles.rounded_xs)}>
+    <header className={clsx(styles.root, styles.rounded_lg)}>
       <div className="container">
         <div className={styles.top}>
-          <div className={clsx(styles.address, styles.icon)}>
-            <IconMarker width={24} height={24} />
-            <span>{data.address}</span>
-          </div>
-
-          <Link href="/" className={clsx(styles.logo, styles.center)}>
+          <Link href="/" className={styles.logo}>
             <Image
               src={data.logo.src}
               width={data.logo.width}
@@ -36,21 +31,26 @@ export const HeaderType_4 = async () => {
             />
           </Link>
 
-          <div className={styles.info}>
-            <div className={styles.icon}>
-              <IconEmail width={20} height={16} />
-              <a href={`mailto:${data.email}`}>{data.email}</a>
-            </div>
-            <div className={styles.icon}>
-              <IconPhone2 width={20} height={18} />
-              <a href={`tel:${data.phone.replace(/\s+/g, '')}`}>{data.phone}</a>
-            </div>
+          <div className={clsx(styles.icon)}>
+            <IconMarker width={24} height={24} />
+            <span>{data.address}</span>
           </div>
 
+          <a className={styles.icon} href={`mailto:${data.email}`}>
+            <IconEmail width={20} height={16} />
+          </a>
+          <a
+            className={styles.icon}
+            href={`tel:${data.phone.replace(/\s+/g, '')}`}
+          >
+            <IconPhone2 width={20} height={18} />
+          </a>
+
+          <MainBtn className={styles.btn} text="Кнопка" outlined />
           <MainBtn className={styles.btn} text="Кнопка заявки" />
         </div>
 
-        <HeaderMenu align="center" data={data.navigation} />
+        <HeaderMenu data={data.navigation} />
       </div>
     </header>
   );

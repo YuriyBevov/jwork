@@ -2,6 +2,7 @@ import {
   HeaderType_1,
   HeaderType_3,
   HeaderType_4,
+  HeaderType_6,
 } from '@/components/header/components';
 
 export default function Headers() {
@@ -10,6 +11,7 @@ export default function Headers() {
       <HeaderType_1 />
       <HeaderType_3 />
       <HeaderType_4 />
+      <HeaderType_6 />
     </>
   );
 }
