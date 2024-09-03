@@ -31,18 +31,18 @@ export const HeaderType_3 = async () => {
             />
           </Link>
 
-          <div className={styles.address}>
-            <IconMarker />
-            {data.address}
+          <div className={clsx(styles.address, styles.icon)}>
+            <IconMarker width={24} height={24} />
+            <span>{data.address}</span>
           </div>
 
-          <div>
-            <div className={styles.email}>
-              <IconEmail />
+          <div className={styles.info}>
+            <div className={styles.icon}>
+              <IconEmail width={20} height={16} />
               <a href={`mailto:${data.email}`}>{data.email}</a>
             </div>
-            <div className={styles.phone}>
-              <IconPhone2 />
+            <div className={styles.icon}>
+              <IconPhone2 width={20} height={18} />
               <a href={`tel:${data.phone.replace(/\s+/g, '')}`}>{data.phone}</a>
             </div>
           </div>

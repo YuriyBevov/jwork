@@ -28,7 +28,8 @@ export const HeaderType_1 = async () => {
             />
           </Link>
 
-          {/* <ContactBlock className={styles.contact} data={data.contactInfo} /> */}
+          <a href={`mailto:${data.email}`}>{data.email}</a>
+          <a href={`tel:${data.phone.replace(/\s+/g, '')}`}>{data.phone}</a>
 
           <MainBtn className={styles.btn} text="Кнопка" outlined />
           <MainBtn className={styles.btn} text="Кнопка заявки" />
