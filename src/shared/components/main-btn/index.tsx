@@ -10,6 +10,7 @@ type Props = {
   rounded?: 'xs' | 'lg';
   text?: string;
   type?: 'link' | 'submit' | 'button';
+  className?: string;
 };
 
 export const MainBtn: React.FC<Props> = ({
@@ -18,6 +19,7 @@ export const MainBtn: React.FC<Props> = ({
   bordered,
   simple,
   text = 'Подробнее',
+  className,
 }) => {
   return (
     <button
@@ -31,6 +33,7 @@ export const MainBtn: React.FC<Props> = ({
             ? styles.rounded_lg
             : null,
         styles.root,
+        className,
       )}
     >
       {text}
