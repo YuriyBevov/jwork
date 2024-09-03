@@ -35,7 +35,7 @@ export const HeaderType_1 = async () => {
           <MainBtn className={styles.btn} text="Кнопка заявки" />
         </div>
 
-        <HeaderMenu data={data.navigation} />
+        <HeaderMenu align="center" data={data.navigation} />
       </div>
     </header>
   );

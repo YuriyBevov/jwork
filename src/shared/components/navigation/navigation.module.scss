@@ -1,12 +1,17 @@
 @import '../../styles/extends.scss';
 @import '../../styles/mixins.scss';
 
-.navigation {
+.root {
+  &_center {
+    ul {
+      justify-content: center;
+    }
+  }
+
   ul {
     @extend %flex-align;
     @extend %list-reset;
     gap: var(--gap-xl);
-    justify-content: center;
     li {
       position: relative;
       padding: var(--gap-md) 0;
