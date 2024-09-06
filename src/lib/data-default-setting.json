@@ -24,6 +24,21 @@
       "id": "27",
       "type": "news",
       "templateID": "7"
+    },
+    {
+      "id": "25",
+      "type": "news",
+      "templateID": "5"
+    },
+    {
+      "id": "26",
+      "type": "news",
+      "templateID": "6"
+    },
+    {
+      "id": "2",
+      "type": "staff",
+      "templateID": "2" 
     }
   ]
 }
