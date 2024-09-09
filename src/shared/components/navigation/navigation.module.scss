@@ -1,0 +1,53 @@
+@import '../../styles/extends.scss';
+@import '../../styles/mixins.scss';
+
+.root {
+  &_center {
+    ul {
+      justify-content: center;
+    }
+  }
+
+  ul {
+    @extend %flex-align;
+    @extend %list-reset;
+    gap: var(--gap-xl);
+    li {
+      position: relative;
+      padding: var(--gap-md) 0;
+
+      &:hover {
+        ul {
+          display: flex;
+        }
+      }
+
+      ul {
+        position: absolute;
+        @extend %flex-column;
+        gap: var(--gap-xs);
+        background-color: #fff;
+        padding: var(--gap-sm);
+        min-width: 250px;
+        top: 50px;
+        display: none;
+        box-shadow:
+          0 0 0 1px rgba(0, 0, 0, 0.1),
+          0 4px 11px rgba(0, 0, 0, 0.1);
+
+        li {
+          list-style-type: none;
+          padding: 0;
+        }
+      }
+    }
+
+    a {
+      color: var(--dark);
+
+      &:hover {
+        color: var(--primary);
+      }
+    }
+  }
+}

@@ -6,11 +6,14 @@ import React from 'react';
 import { getLocalData } from '@/lib/localdata';
 import { MainBtn } from '@/shared/components/main-btn';
 import { HeaderMenu } from '@/shared/components/navigation';
+import { IconEmail } from '@/shared/icons/icon-set-1/icon_email';
+import { IconMarker } from '@/shared/icons/icon-set-1/icon_marker';
+import { IconPhone2 } from '@/shared/icons/icon-set-1/icon_phone_2';
 
 import styles from '../header.module.scss';
 import { HeaderDTO } from '../types';
 
-export const HeaderType_1 = async () => {
+export const HeaderType_6 = async () => {
   const data: HeaderDTO = await getLocalData(
     'src/components/header/components/data.json',
   );
@@ -28,14 +31,26 @@ export const HeaderType_1 = async () => {
             />
           </Link>
 
-          <a href={`mailto:${data.email}`}>{data.email}</a>
-          <a href={`tel:${data.phone.replace(/\s+/g, '')}`}>{data.phone}</a>
+          <div className={clsx(styles.icon)}>
+            <IconMarker width={24} height={24} />
+            <span>{data.address}</span>
+          </div>
+
+          <a className={styles.icon} href={`mailto:${data.email}`}>
+            <IconEmail width={20} height={16} />
+          </a>
+          <a
+            className={styles.icon}
+            href={`tel:${data.phone.replace(/\s+/g, '')}`}
+          >
+            <IconPhone2 width={20} height={18} />
+          </a>
 
           <MainBtn className={styles.btn} text="Кнопка" outlined />
           <MainBtn className={styles.btn} text="Кнопка заявки" />
         </div>
 
-        <HeaderMenu align="center" data={data.navigation} />
+        <HeaderMenu data={data.navigation} />
       </div>
     </header>
   );

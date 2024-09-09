@@ -3,68 +3,96 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
+import { MainSectionLayout } from '@/layouts/main-section-layout';
 import { getLocalData } from '@/lib/localdata';
+import { Badge } from '@/shared/components/badge';
+import { MainBtn } from '@/shared/components/main-btn';
 import { Slider } from '@/shared/components/slider';
-import { IconLinkArrow } from '@/shared/icons/icon-link-arrow';
 
-import styles from './news-type-5.module.scss';
-import { NewsDTO } from './types';
+import { NewsDTO } from '../../types';
+import common from '../news.module.scss';
+import custom from './news-type-5.module.scss';
 
 export const NewsType_5 = async () => {
   const data: NewsDTO = await getLocalData(
-    'src/components/news/news-type-5/data.json',
+    'src/components/news/components/news-type-5/data.json',
   );
 
   return (
-    <section className={styles.root}>
-      <div className="container">
-        <h2 className={clsx('base_title', styles.base_title)}>{data.title}</h2>
-        <Slider slidesPerView={3} slidesPerViewTabletLg={2} spaceBetween={40}>
-          {data.list.map((item) => (
-            <div key={item.id} className={styles.item}>
-              <Image
-                src={item.image.url}
-                alt={item.image.alt}
-                width={item.image.width}
-                height={item.image.height}
-              />
-              <div className={styles.item_info}>
-                <ul className={styles.item_list}>
-                  <li
-                    className={clsx(
-                      styles.item_list__item,
-                      styles.item_list__category,
-                    )}
-                  >
-                    {item.category}
-                  </li>
-                  <li
-                    className={clsx(
-                      styles.item_list__item,
-                      styles.item_list__date,
-                    )}
-                  >
-                    {item.timeRead}
-                  </li>
-                </ul>
-                <Link
-                  href="#"
-                  className={clsx('base_subtitle', styles.base_subtitle)}
-                >
-                  {item.title}
-                </Link>
-                <p
-                  className={clsx('base_text', styles.base_text)}
-                  dangerouslySetInnerHTML={{ __html: item.description }}
+    <MainSectionLayout
+      title={data.title}
+      description={data.description}
+      align={data.titleAlign}
+    >
+      <div className={clsx(common.root, custom.root)}>
+        <Slider
+          slidesPerViewXs={1}
+          slidesPerViewMobile={2}
+          slidesPerViewTablet={2}
+          slidesPerViewTabletLg={3}
+          slidesPerView={4}
+          spaceBetween={24}
+        >
+          {data.content.list.map((item) => (
+            <div
+              key={item.id}
+              className={clsx(common.list_item, custom.list_item)}
+            >
+              <Link
+                href={item.detailPageUrl}
+                key={item.id}
+                className={clsx(
+                  common.list_item_content,
+                  custom.list_item_content,
+                )}
+              >
+                <Image
+                  src={item.image.url}
+                  alt={item.image.alt}
+                  width={item.image.width}
+                  height={item.image.height}
                 />
-                <Link className={styles.item_link} href="#">
-                  Читать подробнее <IconLinkArrow />
-                </Link>
-              </div>
+                <div
+                  className={clsx(
+                    common.list_item_content_wrapper,
+                    custom.list_item_content_wrapper,
+                  )}
+                >
+                  <div
+                    className={clsx(
+                      common.list_item_content_header,
+                      custom.list_item_content_header,
+                    )}
+                  >
+                    <Badge text={item.badge.text} />
+                    <span>{item.note}</span>
+                  </div>
+
+                  <span
+                    className={clsx(
+                      'base_subtitle',
+                      common.base_subtitle,
+                      custom.base_subtitle,
+                    )}
+                  >
+                    {item.title}
+                  </span>
+                  <p
+                    className={clsx(
+                      'base_text',
+                      common.base_text,
+                      custom.base_text,
+                    )}
+                  >
+                    {item.description}
+                  </p>
+                  <MainBtn simple={true} text={'Читать далее...'} />
+                </div>
+              </Link>
             </div>
           ))}
         </Slider>
       </div>
-    </section>
+    </MainSectionLayout>
   );
 };

@@ -67,11 +67,19 @@ export interface RequisitesItem {
 export interface ContactInfo {
   id: string;
   title?: string;
-  items: ContactInfoItems[];
+  items: ContactInfoItem[];
 }
 
-export interface ContactInfoItems {
+export interface ContactInfoItem {
   id: string;
   type: string;
   text: string;
+  icon?: IconItem;
+}
+
+interface IconItem {
+  title: string;
+  icon: string;
+  width: number;
+  height: number;
 }
