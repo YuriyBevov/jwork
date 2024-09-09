@@ -1,2 +1,2 @@
 export { Slider } from './slider';
-export { SliderHousingList } from './slider-housing-list/slider-housing-list';
+export { SliderResultList } from './slider-result-list/slider-result-list';

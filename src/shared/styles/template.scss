@@ -77,6 +77,12 @@ a {
   background: var(--primary);
 }
 
+.slider-result-list-pagination .swiper-pagination-bullet {
+  width: 24px !important;
+  height: 2px !important;
+  background: #d1d5db !important;
+}
+
 .main-section {
   @extend %section-offset;
   &.align_center {
