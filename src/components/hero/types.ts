@@ -15,5 +15,5 @@ interface HeroItem {
   id: string;
   type: string;
   title: string;
-  content?: { id: string; title: string }[];
+  content?: { value: string }[];
 }
