@@ -1,4 +1,4 @@
-import { Input, Select } from '@mantine/core';
+import { Autocomplete, Select } from '@mantine/core';
 import React from 'react';
 
 import { HeaderType_1 } from '@/components/header/components';
@@ -7,6 +7,8 @@ import { Tab, TabContent, TabList } from '@/shared/components/tab';
 
 import { HeroDTO } from '../../types';
 import styles from '../hero.module.scss';
+
+i;
 
 export const HeroType_1 = async () => {
   const data: HeroDTO = await getLocalData(
@@ -27,6 +29,16 @@ export const HeroType_1 = async () => {
             <Tab className={styles.tab}>
               <TabList className={styles.tab_list}>
                 {data.tabs.map((tab) => (
+                  // <SegmentedControl
+                  //   data={
+                  //     key={tab.id}
+                  //     item.content &&
+                  //     item.content.map((contentItem) => ({
+                  //       label: contentItem.value,
+                  //       value: contentItem.value,
+                  //     }))
+                  //   }
+                  // />
                   <React.Fragment key={tab.id}>{tab.title}</React.Fragment>
                 ))}
               </TabList>
@@ -47,9 +59,30 @@ export const HeroType_1 = async () => {
                           }
                           defaultValue={item.content?.[0].value}
                           allowDeselect={false}
+                          comboboxProps={{
+                            transitionProps: {
+                              transition: 'pop',
+                              duration: 200,
+                            },
+                            shadow: 'md',
+                          }}
+                          // rightSection={}
                         />
                       ) : (
-                        <Input key={item.id} />
+                        <>
+                          <Autocomplete
+                            className={styles.select}
+                            placeholder={item.title}
+                            data={
+                              item.content &&
+                              item.content.map((contentItem) => ({
+                                label: contentItem.value,
+                                value: contentItem.value,
+                              }))
+                            }
+                            limit={5}
+                          />
+                        </>
                       ),
                     )}
                   </div>

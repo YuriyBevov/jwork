@@ -92,6 +92,57 @@ a {
   }
 }
 
+.mantine-Autocomplete-options,
+.mantine-Select-dropdown {
+  position: absolute;
+  background-color: #fff;
+  padding: 12px;
+  border-radius: 10px;
+
+  > div {
+    overflow: auto;
+  }
+
+  svg {
+    display: none;
+  }
+}
+
+.mantine-ScrollArea-viewport {
+  overflow: auto !important;
+}
+
+.mantine-Select-option {
+  color: var(--gray);
+  cursor: pointer;
+  &:not(:last-child) {
+    border-bottom: 1px solid var(--gray);
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+  }
+
+  &[aria-selected='true'] {
+    color: var(--black);
+  }
+}
+
+.mantine-Input-wrapper,
+.mantine-Autocomplete-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  div {
+    position: absolute;
+    right: 14px;
+    top: 14px;
+    bottom: 14px;
+    z-index: 0;
+    width: 20px;
+    height: 20px;
+  }
+}
+
 .visible-items {
   white-space: nowrap;
   ul {
