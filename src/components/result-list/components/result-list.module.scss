@@ -17,9 +17,7 @@
     gap: var(--gap-lg);
 
     @include container-down('root', $tablet-width) {
-      & {
-        grid-template-columns: 1fr;
-      }
+      grid-template-columns: 1fr;
     }
 
     &_price {
@@ -66,12 +64,20 @@
         font-weight: var(--fw-m);
         font-size: var(--fs-lg);
         color: var(--dark);
+
+        @include container-down('root', $tablet-width) {
+          @include text-truncate(1);
+        }
       }
 
       .base_subtitle {
         font-weight: var(--fw-r);
         font-size: var(--fs-sm);
         color: var(--dark);
+
+        @include container-down('root', $tablet-width) {
+          @include text-truncate(1);
+        }
       }
 
       .base_text {
@@ -86,11 +92,9 @@
       margin-bottom: 8px;
 
       @include container-down('root', $mobile-width) {
-        & {
-          flex-direction: column;
-          align-items: center;
-          gap: var(--gap-base);
-        }
+        flex-direction: column;
+        align-items: center;
+        gap: var(--gap-base);
       }
 
       &_item {
@@ -98,9 +102,7 @@
         gap: var(--gap-base);
 
         @include container-down('root', $mobile-width) {
-          & {
-            width: 100%;
-          }
+          width: 100%;
         }
 
         img {
@@ -112,31 +114,34 @@
     }
 
     &_properties {
+      @extend %list-reset;
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      column-gap: 128px;
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 80px;
       row-gap: 8px;
       padding: 16px 0;
       border-top: 1px solid var(--lighter);
       border-bottom: 1px solid var(--lighter);
 
       @include container-down('root', $tablet-lg-width) {
-        & {
-          grid-template-columns: 1fr;
+        grid-template-columns: 1fr;
+      }
+
+      &_content {
+        @extend %flex-column;
+
+        &_details {
+          @extend %flex-align;
+          font-weight: var(--fw-r);
+          font-size: var(--fs-sm);
+          color: var(--lighter);
         }
-      }
 
-      &_details {
-        @extend %flex-align;
-        font-weight: var(--fw-r);
-        font-size: var(--fs-sm);
-        color: var(--lighter);
-      }
-
-      &_details span:last-child {
-        margin-left: auto;
-        font-weight: var(--fw-m);
-        color: var(--dark);
+        &_details span:last-child {
+          margin-left: auto;
+          font-weight: var(--fw-m);
+          color: var(--dark);
+        }
       }
     }
 

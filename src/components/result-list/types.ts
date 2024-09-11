@@ -37,14 +37,18 @@ interface ResultListListItem {
       };
     },
   ];
-  properties: {
-    type: string;
-    level: string;
-    square: string;
-    kitchensArea: string;
-    totalArea: string;
-    roomArea: string;
-  };
+  properties: [
+    {
+      'Тип квартиры': string;
+      Этаж: string;
+      Площадь: string;
+    },
+    {
+      'Площадь кухни': string;
+      'Общая площадь': string;
+      'Площадь комнат': string;
+    },
+  ];
   properties_alt: [
     {
       title: string;

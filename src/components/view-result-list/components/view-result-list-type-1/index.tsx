@@ -15,6 +15,29 @@ export const ViewResultListType_1 = () => {
   const [data, setData] = useState<ResultListDTO | null>(null);
   const [isContent, setIsContent] = useState<boolean>(true);
   const [isPopup, setIsPopup] = useState<boolean>(false);
+  // Состояние для отслеживания количества видимых элементов
+  const [visibleCounts, setVisibleCounts] = useState<Record<number, number>>(
+    {},
+  );
+  const [visibleCountsLocations, setVisibleCountsLocations] = useState<
+    Record<number, number>
+  >({});
+
+  // Функция для обработки нажатия кнопки "Показать ещё"
+  const handleShowMore = (id: number) => {
+    setVisibleCounts((prevCounts) => ({
+      ...prevCounts,
+      [id]: (prevCounts[id] || 2) + 2,
+    }));
+  };
+
+  // Функция для обработки нажатия кнопки "Показать ещё"
+  const handleShowMoreLocation = (id: number) => {
+    setVisibleCountsLocations((prevCounts) => ({
+      ...prevCounts,
+      [id]: (prevCounts[id] || 1) + 1,
+    }));
+  };
 
   const openPopup = () => {
     setIsPopup(true);
@@ -51,7 +74,13 @@ export const ViewResultListType_1 = () => {
       {isContent ? (
         <ResultListType_1 data={data} />
       ) : (
-        <ResultListTypeColumn_1 data={data} />
+        <ResultListTypeColumn_1
+          data={data}
+          handleShowMore={handleShowMore}
+          handleShowMoreLocation={handleShowMoreLocation}
+          visibleCounts={visibleCounts}
+          visibleCountsLocations={visibleCountsLocations}
+        />
       )}
       {isPopup && <FilterPopup closePopup={closePopup} />}
     </MainSectionLayout>

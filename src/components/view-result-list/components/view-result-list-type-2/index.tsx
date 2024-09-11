@@ -12,6 +12,29 @@ import { ResultListDTO } from '../../types';
 export const ViewResultListType_2 = () => {
   const [data, setData] = useState<ResultListDTO | null>(null);
   const [isContent, setIsContent] = useState<boolean>(true);
+  // Состояние для отслеживания количества видимых элементов
+  const [visibleCounts, setVisibleCounts] = useState<Record<number, number>>(
+    {},
+  );
+  const [visibleCountsLocations, setVisibleCountsLocations] = useState<
+    Record<number, number>
+  >({});
+
+  // Функция для обработки нажатия кнопки "Показать ещё"
+  const handleShowMore = (id: number) => {
+    setVisibleCounts((prevCounts) => ({
+      ...prevCounts,
+      [id]: (prevCounts[id] || 2) + 2,
+    }));
+  };
+
+  // Функция для обработки нажатия кнопки "Показать ещё"
+  const handleShowMoreLocation = (id: number) => {
+    setVisibleCountsLocations((prevCounts) => ({
+      ...prevCounts,
+      [id]: (prevCounts[id] || 1) + 1,
+    }));
+  };
 
   useEffect(() => {
     async function fetchData() {
@@ -40,7 +63,13 @@ export const ViewResultListType_2 = () => {
       {isContent ? (
         <ResultListType_2 data={data} />
       ) : (
-        <ResultListTypeColumn_2 data={data} />
+        <ResultListTypeColumn_2
+          data={data}
+          handleShowMore={handleShowMore}
+          handleShowMoreLocation={handleShowMoreLocation}
+          visibleCounts={visibleCounts}
+          visibleCountsLocations={visibleCountsLocations}
+        />
       )}
     </MainSectionLayout>
   );

@@ -1,6 +1,5 @@
 {
-  "blocks": [
-    {
+  "blocks": [{
       "id": "21",
       "type": "ViewresultList",
       "templateID": "1"

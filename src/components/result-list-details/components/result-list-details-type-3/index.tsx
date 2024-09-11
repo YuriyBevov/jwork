@@ -97,51 +97,59 @@ export const ResultLisDetailstType_3 = async () => {
                   ))}
                 </ul>
                 <ul className={clsx(common.list_item_properties)}>
-                  {item.properties.map((elem, index) => (
-                    <li
-                      key={`${elem.id}-${index}`}
-                      className={clsx(common.list_item_properties_content)}
-                    >
-                      <div
-                        className={clsx(
-                          common.list_item_properties_content_details,
-                        )}
+                  {item.properties.map((elem, index) => {
+                    // Разделяем ключи на обычные и массивные
+                    const simpleValues = Object.entries(elem).filter(
+                      ([, value]) => !Array.isArray(value),
+                    );
+                    const arrayValues = Object.entries(elem).filter(
+                      ([, value]) => Array.isArray(value),
+                    );
+
+                    return (
+                      <li
+                        key={`properties-${index}`}
+                        className={clsx(common.list_item_properties_content)}
                       >
-                        <span>Дом:</span>
-                        <span>{elem.house}</span>
-                      </div>
-                      <div
-                        className={clsx(
-                          common.list_item_properties_content_details,
-                        )}
-                      >
-                        <span>Корпус:</span>
-                        <span>{elem.frame}</span>
-                      </div>
-                      <div
-                        className={clsx(
-                          common.list_item_properties_content_details,
-                        )}
-                      >
-                        <span>Этажей:</span>
-                        <span>{elem.lavel}</span>
-                      </div>
-                      <div
-                        className={clsx(
-                          common.list_item_properties_content_details,
-                        )}
-                      >
-                        <span>Срок сдачи:</span>
-                        <div>
-                          {elem.completionDate.map((item, index) => (
-                            <span key={`${item.title}-${index}`}>
-                              {item.title}
+                        {/* Сначала выводим простые значения */}
+                        {simpleValues.map(([key, value]) => (
+                          <div
+                            key={key}
+                            className={clsx(
+                              common.list_item_properties_content_details,
+                            )}
+                          >
+                            <span>{key}:</span>
+                            <span>
+                              {' '}
+                              {typeof value === 'string' ||
+                              typeof value === 'number'
+                                ? value
+                                : JSON.stringify(value)}
                             </span>
-                          ))}
-                        </div>
-                      </div>
-                    </li>
-                  ))}
+                          </div>
+                        ))}
+
+                        {/* Затем выводим массивы, включая только те, которые нужно показать последними */}
+                        {arrayValues.map(([key, value]) => (
+                          <div
+                            key={key}
+                            className={clsx(
+                              common.list_item_properties_content_details,
+                            )}
+                          >
+                            <span>{key}:</span>
+                            <div>
+                              {Array.isArray(value) &&
+                                value.map((v, i) => (
+                                  <span key={`${v.title}-${i}`}>{v.title}</span>
+                                ))}
+                            </div>
+                          </div>
+                        ))}
+                      </li>
+                    );
+                  })}
                 </ul>
                 <span className={clsx('base_title', common.base_title)}>
                   {item.info.title}

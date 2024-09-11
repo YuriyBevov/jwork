@@ -36,11 +36,10 @@ interface ResultListListDetalilsItem {
   ];
   properties: [
     {
-      id: number;
-      house: string;
-      frame: string;
-      lavel: string;
-      completionDate: [
+      Дом: string;
+      Корпус: string;
+      Этажей: string;
+      'Срок сдачи': [
         {
           title: string;
         },

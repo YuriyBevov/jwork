@@ -1,19 +1,20 @@
-export interface ResultListColumnDTO {
+export interface ResultListDTO {
   title: string;
   titleAlign?: string;
   description?: string;
   quantity?: string;
   content: {
-    list: ResultListListColumnItem[];
+    list: ResultListListItem[];
   };
 }
 
-interface ResultListListColumnItem {
+interface ResultListListItem {
   id: number;
   title: string;
   description?: string;
   badge: {
     text: string;
+    text_2: string;
   };
   image: [
     {
@@ -36,14 +37,26 @@ interface ResultListListColumnItem {
       };
     },
   ];
-  properties: {
-    type: string;
-    level: string;
-    square: string;
-    kitchensArea: string;
-    totalArea: string;
-    roomArea: string;
-  };
+  properties: [
+    {
+      'Тип квартиры': string;
+      Этаж: string;
+      Площадь: string;
+    },
+    {
+      'Площадь кухни': string;
+      'Общая площадь': string;
+      'Площадь комнат': string;
+    },
+  ];
+  properties_alt: [
+    {
+      title: string;
+      description: string;
+    },
+  ];
   price: string;
+  price_alt: string;
   priceMeasure: string;
+  priceMeasure_alt: string;
 }

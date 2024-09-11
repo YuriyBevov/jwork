@@ -5,13 +5,36 @@ import React, { useEffect, useState } from 'react';
 import { MainSectionLayout } from '@/layouts/main-section-layout';
 import { ViewMode } from '@/shared/components/view-mode';
 
-import { ResultListTypeColumn_1 } from '../../../result-list-column/components/result-list-type-column-1';
-import { ResultListType_1 } from '../../../result-list/components/result-list-type-1';
+import { ResultListTypeColumn_3 } from '../../../result-list-column/components/result-list-type-column-3';
+import { ResultListType_3 } from '../../../result-list/components/result-list-type-3';
 import { ResultListDTO } from '../../types';
 
 export const ViewResultListType_3 = () => {
   const [data, setData] = useState<ResultListDTO | null>(null);
   const [isContent, setIsContent] = useState<boolean>(true);
+  // Состояние для отслеживания количества видимых элементов
+  const [visibleCounts, setVisibleCounts] = useState<Record<number, number>>(
+    {},
+  );
+  const [visibleCountsLocations, setVisibleCountsLocations] = useState<
+    Record<number, number>
+  >({});
+
+  // Функция для обработки нажатия кнопки "Показать ещё"
+  const handleShowMore = (id: number) => {
+    setVisibleCounts((prevCounts) => ({
+      ...prevCounts,
+      [id]: (prevCounts[id] || 2) + 2,
+    }));
+  };
+
+  // Функция для обработки нажатия кнопки "Показать ещё"
+  const handleShowMoreLocation = (id: number) => {
+    setVisibleCountsLocations((prevCounts) => ({
+      ...prevCounts,
+      [id]: (prevCounts[id] || 1) + 1,
+    }));
+  };
 
   useEffect(() => {
     async function fetchData() {
@@ -39,9 +62,15 @@ export const ViewResultListType_3 = () => {
         isContent={isContent}
       />
       {isContent ? (
-        <ResultListType_1 data={data} />
+        <ResultListType_3 data={data} />
       ) : (
-        <ResultListTypeColumn_1 data={data} />
+        <ResultListTypeColumn_3
+          data={data}
+          handleShowMore={handleShowMore}
+          handleShowMoreLocation={handleShowMoreLocation}
+          visibleCounts={visibleCounts}
+          visibleCountsLocations={visibleCountsLocations}
+        />
       )}
     </MainSectionLayout>
   );

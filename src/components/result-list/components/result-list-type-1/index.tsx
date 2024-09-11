@@ -36,12 +36,13 @@ export const ResultListType_1 = ({ data }: { data: ResultListDTO }) => {
               </SliderResultList>
             </div>
             <div className={clsx(common.list_item_content)}>
-              <div className={clsx(common.list_item_content_badge)}>
-                <Badge text={item.badge.text} outlined={true} accent={true} />
+              <div className={clsx(common.list_item_content)}>
+                <div className={clsx(common.list_item_content_badge)}>
+                  <Badge text={item.badge.text} outlined={true} accent={true} />
+                </div>
+                <span>{data.quantity}</span>
               </div>
-              <span className={clsx('base_title', common.base_title)}>
-                {item.title}
-              </span>
+              <span className={clsx(common.base_title)}>{item.title}</span>
               {item.badge.text_2 !== '' && (
                 <div
                   className={clsx(
@@ -88,32 +89,26 @@ export const ResultListType_1 = ({ data }: { data: ResultListDTO }) => {
                 ))}
               </ul>
               {!item.properties_alt ? (
-                <div className={clsx(common.list_item_properties)}>
-                  <div className={clsx(common.list_item_properties_details)}>
-                    <span>Тип квартиры:</span>
-                    <span>{item.properties.type}</span>
-                  </div>
-                  <div className={clsx(common.list_item_properties_details)}>
-                    <span>Площадь кухни:</span>
-                    <span>{item.properties.kitchensArea}</span>
-                  </div>
-                  <div className={clsx(common.list_item_properties_details)}>
-                    <span>Этаж:</span>
-                    <span>{item.properties.level}</span>
-                  </div>
-                  <div className={clsx(common.list_item_properties_details)}>
-                    <span>Общая площадь:</span>
-                    <span>{item.properties.totalArea}</span>
-                  </div>
-                  <div className={clsx(common.list_item_properties_details)}>
-                    <span>Площадь:</span>
-                    <span>{item.properties.square}</span>
-                  </div>
-                  <div className={clsx(common.list_item_properties_details)}>
-                    <span>Площадь комнат:</span>
-                    <span>{item.properties.roomArea}</span>
-                  </div>
-                </div>
+                <ul className={clsx(common.list_item_properties)}>
+                  {item.properties.map((elem, index) => (
+                    <li
+                      key={`properties-${index}`}
+                      className={clsx(common.list_item_properties_content)}
+                    >
+                      {Object.entries(elem).map(([key, value]) => (
+                        <div
+                          key={key}
+                          className={clsx(
+                            common.list_item_properties_content_details,
+                          )}
+                        >
+                          <span>{key}:</span>
+                          <span>{value}</span>
+                        </div>
+                      ))}
+                    </li>
+                  ))}
+                </ul>
               ) : (
                 <div className={clsx(common.list_item_properties_alt)}>
                   {item.properties_alt?.map((elem, index) => (

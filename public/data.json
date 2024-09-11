@@ -3,17 +3,15 @@
   "titleAlign": "center",
   "quantity": "3586",
   "content": {
-    "list": [
-      {
+    "list": [{
         "id": "1",
         "title": "Просторная 2-х комнатная квартира ЖК “Белые ночи” д. 13, стр. 17, кв. 292",
         "description": "Московская обл, г Видное, тер ЖК Видный город, ул имени народного артиста СССР Святослава Рихтера, д 5 к 2, кв 146 Гагаринский р-он",
-        "badge": { 
+        "badge": {
           "text": "Новостройка или вторичка",
-          "text_2": "Есть сданные дома" 
+          "text_2": "Есть сданные дома"
         },
-        "location": [
-          {
+        "location": [{
             "name": "Ховрино",
             "time": "14",
             "image": {
@@ -32,54 +30,63 @@
               "width": 16,
               "height": 16
             }
+          },
+          {
+            "name": "Сокол",
+            "time": "25",
+            "image": {
+              "url": "/assets/images/result-list/result-list_icon_2.svg",
+              "alt": "Сокол",
+              "width": 16,
+              "height": 16
+            }
           }
         ],
-        "image": [
-          {
-          "url": "/assets/images/result-list/result-list_img_1.png",
-          "alt": "Картинка_1",
-          "width": 420,
-          "height": 410
-        },
-          {
-          "url": "/assets/images/result-list/result-list_img_2.png",
-          "alt": "Картинка_2",
-          "width": 420,
-          "height": 410
-        }
-      ],
-        "properties": 
-          {
-            "type": "2 -ккв.",
-            "level": "10 / 25",
-            "square": "2 050,69 м2",
-            "kitchensArea": "150,69 м2",
-            "totalArea": "50,69 м2",
-            "roomArea": "50,69 м2"
+        "image": [{
+            "url": "/assets/images/result-list/result-list_img_1.png",
+            "alt": "Картинка_1",
+            "width": 420,
+            "height": 410
           },
-        "properties_alt": 
-          [
-            {
-              "title": "Студия",
-              "description": "4,56 - 156,37 млн."
-            },
-            {
-              "title": "1 - комн.",
-              "description": "4,56 - 156,37 млн."
-            },
-            {
-              "title": "2 - комн.",
-              "description": "4,56 - 156,37 млн."
-            },
-            {
-              "title": "3 - комн.",
-              "description": "4,56 - 156,37 млн."
-            },
-            {
-              "title": "4 - комн.",
-              "description": "4,56 - 156,37 млн."
-            }
-          ],
+          {
+            "url": "/assets/images/result-list/result-list_img_2.png",
+            "alt": "Картинка_2",
+            "width": 420,
+            "height": 410
+          }
+        ],
+        "properties": [{
+            "Тип квартиры": "2 -ккв.",
+            "Этаж": "10 / 25",
+            "Площадь": "2 050,69 м2"
+          },
+          {
+            "Площадь кухни": "150,69 м2",
+            "Общая площадь": "50,69 м2",
+            "Площадь комнат": "50,69 м2"
+          }
+        ],
+        "properties_alt": [{
+            "title": "Студия",
+            "description": "4,56 - 156,37 млн."
+          },
+          {
+            "title": "1 - комн.",
+            "description": "4,56 - 156,37 млн."
+          },
+          {
+            "title": "2 - комн.",
+            "description": "4,56 - 156,37 млн."
+          },
+          {
+            "title": "3 - комн.",
+            "description": "4,56 - 156,37 млн."
+          },
+          {
+            "title": "4 - комн.",
+            "description": "4,56 - 156,37 млн."
+          }
+        ],
         "price": "23 584 000",
         "price_alt": "4 000 000",
         "priceMeasure": "254 542",
@@ -89,12 +96,11 @@
         "id": "2",
         "title": "Просторная 2-х комнатная квартира ЖК “Белые ночи” д. 13, стр. 17, кв. 292",
         "description": "Московская обл, г Видное, тер ЖК Видный город, ул имени народного артиста СССР Святослава Рихтера, д 5 к 2, кв 146 Гагаринский р-он",
-        "badge": { 
+        "badge": {
           "text": "Новостройка или вторичка",
-          "text_2": "" 
+          "text_2": ""
         },
-        "location": [
-          {
+        "location": [{
             "name": "Ховрино",
             "time": "14",
             "image": {
@@ -113,31 +119,42 @@
               "width": 16,
               "height": 16
             }
+          },
+          {
+            "name": "Сокол",
+            "time": "25",
+            "image": {
+              "url": "/assets/images/result-list/result-list_icon_2.svg",
+              "alt": "Сокол",
+              "width": 16,
+              "height": 16
+            }
           }
         ],
-        "image": [
-          {
-          "url": "/assets/images/result-list/result-list_img_1.png",
-          "alt": "Картинка_1",
-          "width": 420,
-          "height": 410
-        },
-          {
-          "url": "/assets/images/result-list/result-list_img_2.png",
-          "alt": "Картинка_2",
-          "width": 420,
-          "height": 410
-        }
-      ],
-        "properties": 
-          {
-            "type": "2 -ккв.",
-            "level": "10 / 25",
-            "square": "2 050,69 м2",
-            "kitchensArea": "150,69 м2",
-            "totalArea": "50,69 м2",
-            "roomArea": "50,69 м2"
+        "image": [{
+            "url": "/assets/images/result-list/result-list_img_1.png",
+            "alt": "Картинка_1",
+            "width": 420,
+            "height": 410
           },
+          {
+            "url": "/assets/images/result-list/result-list_img_2.png",
+            "alt": "Картинка_2",
+            "width": 420,
+            "height": 410
+          }
+        ],
+        "properties": [{
+            "Тип квартиры": "2 -ккв.",
+            "Этаж": "10 / 25",
+            "Площадь": "2 050,69 м2"
+          },
+          {
+            "Площадь кухни": "150,69 м2",
+            "Общая площадь": "50,69 м2",
+            "Площадь комнат": "50,69 м2"
+          }
+        ],
         "price": "23 584 000",
         "priceMeasure": "254 542"
       },
@@ -145,12 +162,11 @@
         "id": "3",
         "title": "Просторная 2-х комнатная квартира ЖК “Белые ночи” д. 13, стр. 17, кв. 292",
         "description": "Московская обл, г Видное, тер ЖК Видный город, ул имени народного артиста СССР Святослава Рихтера, д 5 к 2, кв 146 Гагаринский р-он",
-        "badge": { 
+        "badge": {
           "text": "Новостройка или вторичка",
-          "text_2": "Есть сданные дома" 
+          "text_2": "Есть сданные дома"
         },
-        "location": [
-          {
+        "location": [{
             "name": "Ховрино",
             "time": "14",
             "image": {
@@ -169,54 +185,63 @@
               "width": 16,
               "height": 16
             }
+          },
+          {
+            "name": "Сокол",
+            "time": "25",
+            "image": {
+              "url": "/assets/images/result-list/result-list_icon_2.svg",
+              "alt": "Сокол",
+              "width": 16,
+              "height": 16
+            }
           }
         ],
-        "image": [
-          {
-          "url": "/assets/images/result-list/result-list_img_1.png",
-          "alt": "Картинка_1",
-          "width": 420,
-          "height": 410
-        },
-          {
-          "url": "/assets/images/result-list/result-list_img_2.png",
-          "alt": "Картинка_2",
-          "width": 420,
-          "height": 410
-        }
-      ],
-        "properties": 
-          {
-            "type": "2 -ккв.",
-            "level": "10 / 25",
-            "square": "2 050,69 м2",
-            "kitchensArea": "150,69 м2",
-            "totalArea": "50,69 м2",
-            "roomArea": "50,69 м2"
+        "image": [{
+            "url": "/assets/images/result-list/result-list_img_1.png",
+            "alt": "Картинка_1",
+            "width": 420,
+            "height": 410
           },
-          "properties_alt": 
-          [
-            {
-              "title": "Студия",
-              "description": "4,56 - 156,37 млн."
-            },
-            {
-              "title": "1 - комн.",
-              "description": "4,56 - 156,37 млн."
-            },
-            {
-              "title": "2 - комн.",
-              "description": "4,56 - 156,37 млн."
-            },
-            {
-              "title": "3 - комн.",
-              "description": "4,56 - 156,37 млн."
-            },
-            {
-              "title": "4 - комн.",
-              "description": "4,56 - 156,37 млн."
-            }
-          ],
+          {
+            "url": "/assets/images/result-list/result-list_img_2.png",
+            "alt": "Картинка_2",
+            "width": 420,
+            "height": 410
+          }
+        ],
+        "properties": [{
+            "Тип квартиры": "2 -ккв.",
+            "Этаж": "10 / 25",
+            "Площадь": "2 050,69 м2"
+          },
+          {
+            "Площадь кухни": "150,69 м2",
+            "Общая площадь": "50,69 м2",
+            "Площадь комнат": "50,69 м2"
+          }
+        ],
+        "properties_alt": [{
+            "title": "Студия",
+            "description": "4,56 - 156,37 млн."
+          },
+          {
+            "title": "1 - комн.",
+            "description": "4,56 - 156,37 млн."
+          },
+          {
+            "title": "2 - комн.",
+            "description": "4,56 - 156,37 млн."
+          },
+          {
+            "title": "3 - комн.",
+            "description": "4,56 - 156,37 млн."
+          },
+          {
+            "title": "4 - комн.",
+            "description": "4,56 - 156,37 млн."
+          }
+        ],
         "price": "23 584 000",
         "price_alt": "4 000 000",
         "priceMeasure": "254 542",
@@ -226,12 +251,11 @@
         "id": "4",
         "title": "Просторная 2-х комнатная квартира ЖК “Белые ночи” д. 13, стр. 17, кв. 292",
         "description": "Московская обл, г Видное, тер ЖК Видный город, ул имени народного артиста СССР Святослава Рихтера, д 5 к 2, кв 146 Гагаринский р-он",
-        "badge": { 
+        "badge": {
           "text": "Новостройка или вторичка",
-          "text_2": "Есть сданные дома" 
+          "text_2": "Есть сданные дома"
         },
-        "location": [
-          {
+        "location": [{
             "name": "Ховрино",
             "time": "14",
             "image": {
@@ -250,54 +274,63 @@
               "width": 16,
               "height": 16
             }
+          },
+          {
+            "name": "Сокол",
+            "time": "25",
+            "image": {
+              "url": "/assets/images/result-list/result-list_icon_2.svg",
+              "alt": "Сокол",
+              "width": 16,
+              "height": 16
+            }
           }
         ],
-        "image": [
-          {
-          "url": "/assets/images/result-list/result-list_img_1.png",
-          "alt": "Картинка_1",
-          "width": 420,
-          "height": 410
-        },
-          {
-          "url": "/assets/images/result-list/result-list_img_2.png",
-          "alt": "Картинка_2",
-          "width": 420,
-          "height": 410
-        }
-      ],
-        "properties": 
-          {
-            "type": "2 -ккв.",
-            "level": "10 / 25",
-            "square": "2 050,69 м2",
-            "kitchensArea": "150,69 м2",
-            "totalArea": "50,69 м2",
-            "roomArea": "50,69 м2"
+        "image": [{
+            "url": "/assets/images/result-list/result-list_img_1.png",
+            "alt": "Картинка_1",
+            "width": 420,
+            "height": 410
           },
-          "properties_alt": 
-          [
-            {
-              "title": "Студия",
-              "description": "4,56 - 156,37 млн."
-            },
-            {
-              "title": "1 - комн.",
-              "description": "4,56 - 156,37 млн."
-            },
-            {
-              "title": "2 - комн.",
-              "description": "4,56 - 156,37 млн."
-            },
-            {
-              "title": "3 - комн.",
-              "description": "4,56 - 156,37 млн."
-            },
-            {
-              "title": "4 - комн.",
-              "description": "4,56 - 156,37 млн."
-            }
-          ],
+          {
+            "url": "/assets/images/result-list/result-list_img_2.png",
+            "alt": "Картинка_2",
+            "width": 420,
+            "height": 410
+          }
+        ],
+        "properties": [{
+            "Тип квартиры": "2 -ккв.",
+            "Этаж": "10 / 25",
+            "Площадь": "2 050,69 м2"
+          },
+          {
+            "Площадь кухни": "150,69 м2",
+            "Общая площадь": "50,69 м2",
+            "Площадь комнат": "50,69 м2"
+          }
+        ],
+        "properties_alt": [{
+            "title": "Студия",
+            "description": "4,56 - 156,37 млн."
+          },
+          {
+            "title": "1 - комн.",
+            "description": "4,56 - 156,37 млн."
+          },
+          {
+            "title": "2 - комн.",
+            "description": "4,56 - 156,37 млн."
+          },
+          {
+            "title": "3 - комн.",
+            "description": "4,56 - 156,37 млн."
+          },
+          {
+            "title": "4 - комн.",
+            "description": "4,56 - 156,37 млн."
+          }
+        ],
         "price": "23 584 000",
         "price_alt": "4 000 000",
         "priceMeasure": "254 542",

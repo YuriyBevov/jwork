@@ -16,8 +16,7 @@
     grid-template-columns: 1fr;
     gap: var(--gap-lg);
 
-
-    &_gallery  {
+    &_gallery {
       max-width: $desktop-lg-width;
       min-width: 290px;
     }
@@ -46,7 +45,7 @@
             order: 2;
           }
         }
-        
+
         a {
           min-width: 140px;
 
@@ -54,7 +53,6 @@
             order: 1;
           }
         }
-        
       }
 
       &_badge {
@@ -71,12 +69,20 @@
         font-weight: var(--fw-m);
         font-size: var(--fs-lg);
         color: var(--dark);
+
+        @include container-down('root', $tablet-width) {
+          @include text-truncate(2);
+        }
       }
 
       .base_subtitle {
         font-weight: var(--fw-r);
         font-size: var(--fs-sm);
         color: var(--dark);
+
+        @include container-down('root', $tablet-width) {
+          @include text-truncate(1);
+        }
       }
 
       .base_text {
@@ -92,9 +98,9 @@
 
       @include container-down('root', $mobile-width) {
         & {
-         flex-direction: column;
-         align-items: center;
-         gap: var(--gap-base);
+          flex-direction: column;
+          align-items: center;
+          gap: var(--gap-base);
         }
       }
 
@@ -104,7 +110,7 @@
 
         @include container-down('root', $mobile-width) {
           & {
-           width: 100%;
+            width: 100%;
           }
         }
 
@@ -125,9 +131,8 @@
       border-bottom: 1px solid var(--lighter);
 
       @include container-down('root', $tablet-lg-width) {
-        & {
-          grid-template-columns: 1fr;
-        }
+        grid-template-columns: 1fr;
+        gap: var(--gap-md);
       }
 
       &_content {
@@ -144,7 +149,7 @@
             align-items: flex-start;
           }
         }
-  
+
         &_details span:last-child {
           margin-left: auto;
           font-weight: var(--fw-m);
@@ -167,7 +172,7 @@
     &_data {
       display: none;
       grid-template-columns: repeat(2, 1fr);
-      gap: var(--gap-sm);
+      gap: var(--gap-lg);
 
       @include container-down('root', $tablet-lg-width) {
         display: grid;
@@ -191,7 +196,7 @@
           font-size: var(--fs-sm);
           color: var(--lighter);
         }
-  
+
         &_details span:last-child {
           margin-left: auto;
           font-weight: var(--fw-m);
@@ -202,9 +207,7 @@
           width: 100%;
         }
       }
-
     }
-
   }
 }
 
@@ -215,7 +218,6 @@
 }
 
 .tab {
-
   @include container-down('root', $tablet-lg-width) {
     display: none;
   }
@@ -225,10 +227,10 @@
     font-weight: var(--fw-r);
     font-size: var(--fs-sm);
     color: var(--dark);
-    }
+  }
 
-    &_body_content td {
-      padding: 16px clamp(16px, 1vw, 32px);
-      border-top: 1px solid var(--lighter);
-    }
+  &_body_content td {
+    padding: 16px clamp(16px, 1vw, 32px);
+    border-top: 1px solid var(--lighter);
+  }
 }
