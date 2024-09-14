@@ -16,6 +16,7 @@ interface ResultListListItem {
     text: string;
     text_2: string;
   };
+  quantity?: string;
   image: [
     {
       url: string;

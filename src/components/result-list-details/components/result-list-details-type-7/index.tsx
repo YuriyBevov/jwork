@@ -7,6 +7,7 @@ import { MainSectionLayout } from '@/layouts/main-section-layout';
 import { getLocalData } from '@/lib/localdata';
 import { Badge } from '@/shared/components/badge';
 import { MainBtn } from '@/shared/components/main-btn';
+import { MainInput } from '@/shared/components/main-input';
 import { MainLink } from '@/shared/components/main-link';
 import { SliderResultList } from '@/shared/components/slider/slider-result-list/slider-result-list';
 
@@ -15,6 +16,27 @@ import { ByDetails } from '../../../../shared/icons/view-mode/by-details';
 import { ResultListDetalilsDTO } from '../../types';
 import common from '../result-list-details.module.scss';
 import custom from './result-list-details-type-7.module.scss';
+
+const inputsData = [
+  {
+    id: '1',
+    type: 'text',
+    name: 'Комнатность',
+    placeholder: 'Комнатность',
+  },
+  {
+    id: '2',
+    type: 'text',
+    name: 'Площадь',
+    placeholder: 'Площадь',
+  },
+  {
+    id: '3',
+    type: 'text',
+    name: 'Стоимость',
+    placeholder: 'Стоимость',
+  },
+];
 
 export const ResultLisDetailstType_7 = async () => {
   const data: ResultListDetalilsDTO = await getLocalData(
@@ -165,6 +187,18 @@ export const ResultLisDetailstType_7 = async () => {
                     </React.Fragment>
                   ))}
                 </span>
+                <div className={clsx(common.list_item_filters)}>
+                  {inputsData.map((field, index) => (
+                    <MainInput
+                      key={`${field.id}-${index}`}
+                      type={field.type}
+                      name={field.name}
+                      placeholder={field.placeholder}
+                      id={field.id}
+                    />
+                  ))}
+                  <MainBtn text="Искать" />
+                </div>
                 <table className={common.tab}>
                   <thead>
                     <tr className={common.tab_header}>

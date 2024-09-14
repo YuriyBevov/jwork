@@ -16,7 +16,7 @@
     grid-template-columns: 3fr 7fr;
     gap: var(--gap-lg);
 
-    @include container-down('root', $tablet-width) {
+    @include container-down('root', $tablet-lg-width) {
       grid-template-columns: 1fr;
     }
 
@@ -26,10 +26,10 @@
 
     &_gallery {
       max-width: 420px;
+      min-width: 290px;
 
-      @include container-down('root', $tablet-width) {
-        max-width: 780px;
-        min-width: 290px;
+      @include container-down('root', $tablet-lg-width) {
+        max-width: 1000px;
       }
     }
 
@@ -44,6 +44,27 @@
       @extend %flex-column;
       flex-grow: 1;
       gap: var(--gap-base);
+
+      &_headers {
+        @extend %flex-align;
+        gap: var(--gap-base);
+        width: 100%;
+
+        @include container-down('root', 400px) {
+          flex-direction: column;
+        }
+
+        span {
+          font-weight: var(--fw-r);
+          font-size: var(--fs-sm);
+          color: var(--secondary);
+          margin-left: auto;
+
+          @include container-down('root', 400px) {
+            margin-left: 0;
+          }
+        }
+      }
 
       &_badge {
         @extend %flex-align;

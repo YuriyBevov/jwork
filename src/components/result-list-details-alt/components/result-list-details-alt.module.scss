@@ -16,6 +16,70 @@
     grid-template-columns: 1fr;
     gap: var(--gap-lg);
 
+    &_info_top {
+      display: grid;
+      grid-template-columns: 3fr 7fr;
+      gap: var(--gap-lg);
+
+      @include container-down('root', $tablet-lg-width) {
+        grid-template-columns: 1fr;
+      }
+
+      &_image {
+        width: 100%;
+        max-width: 500px;
+        height: 100%;
+
+        @include container-down('root', $tablet-lg-width) {
+          max-width: 100%;
+        }
+      }
+
+      &_badge {
+        @extend %flex-align;
+        gap: var(--gap-base);
+        padding: 4px 10px;
+        width: fit-content;
+        background-color: var(--lighter);
+        border-radius: 5px;
+        margin-bottom: 8px;
+      }
+
+      &_header {
+        display: grid;
+        grid-template-columns: 7fr 2fr;
+        gap: var(--gap-sm);
+        margin-bottom: 32px;
+
+        @include container-down('root', $tablet-width) {
+          grid-template-columns: 1fr;
+        }
+
+        &_wrapper {
+          @extend %flex-column;
+          gap: var(--gap-base);
+          margin-left: auto;
+
+          @include container-down('root', $tablet-width) {
+            margin-left: 0;
+          }
+        }
+
+        &_price {
+          font-weight: var(--fw-m);
+          font-size: var(--fs-lg);
+          color: var(--primary);
+          margin: 8px 0;
+        }
+
+        &_measure {
+          font-weight: var(--fw-r);
+          font-size: var(--fs-sm);
+          color: var(--lighter);
+        }
+      }
+    }
+
     &_gallery {
       max-width: $desktop-lg-width;
       min-width: 290px;
@@ -128,7 +192,6 @@
       gap: var(--gap-xl);
       padding: 16px 0;
       border-top: 1px solid var(--lighter);
-      border-bottom: 1px solid var(--lighter);
 
       @include container-down('root', $tablet-lg-width) {
         grid-template-columns: 1fr;
@@ -208,16 +271,6 @@
         }
       }
     }
-    &_filters {
-      @extend %flex-align;
-      gap: var(--gap-base);
-      width: 100%;
-      margin-bottom: 32px;
-
-      input {
-        flex-grow: 1;
-      }
-    }
   }
 }
 
@@ -225,22 +278,4 @@
   font-weight: var(--fw-r);
   font-size: var(--fs-sm);
   color: var(--lighter);
-}
-
-.tab {
-  @include container-down('root', $tablet-lg-width) {
-    display: none;
-  }
-
-  &_header th {
-    padding: 16px clamp(16px, 1vw, 32px);
-    font-weight: var(--fw-r);
-    font-size: var(--fs-sm);
-    color: var(--dark);
-  }
-
-  &_body_content td {
-    padding: 16px clamp(16px, 1vw, 32px);
-    border-top: 1px solid var(--lighter);
-  }
 }

@@ -1,9 +1,8 @@
 import { About } from '@/components/about';
 import { Advantages } from '@/components/advantages';
 import { News } from '@/components/news';
-import { ResultList } from '@/components/result-list';
-import { ResultListColumn } from '@/components/result-list-column';
 import { ResultListDetails } from '@/components/result-list-details';
+import { ResultListDetailsAlt } from '@/components/result-list-details-alt';
 import { Services } from '@/components/services';
 import { Staff } from '@/components/staff';
 import { ViewresultList } from '@/components/view-result-list';
@@ -28,12 +27,12 @@ function blockRenderer(block: Block) {
       return <Staff key={block.id} templateID={block.templateID} />;
     case 'news':
       return <News key={block.id} templateID={block.templateID} />;
-    case 'resultList':
-      return <ResultList key={block.id} templateID={block.templateID} />;
-    case 'resultListColumn':
-      return <ResultListColumn key={block.id} templateID={block.templateID} />;
     case 'resultListDetails':
       return <ResultListDetails key={block.id} templateID={block.templateID} />;
+    case 'ResultListDetailsAlt':
+      return (
+        <ResultListDetailsAlt key={block.id} templateID={block.templateID} />
+      );
     case 'ViewresultList':
       return <ViewresultList key={block.id} templateID={block.templateID} />;
     // case 'footer':

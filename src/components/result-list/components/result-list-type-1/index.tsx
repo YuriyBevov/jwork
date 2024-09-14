@@ -36,11 +36,11 @@ export const ResultListType_1 = ({ data }: { data: ResultListDTO }) => {
               </SliderResultList>
             </div>
             <div className={clsx(common.list_item_content)}>
-              <div className={clsx(common.list_item_content)}>
+              <div className={clsx(common.list_item_content_headers)}>
                 <div className={clsx(common.list_item_content_badge)}>
                   <Badge text={item.badge.text} outlined={true} accent={true} />
                 </div>
-                <span>{data.quantity}</span>
+                {item.quantity && <span>{item.quantity} квартир</span>}
               </div>
               <span className={clsx(common.base_title)}>{item.title}</span>
               {item.badge.text_2 !== '' && (
