@@ -96,7 +96,7 @@ a {
 .mantine-Select-dropdown {
   position: absolute;
   background-color: #fff;
-  padding: 12px;
+  padding-inline: 12px;
   border-radius: 10px;
 
   > div {
@@ -132,15 +132,15 @@ a {
   align-items: center;
   position: relative;
 
-  div {
-    position: absolute;
-    right: 14px;
-    top: 14px;
-    bottom: 14px;
-    z-index: 0;
-    width: 20px;
-    height: 20px;
-  }
+  // div {
+  //   position: absolute;
+  //   right: 14px;
+  //   top: 14px;
+  //   bottom: 14px;
+  //   z-index: 0;
+  //   width: 20px;
+  //   height: 20px;
+  // }
 }
 
 .visible-items {
