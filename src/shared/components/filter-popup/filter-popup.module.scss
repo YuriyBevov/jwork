@@ -1,0 +1,71 @@
+@import '../../styles/extends.scss';
+@import '../../styles/mixins.scss';
+
+.root {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(8px);
+  background: rgba(0, 0, 0, 0.36);
+  z-index: 999;
+}
+
+.modal {
+  position: fixed;
+  right: 0px;
+  top: 0px;
+  display: flex;
+  flex-direction: column;
+  z-index: 9999;
+  padding: var(--fs-sm);
+  height: fit-content;
+  width: 100%;
+  max-width: 370px;
+  overflow-y: auto;
+  background: #ffffff;
+
+  &_header {
+    @extend %flex-align;
+    width: 100%;
+    margin-bottom: var(--fs-sm);
+
+    span {
+      font-weight: var(--fw-b);
+      font-size: var(--fs-lg);
+      color: var(--primary);
+    }
+
+    button {
+      border: none;
+      margin-left: auto;
+    }
+  }
+
+  &_list {
+    @extend %flex-column;
+
+    input {
+      width: 100%;
+      padding: 16px 0;
+      border-top: 1px solid #d1d5db;
+    }
+
+    button {
+      margin: var(--fs-sm) 0;
+      width: 100%;
+    }
+  }
+}
+
+.outlined {
+  background-color: transparent;
+  padding: 4px 0;
+}
+.color_primary {
+  color: var(--primary);
+}
+.color_muted {
+  color: var(--gray);
+}

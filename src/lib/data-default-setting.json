@@ -1,44 +1,38 @@
 {
-  "blocks": [
-    {
+  "blocks": [{
       "id": "21",
-      "type": "news",
+      "type": "resultListDetails",
       "templateID": "1"
     },
     {
       "id": "22",
-      "type": "news",
+      "type": "resultListDetails",
       "templateID": "2"
     },
     {
       "id": "23",
-      "type": "news",
+      "type": "resultListDetails",
       "templateID": "3"
     },
     {
       "id": "24",
-      "type": "news",
+      "type": "resultListDetails",
       "templateID": "4"
     },
     {
-      "id": "27",
-      "type": "news",
-      "templateID": "7"
-    },
-    {
       "id": "25",
-      "type": "news",
+      "type": "resultListDetails",
       "templateID": "5"
     },
     {
       "id": "26",
-      "type": "news",
+      "type": "resultListDetails",
       "templateID": "6"
     },
     {
-      "id": "2",
-      "type": "staff",
-      "templateID": "2" 
+      "id": "27",
+      "type": "resultListDetails",
+      "templateID": "7"
     }
   ]
 }

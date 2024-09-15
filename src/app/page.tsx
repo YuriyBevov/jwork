@@ -1,8 +1,11 @@
 import { About } from '@/components/about';
 import { Advantages } from '@/components/advantages';
 import { News } from '@/components/news';
+import { ResultListDetails } from '@/components/result-list-details';
+import { ResultListDetailsAlt } from '@/components/result-list-details-alt';
 import { Services } from '@/components/services';
 import { Staff } from '@/components/staff';
+import { ViewresultList } from '@/components/view-result-list';
 // import { Footer } from '@/components/footer';
 import { getLocalData } from '@/lib/localdata';
 
@@ -24,6 +27,14 @@ function blockRenderer(block: Block) {
       return <Staff key={block.id} templateID={block.templateID} />;
     case 'news':
       return <News key={block.id} templateID={block.templateID} />;
+    case 'resultListDetails':
+      return <ResultListDetails key={block.id} templateID={block.templateID} />;
+    case 'ResultListDetailsAlt':
+      return (
+        <ResultListDetailsAlt key={block.id} templateID={block.templateID} />
+      );
+    case 'ViewresultList':
+      return <ViewresultList key={block.id} templateID={block.templateID} />;
     // case 'footer':
     //   return <Footer key={block.id} layout={block.layout} />;
     default:
