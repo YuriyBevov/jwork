@@ -1,1 +1,7 @@
 @import '@/shared/styles/extends.scss';
+
+.main-section {
+  &.side {
+    padding: 0;
+  }
+}
