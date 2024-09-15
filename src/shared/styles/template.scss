@@ -106,6 +106,19 @@ a {
       margin-bottom: var(--gap-lg);
     }
   }
+
+  &.side {
+    padding: 0;
+
+    .container {
+      padding: 0;
+    }
+
+    .base_title {
+      font-size: 32px;
+      margin-bottom: 32px;
+    }
+  }
 }
 
 .visible-items {
