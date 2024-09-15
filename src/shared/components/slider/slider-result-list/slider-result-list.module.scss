@@ -1,0 +1,45 @@
+.root {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.swiper_pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide {
+  height: auto;
+}
+
+.slider_result_list_button {
+  position: absolute;
+  top: calc(50% - 20px);
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: rgba(0, 0, 0, 0.7);
+  cursor: pointer;
+  transition: opacity var(--base-transition);
+  z-index: 10;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &_next {
+    right: 10px;
+    transform: rotate(180deg);
+  }
+
+  &_prev {
+    left: 10px;
+  }
+}
