@@ -78,6 +78,7 @@ import { IconZip } from '@/shared/icons/icon-set-1/icon_zip';
 
 import { IconEmail } from './icon-set-1/icon_email';
 import { IconPhone2 } from './icon-set-1/icon_phone_2';
+import { IconSearch } from './icon-set-1/icon_search';
 
 type Props = {
   name?: string;
@@ -159,6 +160,8 @@ export const IconSet: React.FC<Props> = ({
       return <IconPhone width={width} height={height} fill={fill} />;
     case 'phone2':
       return <IconPhone2 width={width} height={height} fill={fill} />;
+    case 'search':
+      return <IconSearch width={width} height={height} fill={fill} />;
     case 'paperclip':
       return <IconPaperclip width={width} height={height} fill={fill} />;
     case 'package':

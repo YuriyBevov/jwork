@@ -6,7 +6,7 @@ import {
   ResultLisDetailstAltType_5,
   ResultLisDetailstAltType_6,
   ResultLisDetailstAltType_7,
-} from '@/components/result-list-details-alt';
+} from '@/components/result-list-details-alt/components';
 
 export default function ResultListDetailsAlt() {
   return (
