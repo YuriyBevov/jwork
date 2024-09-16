@@ -1,0 +1,112 @@
+@import '../../styles/extends.scss';
+@import '../../styles/mixins.scss';
+
+.root {
+  container: root / inline-size;
+  margin-bottom: var(--gap-xxl);
+}
+
+.layout {
+  @extend %flex-align;
+  gap: var(--gap-sm);
+  width: 100%;
+
+  @include container-down('root', 1300px) {
+    flex-direction: column;
+  }
+
+  &_item {
+    display: flex;
+    gap: var(--gap-sm);
+
+    @include container-down('root', 1300px) {
+      width: 100%;
+    }
+
+    &:first-child {
+      margin-right: auto;
+    }
+
+    @include container-down('root', 1300px) {
+      &:first-child {
+        justify-content: space-between;
+        margin-right: 0;
+      }
+    }
+
+    @include container-down('root', 440px) {
+      &:last-child {
+        flex-direction: column;
+      }
+    }
+
+    .title {
+      font-weight: var(--fw-b);
+      font-size: clamp(var(--fs-lg), 3vw, var(--fs-xxl));
+      color: var(--dark);
+    }
+
+    .note {
+      font-weight: var(--fw-b);
+      font-size: clamp(var(--fs-lg), 3vw, var(--fs-xxl));
+      color: var(--lighter);
+    }
+  }
+}
+
+.sort {
+  @extend %flex-align;
+}
+
+@include container-down('root', 440px) {
+  .sort {
+    justify-content: center;
+  }
+}
+
+.btn_group {
+  @extend %flex-align;
+  background: var(--white);
+  border: 1px solid var(--primary);
+  margin-left: clamp(2px, 3vw, 16px);
+}
+
+@include container-down('root', 1300px) {
+  .btn_group {
+    margin-left: auto;
+  }
+}
+
+@include container-down('root', 440px) {
+  .btn_group {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+.btn {
+  border: none;
+  padding: 12px;
+  background: transparent;
+  @extend %flex-align;
+  gap: 8px;
+  cursor: pointer;
+}
+
+@include container-down('root', 440px) {
+  .btn {
+    flex-grow: 1;
+  }
+}
+
+.outlined {
+  background-color: var(--secondary);
+}
+
+.border {
+  border: 1px solid var(--primary);
+}
+
+.color_primary {
+  color: var(--primary);
+}
