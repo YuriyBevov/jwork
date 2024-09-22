@@ -155,6 +155,15 @@ a {
   }
 }
 
+.mantine-MultiSelect-input {
+  height: 48px;
+  border-radius: 10px;
+}
+
+.mantine-MultiSelect-input .mantine-MultiSelect-pillsList {
+  height: 100%;
+}
+
 .mantine-Input-wrapper,
 .mantine-Autocomplete-wrapper {
   display: flex;

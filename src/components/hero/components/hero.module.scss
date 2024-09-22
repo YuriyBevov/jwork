@@ -98,18 +98,12 @@
 }
 
 .select {
-  // svg {
-  //   display: none;
-  // }
-
   input {
-    padding: 13px 44px 13px 12px;
+    padding: 13px 30px 13px 12px;
+    width: 210px;
     border-radius: 10px;
-    // width: fit-content;
     color: var(--gray);
     outline: none;
-    // width: 100%;
-    // min-width: 251px;
     min-height: 48px;
   }
 }
@@ -124,4 +118,10 @@
     width: 100%;
     min-width: 251px;
   }
+}
+
+.multi_select {
+  width: 150px;
+  min-height: 48px;
+  // padding: 15px 44px 15px 12px;
 }
