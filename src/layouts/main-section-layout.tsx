@@ -10,6 +10,7 @@ export const MainSectionLayout = ({
   description,
   children,
   align,
+  cls,
 }: {
   modifier?: string;
   container?: 'fluid';
@@ -17,11 +18,13 @@ export const MainSectionLayout = ({
   description?: string;
   children: React.ReactNode;
   align?: string;
+  cls?: string;
 }) => {
   return (
     <section
       className={clsx(
         'main-section',
+        cls,
         modifier,
         align === 'center' ? 'align_center' : null,
       )}

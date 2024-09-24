@@ -36,6 +36,10 @@
       @extend %flex-column;
       gap: var(--gap-xs);
 
+      .base_subtitle {
+        margin-bottom: var(--gap-lg);
+      }
+
       .base_text {
         @include text-truncate(5);
       }

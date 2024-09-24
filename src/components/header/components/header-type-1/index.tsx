@@ -1,10 +1,11 @@
+import clsx from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
 import { getLocalData } from '@/lib/localdata';
-import { ContactBlock } from '@/shared/components/contact-block/contact-block';
 import { MainBtn } from '@/shared/components/main-btn';
+import { HeaderMenu } from '@/shared/components/navigation';
 
 import styles from '../header.module.scss';
 import { HeaderDTO } from '../types';
@@ -15,7 +16,7 @@ export const HeaderType_1 = async () => {
   );
 
   return (
-    <header className={styles.root}>
+    <header className={clsx(styles.root, styles.rounded_lg)}>
       <div className="container">
         <div className={styles.top}>
           <Link href="/" className={styles.logo}>
@@ -27,30 +28,14 @@ export const HeaderType_1 = async () => {
             />
           </Link>
 
-          <ContactBlock className={styles.contact} data={data.contactInfo} />
+          <a href={`mailto:${data.email}`}>{data.email}</a>
+          <a href={`tel:${data.phone.replace(/\s+/g, '')}`}>{data.phone}</a>
 
-          <MainBtn text="Кнопка" rounded={'lg'} outlined />
-          <MainBtn text="Кнопка заявки" rounded={'lg'} />
+          <MainBtn className={styles.btn} text="Кнопка" outlined />
+          <MainBtn className={styles.btn} text="Кнопка заявки" />
         </div>
 
-        <nav className={styles.navigation}>
-          <ul className={styles.navigation_list}>
-            {data.navigation.map((item) => (
-              <li key={item.id}>
-                <Link href="#">{item.title}</Link>
-                {item.items && (
-                  <ul>
-                    {item.items.map((subItem) => (
-                      <li key={subItem.id}>
-                        <Link href="#">{subItem.title}</Link>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </li>
-            ))}
-          </ul>
-        </nav>
+        <HeaderMenu align="center" data={data.navigation} />
       </div>
     </header>
   );

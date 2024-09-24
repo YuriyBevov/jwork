@@ -1,0 +1,199 @@
+@import '../../../shared/styles/extends.scss';
+@import '../../../shared/styles/mixins.scss';
+
+.root {
+  container: root / inline-size;
+}
+
+.list {
+  @extend %list-reset;
+  display: grid;
+  gap: clamp(var(--gap-lg), 4vw, var(--gap-xxl)) var(--gap-lg);
+  grid-template-columns: repeat(4, 1fr);
+
+  @include container-down('root', $laptop-lg-width) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include container-down('root', $tablet-width) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include container-down('root', $mobile-width) {
+    grid-template-columns: 1fr;
+  }
+
+  &_item {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--gap-md);
+
+    &_price {
+      color: var(--primary);
+    }
+
+    &_gallery {
+      max-width: 540px;
+      min-width: 200px;
+      height: 100%;
+      max-height: 333px;
+    }
+
+    &_gallery_slide {
+      width: 100%;
+      height: 100%;
+      max-height: 333px;
+      object-fit: cover;
+    }
+
+    &_content {
+      @extend %flex-column;
+      max-height: fit-content;
+      gap: var(--gap-base);
+      height: 100%;
+      min-height: 533px;
+
+      &_badge {
+        padding: 4px 10px;
+        width: fit-content;
+        background-color: var(--lighter);
+        border-radius: 5px;
+        margin-bottom: 8px;
+      }
+
+      .base_title {
+        margin-bottom: 8px;
+        font-weight: var(--fw-m);
+        font-size: var(--fs-lg);
+        color: var(--dark);
+
+        @include container-down('root', $tablet-width) {
+          @include text-truncate(1);
+        }
+      }
+
+      .base_subtitle {
+        font-weight: var(--fw-r);
+        font-size: var(--fs-sm);
+        color: var(--dark);
+
+        @include container-down('root', $tablet-width) {
+          @include text-truncate(1);
+        }
+      }
+
+      .base_text {
+        font-size: 16px;
+      }
+    }
+
+    &_locations {
+      @extend %list-reset;
+      display: flex;
+      flex-direction: column;
+      gap: var(--gap-base);
+      margin-bottom: 8px;
+
+      &_item {
+        @extend %flex-align;
+        gap: var(--gap-base);
+
+        @include container-down('root', $mobile-width) {
+          & {
+            width: 100%;
+          }
+        }
+
+        img {
+          max-width: 16px;
+          max-height: 16px;
+          object-fit: contain;
+        }
+      }
+    }
+
+    &_properties {
+      display: grid;
+      grid-template-columns: 1fr;
+      padding: 16px 0;
+      border-top: 1px solid var(--lighter);
+      border-bottom: 1px solid var(--lighter);
+      margin-bottom: auto;
+
+      &_content {
+        @extend %flex-column;
+        &_details {
+          @extend %flex-align;
+          font-weight: var(--fw-r);
+          font-size: var(--fs-sm);
+          color: var(--lighter);
+        }
+
+        &_details span:last-child {
+          margin-left: auto;
+          font-weight: var(--fw-m);
+          color: var(--dark);
+        }
+      }
+    }
+
+    &_properties_alt {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--gap-base);
+
+      @include container-down('root', $tablet-lg-width) {
+        grid-template-columns: 1fr;
+      }
+
+      &_details {
+        @extend %flex-column;
+        padding: 8px 16px;
+        height: 100%;
+        max-height: 84px;
+        background: var(--white);
+        border: 1px solid var(--lighter);
+
+        &_title {
+          font-weight: var(--fw-r);
+          font-size: var(--fs-sm);
+          color: var(--primary);
+          padding-bottom: 8px;
+          border-bottom: 1px solid var(--lighter);
+        }
+
+        &_desc {
+          font-weight: var(--fw-r);
+          font-size: var(--fs-sm);
+          color: var(--gray);
+          padding-top: 8px;
+        }
+      }
+    }
+
+    &_price {
+      font-weight: var(--fw-m);
+      font-size: var(--fs-lg);
+      color: var(--primary);
+      margin: 8px 0;
+    }
+
+    &_price_measure {
+      font-weight: var(--fw-r);
+      font-size: var(--fs-sm);
+      color: var(--lighter);
+    }
+
+    &_show_more {
+      width: fit-content;
+      padding: 0px 8px;
+      height: 24px;
+      background: #f3f4f6;
+      border: 1px solid #d1d5db;
+      font-weight: 400;
+      font-size: 16px;
+      color: #111928;
+      cursor: pointer;
+    }
+  }
+}

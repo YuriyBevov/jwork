@@ -1,0 +1,359 @@
+{
+  "title": "Купить квартиру Москве и Московской области",
+  "titleAlign": "center",
+  "content": {
+    "list": [
+      {
+        "id": "1",
+        "title": "Жилой комплекс Пресненский с видом на Москва-реку с развитой инфраструктурой",
+        "description": "Московская обл, г Видное, тер ЖК Видный город, ул имени народного артиста СССР Святослава Рихтера",
+        "district": "Гагаринский р-он",
+        "badge": { 
+          "text": "Есть сданные дома"
+        },
+        "location": [
+          {
+            "name": "Ховрино",
+            "time": "14",
+            "image": {
+              "url": "/assets/images/result-list/result-list_icon_1.svg",
+              "alt": "Ховрино",
+              "width": 16,
+              "height": 16
+            }
+          },
+          {
+            "name": "Сокол",
+            "time": "14",
+            "image": {
+              "url": "/assets/images/result-list/result-list_icon_2.svg",
+              "alt": "Сокол",
+              "width": 16,
+              "height": 16
+            }
+          },
+          {
+            "name": "Планерная",
+            "time": "25",
+            "image": {
+              "url": "/assets/images/result-list/result-list_icon_2.svg",
+              "alt": "Планерная",
+              "width": 16,
+              "height": 16
+            }
+          }
+        ],
+        "image": [
+          {
+          "url": "/assets/images/result-list-details/result-list-details_img_3.png",
+          "alt": "Картинка_1",
+          "width": 420,
+          "height": 410
+        },
+          {
+            "url": "/assets/images/result-list-details/result-list-details_img_3.png",
+          "alt": "Картинка_2",
+          "width": 420,
+          "height": 410
+        }
+      ],
+        "properties": [
+          {
+            "Дом": "12",
+            "Срок сдачи": [
+              {
+                "title": "3 квартал 2022"
+              },
+              {
+                "title": "3 квартал 2022"
+              },
+              {
+                "title": "3 квартал 2022"
+              }
+            ],
+            "Корпус": "3",
+            "Этажей": "25"
+
+          },
+          {
+            "Дом": "12",
+            "Срок сдачи": [
+              {
+                "title": "3 квартал 2022"
+              },
+              {
+                "title": "3 квартал 2022"
+              }
+            ],
+            "Корпус": "3",
+            "Этажей": "25"
+
+          },
+          {
+            "Дом": "12",
+            "Срок сдачи": [
+              {
+                "title": "3 квартал 2022"
+              }
+            ],
+            "Корпус": "3",
+            "Этажей": "25"
+
+          }
+        ],
+        "info": {
+          "title": "Описание ЖК",
+          "description": "Идею сочетания городской застройки с общественными зданиями и предприятиями социального назначения начали внедрять давно, но лишь появление жилых комплексов позволило приблизить многие услуги к людям.</br>В идеале итогом строительства жилых комплексов становится оптимальное сочетание жилых помещений (квартир) и нежилых площадей, предназначенных для комплексного бытового обслуживания их жителей.</br>Естественно, что жилые комплексы могут сильно различаться по наличию дополнительных услуг и уровню предоставляемого комфорта – каждый из них решает свою градостроительную задачу.</br>Идею сочетания городской застройки с общественными зданиями и предприятиями социального назначения начали внедрять давно, но лишь появление жилых комплексов позволило приблизить многие услуги к людям.</br>В идеале итогом строительства жилых комплексов становится оптимальное сочетание жилых помещений (квартир) и нежилых площадей, предназначенных для комплексного бытового обслуживания их жителей.<br>Естественно, что жилые комплексы могут сильно различаться по наличию дополнительных услуг и уровню предоставляемого комфорта – каждый из них решает свою градостроительную задачу."
+        },
+        "table": [
+          {
+            "title": "Квартиры в комплексе",
+          "layout": "Планировка",
+          "frame": "Корпус",
+          "completionDate": "Срок сдачи",
+          "numberApartment": "№ кв",
+          "type": "Тип",
+          "lavel": "Этаж",
+          "totalArea": "Общая площадь",
+          "price": "Стоимость, руб.",
+          "finishing": "Отделка",
+          "data": [
+            {
+            "image": {
+              "url": "/assets/images/result-list-details/result-list-details_img_1.png",
+              "alt": "Планировка",
+              "width": 80,
+              "height": 80
+            },
+            "id": 1,
+            "frame": "Дом 53",
+            "completionDate": "Сдан - 4 кв. 2021 г.",
+            "numberApartment": "150",
+            "type": "1 ккв",
+            "lavel": "25/25",
+            "totalArea": "150. 54",
+            "price": "555 555 555",
+            "finishing": "Без отделки"
+          },
+            {
+            "image": {
+              "url": "/assets/images/result-list-details/result-list-details_img_2.png",
+              "alt": "Планировка",
+              "width": 80,
+              "height": 80
+            },
+            "id": 2,
+            "frame": "Дом 53",
+            "completionDate": "Сдан - 4 кв. 2021 г.",
+            "numberApartment": "150",
+            "type": "1 ккв",
+            "lavel": "25/25",
+            "totalArea": "150. 54",
+            "price": "555 555 555",
+            "finishing": "Без отделки"
+          },
+            {
+            "image": {
+              "url": "/assets/images/result-list-details/result-list-details_img_2.png",
+              "alt": "Планировка",
+              "width": 80,
+              "height": 80
+            },
+            "id": 3,
+            "frame": "Дом 53",
+            "completionDate": "Сдан - 4 кв. 2021 г.",
+            "numberApartment": "150",
+            "type": "1 ккв",
+            "lavel": "25/25",
+            "totalArea": "150. 54",
+            "price": "555 555 555",
+            "finishing": "Без отделки"
+          },
+            {
+            "image": {
+              "url": "/assets/images/result-list-details/result-list-details_img_1.png",
+              "alt": "Планировка",
+              "width": 80,
+              "height": 80
+            },
+            "id": 4,
+            "frame": "Дом 53",
+            "completionDate": "Сдан - 4 кв. 2021 г.",
+            "numberApartment": "150",
+            "type": "1 ккв",
+            "lavel": "25/25",
+            "totalArea": "150. 54",
+            "price": "555 555 555",
+            "finishing": "Без отделки"
+          },
+            {
+            "image": {
+              "url": "/assets/images/result-list-details/result-list-details_img_1.png",
+              "alt": "Планировка",
+              "width": 80,
+              "height": 80
+            },
+            "id": 5,
+            "frame": "Дом 53",
+            "completionDate": "Сдан - 4 кв. 2021 г.",
+            "numberApartment": "150",
+            "type": "1 ккв",
+            "lavel": "25/25",
+            "totalArea": "150. 54",
+            "price": "555 555 555",
+            "finishing": "Без отделки"
+          },
+            {
+            "image": {
+              "url": "/assets/images/result-list-details/result-list-details_img_2.png",
+              "alt": "Планировка",
+              "width": 80,
+              "height": 80
+            },
+            "id": 6,
+            "frame": "Дом 53",
+            "completionDate": "Сдан - 4 кв. 2021 г.",
+            "numberApartment": "150",
+            "type": "1 ккв",
+            "lavel": "25/25",
+            "totalArea": "150. 54",
+            "price": "555 555 555",
+            "finishing": "Без отделки"
+          },
+            {
+            "image": {
+              "url": "/assets/images/result-list-details/result-list-details_img_1.png",
+              "alt": "Планировка",
+              "width": 80,
+              "height": 80
+            },
+            "id": 7,
+            "frame": "Дом 53",
+            "completionDate": "Сдан - 4 кв. 2021 г.",
+            "numberApartment": "150",
+            "type": "1 ккв",
+            "lavel": "25/25",
+            "totalArea": "150. 54",
+            "price": "555 555 555",
+            "finishing": "Без отделки"
+          },
+            {
+            "image": {
+              "url": "/assets/images/result-list-details/result-list-details_img_2.png",
+              "alt": "Планировка",
+              "width": 80,
+              "height": 80
+            },
+            "id": 8,
+            "frame": "Дом 53",
+            "completionDate": "Сдан - 4 кв. 2021 г.",
+            "numberApartment": "150",
+            "type": "1 ккв",
+            "lavel": "25/25",
+            "totalArea": "150. 54",
+            "price": "555 555 555",
+            "finishing": "Без отделки"
+          },
+            {
+            "image": {
+              "url": "/assets/images/result-list-details/result-list-details_img_1.png",
+              "alt": "Планировка",
+              "width": 80,
+              "height": 80
+            },
+            "id": 9,
+            "frame": "Дом 53",
+            "completionDate": "Сдан - 4 кв. 2021 г.",
+            "numberApartment": "150",
+            "type": "1 ккв",
+            "lavel": "25/25",
+            "totalArea": "150. 54",
+            "price": "555 555 555",
+            "finishing": "Без отделки"
+          },
+            {
+            "image": {
+              "url": "/assets/images/result-list-details/result-list-details_img_1.png",
+              "alt": "Планировка",
+              "width": 80,
+              "height": 80
+            },
+            "id": 10,
+            "frame": "Дом 53",
+            "completionDate": "Сдан - 4 кв. 2021 г.",
+            "numberApartment": "150",
+            "type": "1 ккв",
+            "lavel": "25/25",
+            "totalArea": "150. 54",
+            "price": "555 555 555",
+            "finishing": "Без отделки"
+          }
+        ]
+        }
+        ],
+        "apartments": [
+            {
+              "image": {
+                "url": "/assets/images/result-list-details/result-list-details_img_4.png",
+                "alt": "Планировка",
+                "width": 324,
+                "height": 300
+              },
+              "id": 1,
+              "type": "2 -ккв.",
+              "level": "10 / 25",
+              "square": "2 050,69 м2",
+              "kitchensArea": "150,69 м2",
+              "totalArea": "50,69 м2",
+              "roomArea": "50,69 м2"
+            },
+            {
+              "image": {
+                "url": "/assets/images/result-list-details/result-list-details_img_4.png",
+                "alt": "Планировка",
+                "width": 324,
+                "height": 300
+              },
+              "id": 2,
+              "type": "2 -ккв.",
+              "level": "10 / 25",
+              "square": "2 050,69 м2",
+              "kitchensArea": "150,69 м2",
+              "totalArea": "50,69 м2",
+              "roomArea": "50,69 м2"
+            },
+            {
+              "image": {
+                "url": "/assets/images/result-list-details/result-list-details_img_4.png",
+                "alt": "Планировка",
+                "width": 324,
+                "height": 300
+              },
+              "id": 3,
+              "type": "2 -ккв.",
+              "level": "10 / 25",
+              "square": "2 050,69 м2",
+              "kitchensArea": "150,69 м2",
+              "totalArea": "50,69 м2",
+              "roomArea": "50,69 м2"
+            },
+            {
+              "image": {
+                "url": "/assets/images/result-list-details/result-list-details_img_4.png",
+                "alt": "Планировка",
+                "width": 324,
+                "height": 300
+              },
+              "id": 4,
+              "type": "2 -ккв.",
+              "level": "10 / 25",
+              "square": "2 050,69 м2",
+              "kitchensArea": "150,69 м2",
+              "totalArea": "50,69 м2",
+              "roomArea": "50,69 м2"
+            }
+        ]
+      }
+    ]
+  }
+}
