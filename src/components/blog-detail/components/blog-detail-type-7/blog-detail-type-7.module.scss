@@ -1,11 +1,6 @@
-@import '../../../shared/styles/extends.scss';
-@import '../../../shared/styles/mixins.scss';
-
-.root {
-  @extend %section-offset;
-}
+@import '../../../../shared/styles/extends.scss';
+@import '../../../../shared/styles/mixins.scss';
 
 .base_title {
   text-align: center;
-  color: var(--primary);
 }

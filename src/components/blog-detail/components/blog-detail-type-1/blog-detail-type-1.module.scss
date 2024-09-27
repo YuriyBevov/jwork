@@ -2,8 +2,6 @@
 @import '../../../../shared/styles/mixins.scss';
 
 .root {
-  @extend %section-offset;
-
   small {
     display: block;
     font-size: 16px;

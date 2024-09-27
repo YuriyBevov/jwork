@@ -1,9 +1,7 @@
-@import '../../../shared/styles/extends.scss';
-@import '../../../shared/styles/mixins.scss';
+@import '../../../../shared/styles/extends.scss';
+@import '../../../../shared/styles/mixins.scss';
 
 .root {
-  @extend %section-offset;
-
   &_header {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -18,20 +16,16 @@
     &_side {
       @extend %flex-column;
       gap: var(--gap-sm);
-    }
-
-    &_preview_img {
-      background-color: var(--light);
-      border-radius: 30px;
-      overflow: hidden;
 
       img {
         display: block;
         width: 100%;
         height: auto;
         object-fit: contain;
+        border-radius: 30px;
       }
     }
+
 
     &_timestamp {
       font-size: 14px;
@@ -48,13 +42,6 @@
 
   .author_block {
     margin-bottom: var(--gap-md);
-  }
-
-  small {
-    display: block;
-    font-size: 16px;
-    margin-bottom: var(--gap-xs);
-    color: var(--gray);
   }
 }
 

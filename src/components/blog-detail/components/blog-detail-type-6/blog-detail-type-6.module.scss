@@ -2,8 +2,6 @@
 @import '../../../../shared/styles/mixins.scss';
 
 .root {
-  @extend %section-offset;
-
   &_content {
     display: grid;
     grid-template-columns: auto minmax(400px, 15vw);
@@ -15,11 +13,7 @@
 
     &_side {
       @extend %flex-column;
-      gap: var(--gap-lg);
-
-      .main-section {
-        background-color: red;
-      }
+      gap: var(--gap-sm);
     }
   }
 

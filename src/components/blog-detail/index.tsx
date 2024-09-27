@@ -3,12 +3,10 @@ import React from 'react';
 import { BlogDetail_1 } from './components';
 import { BlogDetail_2 } from './components';
 import { BlogDetail_6 } from './components';
-
-// import { BlogType_3 } from './components';
-// import { BlogType_4 } from './components';
-// import { BlogType_5 } from './components';
-// import { BlogType_6 } from './components';
-// import { BlogType_7 } from './components';
+import { BlogDetail_3 } from './components';
+import { BlogDetail_4 } from './components';
+import { BlogDetail_5 } from './components';
+import { BlogDetail_7 } from './components';
 
 export const BlogDetail = ({ templateID }: { templateID: string }) => {
   switch (templateID) {
@@ -16,16 +14,16 @@ export const BlogDetail = ({ templateID }: { templateID: string }) => {
       return <BlogDetail_1 />;
     case '2':
       return <BlogDetail_2 />;
-    // case '3':
-    //   return <BlogType_3 />;
-    // case '4':
-    //   return <BlogType_4 />;
-    // case '5':
-    //   return <BlogType_5 />;
+    case '3':
+      return <BlogDetail_3 />;
+    case '4':
+      return <BlogDetail_4 />;
+    case '5':
+      return <BlogDetail_5 />;
     case '6':
       return <BlogDetail_6 />;
-    // case '7':
-    //   return <BlogType_7 />;
+    case '7':
+      return <BlogDetail_7 />;
     default:
       return null;
   }
