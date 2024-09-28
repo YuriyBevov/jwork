@@ -1,4 +1,4 @@
-import { Button, MultiSelect, Select } from '@mantine/core';
+import { Autocomplete, Button, MultiSelect, Select } from '@mantine/core';
 import React from 'react';
 
 import { HeaderType_1 } from '@/components/header/components';
@@ -18,7 +18,7 @@ export const HeroType_1 = async () => {
       case 'select':
         return (
           <Select
-            className={styles.select}
+            classNames={{ input: styles.input }}
             key={item.id}
             data={
               item.content &&
@@ -41,9 +41,14 @@ export const HeroType_1 = async () => {
       case 'multi_select':
         return (
           <MultiSelect
-            className={styles.multi_select}
             key={item.id}
             placeholder="1,2 комнаты"
+            className={styles.multi_select}
+            classNames={{
+              input: styles.input,
+              inputField: styles.input_field,
+              pillsList: styles.pillsList,
+            }}
             data={
               item.content &&
               item.content.map((value) => ({
@@ -56,9 +61,10 @@ export const HeroType_1 = async () => {
         );
       case 'search':
         return (
-          <Select
-            className={styles.select}
+          <Autocomplete
             key={item.id}
+            placeholder={item.title}
+            classNames={{ input: styles.input }}
             data={
               item.content &&
               item.content.map((contentItem) => ({
@@ -66,8 +72,6 @@ export const HeroType_1 = async () => {
                 value: contentItem.value,
               }))
             }
-            defaultValue={item.content?.[0].value}
-            allowDeselect={false}
             comboboxProps={{
               transitionProps: {
                 transition: 'pop',
@@ -75,7 +79,6 @@ export const HeroType_1 = async () => {
               },
               shadow: 'md',
             }}
-            searchable={true}
           />
         );
       case 'price_range':
