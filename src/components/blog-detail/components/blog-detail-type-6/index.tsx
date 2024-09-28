@@ -5,10 +5,12 @@ import React from 'react';
 import { NewsType_7 } from '@/components/news/components';
 import { getLocalData } from '@/lib/localdata';
 import { AuthorBlock } from '@/shared/components/author-block/author-block';
+import { BadgeBlock } from '@/shared/components/badge-block/badge-block';
 import { ContentBlock } from '@/shared/components/content-block/content-block';
 
-import styles from './blog-detail-type-6.module.scss';
-import { BlogDetailDTO } from './types';
+import { BlogDetailDTO } from '../../types';
+import common from '../blog-detail.module.scss';
+import custom from './blog-detail-type-6.module.scss';
 
 export const BlogDetail_6 = async () => {
   const data: BlogDetailDTO = await getLocalData(
@@ -16,11 +18,11 @@ export const BlogDetail_6 = async () => {
   );
 
   return (
-    <section className={styles.root}>
+    <section className={clsx(common.root, custom.root)}>
       <div className="container">
-        <div className={styles.root_content}>
-          <div className={styles.root_content_side}>
-            <div className={styles.root_detail_img}>
+        <div className={custom.root_content}>
+          <div className={custom.root_content_side}>
+            <div className={custom.root_detail_img}>
               <Image
                 src={data.image.url}
                 alt={data.image.alt}
@@ -28,10 +30,13 @@ export const BlogDetail_6 = async () => {
                 height={data.image.height}
               />
             </div>
-
-            <h2 className={clsx('base_title', styles.base_title)}>
+            <BadgeBlock data={data.badges} />
+            <h2 className={clsx('base_title', custom.base_title)}>
               {data.title}
             </h2>
+            <span className={clsx('base_text', custom.base_text)}>
+              {data.subtitle}
+            </span>
             <AuthorBlock
               user={data.author.user}
               date={data.author.date}
@@ -40,7 +45,7 @@ export const BlogDetail_6 = async () => {
             />
             <ContentBlock content={data.content} />
           </div>
-          <div className={styles.root_content_side}>
+          <div className={custom.root_content_side}>
             <NewsType_7
               title={'Рекомендации'}
               titleAlign={'left'}

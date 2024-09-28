@@ -2,8 +2,6 @@
 @import '../../../../shared/styles/mixins.scss';
 
 .root {
-  @extend %section-offset;
-
   &_header {
     @extend %flex-column;
     align-items: center;
@@ -23,7 +21,6 @@
 
     .base_title {
       text-align: center;
-      color: var(--primary);
     }
   }
 }

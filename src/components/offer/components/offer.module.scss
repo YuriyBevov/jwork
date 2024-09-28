@@ -1,0 +1,35 @@
+@import '../../../shared/styles/extends.scss';
+@import '../../../shared/styles/mixins.scss';
+
+.root {
+  container: root / inline-size;
+}
+
+.list {
+  @extend %list-reset;
+
+  gap: clamp(var(--gap-lg), 4vw, var(--gap-xxl)) var(--gap-lg);
+  width: 100%;
+
+  &_item_content {
+    gap: var(--gap-sm);
+    height: 100%;
+
+    & > img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    &_wrapper {
+      @extend %flex-column;
+      gap: var(--gap-sm);
+    }
+
+    &_footer {
+      margin-top: auto;
+      padding-top: var(--gap-sm);
+    }
+  }
+}

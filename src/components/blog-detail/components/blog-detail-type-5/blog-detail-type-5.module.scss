@@ -1,37 +1,12 @@
-@import '../../../shared/styles/extends.scss';
-@import '../../../shared/styles/mixins.scss';
+@import '../../../../shared/styles/extends.scss';
+@import '../../../../shared/styles/mixins.scss';
 
 .root {
-  @extend %section-offset;
-
   img {
     width: 100%;
     height: auto;
     object-fit: contain;
     margin-bottom: clamp(var(--gap-sm), 3.6vw, var(--gap-lg));
-  }
-
-  &_wrapper {
-    display: grid;
-    grid-template-columns: 3fr 5fr;
-    gap: var(--gap-xl);
-
-    @include media-down($laptop-width) {
-      grid-template-columns: 1fr;
-    }
-  }
-
-  &_sidebar {
-    @extend %flex-column;
-    gap: var(--gap-sm);
-    height: fit-content;
-    position: sticky;
-    top: var(--gap-lg);
-
-    @include media-down($laptop-width) {
-      position: static;
-      top: initial;
-    }
   }
 
   .author_block {
@@ -50,4 +25,27 @@
   font-size: calc(var(--base-subtitle) * 1.2);
   margin-bottom: 0;
   color: var(--primary);
+}
+
+.content_wrapper {
+  display: grid;
+  grid-template-columns: 3fr 5fr;
+  gap: var(--gap-xl);
+
+  @include media-down($laptop-width) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.content_sidebar {
+  @extend %flex-column;
+  gap: var(--gap-sm);
+  height: fit-content;
+  position: sticky;
+  top: var(--gap-lg);
+
+  @include media-down($laptop-width) {
+    position: static;
+    top: initial;
+  }
 }
