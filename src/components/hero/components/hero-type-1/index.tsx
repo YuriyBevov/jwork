@@ -1,7 +1,7 @@
-import { Autocomplete, Button, MultiSelect, Select } from '@mantine/core';
 import React from 'react';
 
 import { HeaderType_1 } from '@/components/header/components';
+import { AutocompleteUi, MultiSelectUi, SelectUi } from '@/components/hero/ui';
 import { getLocalData } from '@/lib/localdata';
 import { Tab, TabContent, TabList } from '@/shared/components/tab';
 
@@ -13,76 +13,14 @@ export const HeroType_1 = async () => {
     'src/components/hero/components/data.json',
   );
 
-  const getItemElement = (item: HeroItem) => {
+  const selectItem = (item: HeroItem) => {
     switch (item.type) {
       case 'select':
-        return (
-          <Select
-            classNames={{ input: styles.input }}
-            key={item.id}
-            data={
-              item.content &&
-              item.content.map((value) => ({
-                label: value.value,
-                value: value.value,
-              }))
-            }
-            defaultValue={item.content?.[0].value}
-            allowDeselect={false}
-            comboboxProps={{
-              transitionProps: {
-                transition: 'pop',
-                duration: 200,
-              },
-              shadow: 'md',
-            }}
-          />
-        );
+        return <SelectUi item={item} />;
       case 'multi_select':
-        return (
-          <MultiSelect
-            key={item.id}
-            placeholder="1,2 комнаты"
-            className={styles.multi_select}
-            classNames={{
-              input: styles.input,
-              inputField: styles.input_field,
-              pillsList: styles.pillsList,
-            }}
-            data={
-              item.content &&
-              item.content.map((value) => ({
-                label: value.value,
-                value: value.value,
-              }))
-            }
-            checkIconPosition="right"
-          />
-        );
+        return <MultiSelectUi item={item} />;
       case 'search':
-        return (
-          <Autocomplete
-            key={item.id}
-            placeholder={item.title}
-            classNames={{ input: styles.input }}
-            data={
-              item.content &&
-              item.content.map((contentItem) => ({
-                label: contentItem.value,
-                value: contentItem.value,
-              }))
-            }
-            comboboxProps={{
-              transitionProps: {
-                transition: 'pop',
-                duration: 200,
-              },
-              shadow: 'md',
-            }}
-          />
-        );
-      case 'price_range':
-        return <div>price_range</div>;
+        return <AutocompleteUi item={item} />;
       default:
         return <div>default</div>;
     }
@@ -112,16 +50,12 @@ export const HeroType_1 = async () => {
                     <div key={tab.id}>
                       {tab.items.map((item) => (
                         <React.Fragment key={item.id}>
-                          {getItemElement(item)}
+                          {selectItem(item)}
                         </React.Fragment>
                       ))}
                     </div>
                   ))}
                 </TabContent>
-                <Button variant="outline">На карте</Button>
-                <Button radius="xl" color="green">
-                  Искать
-                </Button>
               </div>
             </Tab>
           </div>
