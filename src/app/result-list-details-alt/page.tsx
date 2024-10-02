@@ -8,6 +8,7 @@ import {
   ResultLisDetailstAltType_7,
 } from '@/components/item-detail-type-1-alt';
 
+
 export default function ResultListDetailsAlt() {
   return (
     <>

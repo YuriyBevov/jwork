@@ -12,16 +12,25 @@ import { NewsDTO } from '../../types';
 import common from '../news.module.scss';
 import custom from './news-type-7.module.scss';
 
-export const NewsType_7 = async () => {
+export const NewsType_7 = async ({
+  title,
+  titleAlign,
+  cls,
+}: {
+  cls?: string;
+  title?: string;
+  titleAlign?: 'left' | 'center';
+}) => {
   const data: NewsDTO = await getLocalData(
     'src/components/news/components/news-type-7/data.json',
   );
 
   return (
     <MainSectionLayout
-      title={data.title}
+      title={title ? title : data.title}
       description={data.description}
-      align={data.titleAlign}
+      align={titleAlign ? titleAlign : data.titleAlign}
+      cls={cls ? cls : ''}
     >
       <div className={clsx(common.root, custom.root)}>
         <ul className={clsx(common.list, custom.list)}>

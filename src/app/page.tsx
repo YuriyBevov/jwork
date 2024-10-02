@@ -1,9 +1,10 @@
 import { About } from '@/components/about';
 import { Advantages } from '@/components/advantages';
 import { ItemDetail } from '@/components/item-detail';
-// import { ItemDetail } from '@/components/item-detail-type-1';
-// import { ResultListDetailsAlt } from '@/components/item-detail-type-1-alt';
 import { News } from '@/components/news';
+import { BlogDetail } from '@/components/blog-detail';
+import { News } from '@/components/news';
+import { Offer } from '@/components/offer';
 import { Services } from '@/components/services';
 import { Staff } from '@/components/staff';
 // import { ViewresultList } from '@/components/view-result-list';
@@ -30,12 +31,12 @@ function blockRenderer(block: Block) {
       return <News key={block.id} templateID={block.templateID} />;
     case 'itemDetailType_1':
       return <ItemDetail key={block.id} templateID={block.templateID} />;
-    // case 'ResultListDetailsAlt':
-    //   return (
-    //     <ResultListDetailsAlt key={block.id} templateID={block.templateID} />
-    //   );
-    // case 'ViewresultList':
-    //   return <ViewresultList key={block.id} templateID={block.templateID} />;
+    case 'offer':
+      return <Offer key={block.id} templateID={block.templateID} />;
+    case 'blog':
+      return <BlogDetail key={block.id} templateID={block.templateID} />;
+    case 'ViewresultList':
+      return <ViewresultList key={block.id} templateID={block.templateID} />;
     // case 'footer':
     //   return <Footer key={block.id} layout={block.layout} />;
     default:

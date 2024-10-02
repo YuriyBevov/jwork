@@ -1,0 +1,7 @@
+@import '../../../shared/styles/extends.scss';
+@import '../../../shared/styles/mixins.scss';
+
+.root {
+  @extend %section-offset;
+  container: root / inline-size;
+}
