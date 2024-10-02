@@ -1,11 +1,12 @@
 import { About } from '@/components/about';
 import { Advantages } from '@/components/advantages';
+import { ItemDetail } from '@/components/item-detail';
+// import { ItemDetail } from '@/components/item-detail-type-1';
+// import { ResultListDetailsAlt } from '@/components/item-detail-type-1-alt';
 import { News } from '@/components/news';
-import { ResultListDetails } from '@/components/result-list-details';
-import { ResultListDetailsAlt } from '@/components/result-list-details-alt';
 import { Services } from '@/components/services';
 import { Staff } from '@/components/staff';
-import { ViewresultList } from '@/components/view-result-list';
+// import { ViewresultList } from '@/components/view-result-list';
 // import { Footer } from '@/components/footer';
 import { getLocalData } from '@/lib/localdata';
 
@@ -27,14 +28,14 @@ function blockRenderer(block: Block) {
       return <Staff key={block.id} templateID={block.templateID} />;
     case 'news':
       return <News key={block.id} templateID={block.templateID} />;
-    case 'resultListDetails':
-      return <ResultListDetails key={block.id} templateID={block.templateID} />;
-    case 'ResultListDetailsAlt':
-      return (
-        <ResultListDetailsAlt key={block.id} templateID={block.templateID} />
-      );
-    case 'ViewresultList':
-      return <ViewresultList key={block.id} templateID={block.templateID} />;
+    case 'itemDetailType_1':
+      return <ItemDetail key={block.id} templateID={block.templateID} />;
+    // case 'ResultListDetailsAlt':
+    //   return (
+    //     <ResultListDetailsAlt key={block.id} templateID={block.templateID} />
+    //   );
+    // case 'ViewresultList':
+    //   return <ViewresultList key={block.id} templateID={block.templateID} />;
     // case 'footer':
     //   return <Footer key={block.id} layout={block.layout} />;
     default:

@@ -1,38 +1,7 @@
 {
   "blocks": [{
-      "id": "21",
-      "type": "resultListDetails",
-      "templateID": "1"
-    },
-    {
-      "id": "22",
-      "type": "resultListDetails",
-      "templateID": "2"
-    },
-    {
-      "id": "23",
-      "type": "resultListDetails",
-      "templateID": "3"
-    },
-    {
-      "id": "24",
-      "type": "resultListDetails",
-      "templateID": "4"
-    },
-    {
-      "id": "25",
-      "type": "resultListDetails",
-      "templateID": "5"
-    },
-    {
-      "id": "26",
-      "type": "resultListDetails",
-      "templateID": "6"
-    },
-    {
-      "id": "27",
-      "type": "resultListDetails",
-      "templateID": "7"
-    }
-  ]
+    "id": "21",
+    "type": "itemDetailType_1",
+    "templateID": "1"
+  }]
 }
