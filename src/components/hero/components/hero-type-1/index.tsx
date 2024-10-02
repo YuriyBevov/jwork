@@ -1,7 +1,13 @@
+import { Button } from '@mantine/core';
 import React from 'react';
 
 import { HeaderType_1 } from '@/components/header/components';
-import { AutocompleteUi, MultiSelectUi, SelectUi } from '@/components/hero/ui';
+import {
+  AutocompleteUi,
+  MultiSelectUi,
+  PriceRangeDropdownUi,
+  SelectUi,
+} from '@/components/hero/ui';
 import { getLocalData } from '@/lib/localdata';
 import { Tab, TabContent, TabList } from '@/shared/components/tab';
 
@@ -21,6 +27,8 @@ export const HeroType_1 = async () => {
         return <MultiSelectUi item={item} />;
       case 'search':
         return <AutocompleteUi item={item} />;
+      case 'price_range':
+        return <PriceRangeDropdownUi />;
       default:
         return <div>default</div>;
     }
@@ -37,14 +45,13 @@ export const HeroType_1 = async () => {
           <div className={styles.content}>
             <h1>{data.title}</h1>
             <p>{data.description}</p>
-
             <Tab className={styles.tab}>
               <TabList className={styles.tab_list}>
                 {data.tabs.map((tab) => (
                   <React.Fragment key={tab.id}>{tab.title}</React.Fragment>
                 ))}
               </TabList>
-              <div>
+              <div className={styles.tab_content_wrapper}>
                 <TabContent className={styles.tab_content}>
                   {data.tabs.map((tab) => (
                     <div key={tab.id}>
@@ -56,6 +63,8 @@ export const HeroType_1 = async () => {
                     </div>
                   ))}
                 </TabContent>
+                <Button className={styles.button}>На карте</Button>
+                <Button className={styles.button}>Искать</Button>
               </div>
             </Tab>
           </div>

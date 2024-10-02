@@ -24,12 +24,7 @@ export const AutocompleteUi = ({ item }: { item: HeroItem }) => {
         }))
       }
       comboboxProps={{
-        transitionProps: {
-          transition: 'pop',
-          duration: 200,
-        },
         shadow: 'md',
-        dropdownPadding: 12,
       }}
     />
   );

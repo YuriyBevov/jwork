@@ -94,5 +94,12 @@
       gap: 16px;
       position: relative;
     }
+
+    &_wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--gap-sm);
+      align-items: center;
+    }
   }
 }

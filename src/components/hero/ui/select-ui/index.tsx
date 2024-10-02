@@ -25,10 +25,6 @@ export const SelectUi = ({ item }: { item: HeroItem }) => {
       defaultValue={item.content?.[0].value}
       allowDeselect={false}
       comboboxProps={{
-        transitionProps: {
-          transition: 'pop',
-          duration: 200,
-        },
         shadow: 'md',
         dropdownPadding: 12,
       }}
