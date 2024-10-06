@@ -4,7 +4,7 @@ import { Combobox, Input, useCombobox } from '@mantine/core';
 
 import styles from '../hero-ui.module.scss';
 
-export const PriceRangeDropdownUi = () => {
+export const PriceRangeDropdownUi = ({ className }: { className?: string }) => {
   const combobox = useCombobox();
 
   return (
@@ -13,7 +13,7 @@ export const PriceRangeDropdownUi = () => {
         <Combobox.Target>
           <Input
             classNames={{ input: styles.input }}
-            style={{ width: '209px' }}
+            className={className}
             component="button"
             type="button"
             pointer

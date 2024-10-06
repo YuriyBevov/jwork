@@ -5,15 +5,21 @@ import { HeroItem } from '@/components/hero/types';
 
 import styles from '../hero-ui.module.scss';
 
-export const SelectUi = ({ item }: { item: HeroItem }) => {
+export const SelectUi = ({
+  item,
+  className,
+}: {
+  item: HeroItem;
+  className?: string;
+}) => {
   return (
     <Select
-      style={{ width: '251px' }}
       classNames={{
         input: styles.input,
         dropdown: styles.dropdown,
         option: styles.option,
       }}
+      className={className}
       data={
         item.content &&
         item.content.map((value) => ({

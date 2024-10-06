@@ -5,7 +5,13 @@ import { IconSearch } from '@/shared/icons/icon-set-1/icon_search';
 import { HeroItem } from '../../types';
 import styles from '../hero-ui.module.scss';
 
-export const AutocompleteUi = ({ item }: { item: HeroItem }) => {
+export const AutocompleteUi = ({
+  item,
+  className,
+}: {
+  item: HeroItem;
+  className?: string;
+}) => {
   return (
     <Autocomplete
       placeholder={item.title}
@@ -15,7 +21,7 @@ export const AutocompleteUi = ({ item }: { item: HeroItem }) => {
         dropdown: styles.dropdown,
         option: styles.option,
       }}
-      style={{ width: '209px' }}
+      className={className}
       data={
         item.content &&
         item.content.map((contentItem) => ({

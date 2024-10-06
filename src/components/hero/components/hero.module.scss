@@ -23,17 +23,18 @@
 
 .content {
   position: relative;
-  padding-inline: 150px;
   z-index: 1;
   display: flex;
   flex-direction: column;
   gap: 24px;
+  max-width: 1250px;
+  margin-inline: auto;
+  padding-inline: var(--gap-base);
 
   h1 {
     font-weight: 700;
-    font-size: 56px;
+    font-size: clamp(24px, 5vw, 56px);
     color: #fff;
-    padding-right: 100px;
     margin: 0;
   }
 
@@ -88,7 +89,10 @@
 
   &_content {
     > div {
-      display: flex;
+      // display: flex;
+      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
       gap: 24px;
       color: #fff;
       gap: 16px;
@@ -101,5 +105,55 @@
       gap: var(--gap-sm);
       align-items: center;
     }
+  }
+}
+
+.button {
+  height: 48px;
+  border-radius: 10px;
+  width: 150px;
+}
+
+.select {
+  width: 100%;
+}
+
+// .multi_select {
+//   width: 150px;
+// }
+
+// .autocomplete {
+//   width: 209px;
+// }
+
+// .price_range {
+//   width: 209px;
+// }
+
+@media (max-width: 768px) {
+  .root {
+    height: auto;
+  }
+
+  .content {
+    padding-block: 37px;
+    padding-inline: 20px;
+  }
+
+  .container {
+    padding: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .button {
+    width: 100%;
+  }
+
+  .price_range,
+  .autocomplete,
+  .multi_select,
+  .select {
+    width: 100%;
   }
 }

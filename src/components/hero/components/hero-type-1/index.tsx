@@ -1,4 +1,4 @@
-import { Button } from '@mantine/core';
+import clsx from 'clsx';
 import React from 'react';
 
 import { HeaderType_1 } from '@/components/header/components';
@@ -9,7 +9,9 @@ import {
   SelectUi,
 } from '@/components/hero/ui';
 import { getLocalData } from '@/lib/localdata';
+import { ButtonUi } from '@/shared/components/button';
 import { Tab, TabContent, TabList } from '@/shared/components/tab';
+import { IconPin } from '@/shared/icons/icon-set-1/icon_pin';
 
 import { HeroDTO, HeroItem } from '../../types';
 import styles from '../hero.module.scss';
@@ -22,22 +24,22 @@ export const HeroType_1 = async () => {
   const selectItem = (item: HeroItem) => {
     switch (item.type) {
       case 'select':
-        return <SelectUi item={item} />;
+        return <SelectUi className={styles.select} item={item} />;
       case 'multi_select':
-        return <MultiSelectUi item={item} />;
+        return <MultiSelectUi className={styles.select} item={item} />;
       case 'search':
-        return <AutocompleteUi item={item} />;
+        return <AutocompleteUi className={styles.select} item={item} />;
       case 'price_range':
-        return <PriceRangeDropdownUi />;
+        return <PriceRangeDropdownUi className={styles.select} />;
       default:
-        return <div>default</div>;
+        return null;
     }
   };
 
   return (
     <>
       <HeaderType_1 />
-      <section className="container">
+      <section className={clsx('container', styles.container)}>
         <div
           style={{ backgroundImage: 'url(' + data.backgroundImagePath + ')' }}
           className={styles.root}
@@ -63,8 +65,20 @@ export const HeroType_1 = async () => {
                     </div>
                   ))}
                 </TabContent>
-                <Button className={styles.button}>На карте</Button>
-                <Button className={styles.button}>Искать</Button>
+
+                <ButtonUi
+                  icon={<IconPin fill="#1a57db" width={16} height={20} />}
+                  radius="xs"
+                  outline
+                  height="lg"
+                  style={{ backgroundColor: '#fff' }}
+                  className={styles.button}
+                >
+                  На карте
+                </ButtonUi>
+                <ButtonUi radius="xs" height="lg" className={styles.button}>
+                  Искать
+                </ButtonUi>
               </div>
             </Tab>
           </div>
