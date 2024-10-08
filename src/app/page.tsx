@@ -1,8 +1,10 @@
 import { About } from '@/components/about';
 import { Advantages } from '@/components/advantages';
 import { ApartDetail } from '@/components/apart-detail';
+import { BlogDetail } from '@/components/blog-detail';
 import { ItemDetail } from '@/components/item-detail';
 import { News } from '@/components/news';
+import { Offer } from '@/components/offer';
 import { Services } from '@/components/services';
 import { Staff } from '@/components/staff';
 // import { ViewresultList } from '@/components/view-result-list';
@@ -31,10 +33,10 @@ function blockRenderer(block: Block) {
       return <ItemDetail key={block.id} templateID={block.templateID} />;
     case 'apartDetailType_1':
       return <ApartDetail key={block.id} templateID={block.templateID} />;
-    // case 'ResultListDetailsAlt':
-    //   return (
-    //     <ResultListDetailsAlt key={block.id} templateID={block.templateID} />
-    //   );
+    case 'offer':
+      return <Offer key={block.id} templateID={block.templateID} />;
+    case 'blog':
+      return <BlogDetail key={block.id} templateID={block.templateID} />;
     // case 'ViewresultList':
     //   return <ViewresultList key={block.id} templateID={block.templateID} />;
     // case 'footer':

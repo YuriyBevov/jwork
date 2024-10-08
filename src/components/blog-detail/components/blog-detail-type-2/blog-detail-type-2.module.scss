@@ -1,0 +1,26 @@
+@import '../../../../shared/styles/extends.scss';
+@import '../../../../shared/styles/mixins.scss';
+
+.root {
+  &_header {
+    @extend %flex-column;
+    align-items: center;
+    gap: var(--gap-md);
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+
+    small {
+      display: block;
+      font-size: 16px;
+      color: var(--gray);
+    }
+
+    .base_title {
+      text-align: center;
+    }
+  }
+}

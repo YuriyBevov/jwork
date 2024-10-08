@@ -3,6 +3,16 @@
 import { Tabs } from '@mantine/core';
 import React from 'react';
 
-export const Tab = ({ children }: { children: React.ReactNode }) => {
-  return <Tabs defaultValue="0">{children}</Tabs>;
+export const Tab = ({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) => {
+  return (
+    <Tabs className={className} defaultValue="0">
+      {children}
+    </Tabs>
+  );
 };

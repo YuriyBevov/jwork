@@ -1,0 +1,15 @@
+@import '../../../../shared/styles/extends.scss';
+@import '../../../../shared/styles/mixins.scss';
+
+.root {
+  small {
+    display: block;
+    font-size: 16px;
+    margin-bottom: var(--gap-xs);
+    color: var(--gray);
+  }
+}
+
+.base_title {
+  color: var(--primary);
+}
