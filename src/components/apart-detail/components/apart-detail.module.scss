@@ -174,7 +174,8 @@
     &_info_top {
       display: grid;
       grid-template-columns: 4fr 7fr;
-      gap: var(--gap-lg);
+      row-gap: var(--gap-lg);
+      column-gap: var(--gap-xxl);
       margin-bottom: var(--fs-xxl);
 
       @include container-down('root', $tablet-lg-width) {
