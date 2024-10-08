@@ -1,81 +1,67 @@
-export interface ResultListDetalilsAltDTO {
-  title: string;
-  titleAlign?: string;
-  content: {
-    list: ResultListListDetalilsAltItem[];
-  };
+export interface ItemDetailDTO {
+  name: string;
+  address: string;
+  note: string;
+  latitude: number;
+  longitude: number;
+  status: string;
+  region_name: string;
+  block_img: string[];
+  apartments: ApartmentsList[];
+  apartment: Apartment;
+  metros: MetrosList[];
+  block_info: BlockInfo;
 }
 
-interface ResultListListDetalilsAltItem {
+interface ApartmentsList {
   id: number;
-  title: string;
-  description?: string;
+  room_type_name: string;
+  decoration?: string;
+  space_total: number;
+  space_room: string;
+  space_kitchen: string;
+  number: string;
+  price: number;
+  meter_price: number;
+  flat_floor: number;
+  image: string;
+  image2: string;
+  building_corp: string;
+  building_floors: number;
+  building_deadline: string;
   badge: {
     text: string;
   };
-  image: [
-    {
-      url: string;
-      alt: string;
-      width: number;
-      height: number;
-    },
-  ];
-  district: string;
-  location: [
-    {
-      name: string;
-      time: string;
-      image: {
-        url: string;
-        alt: string;
-        width: number;
-        height: number;
-      };
-    },
-  ];
-  properties: [
-    {
-      Дом: string;
-      Корпус: string;
-      Этажей: string;
-      'Срок сдачи': [
-        {
-          title: string;
-        },
-      ];
-    },
-  ];
-  info: {
-    title: string;
-    description: string;
-  };
-  data: ResultListListDetalilsAltData[];
 }
-
-export interface ResultListListDetalilsAltData {
+interface Apartment {
   id: number;
-  title: string;
-  image: {
-    url: string;
-    alt: string;
-    width: number;
-    height: number;
-  };
+  room_type_name: string;
+  decoration?: string;
+  space_total: number;
+  space_room: string;
+  space_kitchen: string;
+  number: string;
+  price: number;
+  meter_price: number;
+  flat_floor: number;
+  image: string;
+  image2: string;
+  building_corp: string;
+  building_floors: number;
+  building_deadline: string;
   badge: {
     text: string;
   };
-  data_content: [
-    {
-      'Общая площадь': string;
-      Корпус: string;
-      '№ квартиры': string;
-      'Тип  кв': string;
-      Этаж: string;
-      Отделка: string;
-      'Срок сдачи': string;
-    },
-  ];
-  price: string;
-  priceMeasure: string;
+}
+
+export interface MetrosList {
+  subway_id: number;
+  distance: string;
+  metro: string;
+}
+
+interface BlockInfo {
+  building_corps: string[];
+  max_floors: number;
+  deadlines: string[];
 }

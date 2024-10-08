@@ -1,8 +1,7 @@
 import { About } from '@/components/about';
 import { Advantages } from '@/components/advantages';
+import { ApartDetail } from '@/components/apart-detail';
 import { ItemDetail } from '@/components/item-detail';
-// import { ItemDetail } from '@/components/item-detail-type-1';
-// import { ResultListDetailsAlt } from '@/components/item-detail-type-1-alt';
 import { News } from '@/components/news';
 import { Services } from '@/components/services';
 import { Staff } from '@/components/staff';
@@ -30,6 +29,8 @@ function blockRenderer(block: Block) {
       return <News key={block.id} templateID={block.templateID} />;
     case 'itemDetailType_1':
       return <ItemDetail key={block.id} templateID={block.templateID} />;
+    case 'apartDetailType_1':
+      return <ApartDetail key={block.id} templateID={block.templateID} />;
     // case 'ResultListDetailsAlt':
     //   return (
     //     <ResultListDetailsAlt key={block.id} templateID={block.templateID} />
