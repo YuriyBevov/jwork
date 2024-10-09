@@ -26,6 +26,7 @@
   &_item {
     display: grid;
     grid-template-columns: 1fr;
+    grid-template-rows: 333px 1fr;
     gap: var(--gap-md);
 
     &_price {
