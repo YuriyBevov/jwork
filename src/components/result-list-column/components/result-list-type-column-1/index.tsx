@@ -4,170 +4,158 @@ import Image from 'next/image';
 import React from 'react';
 
 import { Badge } from '@/shared/components/badge';
+import { MetrosListAlt } from '@/shared/components/metros-list-alt';
 import { SliderResultList } from '@/shared/components/slider/slider-result-list/slider-result-list';
 
-import IconWalk from '../../../../../public/assets/images/result-list/directions_walk.svg';
+import { ByDetails } from '../../../../shared/icons/view-mode/by-details';
 import { ResultListDTO } from '../../types';
-import common from '../result-list-column.module.scss';
-import custom from './result-list-type-column-1.module.scss';
+import styles from '../result-list-column.module.scss';
 
 type Props = {
   data: ResultListDTO;
   visibleCounts: Record<number, number>; // Объект, где ключ — это id элемента, а значение — количество видимых элементов
   handleShowMore: (id: number) => void; // Функция, которая принимает id элемента для показа дополнительных данных
-  visibleCountsLocations: Record<number, number>;
-  handleShowMoreLocation: (id: number) => void;
+  visibleCountsMetros: Record<number, number>;
+  handleShowMoreMetro: (id: number) => void;
 };
 
 export const ResultListTypeColumn_1: React.FC<Props> = ({
   data,
   visibleCounts,
   handleShowMore,
-  visibleCountsLocations,
-  handleShowMoreLocation,
+  visibleCountsMetros,
+  handleShowMoreMetro,
 }) => {
+  // Функция форматирования числа
+  const formatPrice = (number: number) => {
+    return (number / 1000000).toFixed(2).replace('.', ',');
+  };
+
+  // Получаем минимальную цену
+  const minPrice = data?.blocks
+    ? Math.min(
+        ...data.blocks.reduce<number[]>((acc, elem) => {
+          return acc.concat(
+            elem.apartments.map((apartment) => apartment.price),
+          );
+        }, []),
+      ) ?? Infinity // Устанавливаем значение по умолчанию
+    : Infinity; // Если data или blocks не определены
+
+  // Форматируем минимальную цену
+  const finalMinPrice =
+    minPrice !== Infinity ? minPrice.toLocaleString('ru-RU') : 'Нет данных';
+
+  // Получаем минимальную цену за квадратный метр
+  const minMeterPrice = data?.blocks
+    ? Math.min(
+        ...data.blocks.reduce<number[]>((acc, elem) => {
+          return acc.concat(
+            elem.apartments.map((apartment) => apartment.meter_price),
+          );
+        }, []),
+      ) ?? Infinity // Устанавливаем значение по умолчанию
+    : Infinity; // Если data или blocks не определены
+
+  // Форматируем минимальную цену
+  const finalMinMeterPrice =
+    minMeterPrice !== Infinity
+      ? minMeterPrice.toLocaleString('ru-RU')
+      : 'Нет данных';
+
   return (
-    <div className={clsx(common.root, custom.root)}>
-      <ul className={clsx(common.list, custom.list)}>
-        {data.content.list.map((item) => {
+    <div className={clsx(styles.root)}>
+      <ul className={clsx(styles.list)}>
+        {data?.blocks.map((item) => {
           const visibleCount = visibleCounts[item.id] || 2;
-          const visibleCountsLocation = visibleCountsLocations[item.id] || 1;
+          const visibleCountsMetro = visibleCountsMetros[item.id] || 1;
           return (
-            <li
-              key={item.id}
-              className={clsx(common.list_item, custom.list_item)}
-            >
-              <div className={clsx(common.list_item_gallery)}>
+            <li key={item.id} className={clsx(styles.list_item)}>
+              <div className={clsx(styles.list_item_gallery)}>
                 <SliderResultList>
-                  {item.image.map((img) => (
+                  {item?.block_img.map((img, index) => (
                     <Image
-                      key={img.url}
-                      src={img.url}
-                      alt={img.alt}
-                      width={img.width}
-                      height={img.height}
-                      className={clsx(common.list_item_gallery_slide)}
+                      key={`картина-${index}`}
+                      src={img}
+                      alt={`slider-${index}`}
+                      width={420}
+                      height={410}
+                      className={clsx(styles.content_section_gallery_slide)}
                     />
                   ))}
                 </SliderResultList>
               </div>
-              <div className={clsx(common.list_item_content)}>
-                <div className={clsx(common.list_item_content_badge)}>
-                  <Badge text={item.badge.text} outlined={true} accent={true} />
-                </div>
-                <span className={clsx('base_title', common.base_title)}>
-                  {item.title}
-                </span>
-                <span className={clsx('base_subtitle', common.base_subtitle)}>
-                  {item.description}
-                </span>
-                <ul className={clsx(common.list_item_locations)}>
-                  {item.location
-                    .slice(0, visibleCountsLocation) // Показываем только два элемента по умолчанию
-                    .map((elem) => (
-                      <li
-                        key={elem.name}
-                        className={clsx(common.list_item_locations_item)}
-                      >
-                        <Image
-                          src={elem.image.url}
-                          alt={elem.image.alt}
-                          width={elem.image.width}
-                          height={elem.image.height}
-                        />
-                        <span className={clsx('base_text', common.base_text)}>
-                          {elem.name}
-                        </span>
-                        <Image
-                          src={IconWalk}
-                          alt={elem.image.alt}
-                          width={16}
-                          height={16}
-                        />
-                        <span className={clsx('base_text', common.base_text)}>
-                          {elem.time} мин
-                        </span>
-                      </li>
-                    ))}
-                  {item.location.length > visibleCountsLocation && (
-                    <button
-                      className={clsx(common.list_item_show_more)}
-                      onClick={() => handleShowMoreLocation(item.id)} // При клике передаем id для конкретного элемента
-                    >
-                      Показать ещё...
-                    </button>
+              <div className={clsx(styles.list_item_content)}>
+                <div className={clsx(styles.list_item_content_headers)}>
+                  <div className={clsx(styles.list_item_content_badge)}>
+                    <Badge
+                      text={item?.badge?.text}
+                      outlined={true}
+                      accent={true}
+                    />
+                  </div>
+                  {item?.apartment_count && (
+                    <span>{item?.apartment_count} квартир</span>
                   )}
-                </ul>
-                {!item.properties_alt ? (
-                  <ul className={clsx(common.list_item_properties)}>
-                    {item.properties.map((elem, index) => (
-                      <li
-                        key={`properties-${index}`}
-                        className={clsx(common.list_item_properties_content)}
-                      >
-                        {Object.entries(elem).map(([key, value]) => (
-                          <div
-                            key={key}
-                            className={clsx(
-                              common.list_item_properties_content_details,
-                            )}
-                          >
-                            <span>{key}:</span>
-                            <span>{value}</span>
-                          </div>
-                        ))}
-                      </li>
-                    ))}
-                  </ul>
-                ) : (
-                  <div className={clsx(common.list_item_properties_alt)}>
-                    {item.properties_alt
-                      ?.slice(0, visibleCount)
-                      .map((elem, index) => (
-                        <div
-                          key={`${elem.title}-${index}`}
-                          className={clsx(
-                            common.list_item_properties_alt_details,
-                          )}
-                        >
-                          <span
-                            className={clsx(
-                              common.list_item_properties_alt_details_title,
-                            )}
-                          >
-                            {elem?.title}
-                          </span>
-                          <span
-                            className={clsx(
-                              common.list_item_properties_alt_details_desc,
-                            )}
-                          >
-                            {elem?.description}
-                          </span>
-                        </div>
-                      ))}
-                    {item.properties_alt &&
-                      visibleCount < item.properties_alt.length && (
-                        <button
-                          className={clsx(common.list_item_show_more)}
-                          onClick={() => handleShowMore(item.id)}
-                        >
-                          Показать ещё...
-                        </button>
-                      )}
+                </div>
+                <span className={clsx(styles.base_title)}>{item.name}</span>
+                {item?.badge?.text2 !== '' && (
+                  <div className={clsx(styles.list_item_content_badge_alt)}>
+                    <ByDetails width={24} height={24} fill="#6B7280" />
+                    <Badge
+                      text={item?.badge?.text2}
+                      outlined={true}
+                      accent={true}
+                    />
                   </div>
                 )}
-                <span
-                  className={clsx(
-                    common.list_item_price,
-                    custom.list_item_price,
-                  )}
-                >
-                  {item.price} руб
+                <span className={clsx('base_subtitle', styles.base_subtitle)}>
+                  {item?.address}
                 </span>
-                <span className={clsx(common.list_item_price_measure)}>
-                  {item.priceMeasure} руб./м2
+                <span className={clsx('base_subtitle', styles.base_subtitle)}>
+                  {item?.region_name}
                 </span>
+                <MetrosListAlt
+                  metros={item?.metros}
+                  visibleCountsMetro={visibleCountsMetro}
+                  itemId={item.id}
+                  handleShowMoreMetro={handleShowMoreMetro}
+                />
+                <ul className={clsx(styles.list_item_properties_alt)}>
+                  {item?.apartments
+                    ?.slice(0, visibleCount)
+                    .map((elem, index) => (
+                      <li
+                        key={`${elem.room_type_name}-${index}`}
+                        className={clsx(
+                          styles.list_item_properties_alt_details,
+                        )}
+                      >
+                        <span>{elem.room_type_name}:</span>
+                        <span>
+                          {formatPrice(elem?.base_price)}-
+                          {formatPrice(elem?.price)} млн.
+                        </span>
+                      </li>
+                    ))}
+                </ul>
+                {item?.apartments && visibleCount < item.apartments.length && (
+                  <button
+                    className={clsx(styles.list_item_show_more)}
+                    onClick={() => handleShowMore(item.id)}
+                  >
+                    Показать ещё...
+                  </button>
+                )}
+
+                <div className={clsx(styles.list_item_wrapper)}>
+                  <span className={clsx(styles.list_item_price)}>
+                    от {finalMinPrice} руб
+                  </span>
+                  <span className={clsx(styles.list_item_price_measure)}>
+                    за {finalMinMeterPrice} руб./м2
+                  </span>
+                </div>
               </div>
             </li>
           );

@@ -74,7 +74,7 @@ export const ResultListFilter = ({ openPopup }: { openPopup: () => void }) => {
             fill="#046C4E"
             outlined={true}
           />
-          <MainBtn text="Искать" />
+          <MainBtn text="Искать" displayBtn={true} />
         </div>
       </div>
     </div>

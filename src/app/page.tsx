@@ -7,7 +7,7 @@ import { News } from '@/components/news';
 import { Offer } from '@/components/offer';
 import { Services } from '@/components/services';
 import { Staff } from '@/components/staff';
-// import { ViewresultList } from '@/components/view-result-list';
+import { ViewresultList } from '@/components/view-result-list';
 // import { Footer } from '@/components/footer';
 import { getLocalData } from '@/lib/localdata';
 
@@ -37,8 +37,8 @@ function blockRenderer(block: Block) {
       return <Offer key={block.id} templateID={block.templateID} />;
     case 'blog':
       return <BlogDetail key={block.id} templateID={block.templateID} />;
-    // case 'ViewresultList':
-    //   return <ViewresultList key={block.id} templateID={block.templateID} />;
+    case 'ViewresultList':
+      return <ViewresultList key={block.id} templateID={block.templateID} />;
     // case 'footer':
     //   return <Footer key={block.id} layout={block.layout} />;
     default:

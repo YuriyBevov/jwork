@@ -42,8 +42,10 @@ export const ItemDetailType_1 = async () => {
   );
 
   // Функция для преобразования даты в формат "N квартал YYYY"
-  function formatToQuarter(dateString: string): string {
-    const date = new Date(dateString);
+  function formatToQuarter(input: string | number): string {
+    // Если входное значение - число (например, таймстамп), преобразуем его в объект Date
+    const date = typeof input === 'number' ? new Date(input) : new Date(input);
+
     const year = date.getFullYear();
     const month = date.getMonth() + 1; // Месяцы в JS начинаются с 0
 
@@ -69,8 +71,8 @@ export const ItemDetailType_1 = async () => {
     <MainSectionLayout>
       <div className={clsx(styles.root)}>
         <div className={clsx(styles.content)}>
-          <div className={clsx(styles.content_section)}>
-            <div className={clsx(styles.content_section_gallery)}>
+          <div className={clsx(styles.content_row)}>
+            <div className={clsx(styles.content_row_gallery)}>
               <SliderResultList>
                 {data?.block_img.map((img, index) => (
                   <Image
@@ -79,18 +81,13 @@ export const ItemDetailType_1 = async () => {
                     alt={`slider-${index}`}
                     width={420}
                     height={410}
-                    className={clsx(styles.content_section_gallery_slide)}
+                    className={clsx(styles.content_row_gallery_slide)}
                   />
                 ))}
               </SliderResultList>
             </div>
           </div>
-          <div
-            className={clsx(
-              styles.content_section,
-              styles.content_section_column,
-            )}
-          >
+          <div className={clsx(styles.content_row, styles.content_column)}>
             <span
               className={clsx('base_title', styles.base_title, styles.order_2)}
             >
@@ -106,8 +103,8 @@ export const ItemDetailType_1 = async () => {
               outlined={true}
             />
           </div>
-          <div className={clsx(styles.content_section)}>
-            <div className={clsx(styles.content_section_badge)}>
+          <div className={clsx(styles.content_row)}>
+            <div className={clsx(styles.content_row_badge)}>
               <ByDetails width={24} height={24} fill="#6B7280" />
               <Badge
                 text={data?.status ? data?.status : ''}
@@ -116,27 +113,27 @@ export const ItemDetailType_1 = async () => {
               />
             </div>
           </div>
-          <div className={clsx(styles.content_section)}>
+          <div className={clsx(styles.content_row)}>
             <span className={clsx('base_subtitle', styles.base_subtitle)}>
               {data?.address}
             </span>
           </div>
-          <div className={clsx(styles.content_section)}>
+          <div className={clsx(styles.content_row)}>
             <span className={clsx('base_subtitle', styles.base_subtitle)}>
               {data?.region_name}
             </span>
           </div>
           <MetrosList metros={data?.metros ?? []} />
-          <div className={clsx(styles.content_section)}>
-            <ul className={clsx(styles.content_section_apart)}>
-              <li className={styles.content_section_apart_item}>
-                <span className={styles.content_section_apart_item_name}>
+          <div className={clsx(styles.content_row)}>
+            <ul className={clsx(styles.content_row_apart)}>
+              <li className={styles.content_row_apart_item}>
+                <span className={styles.content_row_apart_item_name}>
                   Корпус:
                 </span>
                 <div>
                   {data?.block_info.building_corps.map((item, index) => (
                     <span
-                      className={styles.content_section_apart_item_value}
+                      className={styles.content_row_apart_item_value}
                       key={`${item}-${index}`}
                     >
                       {item}
@@ -144,22 +141,22 @@ export const ItemDetailType_1 = async () => {
                   ))}
                 </div>
               </li>
-              <li className={styles.content_section_apart_item}>
-                <span className={styles.content_section_apart_item_name}>
+              <li className={styles.content_row_apart_item}>
+                <span className={styles.content_row_apart_item_name}>
                   Этажей:
                 </span>
-                <span className={styles.content_section_apart_item_value}>
+                <span className={styles.content_row_apart_item_value}>
                   {data?.block_info.max_floors}
                 </span>
               </li>
-              <li className={styles.content_section_apart_item}>
-                <span className={styles.content_section_apart_item_name}>
+              <li className={styles.content_row_apart_item}>
+                <span className={styles.content_row_apart_item_name}>
                   Срок сдачи:
                 </span>
                 <div>
                   {deadlines.map((item, index) => (
                     <span
-                      className={styles.content_section_apart_item_value}
+                      className={styles.content_row_apart_item_value}
                       key={`${item}-${index}`}
                     >
                       {item}
@@ -169,22 +166,22 @@ export const ItemDetailType_1 = async () => {
               </li>
             </ul>
           </div>
-          <div className={clsx(styles.content_section)}>
+          <div className={clsx(styles.content_row)}>
             <span className={clsx('base_title', styles.base_title)}>
               Описание ЖК
             </span>
             <div
-              className={clsx(styles.content_section_note)}
+              className={clsx(styles.content_row_note)}
               dangerouslySetInnerHTML={{ __html: data?.note ? data?.note : '' }}
             />
           </div>
-          <div className={clsx(styles.content_section)}>
+          <div className={clsx(styles.content_row)}>
             <span className={clsx('base_title', styles.base_title)}>
               Квартиры в комплексе
             </span>
           </div>
-          <div className={clsx(styles.content_section)}>
-            <div className={clsx(styles.content_section_filters)}>
+          <div className={clsx(styles.content_row)}>
+            <div className={clsx(styles.content_row_filters)}>
               {inputsData.map((field, index) => (
                 <MainInput
                   key={`${field.id}-${index}`}
@@ -197,7 +194,7 @@ export const ItemDetailType_1 = async () => {
               <MainBtn text="Искать" />
             </div>
           </div>
-          <div className={clsx(styles.content_section)}>
+          <div className={clsx(styles.content_row)}>
             <table className={styles.tab}>
               <thead>
                 <tr className={styles.tab_header}>
@@ -228,24 +225,22 @@ export const ItemDetailType_1 = async () => {
                       />
                     </td>
                     <td>{item.building_corp}</td>
-                    <td>{item.building_deadline}</td>
+                    <td>{formatToQuarter(item.building_deadline)}</td>
                     <td>{item.number}</td>
                     <td>{item.room_type_name}</td>
                     <td>{item.flat_floor}</td>
                     <td>{item.space_total}</td>
-                    <td>{item.price}</td>
+                    <td>{item.price.toLocaleString('ru-RU')}</td>
                     <td>{item.decoration}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
-          </div>
-          <div className={clsx(styles.content_section)}>
-            <ul className={clsx(styles.content_section_data)}>
+            <ul className={clsx(styles.content_row_list)}>
               {data?.apartments.map((item, index) => (
                 <li
                   key={`${item.room_type_name}-${index}`}
-                  className={clsx(styles.content_section_data_item)}
+                  className={clsx(styles.content_row_list_item)}
                 >
                   <Image
                     src={item?.image}
@@ -253,42 +248,56 @@ export const ItemDetailType_1 = async () => {
                     width={326}
                     height={326}
                   />
-                  <div
-                    className={clsx(styles.content_section_data_item_details)}
-                  >
-                    <span>Тип квартиры:</span>
-                    <span>{item.room_type_name}</span>
-                  </div>
-                  <div
-                    className={clsx(styles.content_section_data_item_details)}
-                  >
-                    <span>Этаж:</span>
-                    <span>{item.flat_floor}</span>
-                  </div>
-                  <div
-                    className={clsx(styles.content_section_data_item_details)}
-                  >
-                    <span>Площадь:</span>
-                    <span>{item.space_total}</span>
-                  </div>
-                  <div
-                    className={clsx(styles.content_section_data_item_details)}
-                  >
-                    <span>Площадь кухни:</span>
-                    <span>{item.space_kitchen}</span>
-                  </div>
-                  <div
-                    className={clsx(styles.content_section_data_item_details)}
-                  >
-                    <span>Общая площадь:</span>
-                    <span>{item.space_total}</span>
-                  </div>
-                  <div
-                    className={clsx(styles.content_section_data_item_details)}
-                  >
-                    <span>Площадь комнат:</span>
-                    <span>{item.space_room}</span>
-                  </div>
+                  <ul className={clsx(styles.content_row_list_item_aside)}>
+                    <li
+                      className={clsx(
+                        styles.content_row_list_item_aside_details,
+                      )}
+                    >
+                      <span>Тип квартиры:</span>
+                      <span>{item.room_type_name}</span>
+                    </li>
+                    <li
+                      className={clsx(
+                        styles.content_row_list_item_aside_details,
+                      )}
+                    >
+                      <span>Этаж:</span>
+                      <span>{item.flat_floor}</span>
+                    </li>
+                    <li
+                      className={clsx(
+                        styles.content_row_list_item_aside_details,
+                      )}
+                    >
+                      <span>Площадь:</span>
+                      <span>{item.space_total}</span>
+                    </li>
+                    <li
+                      className={clsx(
+                        styles.content_row_list_item_aside_details,
+                      )}
+                    >
+                      <span>Площадь кухни:</span>
+                      <span>{item.space_kitchen}</span>
+                    </li>
+                    <li
+                      className={clsx(
+                        styles.content_row_list_item_aside_details,
+                      )}
+                    >
+                      <span>Общая площадь:</span>
+                      <span>{item.space_total}</span>
+                    </li>
+                    <li
+                      className={clsx(
+                        styles.content_row_list_item_aside_details,
+                      )}
+                    >
+                      <span>Площадь комнат:</span>
+                      <span>{item.space_room}</span>
+                    </li>
+                  </ul>
                   <MainBtn text="Искать" />
                 </li>
               ))}

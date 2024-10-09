@@ -9,21 +9,21 @@ import { SliderResultList } from '@/shared/components/slider/slider-result-list/
 import IconWalk from '../../../../../public/assets/images/result-list/directions_walk.svg';
 import { ResultListDTO } from '../../types';
 import common from '../result-list-column.module.scss';
-import custom from './result-list-type-column-2.module.scss';
+import custom from './result-list-type-column-1.module.scss';
 
 type Props = {
   data: ResultListDTO;
   visibleCounts: Record<number, number>; // Объект, где ключ — это id элемента, а значение — количество видимых элементов
   handleShowMore: (id: number) => void; // Функция, которая принимает id элемента для показа дополнительных данных
-  visibleCountsLocations: Record<number, number>;
+  visibleCountsMetros: Record<number, number>;
   handleShowMoreLocation: (id: number) => void;
 };
 
-export const ResultListTypeColumn_2: React.FC<Props> = ({
+export const ResultListTypeColumn_1: React.FC<Props> = ({
   data,
   visibleCounts,
   handleShowMore,
-  visibleCountsLocations,
+  visibleCountsMetros,
   handleShowMoreLocation,
 }) => {
   return (
@@ -31,7 +31,7 @@ export const ResultListTypeColumn_2: React.FC<Props> = ({
       <ul className={clsx(common.list, custom.list)}>
         {data.content.list.map((item) => {
           const visibleCount = visibleCounts[item.id] || 2;
-          const visibleCountsLocation = visibleCountsLocations[item.id] || 1;
+          const visibleCountsLocation = visibleCountsMetros[item.id] || 1;
           return (
             <li
               key={item.id}
@@ -149,9 +149,7 @@ export const ResultListTypeColumn_2: React.FC<Props> = ({
                     {item.properties_alt &&
                       visibleCount < item.properties_alt.length && (
                         <button
-                          className={clsx(
-                            common.list_item_properties_alt_details_btn,
-                          )}
+                          className={clsx(common.list_item_show_more)}
                           onClick={() => handleShowMore(item.id)}
                         >
                           Показать ещё...

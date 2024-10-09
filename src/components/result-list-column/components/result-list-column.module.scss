@@ -53,6 +53,27 @@
       height: 100%;
       min-height: 533px;
 
+      &_headers {
+        @extend %flex-align;
+        gap: var(--gap-base);
+        width: 100%;
+
+        @include container-down('root', 400px) {
+          flex-direction: column;
+        }
+
+        span {
+          font-weight: var(--fw-r);
+          font-size: var(--fs-sm);
+          color: var(--secondary);
+          margin-left: auto;
+
+          @include container-down('root', 400px) {
+            margin-left: 0;
+          }
+        }
+      }
+
       &_badge {
         padding: 4px 10px;
         width: fit-content;
@@ -61,25 +82,27 @@
         margin-bottom: 8px;
       }
 
+      &_badge_alt {
+        @extend %flex-align;
+        gap: var(--gap-base);
+        width: fit-content;
+        margin-bottom: 8px;
+        background-color: transparent;
+      }
+
       .base_title {
         margin-bottom: 8px;
         font-weight: var(--fw-m);
         font-size: var(--fs-lg);
         color: var(--dark);
-
-        @include container-down('root', $tablet-width) {
-          @include text-truncate(1);
-        }
+        @include text-truncate(2);
       }
 
       .base_subtitle {
         font-weight: var(--fw-r);
         font-size: var(--fs-sm);
         color: var(--dark);
-
-        @include container-down('root', $tablet-width) {
-          @include text-truncate(1);
-        }
+        @include text-truncate(1);
       }
 
       .base_text {
@@ -87,29 +110,9 @@
       }
     }
 
-    &_locations {
-      @extend %list-reset;
-      display: flex;
-      flex-direction: column;
+    &_wrapper {
+      @extend %flex-column;
       gap: var(--gap-base);
-      margin-bottom: 8px;
-
-      &_item {
-        @extend %flex-align;
-        gap: var(--gap-base);
-
-        @include container-down('root', $mobile-width) {
-          & {
-            width: 100%;
-          }
-        }
-
-        img {
-          max-width: 16px;
-          max-height: 16px;
-          object-fit: contain;
-        }
-      }
     }
 
     &_properties {
@@ -138,36 +141,48 @@
     }
 
     &_properties_alt {
+      @extend %list-reset;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: var(--gap-base);
+      column-gap: var(--gap-sm);
+      row-gap: 8px;
+      width: 100%;
+      padding: 16px 0;
+      border-top: 1px solid var(--lighter);
+      border-bottom: 1px solid var(--lighter);
+
+      @include container-down('root', 1260px) {
+        grid-template-columns: repeat(3, 1fr);
+      }
 
       @include container-down('root', $tablet-lg-width) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @include container-down('root', $mobile-width) {
         grid-template-columns: 1fr;
       }
 
       &_details {
         @extend %flex-column;
+        gap: var(--gap-base);
+        font-weight: var(--fw-r);
+        font-size: var(--fs-sm);
+        color: var(--primary);
         padding: 8px 16px;
-        height: 100%;
-        max-height: 84px;
-        background: var(--white);
-        border: 1px solid var(--lighter);
+        background: #ffffff;
+        border: 1px solid #e5edff;
+      }
 
-        &_title {
-          font-weight: var(--fw-r);
-          font-size: var(--fs-sm);
-          color: var(--primary);
-          padding-bottom: 8px;
-          border-bottom: 1px solid var(--lighter);
-        }
+      &_details span:first-child {
+        border-bottom: 1px solid var(--lighter);
+        padding-bottom: 8px;
+      }
 
-        &_desc {
-          font-weight: var(--fw-r);
-          font-size: var(--fs-sm);
-          color: var(--gray);
-          padding-top: 8px;
-        }
+      &_details span:last-child {
+        // margin-left: auto;
+        font-weight: var(--fw-m);
+        color: var(--gray);
+        // white-space: nowrap;
       }
     }
 
@@ -181,7 +196,7 @@
     &_price_measure {
       font-weight: var(--fw-r);
       font-size: var(--fs-sm);
-      color: var(--lighter);
+      color: var(--site-color);
     }
 
     &_show_more {

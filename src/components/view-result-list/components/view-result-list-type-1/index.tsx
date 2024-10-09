@@ -19,7 +19,7 @@ export const ViewResultListType_1 = () => {
   const [visibleCounts, setVisibleCounts] = useState<Record<number, number>>(
     {},
   );
-  const [visibleCountsLocations, setVisibleCountsLocations] = useState<
+  const [visibleCountsMetros, setVisibleCountsMetros] = useState<
     Record<number, number>
   >({});
 
@@ -32,8 +32,8 @@ export const ViewResultListType_1 = () => {
   };
 
   // Функция для обработки нажатия кнопки "Показать ещё"
-  const handleShowMoreLocation = (id: number) => {
-    setVisibleCountsLocations((prevCounts) => ({
+  const handleShowMoreMetro = (id: number) => {
+    setVisibleCountsMetros((prevCounts) => ({
       ...prevCounts,
       [id]: (prevCounts[id] || 1) + 1,
     }));
@@ -60,11 +60,11 @@ export const ViewResultListType_1 = () => {
   }
 
   return (
-    <MainSectionLayout align={data.titleAlign}>
+    <MainSectionLayout>
       <ResultListFilter openPopup={openPopup} />
       <ViewMode
-        title={data.title}
-        quantity={data.quantity}
+        title="Жилые комплексы"
+        quantity={data?.count_blocks}
         accent={true}
         border={true}
         fillColor={'#1A56DB'}
@@ -77,9 +77,9 @@ export const ViewResultListType_1 = () => {
         <ResultListTypeColumn_1
           data={data}
           handleShowMore={handleShowMore}
-          handleShowMoreLocation={handleShowMoreLocation}
+          handleShowMoreMetro={handleShowMoreMetro}
           visibleCounts={visibleCounts}
-          visibleCountsLocations={visibleCountsLocations}
+          visibleCountsMetros={visibleCountsMetros}
         />
       )}
       {isPopup && <FilterPopup closePopup={closePopup} />}

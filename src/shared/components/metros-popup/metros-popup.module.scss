@@ -6,7 +6,7 @@
 
 .modal {
   position: absolute;
-  left: 0px;
+  right: 0;
   top: 30px;
   z-index: 9999;
   padding: var(--fs-sm);
@@ -18,11 +18,12 @@
   background: #ffffff;
   border: 1px solid #d1d5db;
 
-  @include container-down('root', 630px) {
-    left: -50px;
-  }
+  // @include container-down('root', 630px) {
+  //   left: -50px;
+  // }
   @include container-down('root', 590px) {
     left: 0;
+    right: auto;
   }
 }
 
