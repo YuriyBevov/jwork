@@ -1,1 +1,1 @@
-export { ResultListTypeColumn_1 } from './result-list-type-column-1';
+export { ResultListColumnType_1 } from './result-list-column-type-1';

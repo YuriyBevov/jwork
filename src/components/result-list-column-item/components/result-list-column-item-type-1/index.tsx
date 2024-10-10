@@ -7,9 +7,8 @@ import { Badge } from '@/shared/components/badge';
 import { MetrosListAlt } from '@/shared/components/metros-list-alt';
 import { SliderResultList } from '@/shared/components/slider/slider-result-list/slider-result-list';
 
-import { ByDetails } from '../../../../shared/icons/view-mode/by-details';
 import { ResultListDTO } from '../../types';
-import styles from '../result-list-column.module.scss';
+import styles from '../result-list-column-item.module.scss';
 
 type Props = {
   data: ResultListDTO;
@@ -19,18 +18,11 @@ type Props = {
   handleShowMoreMetro: (id: number) => void;
 };
 
-export const ResultListTypeColumn_1: React.FC<Props> = ({
+export const ResultListColumnItemType_1: React.FC<Props> = ({
   data,
-  visibleCounts,
-  handleShowMore,
   visibleCountsMetros,
   handleShowMoreMetro,
 }) => {
-  // Функция форматирования числа
-  const formatPrice = (number: number) => {
-    return (number / 1000000).toFixed(2).replace('.', ',');
-  };
-
   // Получаем минимальную цену
   const minPrice = data?.blocks
     ? Math.min(
@@ -67,7 +59,6 @@ export const ResultListTypeColumn_1: React.FC<Props> = ({
     <div className={clsx(styles.root)}>
       <ul className={clsx(styles.list)}>
         {data?.blocks.map((item) => {
-          const visibleCount = visibleCounts[item.id] || 2;
           const visibleCountsMetro = visibleCountsMetros[item.id] || 1;
           return (
             <li key={item.id} className={clsx(styles.list_item)}>
@@ -94,21 +85,8 @@ export const ResultListTypeColumn_1: React.FC<Props> = ({
                       accent={true}
                     />
                   </div>
-                  {item?.apartment_count && (
-                    <span>{item?.apartment_count} квартир</span>
-                  )}
                 </div>
                 <span className={clsx(styles.base_title)}>{item.name}</span>
-                {item?.badge?.text2 !== '' && (
-                  <div className={clsx(styles.list_item_content_badge_alt)}>
-                    <ByDetails width={24} height={24} fill="#6B7280" />
-                    <Badge
-                      text={item?.badge?.text2}
-                      outlined={true}
-                      accent={true}
-                    />
-                  </div>
-                )}
                 <span className={clsx('base_subtitle', styles.base_subtitle)}>
                   {item?.address}
                 </span>
@@ -121,32 +99,32 @@ export const ResultListTypeColumn_1: React.FC<Props> = ({
                   itemId={item.id}
                   handleShowMoreMetro={handleShowMoreMetro}
                 />
-                <ul className={clsx(styles.list_item_properties_alt)}>
-                  {item?.apartments
-                    ?.slice(0, visibleCount)
-                    .map((elem, index) => (
-                      <li
-                        key={`${elem.room_type_name}-${index}`}
-                        className={clsx(
-                          styles.list_item_properties_alt_details,
-                        )}
-                      >
-                        <span>{elem.room_type_name}:</span>
-                        <span>
-                          {formatPrice(elem?.base_price)}-
-                          {formatPrice(elem?.price)} млн.
-                        </span>
-                      </li>
-                    ))}
-                </ul>
-                {item?.apartments && visibleCount < item.apartments.length && (
-                  <button
-                    className={clsx(styles.list_item_show_more)}
-                    onClick={() => handleShowMore(item.id)}
-                  >
-                    Показать ещё...
-                  </button>
-                )}
+                <div className={clsx(styles.list_item_apart)}>
+                  <div className={clsx(styles.list_item_apart_details)}>
+                    <span>Тип квартиры:</span>
+                    <span>{item?.apartment?.room_type_name}</span>
+                  </div>
+                  <div className={clsx(styles.list_item_apart_details)}>
+                    <span>Этаж:</span>
+                    <span>{item?.apartment?.flat_floor}</span>
+                  </div>
+                  <div className={clsx(styles.list_item_apart_details)}>
+                    <span>Площадь:</span>
+                    <span>{item?.apartment?.space_total}</span>
+                  </div>
+                  <div className={clsx(styles.list_item_apart_details)}>
+                    <span>Площадь кухни:</span>
+                    <span>{item?.apartment?.space_kitchen}</span>
+                  </div>
+                  <div className={clsx(styles?.list_item_apart_details)}>
+                    <span>Общая площадь:</span>
+                    <span>{item?.apartment?.space_total}</span>
+                  </div>
+                  <div className={clsx(styles.list_item_apart_details)}>
+                    <span>Площадь комнат:</span>
+                    <span>{item?.apartment?.space_room}</span>
+                  </div>
+                </div>
 
                 <div className={clsx(styles.list_item_wrapper)}>
                   <span className={clsx(styles.list_item_price)}>

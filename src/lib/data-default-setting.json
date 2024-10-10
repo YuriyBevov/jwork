@@ -1,7 +1,7 @@
 {
   "blocks": [{
     "id": "21",
-    "type": "ViewresultList",
+    "type": "viewresultListItem",
     "templateID": "1"
   }]
 }
