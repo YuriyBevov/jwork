@@ -42,29 +42,32 @@ export const ApartDetailType_1 = async () => {
   // Преобразование массива deadlines
   const deadlines = data?.block_info?.deadlines?.map(formatToQuarter) || [];
 
+  const finalPrice = data?.apartment.price.toLocaleString('ru-RU');
+  const finalMeterPrice = data?.apartment?.meter_price.toLocaleString('ru-RU');
+
   return (
     <MainSectionLayout>
       <div className={clsx(styles.root)}>
         <div className={clsx(styles.content)}>
-          <div className={clsx(styles.content_section)}>
+          <div className={clsx(styles.content_row)}>
             {data?.apartment && (
-              <div className={clsx(styles.content_section_info_top)}>
+              <div className={clsx(styles.content_row_info_top)}>
                 <Image
                   src={data?.apartment.image}
                   alt={`data?.apartment-${data?.apartment.id}`}
                   width={326}
                   height={326}
-                  className={clsx(styles.content_section_info_top_image)}
+                  className={clsx(styles.content_row_info_top_image)}
                 />
-                <div className={clsx(styles.content_section_info_top_content)}>
-                  <div className={clsx(styles.content_section_info_top_badge)}>
+                <div className={clsx(styles.content_row_info_top_content)}>
+                  <div className={clsx(styles.content_row_info_top_badge)}>
                     <Badge
                       text={data?.apartment?.badge?.text}
                       outlined={true}
                       accent={true}
                     />
                   </div>
-                  <div className={clsx(styles.content_section_info_top_header)}>
+                  <div className={clsx(styles.content_row_info_top_header)}>
                     <span
                       className={clsx('base_subtitle', styles.base_subtitle)}
                     >
@@ -72,33 +75,33 @@ export const ApartDetailType_1 = async () => {
                     </span>
                     <div
                       className={clsx(
-                        styles.content_section_info_top_header_wrapper,
+                        styles.content_row_info_top_header_wrapper,
                       )}
                     >
                       <span
                         className={clsx(
-                          styles.content_section_info_top_header_price,
+                          styles.content_row_info_top_header_price,
                         )}
                       >
-                        {data?.apartment.price} руб
+                        {finalPrice} руб
                       </span>
                       <span
                         className={clsx(
-                          styles.content_section_info_top_header_measure,
+                          styles.content_row_info_top_header_measure,
                         )}
                       >
-                        за {data?.apartment?.meter_price} руб./м2
+                        за {finalMeterPrice} руб./м2
                       </span>
                     </div>
                   </div>
                   <div
                     className={clsx(
-                      styles.content_section_info_top_content_wrapper,
+                      styles.content_row_info_top_content_wrapper,
                     )}
                   >
                     <div
                       className={clsx(
-                        styles.content_section_info_top_content_details,
+                        styles.content_row_info_top_content_details,
                       )}
                     >
                       <span>Тип квартиры:</span>
@@ -106,7 +109,7 @@ export const ApartDetailType_1 = async () => {
                     </div>
                     <div
                       className={clsx(
-                        styles.content_section_info_top_content_details,
+                        styles.content_row_info_top_content_details,
                       )}
                     >
                       <span>Этаж:</span>
@@ -114,7 +117,7 @@ export const ApartDetailType_1 = async () => {
                     </div>
                     <div
                       className={clsx(
-                        styles.content_section_info_top_content_details,
+                        styles.content_row_info_top_content_details,
                       )}
                     >
                       <span>Площадь:</span>
@@ -122,7 +125,7 @@ export const ApartDetailType_1 = async () => {
                     </div>
                     <div
                       className={clsx(
-                        styles.content_section_info_top_content_details,
+                        styles.content_row_info_top_content_details,
                       )}
                     >
                       <span>Площадь кухни:</span>
@@ -130,7 +133,7 @@ export const ApartDetailType_1 = async () => {
                     </div>
                     <div
                       className={clsx(
-                        styles.content_section_info_top_content_details,
+                        styles.content_row_info_top_content_details,
                       )}
                     >
                       <span>Общая площадь:</span>
@@ -138,7 +141,7 @@ export const ApartDetailType_1 = async () => {
                     </div>
                     <div
                       className={clsx(
-                        styles.content_section_info_top_content_details,
+                        styles.content_row_info_top_content_details,
                       )}
                     >
                       <span>Площадь комнат:</span>
@@ -149,13 +152,13 @@ export const ApartDetailType_1 = async () => {
               </div>
             )}
           </div>
-          <div className={clsx(styles.content_section)}>
+          <div className={clsx(styles.content_row)}>
             <span className={clsx('base_title', styles.base_title)}>
               Описание ЖК
             </span>
           </div>
-          <div className={clsx(styles.content_section)}>
-            <div className={clsx(styles.content_section_gallery)}>
+          <div className={clsx(styles.content_row)}>
+            <div className={clsx(styles.content_row_gallery)}>
               <SliderResultList>
                 {data?.block_img.map((img, index) => (
                   <Image
@@ -164,18 +167,13 @@ export const ApartDetailType_1 = async () => {
                     alt={`slider-${index}`}
                     width={420}
                     height={410}
-                    className={clsx(styles.content_section_gallery_slide)}
+                    className={clsx(styles.content_row_gallery_slide)}
                   />
                 ))}
               </SliderResultList>
             </div>
           </div>
-          <div
-            className={clsx(
-              styles.content_section,
-              styles.content_section_column,
-            )}
-          >
+          <div className={clsx(styles.content_row, styles.content_column)}>
             <span
               className={clsx('base_title', styles.base_title, styles.order_2)}
             >
@@ -191,8 +189,8 @@ export const ApartDetailType_1 = async () => {
               outlined={true}
             />
           </div>
-          <div className={clsx(styles.content_section)}>
-            <div className={clsx(styles.content_section_badge)}>
+          <div className={clsx(styles.content_row)}>
+            <div className={clsx(styles.content_row_badge)}>
               <ByDetails width={24} height={24} fill="#6B7280" />
               <Badge
                 text={data?.status ? data?.status : ''}
@@ -201,23 +199,23 @@ export const ApartDetailType_1 = async () => {
               />
             </div>
           </div>
-          <div className={clsx(styles.content_section)}>
+          <div className={clsx(styles.content_row)}>
             <span className={clsx(styles.base_text)}>{data?.address}</span>
           </div>
-          <div className={clsx(styles.content_section)}>
+          <div className={clsx(styles.content_row)}>
             <span className={clsx(styles.base_text)}>{data?.region_name}</span>
           </div>
           <MetrosList metros={data?.metros ?? []} />
-          <div className={clsx(styles.content_section)}>
-            <ul className={clsx(styles.content_section_apart)}>
-              <li className={styles.content_section_apart_item}>
-                <span className={styles.content_section_apart_item_name}>
+          <div className={clsx(styles.content_row)}>
+            <ul className={clsx(styles.content_row_apart)}>
+              <li className={styles.content_row_apart_item}>
+                <span className={styles.content_row_apart_item_name}>
                   Корпус:
                 </span>
                 <div>
                   {data?.block_info.building_corps.map((item, index) => (
                     <span
-                      className={styles.content_section_apart_item_value}
+                      className={styles.content_row_apart_item_value}
                       key={`${item}-${index}`}
                     >
                       {item}
@@ -225,22 +223,22 @@ export const ApartDetailType_1 = async () => {
                   ))}
                 </div>
               </li>
-              <li className={styles.content_section_apart_item}>
-                <span className={styles.content_section_apart_item_name}>
+              <li className={styles.content_row_apart_item}>
+                <span className={styles.content_row_apart_item_name}>
                   Этажей:
                 </span>
-                <span className={styles.content_section_apart_item_value}>
+                <span className={styles.content_row_apart_item_value}>
                   {data?.block_info.max_floors}
                 </span>
               </li>
-              <li className={styles.content_section_apart_item}>
-                <span className={styles.content_section_apart_item_name}>
+              <li className={styles.content_row_apart_item}>
+                <span className={styles.content_row_apart_item_name}>
                   Срок сдачи:
                 </span>
                 <div>
                   {deadlines.map((item, index) => (
                     <span
-                      className={styles.content_section_apart_item_value}
+                      className={styles.content_row_apart_item_value}
                       key={`${item}-${index}`}
                     >
                       {item}
@@ -250,17 +248,17 @@ export const ApartDetailType_1 = async () => {
               </li>
             </ul>
           </div>
-          <div className={clsx(styles.content_section)}>
+          <div className={clsx(styles.content_row)}>
             <span className={clsx('base_title', styles.base_title)}>
               Описание ЖК
             </span>
             <div
-              className={clsx(styles.content_section_note)}
+              className={clsx(styles.content_row_note)}
               dangerouslySetInnerHTML={{ __html: data?.note ? data?.note : '' }}
             />
           </div>
 
-          <div className={clsx(styles.content_section)}>
+          <div className={clsx(styles.content_row)}>
             <div
               style={{
                 position: 'relative',

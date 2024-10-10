@@ -32,9 +32,9 @@ export const MetrosList: React.FC<Props> = ({ metros }) => {
   useEffect(() => {
     const handleResize = () => {
       // Если ширина экрана меньше или равна 1200px, показываем 2 элемента
-      if (window.innerWidth <= 900) {
+      if (window.innerWidth <= 1120) {
         setDisplayedCount(1);
-      } else if (window.innerWidth <= 1200) {
+      } else if (window.innerWidth <= 1490) {
         setDisplayedCount(2);
       } else {
         // Если больше 1200px, показываем 3 элемента
@@ -61,9 +61,9 @@ export const MetrosList: React.FC<Props> = ({ metros }) => {
   return (
     <div className={clsx(styles.content_section)}>
       <ul className={clsx(styles.content_section_metros)}>
-        {displayedItems?.map((elem) => (
+        {displayedItems?.map((elem, index) => (
           <li
-            key={elem.subway_id}
+            key={`${elem.subway_id}-${index}`}
             className={clsx(styles.content_section_metros_item)}
           >
             <IconMetro />
@@ -103,9 +103,9 @@ export const MetrosList: React.FC<Props> = ({ metros }) => {
           {showModal && (
             <MetrosPopup>
               <ul className={clsx(styles.content_section_metros_modal_list)}>
-                {hiddenItems?.map((elem) => (
+                {hiddenItems?.map((elem, index) => (
                   <li
-                    key={elem.subway_id}
+                    key={`${elem.subway_id}-${index}`}
                     className={clsx(styles.content_section_metros_item)}
                   >
                     <IconMetro />

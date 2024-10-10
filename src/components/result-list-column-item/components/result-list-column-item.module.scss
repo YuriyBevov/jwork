@@ -116,74 +116,48 @@
       gap: var(--gap-base);
     }
 
-    &_properties {
+    &_apart {
+      @extend %list-reset;
       display: grid;
       grid-template-columns: 1fr;
       padding: 16px 0;
+      gap: var(--gap-base);
       border-top: 1px solid var(--lighter);
       border-bottom: 1px solid var(--lighter);
       margin-bottom: auto;
 
-      &_content {
-        @extend %flex-column;
-        &_details {
-          @extend %flex-align;
-          font-weight: var(--fw-r);
-          font-size: var(--fs-sm);
-          color: var(--lighter);
+      &_details {
+        @extend %flex-align;
+        font-weight: var(--fw-r);
+        font-size: var(--fs-sm);
+        color: var(--gray);
+        width: 100%;
+
+        @include container-down('root', $tablet-lg-width) {
+          width: 100%;
         }
 
-        &_details span:last-child {
+        &:last-child {
+          align-items: flex-start;
+        }
+      }
+
+      &_details span:last-child {
+        margin-left: auto;
+        font-weight: var(--fw-m);
+        color: var(--dark);
+      }
+
+      &_details div {
+        @extend %flex-column;
+        gap: var(--gap-base);
+        margin-left: auto;
+
+        & span {
           margin-left: auto;
           font-weight: var(--fw-m);
           color: var(--dark);
         }
-      }
-    }
-
-    &_properties_alt {
-      @extend %list-reset;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      column-gap: var(--gap-sm);
-      row-gap: 8px;
-      width: 100%;
-      padding: 16px 0;
-      border-top: 1px solid var(--lighter);
-      border-bottom: 1px solid var(--lighter);
-
-      @include container-down('root', 1260px) {
-        grid-template-columns: repeat(3, 1fr);
-      }
-
-      @include container-down('root', $tablet-lg-width) {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      @include container-down('root', $mobile-width) {
-        grid-template-columns: 1fr;
-      }
-
-      &_details {
-        @extend %flex-column;
-        gap: var(--gap-base);
-        font-weight: var(--fw-r);
-        font-size: var(--fs-sm);
-        color: var(--primary);
-        padding: 8px 16px;
-        background: #ffffff;
-        border: 1px solid #e5edff;
-      }
-
-      &_details span:first-child {
-        border-bottom: 1px solid var(--lighter);
-        padding-bottom: 8px;
-      }
-
-      &_details span:last-child {
-        // margin-left: auto;
-        font-weight: var(--fw-m);
-        color: var(--gray);
-        // white-space: nowrap;
       }
     }
 

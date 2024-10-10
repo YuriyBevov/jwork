@@ -7,16 +7,10 @@ import { Badge } from '@/shared/components/badge';
 import { MetrosList } from '@/shared/components/metros-list';
 import { SliderResultList } from '@/shared/components/slider/slider-result-list/slider-result-list';
 
-import { ByDetails } from '../../../../shared/icons/view-mode/by-details';
 import { ResultListDTO } from '../../types';
-import styles from '../result-list.module.scss';
+import styles from '../result-list-item.module.scss';
 
-export const ResultListType_1 = ({ data }: { data: ResultListDTO }) => {
-  // Функция форматирования числа
-  const formatPrice = (number: number) => {
-    return (number / 1000000).toFixed(2).replace('.', ',');
-  };
-
+export const ResultListItemType_1 = ({ data }: { data: ResultListDTO }) => {
   // Получаем минимальную цену
   const minPrice = data?.blocks
     ? Math.min(
@@ -77,21 +71,10 @@ export const ResultListType_1 = ({ data }: { data: ResultListDTO }) => {
                     accent={true}
                   />
                 </div>
-                {item?.apartment_count && (
-                  <span>{item?.apartment_count} квартир</span>
-                )}
               </div>
-              <span className={clsx(styles.base_title)}>{item.name}</span>
-              {item?.badge?.text2 !== '' && (
-                <div className={clsx(styles.list_item_content_badge_alt)}>
-                  <ByDetails width={24} height={24} fill="#6B7280" />
-                  <Badge
-                    text={item?.badge?.text2}
-                    outlined={true}
-                    accent={true}
-                  />
-                </div>
-              )}
+              <span className={clsx(styles.base_title)}>
+                {item?.apartment?.room_type_name}, {item?.name}
+              </span>
               <span className={clsx('base_subtitle', styles.base_subtitle)}>
                 {item?.address}
               </span>
@@ -99,29 +82,39 @@ export const ResultListType_1 = ({ data }: { data: ResultListDTO }) => {
                 {item?.region_name}
               </span>
               <MetrosList metros={item?.metros ?? []} />
+              <ul className={clsx(styles.list_item_apart)}>
+                <li className={clsx(styles.list_item_apart_details)}>
+                  <span>Тип квартиры:</span>
+                  <span>{item?.apartment?.room_type_name}</span>
+                </li>
+                <li className={clsx(styles.list_item_apart_details)}>
+                  <span>Этаж:</span>
+                  <span>{item?.apartment?.flat_floor}</span>
+                </li>
+                <li className={clsx(styles.list_item_apart_details)}>
+                  <span>Площадь:</span>
+                  <span>{item?.apartment?.space_total}</span>
+                </li>
+                <li className={clsx(styles.list_item_apart_details)}>
+                  <span>Площадь кухни:</span>
+                  <span>{item?.apartment?.space_kitchen}</span>
+                </li>
+                <li className={clsx(styles?.list_item_apart_details)}>
+                  <span>Общая площадь:</span>
+                  <span>{item?.apartment?.space_total}</span>
+                </li>
+                <li className={clsx(styles.list_item_apart_details)}>
+                  <span>Площадь комнат:</span>
+                  <span>{item?.apartment?.space_room}</span>
+                </li>
+              </ul>
               <div className={clsx(styles.list_item_wrapper)}>
-                <ul className={clsx(styles.list_item_properties)}>
-                  {item?.apartments.map((elem, index) => (
-                    <li
-                      key={`${elem.id}-${index}`}
-                      className={clsx(styles.list_item_properties_details)}
-                    >
-                      <span>{elem.room_type_name}:</span>
-                      <span>
-                        {formatPrice(elem?.base_price)}-
-                        {formatPrice(elem?.price)} млн.
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-                <div className={clsx(styles.list_item_wrapper)}>
-                  <span className={clsx(styles.list_item_price)}>
-                    от {finalMinPrice} руб
-                  </span>
-                  <span className={clsx(styles.list_item_price_measure)}>
-                    за {finalMinMeterPrice} руб./м2
-                  </span>
-                </div>
+                <span className={clsx(styles.list_item_price)}>
+                  от {finalMinPrice} руб
+                </span>
+                <span className={clsx(styles.list_item_price_measure)}>
+                  за {finalMinMeterPrice} руб./м2
+                </span>
               </div>
             </div>
           </li>

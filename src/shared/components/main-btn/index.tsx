@@ -11,6 +11,7 @@ type Props = {
   text?: string;
   type?: 'link' | 'submit' | 'button';
   className?: string;
+  displayBtn?: boolean;
 };
 
 export const MainBtn: React.FC<Props> = ({
@@ -20,12 +21,14 @@ export const MainBtn: React.FC<Props> = ({
   simple,
   text = 'Подробнее',
   className,
+  displayBtn,
 }) => {
   return (
     <button
       className={clsx(
         outlined ? styles.outlined : null,
         bordered ? styles.bordered : null,
+        displayBtn ? styles.displayBtn : null,
         simple ? styles.simple : null,
         rounded === 'xs'
           ? styles.rounded_xs

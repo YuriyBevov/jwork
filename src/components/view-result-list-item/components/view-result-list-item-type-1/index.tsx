@@ -7,11 +7,11 @@ import { FilterPopup } from '@/shared/components/filter-popup';
 import { ResultListFilter } from '@/shared/components/result-list-filters';
 import { ViewMode } from '@/shared/components/view-mode';
 
-import { ResultListColumnType_1 } from '../../../result-list-column/components/result-list-column-type-1';
-import { ResultListType_1 } from '../../../result-list/components/result-list-type-1';
+import { ResultListColumnItemType_1 } from '../../../result-list-column-item/components/result-list-column-item-type-1';
+import { ResultListItemType_1 } from '../../../result-list-item/components/result-list-item-type-1';
 import { ResultListDTO } from '../../types';
 
-export const ViewResultListType_1 = () => {
+export const ViewResultListItemType_1 = () => {
   const [data, setData] = useState<ResultListDTO | null>(null);
   const [isContent, setIsContent] = useState<boolean>(true);
   const [isPopup, setIsPopup] = useState<boolean>(false);
@@ -63,7 +63,7 @@ export const ViewResultListType_1 = () => {
     <MainSectionLayout>
       <ResultListFilter openPopup={openPopup} />
       <ViewMode
-        title="Жилые комплексы"
+        title="Купить квартиру Москве и Московской области"
         quantity={data?.count_blocks}
         accent={true}
         border={true}
@@ -72,9 +72,9 @@ export const ViewResultListType_1 = () => {
         isContent={isContent}
       />
       {isContent ? (
-        <ResultListType_1 data={data} />
+        <ResultListItemType_1 data={data} />
       ) : (
-        <ResultListColumnType_1
+        <ResultListColumnItemType_1
           data={data}
           handleShowMore={handleShowMore}
           handleShowMoreMetro={handleShowMoreMetro}

@@ -14,12 +14,34 @@ export interface ResultList {
   status: string;
   region_name: string;
   block_img: string[];
+  apartment: Apartment;
   apartments: ApartmentsList[];
   metros: MetrosList[];
   block_info: BlockInfo;
   badge: {
     text: string;
     text2: string;
+  };
+}
+
+interface Apartment {
+  id: number;
+  room_type_name: string;
+  decoration?: string;
+  space_total: number;
+  space_room: string;
+  space_kitchen: string;
+  number: string;
+  price: number;
+  meter_price: number;
+  flat_floor: number;
+  image: string;
+  image2: string;
+  building_corp: string;
+  building_floors: number;
+  building_deadline: string;
+  badge: {
+    text: string;
   };
 }
 
