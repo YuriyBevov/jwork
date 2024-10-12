@@ -3,6 +3,7 @@ import { Advantages } from '@/components/advantages';
 import { ApartDetail } from '@/components/apart-detail';
 import { BlogDetail } from '@/components/blog-detail';
 import { ItemDetail } from '@/components/item-detail';
+import { Map } from '@/components/map';
 import { News } from '@/components/news';
 import { Offer } from '@/components/offer';
 import { Services } from '@/components/services';
@@ -37,6 +38,8 @@ function blockRenderer(block: Block) {
       return <Offer key={block.id} templateID={block.templateID} />;
     case 'blog':
       return <BlogDetail key={block.id} templateID={block.templateID} />;
+    case 'map':
+      return <Map key={block.id} templateID={block.templateID} />;
     // case 'ViewresultList':
     //   return <ViewresultList key={block.id} templateID={block.templateID} />;
     // case 'footer':

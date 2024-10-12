@@ -1,7 +1,9 @@
 {
-  "blocks": [{
-    "id": "21",
-    "type": "apartDetailType_1",
-    "templateID": "1"
-  }]
+  "blocks": [
+    {
+      "id": "21",
+      "type": "map",
+      "templateID": "1"
+    }
+  ]
 }

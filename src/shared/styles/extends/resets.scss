@@ -4,6 +4,12 @@
   list-style: none;
 }
 
+%btn-reset {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+}
+
 %fieldset-reset {
   margin: 0;
   padding: 0;
