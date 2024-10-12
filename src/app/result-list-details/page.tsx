@@ -1,4 +1,4 @@
-import { ItemDetailType_1 } from '@/components/item-detail-type-1';
+import { ItemDetailType_1 } from '@/components/item-detail/components';
 
 export default function ResultListDetails() {
   return (

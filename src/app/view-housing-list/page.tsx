@@ -6,7 +6,7 @@ import {
   ViewResultListType_5,
   ViewResultListType_6,
   ViewResultListType_7,
-} from '@/components/result-list';
+} from '@/components/view-result-list/components';
 
 export default function ViewresultList() {
   return (

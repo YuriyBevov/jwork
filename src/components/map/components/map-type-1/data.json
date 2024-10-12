@@ -1,4 +1,27 @@
 {
   "name": "TEST",
-  "coords": [55.75, 37.57]
+  "coords": [55.75, 37.57],
+  "filter": {
+    "title": "Фильтр",
+    "items": [
+      {
+        "title": "Вторичка",
+        "type": "text",
+        "name": "Вторичка",
+        "placeholder": "Вторичка"
+      },
+      {
+        "title": "Комнатность",
+        "type": "text",
+        "name": "Комнатность",
+        "placeholder": "Комнатность"
+      },
+      {
+        "title": "Площадь",
+        "type": "text",
+        "name": "Площадь",
+        "placeholder": "Площадь"
+      }
+    ]
+  }
 }
