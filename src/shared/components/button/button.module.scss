@@ -1,0 +1,50 @@
+.root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-base);
+  width: fit-content;
+  padding-inline: calc(var(--gap-sm) + 4px);
+  border: 1px solid transparent;
+  background-color: var(--primary);
+  color: var(--white);
+  cursor: pointer;
+  transition: opacity var(--base-transition);
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  span {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    line-height: 1;
+  }
+}
+
+.radius {
+  &__xs {
+    border-radius: calc(var(--gap-base) + 2px);
+  }
+
+  &__lg {
+    border-radius: var(--gap-lg);
+  }
+}
+
+.height {
+  &__xs {
+    min-height: 40px;
+  }
+
+  &__lg {
+    min-height: 48px;
+  }
+}
+
+.outline {
+  background-color: transparent;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+}

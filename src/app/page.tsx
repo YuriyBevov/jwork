@@ -6,6 +6,8 @@ import { ItemDetail } from '@/components/item-detail';
 import { Map } from '@/components/map';
 import { News } from '@/components/news';
 import { Offer } from '@/components/offer';
+import { ResultListDetails } from '@/components/result-list-details';
+import { ResultListDetailsAlt } from '@/components/result-list-details-alt';
 import { Services } from '@/components/services';
 import { Staff } from '@/components/staff';
 // import { ViewresultList } from '@/components/view-result-list';
