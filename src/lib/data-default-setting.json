@@ -1,7 +1,12 @@
 {
   "blocks": [
     {
-      "id": "21",
+      "id": "1",
+      "type": "header",
+      "templateID": "1"
+    },
+    {
+      "id": "2",
       "type": "map",
       "templateID": "1"
     }
