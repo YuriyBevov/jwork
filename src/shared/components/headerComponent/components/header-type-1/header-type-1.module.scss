@@ -1,0 +1,41 @@
+@import '../../../../styles/extends.scss';
+@import '../../../../styles/mixins.scss';
+
+.header {
+  &_section {
+  }
+
+  &_logo {
+    margin-right: auto;
+  }
+
+  &_contacts {
+    outline: 1px solid red;
+
+    @include container-down('header', $tablet-lg-width) {
+      flex-direction: column;
+
+      & > * {
+        width: 100%;
+      }
+    }
+
+    @include container-down('header', $tablet-width) {
+      display: none;
+    }
+  }
+
+  &_action {
+    outline: 1px solid red;
+
+    @include container-down('header', $tablet-width) {
+      display: none;
+    }
+  }
+}
+
+.burger {
+  @include container-down('header', $tablet-width) {
+    display: flex;
+  }
+}
