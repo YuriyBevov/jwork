@@ -1,3 +1,5 @@
+'use client';
+
 import { Input, InputLabel, RangeSlider } from '@mantine/core';
 import React, { useState } from 'react';
 
