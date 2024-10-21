@@ -3,15 +3,28 @@
 import clsx from 'clsx';
 import { useState } from 'react';
 
-import { FilterDTO } from '@/components/map/types';
+import { Filter, FilterItem } from '@/components/map/types';
 import { IconFilter } from '@/shared/icons/icon-filter';
 import { IconSmallArrow } from '@/shared/icons/icon-small-arrow';
+import { CheckboxBtnUi, CheckboxUi, RangeSliderUi } from '@/shared/ui';
 
-import { FilterItems } from '../filter-items';
 import styles from './filter-map.module.scss';
 
-export const FilterMap = ({ data }: { data: FilterDTO }) => {
+export const FilterMap = ({ data }: { data: Filter }) => {
   const [openFilter, setOpenFilter] = useState(false);
+
+  function blockRenderer(block: FilterItem) {
+    switch (block.type) {
+      case 'range':
+        return <RangeSliderUi key={block.id} data={block} />;
+      case 'checkbox':
+        return <CheckboxBtnUi key={block.id} data={block} />;
+      case 'checkbox_btn':
+        return <CheckboxUi key={block.id} data={block} />;
+      default:
+        return null;
+    }
+  }
 
   const handleOpenFilter = () => {
     setOpenFilter(!openFilter);
@@ -32,7 +45,12 @@ export const FilterMap = ({ data }: { data: FilterDTO }) => {
           <IconSmallArrow width={16} height={16} />
         </button>
       </div>
-      {openFilter && <FilterItems data={data} />}
+
+      {data.items
+        .sort((a, b) => parseInt(a.id) - parseInt(b.id))
+        .map((block: FilterItem) => blockRenderer(block))}
+
+      {/* {openFilter && <FilterItems data={data} />} */}
     </div>
   );
 };

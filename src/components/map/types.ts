@@ -1,17 +1,22 @@
-export interface PageDTO {
+export interface FilterDTO {
   name: string;
   coords: [number, number];
-  filter: FilterDTO;
+  filter: Filter;
 }
 
-export interface FilterDTO {
+export interface Filter {
   title: string;
   items: FilterItem[];
 }
 
-interface FilterItem {
+export interface FilterItem {
+  id: string;
   title: string;
   type: string;
-  name: string;
-  placeholder: string;
+  value: FilterItemValue[] | [number, number];
+}
+
+interface FilterItemValue {
+  id: string;
+  value: string | number;
 }
