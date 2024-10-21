@@ -11,7 +11,7 @@ interface Hero {
   items: HeroItem[];
 }
 
-interface HeroItem {
+export interface HeroItem {
   id: string;
   type: string;
   title: string;

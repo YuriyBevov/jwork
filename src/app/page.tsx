@@ -2,7 +2,9 @@ import { About } from '@/components/about';
 import { Advantages } from '@/components/advantages';
 import { ApartDetail } from '@/components/apart-detail';
 import { BlogDetail } from '@/components/blog-detail';
+import { Header } from '@/components/header';
 import { ItemDetail } from '@/components/item-detail';
+import { Map } from '@/components/map';
 import { News } from '@/components/news';
 import { Offer } from '@/components/offer';
 import { Services } from '@/components/services';
@@ -20,6 +22,8 @@ interface Block {
 
 function blockRenderer(block: Block) {
   switch (block.type) {
+    case 'header':
+      return <Header key={block.id} templateID={block.templateID} />;
     case 'advantages':
       return <Advantages key={block.id} templateID={block.templateID} />;
     case 'about':
@@ -46,6 +50,8 @@ function blockRenderer(block: Block) {
       );
     // case 'footer':
     //   return <Footer key={block.id} layout={block.layout} />;
+    case 'map':
+      return <Map key={block.id} templateID={block.templateID} />;
     default:
       return null;
   }
