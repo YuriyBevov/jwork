@@ -31,16 +31,16 @@ export const ResultListColumnType_1: React.FC<Props> = ({
     return (number / 1000000).toFixed(2).replace('.', ',');
   };
 
-  // Получаем минимальную цену
-  const minPrice = data?.blocks
-    ? Math.min(
-        ...data.blocks.reduce<number[]>((acc, elem) => {
-          return acc.concat(
-            elem.apartments.map((apartment) => apartment.price),
-          );
-        }, []),
-      ) ?? Infinity // Устанавливаем значение по умолчанию
-    : Infinity; // Если data или blocks не определены
+  const minPrice =
+    data && data.blocks
+      ? Math.min(
+          ...data.blocks.reduce<number[]>((acc, elem) => {
+            return acc.concat(
+              elem.apartments.map((apartment) => apartment.price),
+            );
+          }, []),
+        ) ?? Infinity
+      : Infinity;
 
   // Форматируем минимальную цену
   const finalMinPrice =
@@ -87,15 +87,19 @@ export const ResultListColumnType_1: React.FC<Props> = ({
               </div>
               <div className={clsx(styles.list_item_content)}>
                 <div className={clsx(styles.list_item_content_headers)}>
-                  <div className={clsx(styles.list_item_content_badge)}>
-                    <Badge
-                      text={item?.badge?.text}
-                      outlined={true}
-                      accent={true}
-                    />
-                  </div>
-                  {item?.apartment_count && (
-                    <span>{item?.apartment_count} квартир</span>
+                  {data?.type && (
+                    <div className={clsx(styles.list_item_content_badge)}>
+                      <Badge
+                        text={
+                          data?.type === 'newbuildings' ? 'Жилые комплексы' : ''
+                        }
+                        outlined={true}
+                        accent={true}
+                      />
+                    </div>
+                  )}
+                  {item?.apartments && (
+                    <span>{item?.apartments.length} квартир</span>
                   )}
                 </div>
                 <span className={clsx(styles.base_title)}>{item.name}</span>

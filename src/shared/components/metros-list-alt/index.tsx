@@ -38,20 +38,38 @@ export const MetrosListAlt: React.FC<Props> = ({
               className={clsx(styles.content_section_metros_details)}
             >
               <IconMetro />
-              <span className={clsx('base_text', styles.base_text)}>
+              <span
+                className={clsx(
+                  'base_text',
+                  styles.base_text,
+                  styles.base_text_margin_r,
+                )}
+              >
                 {elem.metro}
               </span>
               {elem.distance.includes('пешком') ? (
                 <>
                   <IconMan />
-                  <span className={clsx('base_text', styles.base_text)}>
+                  <span
+                    className={clsx(
+                      'base_text',
+                      styles.base_text,
+                      styles.base_text_time,
+                    )}
+                  >
                     {elem.distance.replace('пешком', '').trim()}
                   </span>
                 </>
               ) : elem.distance.includes('транспортом') ? (
                 <>
                   <IconTransport />
-                  <span className={clsx('base_text', styles.base_text)}>
+                  <span
+                    className={clsx(
+                      'base_text',
+                      styles.base_text,
+                      styles.base_text_time,
+                    )}
+                  >
                     {elem.distance.replace('транспортом', '').trim()}
                   </span>
                 </>

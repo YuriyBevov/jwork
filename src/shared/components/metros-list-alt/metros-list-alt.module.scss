@@ -43,10 +43,20 @@
         svg {
           max-width: 16px;
           max-height: 16px;
+          min-height: 16px;
+          min-width: 16px;
           object-fit: contain;
         }
         .base_text {
           font-size: var(--gap-sm);
+
+          &_margin_r {
+            margin-right: auto;
+          }
+
+          &_time {
+            white-space: nowrap;
+          }
         }
       }
 
@@ -64,6 +74,7 @@
       font-size: 16px;
       color: #111928;
       cursor: pointer;
+      white-space: nowrap;
     }
   }
 }

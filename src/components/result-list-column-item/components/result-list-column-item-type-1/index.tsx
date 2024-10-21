@@ -99,32 +99,32 @@ export const ResultListColumnItemType_1: React.FC<Props> = ({
                   itemId={item.id}
                   handleShowMoreMetro={handleShowMoreMetro}
                 />
-                <div className={clsx(styles.list_item_apart)}>
-                  <div className={clsx(styles.list_item_apart_details)}>
+                <ul className={clsx(styles.list_item_apart)}>
+                  <li className={clsx(styles.list_item_apart_details)}>
                     <span>Тип квартиры:</span>
                     <span>{item?.apartment?.room_type_name}</span>
-                  </div>
-                  <div className={clsx(styles.list_item_apart_details)}>
+                  </li>
+                  <li className={clsx(styles.list_item_apart_details)}>
                     <span>Этаж:</span>
                     <span>{item?.apartment?.flat_floor}</span>
-                  </div>
-                  <div className={clsx(styles.list_item_apart_details)}>
+                  </li>
+                  <li className={clsx(styles.list_item_apart_details)}>
                     <span>Площадь:</span>
                     <span>{item?.apartment?.space_total}</span>
-                  </div>
-                  <div className={clsx(styles.list_item_apart_details)}>
+                  </li>
+                  <li className={clsx(styles.list_item_apart_details)}>
                     <span>Площадь кухни:</span>
                     <span>{item?.apartment?.space_kitchen}</span>
-                  </div>
-                  <div className={clsx(styles?.list_item_apart_details)}>
+                  </li>
+                  <li className={clsx(styles?.list_item_apart_details)}>
                     <span>Общая площадь:</span>
                     <span>{item?.apartment?.space_total}</span>
-                  </div>
-                  <div className={clsx(styles.list_item_apart_details)}>
+                  </li>
+                  <li className={clsx(styles.list_item_apart_details)}>
                     <span>Площадь комнат:</span>
                     <span>{item?.apartment?.space_room}</span>
-                  </div>
-                </div>
+                  </li>
+                </ul>
 
                 <div className={clsx(styles.list_item_wrapper)}>
                   <span className={clsx(styles.list_item_price)}>

@@ -114,6 +114,7 @@
     &_wrapper {
       @extend %flex-column;
       gap: var(--gap-base);
+      margin-top: auto;
     }
 
     &_properties {

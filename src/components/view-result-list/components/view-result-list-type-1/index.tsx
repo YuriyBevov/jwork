@@ -19,6 +19,9 @@ export const ViewResultListType_1 = () => {
   const [visibleCounts, setVisibleCounts] = useState<Record<number, number>>(
     {},
   );
+  const [visibleCountsAlt, setVisibleCountsAlt] = useState<
+    Record<number, number>
+  >({});
   const [visibleCountsMetros, setVisibleCountsMetros] = useState<
     Record<number, number>
   >({});
@@ -28,6 +31,14 @@ export const ViewResultListType_1 = () => {
     setVisibleCounts((prevCounts) => ({
       ...prevCounts,
       [id]: (prevCounts[id] || 2) + 2,
+    }));
+  };
+
+  // Функция для обработки нажатия кнопки "Показать ещё"
+  const handleShowMoreAlt = (id: number) => {
+    setVisibleCountsAlt((prevCounts) => ({
+      ...prevCounts,
+      [id]: (prevCounts[id] || 4) + 4,
     }));
   };
 
@@ -49,7 +60,7 @@ export const ViewResultListType_1 = () => {
     async function fetchData() {
       const response = await fetch('/data.json');
       const result = await response.json();
-      setData(result);
+      setData(result.data);
     }
 
     fetchData();
@@ -72,7 +83,11 @@ export const ViewResultListType_1 = () => {
         isContent={isContent}
       />
       {isContent ? (
-        <ResultListType_1 data={data} />
+        <ResultListType_1
+          data={data}
+          visibleCounts={visibleCountsAlt}
+          handleShowMore={handleShowMoreAlt}
+        />
       ) : (
         <ResultListColumnType_1
           data={data}

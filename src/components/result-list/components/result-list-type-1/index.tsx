@@ -11,7 +11,17 @@ import { ByDetails } from '../../../../shared/icons/view-mode/by-details';
 import { ResultListDTO } from '../../types';
 import styles from '../result-list.module.scss';
 
-export const ResultListType_1 = ({ data }: { data: ResultListDTO }) => {
+type Props = {
+  data: ResultListDTO;
+  visibleCounts: Record<number, number>; // Объект, где ключ — это id элемента, а значение — количество видимых элементов
+  handleShowMore: (id: number) => void; // Функция, которая принимает id элемента для показа дополнительных данных
+};
+
+export const ResultListType_1: React.FC<Props> = ({
+  data,
+  visibleCounts,
+  handleShowMore,
+}) => {
   // Функция форматирования числа
   const formatPrice = (number: number) => {
     return (number / 1000000).toFixed(2).replace('.', ',');
@@ -52,80 +62,98 @@ export const ResultListType_1 = ({ data }: { data: ResultListDTO }) => {
   return (
     <div className={clsx(styles.root)}>
       <ul className={clsx(styles.list)}>
-        {data?.blocks.map((item) => (
-          <li key={item?.id} className={clsx(styles.list_item)}>
-            <div className={clsx(styles.list_item_gallery)}>
-              <SliderResultList>
-                {item?.block_img.map((img, index) => (
-                  <Image
-                    key={`картина-${index}`}
-                    src={img}
-                    alt={`slider-${index}`}
-                    width={420}
-                    height={410}
-                    className={clsx(styles.content_section_gallery_slide)}
-                  />
-                ))}
-              </SliderResultList>
-            </div>
-            <div className={clsx(styles.list_item_content)}>
-              <div className={clsx(styles.list_item_content_headers)}>
-                <div className={clsx(styles.list_item_content_badge)}>
-                  <Badge
-                    text={item?.badge?.text}
-                    outlined={true}
-                    accent={true}
-                  />
-                </div>
-                {item?.apartment_count && (
-                  <span>{item?.apartment_count} квартир</span>
-                )}
-              </div>
-              <span className={clsx(styles.base_title)}>{item.name}</span>
-              {item?.badge?.text2 !== '' && (
-                <div className={clsx(styles.list_item_content_badge_alt)}>
-                  <ByDetails width={24} height={24} fill="#6B7280" />
-                  <Badge
-                    text={item?.badge?.text2}
-                    outlined={true}
-                    accent={true}
-                  />
-                </div>
-              )}
-              <span className={clsx('base_subtitle', styles.base_subtitle)}>
-                {item?.address}
-              </span>
-              <span className={clsx('base_subtitle', styles.base_subtitle)}>
-                {item?.region_name}
-              </span>
-              <MetrosList metros={item?.metros ?? []} />
-              <div className={clsx(styles.list_item_wrapper)}>
-                <ul className={clsx(styles.list_item_properties)}>
-                  {item?.apartments.map((elem, index) => (
-                    <li
-                      key={`${elem.id}-${index}`}
-                      className={clsx(styles.list_item_properties_details)}
-                    >
-                      <span>{elem.room_type_name}:</span>
-                      <span>
-                        {formatPrice(elem?.base_price)}-
-                        {formatPrice(elem?.price)} млн.
-                      </span>
-                    </li>
+        {data?.blocks.map((item) => {
+          const visibleCount = visibleCounts[item.id] || 4;
+          return (
+            <li key={item?.id} className={clsx(styles.list_item)}>
+              <div className={clsx(styles.list_item_gallery)}>
+                <SliderResultList>
+                  {item?.block_img.map((img, index) => (
+                    <Image
+                      key={`картина-${index}`}
+                      src={img}
+                      alt={`slider-${index}`}
+                      width={420}
+                      height={410}
+                      className={clsx(styles.content_section_gallery_slide)}
+                    />
                   ))}
-                </ul>
+                </SliderResultList>
+              </div>
+              <div className={clsx(styles.list_item_content)}>
+                <div className={clsx(styles.list_item_content_headers)}>
+                  {data?.type && (
+                    <div className={clsx(styles.list_item_content_badge)}>
+                      <Badge
+                        text={
+                          data?.type === 'newbuildings' ? 'Жилые комплексы' : ''
+                        }
+                        outlined={true}
+                        accent={true}
+                      />
+                    </div>
+                  )}
+                  {item?.apartments && (
+                    <span>{item?.apartments.length} квартир</span>
+                  )}
+                </div>
+                <span className={clsx(styles.base_title)}>{item.name}</span>
+                {item?.badge?.text2 !== '' && (
+                  <div className={clsx(styles.list_item_content_badge_alt)}>
+                    <ByDetails width={24} height={24} fill="#6B7280" />
+                    <Badge
+                      text={item?.badge?.text2}
+                      outlined={true}
+                      accent={true}
+                    />
+                  </div>
+                )}
+                <span className={clsx('base_subtitle', styles.base_subtitle)}>
+                  {item?.address}
+                </span>
+                <span className={clsx('base_subtitle', styles.base_subtitle)}>
+                  {item?.region_name}
+                </span>
+                <MetrosList metros={item?.metros ?? []} />
                 <div className={clsx(styles.list_item_wrapper)}>
-                  <span className={clsx(styles.list_item_price)}>
-                    от {finalMinPrice} руб
-                  </span>
-                  <span className={clsx(styles.list_item_price_measure)}>
-                    за {finalMinMeterPrice} руб./м2
-                  </span>
+                  <ul className={clsx(styles.list_item_properties)}>
+                    {item?.apartments
+                      ?.slice(0, visibleCount)
+                      .map((elem, index) => (
+                        <li
+                          key={`${elem.id}-${index}`}
+                          className={clsx(styles.list_item_properties_details)}
+                        >
+                          <span>{elem.room_type_name}:</span>
+                          <span>
+                            {formatPrice(elem?.base_price)}-
+                            {formatPrice(elem?.price)} млн.
+                          </span>
+                        </li>
+                      ))}
+                  </ul>
+                  {item?.apartments &&
+                    visibleCount < item.apartments.length && (
+                      <button
+                        className={clsx(styles.list_item_show_more)}
+                        onClick={() => handleShowMore(item.id)}
+                      >
+                        Показать ещё...
+                      </button>
+                    )}
+                  <div className={clsx(styles.list_item_wrapper)}>
+                    <span className={clsx(styles.list_item_price)}>
+                      от {finalMinPrice} руб
+                    </span>
+                    <span className={clsx(styles.list_item_price_measure)}>
+                      за {finalMinMeterPrice} руб./м2
+                    </span>
+                  </div>
                 </div>
               </div>
-            </div>
-          </li>
-        ))}
+            </li>
+          );
+        })}
       </ul>
     </div>
   );

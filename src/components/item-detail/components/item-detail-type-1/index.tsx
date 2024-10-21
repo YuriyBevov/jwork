@@ -65,7 +65,8 @@ export const ItemDetailType_1 = async () => {
   }
 
   // Преобразование массива deadlines
-  const deadlines = data?.block_info?.deadlines?.map(formatToQuarter) || [];
+  const deadlines =
+    data?.data?.block?.block_info?.deadlines?.map(formatToQuarter) || [];
 
   return (
     <MainSectionLayout>
@@ -74,7 +75,7 @@ export const ItemDetailType_1 = async () => {
           <div className={clsx(styles.content_row)}>
             <div className={clsx(styles.content_row_gallery)}>
               <SliderResultList>
-                {data?.block_img.map((img, index) => (
+                {data?.data?.block?.block_img.map((img, index) => (
                   <Image
                     key={`картина-${index}`}
                     src={img}
@@ -91,7 +92,7 @@ export const ItemDetailType_1 = async () => {
             <span
               className={clsx('base_title', styles.base_title, styles.order_2)}
             >
-              {data?.name}
+              {data?.data?.block?.name}
             </span>
             <MainLink
               text="На карте"
@@ -107,7 +108,7 @@ export const ItemDetailType_1 = async () => {
             <div className={clsx(styles.content_row_badge)}>
               <ByDetails width={24} height={24} fill="#6B7280" />
               <Badge
-                text={data?.status ? data?.status : ''}
+                text={data?.data?.type === 'newbuildings' ? 'Новостройка' : ''}
                 outlined={true}
                 muted={true}
               />
@@ -115,15 +116,15 @@ export const ItemDetailType_1 = async () => {
           </div>
           <div className={clsx(styles.content_row)}>
             <span className={clsx('base_subtitle', styles.base_subtitle)}>
-              {data?.address}
+              {data?.data?.block?.address}
             </span>
           </div>
           <div className={clsx(styles.content_row)}>
             <span className={clsx('base_subtitle', styles.base_subtitle)}>
-              {data?.region_name}
+              {data?.data?.block?.region_name}
             </span>
           </div>
-          <MetrosList metros={data?.metros ?? []} />
+          <MetrosList metros={data?.data?.block?.metros ?? []} />
           <div className={clsx(styles.content_row)}>
             <ul className={clsx(styles.content_row_apart)}>
               <li className={styles.content_row_apart_item}>
@@ -131,14 +132,16 @@ export const ItemDetailType_1 = async () => {
                   Корпус:
                 </span>
                 <div>
-                  {data?.block_info.building_corps.map((item, index) => (
-                    <span
-                      className={styles.content_row_apart_item_value}
-                      key={`${item}-${index}`}
-                    >
-                      {item}
-                    </span>
-                  ))}
+                  {data?.data?.block?.block_info.building_corps.map(
+                    (item, index) => (
+                      <span
+                        className={styles.content_row_apart_item_value}
+                        key={`${item}-${index}`}
+                      >
+                        {item}
+                      </span>
+                    ),
+                  )}
                 </div>
               </li>
               <li className={styles.content_row_apart_item}>
@@ -146,7 +149,7 @@ export const ItemDetailType_1 = async () => {
                   Этажей:
                 </span>
                 <span className={styles.content_row_apart_item_value}>
-                  {data?.block_info.max_floors}
+                  {data?.data?.block?.block_info.max_floors}
                 </span>
               </li>
               <li className={styles.content_row_apart_item}>
@@ -172,7 +175,9 @@ export const ItemDetailType_1 = async () => {
             </span>
             <div
               className={clsx(styles.content_row_note)}
-              dangerouslySetInnerHTML={{ __html: data?.note ? data?.note : '' }}
+              dangerouslySetInnerHTML={{
+                __html: data?.data?.block?.note ? data?.data?.block?.note : '',
+              }}
             />
           </div>
           <div className={clsx(styles.content_row)}>
@@ -210,7 +215,7 @@ export const ItemDetailType_1 = async () => {
                 </tr>
               </thead>
               <tbody>
-                {data?.apartments.map((item, index) => (
+                {data?.data?.block?.apartments.map((item, index) => (
                   <tr
                     className={styles.tab_body_content}
                     key={`${item.id}-${index}`}
@@ -237,7 +242,7 @@ export const ItemDetailType_1 = async () => {
               </tbody>
             </table>
             <ul className={clsx(styles.content_row_list)}>
-              {data?.apartments.map((item, index) => (
+              {data?.data?.block?.apartments.map((item, index) => (
                 <li
                   key={`${item.room_type_name}-${index}`}
                   className={clsx(styles.content_row_list_item)}
