@@ -1,10 +1,10 @@
 export interface FilterDTO {
   name: string;
   coords: [number, number];
-  filter: Filter;
+  filter: FilterItems;
 }
 
-export interface Filter {
+export interface FilterItems {
   title: string;
   items: FilterItem[];
 }
@@ -16,7 +16,10 @@ export interface FilterItem {
   value: FilterItemValue[] | [number, number];
 }
 
-interface FilterItemValue {
+export interface FilterItemValue {
   id: string;
-  value: string | number;
+  value: {
+    id: string;
+    value: string;
+  }[];
 }

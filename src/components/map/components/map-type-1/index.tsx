@@ -1,5 +1,5 @@
 import { getLocalData } from '@/lib/localdata';
-import { FilterMap } from '@/shared/components/filter-map';
+import { Filter } from '@/shared/components/filter';
 import { YMap } from '@/shared/components/yMap';
 
 import { FilterDTO } from '../../types';
@@ -14,7 +14,7 @@ export const MapType_1 = async () => {
     <section>
       <div className="container-fluid">
         <div className={styles.root}>
-          <FilterMap data={data.filter} />
+          <Filter data={data.filter} />
           <YMap />
         </div>
       </div>

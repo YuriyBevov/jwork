@@ -7,12 +7,6 @@
     font-size: var(--gap-sm);
     font-weight: 500;
   }
-
-  &:not(:last-child) {
-    padding-bottom: var(--gap-sm);
-    margin-bottom: var(--gap-sm);
-    border-bottom: 1px solid rgb(209, 213, 219);
-  }
 }
 
 .input_numeric {

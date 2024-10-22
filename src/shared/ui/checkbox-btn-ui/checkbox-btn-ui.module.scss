@@ -1,0 +1,25 @@
+.root {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-base);
+
+  label {
+    position: relative;
+    border: 1px solid rgb(209, 213, 219);
+    background: rgb(243, 244, 246);
+    cursor: pointer;
+  }
+
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+
+    &:checked ~ label {
+      background-color: var(--primary);
+      border: 1px solid var(--primary);
+    }
+  }
+}
