@@ -10,7 +10,7 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    margin-bottom: 16px;
+    // margin-bottom: 16px;
 
     @include container-down('root', 900px) {
       &_column {
@@ -24,7 +24,6 @@
     &_metros {
       @extend %list-reset;
       display: flex;
-      align-items: flex-start;
       gap: var(--gap-xxl);
       margin-bottom: 8px;
       width: 100%;
@@ -50,6 +49,8 @@
         svg {
           max-width: 16px;
           max-height: 16px;
+          min-width: 16px;
+          min-height: 16px;
           object-fit: contain;
         }
 
@@ -63,6 +64,19 @@
           font-size: 16px;
           color: #111928;
           cursor: pointer;
+          white-space: nowrap;
+        }
+
+        .base_text {
+          font-size: var(--gap-sm);
+
+          &_margin_r {
+            margin-right: auto;
+          }
+
+          &_time {
+            white-space: nowrap;
+          }
         }
       }
 

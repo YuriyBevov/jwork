@@ -7,7 +7,7 @@ import { FilterPopup } from '@/shared/components/filter-popup';
 import { ResultListFilter } from '@/shared/components/result-list-filters';
 import { ViewMode } from '@/shared/components/view-mode';
 
-import { ResultListTypeColumn_1 } from '../../../result-list-column/components/result-list-type-column-1';
+import { ResultListColumnType_1 } from '../../../result-list-column/components/result-list-column-type-1';
 import { ResultListType_1 } from '../../../result-list/components/result-list-type-1';
 import { ResultListDTO } from '../../types';
 
@@ -19,7 +19,10 @@ export const ViewResultListType_1 = () => {
   const [visibleCounts, setVisibleCounts] = useState<Record<number, number>>(
     {},
   );
-  const [visibleCountsLocations, setVisibleCountsLocations] = useState<
+  const [visibleCountsAlt, setVisibleCountsAlt] = useState<
+    Record<number, number>
+  >({});
+  const [visibleCountsMetros, setVisibleCountsMetros] = useState<
     Record<number, number>
   >({});
 
@@ -32,8 +35,16 @@ export const ViewResultListType_1 = () => {
   };
 
   // Функция для обработки нажатия кнопки "Показать ещё"
-  const handleShowMoreLocation = (id: number) => {
-    setVisibleCountsLocations((prevCounts) => ({
+  const handleShowMoreAlt = (id: number) => {
+    setVisibleCountsAlt((prevCounts) => ({
+      ...prevCounts,
+      [id]: (prevCounts[id] || 4) + 4,
+    }));
+  };
+
+  // Функция для обработки нажатия кнопки "Показать ещё"
+  const handleShowMoreMetro = (id: number) => {
+    setVisibleCountsMetros((prevCounts) => ({
       ...prevCounts,
       [id]: (prevCounts[id] || 1) + 1,
     }));
@@ -49,7 +60,7 @@ export const ViewResultListType_1 = () => {
     async function fetchData() {
       const response = await fetch('/data.json');
       const result = await response.json();
-      setData(result);
+      setData(result.data);
     }
 
     fetchData();
@@ -60,11 +71,11 @@ export const ViewResultListType_1 = () => {
   }
 
   return (
-    <MainSectionLayout align={data.titleAlign}>
+    <MainSectionLayout>
       <ResultListFilter openPopup={openPopup} />
       <ViewMode
-        title={data.title}
-        quantity={data.quantity}
+        title="Жилые комплексы"
+        quantity={data?.count_blocks}
         accent={true}
         border={true}
         fillColor={'#1A56DB'}
@@ -72,14 +83,18 @@ export const ViewResultListType_1 = () => {
         isContent={isContent}
       />
       {isContent ? (
-        <ResultListType_1 data={data} />
+        <ResultListType_1
+          data={data}
+          visibleCounts={visibleCountsAlt}
+          handleShowMore={handleShowMoreAlt}
+        />
       ) : (
-        <ResultListTypeColumn_1
+        <ResultListColumnType_1
           data={data}
           handleShowMore={handleShowMore}
-          handleShowMoreLocation={handleShowMoreLocation}
+          handleShowMoreMetro={handleShowMoreMetro}
           visibleCounts={visibleCounts}
-          visibleCountsLocations={visibleCountsLocations}
+          visibleCountsMetros={visibleCountsMetros}
         />
       )}
       {isPopup && <FilterPopup closePopup={closePopup} />}

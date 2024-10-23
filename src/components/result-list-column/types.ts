@@ -1,62 +1,56 @@
 export interface ResultListDTO {
-  title: string;
-  titleAlign?: string;
-  description?: string;
-  quantity?: string;
-  content: {
-    list: ResultListListItem[];
+  count_blocks: number;
+  type: string;
+  blocks: ResultList[];
+}
+
+export interface ResultList {
+  id: number;
+  apartment_count: number;
+  name: string;
+  address: string;
+  note: string;
+  latitude: number;
+  longitude: number;
+  status: string;
+  region_name: string;
+  block_img: string[];
+  apartments: ApartmentsList[];
+  metros: MetrosList[];
+  block_info: BlockInfo;
+  badge: {
+    text: string;
+    text2: string;
   };
 }
 
-interface ResultListListItem {
+interface ApartmentsList {
   id: number;
-  title: string;
-  description?: string;
-  badge: {
-    text: string;
-    text_2: string;
-  };
-  image: [
-    {
-      url: string;
-      alt: string;
-      width: number;
-      height: number;
-    },
-  ];
-  district: string;
-  location: [
-    {
-      name: string;
-      time: string;
-      image: {
-        url: string;
-        alt: string;
-        width: number;
-        height: number;
-      };
-    },
-  ];
-  properties: [
-    {
-      'Тип квартиры': string;
-      Этаж: string;
-      Площадь: string;
-    },
-    {
-      'Площадь кухни': string;
-      'Общая площадь': string;
-      'Площадь комнат': string;
-    },
-  ];
-  properties_alt: [
-    {
-      title: string;
-      description: string;
-    },
-  ];
-  price: string;
-  price_alt: string;
-  priceMeasure: string;
-  priceMeasure_alt: string;
+  room_type_name: string;
+  decoration?: string;
+  space_total: number;
+  space_room: string;
+  space_kitchen: string;
+  number: string;
+  price: number;
+  base_price: number;
+  meter_price: number;
+  flat_floor: number;
+  image: string;
+  image2: string;
+  building_corp: string;
+  building_floors: number;
+  building_deadline: string;
+}
+
+export interface MetrosList {
+  subway_id: number;
+  distance: string;
+  metro: string;
+}
+
+interface BlockInfo {
+  building_corps: string[];
+  max_floors: number;
+  deadlines: string[];
 }

@@ -1,4 +1,13 @@
 export interface ItemDetailDTO {
+  data: Data;
+}
+
+export interface Data {
+  block: Block;
+  type: string;
+}
+
+export interface Block {
   name: string;
   address: string;
   note: string;
