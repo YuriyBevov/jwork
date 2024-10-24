@@ -18,20 +18,16 @@ type Props = {
   handleShowMoreMetro: (id: number) => void;
 };
 
-export const ResultListColumnItemType_1: React.FC<Props> = ({
-  data,
-  visibleCountsMetros,
-  handleShowMoreMetro,
-}) => {
+export const ResultListColumnItemType_1: React.FC<Props> = ({ data }) => {
   // Получаем минимальную цену
   const minPrice = data?.blocks
-    ? Math.min(
+    ? (Math.min(
         ...data.blocks.reduce<number[]>((acc, elem) => {
           return acc.concat(
             elem.apartments.map((apartment) => apartment.price),
           );
         }, []),
-      ) ?? Infinity // Устанавливаем значение по умолчанию
+      ) ?? Infinity) // Устанавливаем значение по умолчанию
     : Infinity; // Если data или blocks не определены
 
   // Форматируем минимальную цену
@@ -40,13 +36,13 @@ export const ResultListColumnItemType_1: React.FC<Props> = ({
 
   // Получаем минимальную цену за квадратный метр
   const minMeterPrice = data?.blocks
-    ? Math.min(
+    ? (Math.min(
         ...data.blocks.reduce<number[]>((acc, elem) => {
           return acc.concat(
             elem.apartments.map((apartment) => apartment.meter_price),
           );
         }, []),
-      ) ?? Infinity // Устанавливаем значение по умолчанию
+      ) ?? Infinity) // Устанавливаем значение по умолчанию
     : Infinity; // Если data или blocks не определены
 
   // Форматируем минимальную цену
@@ -59,7 +55,6 @@ export const ResultListColumnItemType_1: React.FC<Props> = ({
     <div className={clsx(styles.root)}>
       <ul className={clsx(styles.list)}>
         {data?.blocks.map((item) => {
-          const visibleCountsMetro = visibleCountsMetros[item.id] || 1;
           return (
             <li key={item.id} className={clsx(styles.list_item)}>
               <div className={clsx(styles.list_item_gallery)}>
@@ -78,13 +73,17 @@ export const ResultListColumnItemType_1: React.FC<Props> = ({
               </div>
               <div className={clsx(styles.list_item_content)}>
                 <div className={clsx(styles.list_item_content_headers)}>
-                  <div className={clsx(styles.list_item_content_badge)}>
-                    <Badge
-                      text={item?.badge?.text}
-                      outlined={true}
-                      accent={true}
-                    />
-                  </div>
+                  {data?.type === 'newbuildings' && (
+                    <div className={clsx(styles.list_item_content_badge)}>
+                      <Badge
+                        text={
+                          data?.type === 'newbuildings' ? 'Новостройка' : ''
+                        }
+                        outlined={true}
+                        accent={true}
+                      />
+                    </div>
+                  )}
                 </div>
                 <span className={clsx(styles.base_title)}>{item.name}</span>
                 <span className={clsx('base_subtitle', styles.base_subtitle)}>
@@ -93,12 +92,7 @@ export const ResultListColumnItemType_1: React.FC<Props> = ({
                 <span className={clsx('base_subtitle', styles.base_subtitle)}>
                   {item?.region_name}
                 </span>
-                <MetrosListAlt
-                  metros={item?.metros}
-                  visibleCountsMetro={visibleCountsMetro}
-                  itemId={item.id}
-                  handleShowMoreMetro={handleShowMoreMetro}
-                />
+                <MetrosListAlt metros={item?.metros} />
                 <ul className={clsx(styles.list_item_apart)}>
                   <li className={clsx(styles.list_item_apart_details)}>
                     <span>Тип квартиры:</span>
