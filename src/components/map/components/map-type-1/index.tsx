@@ -72,6 +72,7 @@ export const MapType_1 = async () => {
                   )}
                 </div>
                 <span className={clsx(styles.base_title)}>
+                  {data?.data?.block?.apartment?.room_type_name},{' '}
                   {data?.data?.block?.name}
                 </span>
                 <span className={clsx('base_subtitle', styles.base_subtitle)}>
