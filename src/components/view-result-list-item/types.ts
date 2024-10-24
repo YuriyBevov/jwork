@@ -1,5 +1,6 @@
 export interface ResultListDTO {
   count_blocks: number;
+  type: string;
   blocks: ResultList[];
 }
 

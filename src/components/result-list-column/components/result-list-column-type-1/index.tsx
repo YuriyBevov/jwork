@@ -23,8 +23,6 @@ export const ResultListColumnType_1: React.FC<Props> = ({
   data,
   visibleCounts,
   handleShowMore,
-  visibleCountsMetros,
-  handleShowMoreMetro,
 }) => {
   // Функция форматирования числа
   const formatPrice = (number: number) => {
@@ -33,13 +31,13 @@ export const ResultListColumnType_1: React.FC<Props> = ({
 
   const minPrice =
     data && data.blocks
-      ? Math.min(
+      ? (Math.min(
           ...data.blocks.reduce<number[]>((acc, elem) => {
             return acc.concat(
               elem.apartments.map((apartment) => apartment.price),
             );
           }, []),
-        ) ?? Infinity
+        ) ?? Infinity)
       : Infinity;
 
   // Форматируем минимальную цену
@@ -48,13 +46,13 @@ export const ResultListColumnType_1: React.FC<Props> = ({
 
   // Получаем минимальную цену за квадратный метр
   const minMeterPrice = data?.blocks
-    ? Math.min(
+    ? (Math.min(
         ...data.blocks.reduce<number[]>((acc, elem) => {
           return acc.concat(
             elem.apartments.map((apartment) => apartment.meter_price),
           );
         }, []),
-      ) ?? Infinity // Устанавливаем значение по умолчанию
+      ) ?? Infinity) // Устанавливаем значение по умолчанию
     : Infinity; // Если data или blocks не определены
 
   // Форматируем минимальную цену
@@ -68,7 +66,6 @@ export const ResultListColumnType_1: React.FC<Props> = ({
       <ul className={clsx(styles.list)}>
         {data?.blocks.map((item) => {
           const visibleCount = visibleCounts[item.id] || 2;
-          const visibleCountsMetro = visibleCountsMetros[item.id] || 1;
           return (
             <li key={item.id} className={clsx(styles.list_item)}>
               <div className={clsx(styles.list_item_gallery)}>
@@ -119,12 +116,7 @@ export const ResultListColumnType_1: React.FC<Props> = ({
                 <span className={clsx('base_subtitle', styles.base_subtitle)}>
                   {item?.region_name}
                 </span>
-                <MetrosListAlt
-                  metros={item?.metros}
-                  visibleCountsMetro={visibleCountsMetro}
-                  itemId={item.id}
-                  handleShowMoreMetro={handleShowMoreMetro}
-                />
+                <MetrosListAlt metros={item?.metros} />
                 <ul className={clsx(styles.list_item_properties_alt)}>
                   {item?.apartments
                     ?.slice(0, visibleCount)

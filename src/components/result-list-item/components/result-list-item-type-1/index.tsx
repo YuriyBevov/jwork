@@ -13,13 +13,13 @@ import styles from '../result-list-item.module.scss';
 export const ResultListItemType_1 = ({ data }: { data: ResultListDTO }) => {
   // Получаем минимальную цену
   const minPrice = data?.blocks
-    ? Math.min(
+    ? (Math.min(
         ...data.blocks.reduce<number[]>((acc, elem) => {
           return acc.concat(
             elem.apartments.map((apartment) => apartment.price),
           );
         }, []),
-      ) ?? Infinity // Устанавливаем значение по умолчанию
+      ) ?? Infinity) // Устанавливаем значение по умолчанию
     : Infinity; // Если data или blocks не определены
 
   // Форматируем минимальную цену
@@ -28,13 +28,13 @@ export const ResultListItemType_1 = ({ data }: { data: ResultListDTO }) => {
 
   // Получаем минимальную цену за квадратный метр
   const minMeterPrice = data?.blocks
-    ? Math.min(
+    ? (Math.min(
         ...data.blocks.reduce<number[]>((acc, elem) => {
           return acc.concat(
             elem.apartments.map((apartment) => apartment.meter_price),
           );
         }, []),
-      ) ?? Infinity // Устанавливаем значение по умолчанию
+      ) ?? Infinity) // Устанавливаем значение по умолчанию
     : Infinity; // Если data или blocks не определены
 
   // Форматируем минимальную цену
@@ -55,7 +55,7 @@ export const ResultListItemType_1 = ({ data }: { data: ResultListDTO }) => {
                     key={`картина-${index}`}
                     src={img}
                     alt={`slider-${index}`}
-                    width={420}
+                    width={1000}
                     height={410}
                     className={clsx(styles.content_section_gallery_slide)}
                   />
@@ -64,13 +64,15 @@ export const ResultListItemType_1 = ({ data }: { data: ResultListDTO }) => {
             </div>
             <div className={clsx(styles.list_item_content)}>
               <div className={clsx(styles.list_item_content_headers)}>
-                <div className={clsx(styles.list_item_content_badge)}>
-                  <Badge
-                    text={item?.badge?.text}
-                    outlined={true}
-                    accent={true}
-                  />
-                </div>
+                {data?.type === 'newbuildings' && (
+                  <div className={clsx(styles.list_item_content_badge)}>
+                    <Badge
+                      text={data?.type === 'newbuildings' ? 'Новостройка' : ''}
+                      outlined={true}
+                      accent={true}
+                    />
+                  </div>
+                )}
               </div>
               <span className={clsx(styles.base_title)}>
                 {item?.apartment?.room_type_name}, {item?.name}

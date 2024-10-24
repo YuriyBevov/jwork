@@ -32,9 +32,9 @@ export const MetrosList: React.FC<Props> = ({ metros }) => {
   useEffect(() => {
     const handleResize = () => {
       // Если ширина экрана меньше или равна 1200px, показываем 2 элемента
-      if (window.innerWidth <= 1120) {
+      if (window.innerWidth <= 1400) {
         setDisplayedCount(1);
-      } else if (window.innerWidth <= 1490) {
+      } else if (window.innerWidth <= 1600) {
         setDisplayedCount(2);
       } else {
         // Если больше 1200px, показываем 3 элемента

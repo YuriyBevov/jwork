@@ -49,7 +49,7 @@ export const ViewResultListItemType_1 = () => {
     async function fetchData() {
       const response = await fetch('/data.json');
       const result = await response.json();
-      setData(result);
+      setData(result.data);
     }
 
     fetchData();
