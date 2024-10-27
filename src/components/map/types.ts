@@ -9,17 +9,14 @@ export interface FilterItems {
   items: FilterItem[];
 }
 
-export interface FilterItem {
+export type FilterItem = {
   id: string;
   title: string;
   type: string;
-  value: FilterItemValue[] | [number, number];
-}
+  value: FilterItemValue[];
+};
 
-export interface FilterItemValue {
+export type FilterItemValue = {
   id: string;
-  value: {
-    id: string;
-    value: string;
-  }[];
-}
+  value: [number, number];
+};

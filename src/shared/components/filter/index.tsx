@@ -8,10 +8,19 @@ import { IconFilter } from '@/shared/icons/icon-filter';
 import { IconSmallArrow } from '@/shared/icons/icon-small-arrow';
 import { CheckboxBtnUi, CheckboxUi, RangeSliderUi } from '@/shared/ui';
 
+import { ButtonUi } from '../button';
 import styles from './filter.module.scss';
 
 export const Filter = ({ data }: { data: FilterItems }) => {
   const [openFilter, setOpenFilter] = useState(false);
+
+  const [activeIds, setActiveIds] = useState<string[]>([]);
+
+  // const [isActive, setIsActive] = useState(false);
+
+  // const handleClick = (id) => {
+  //   setIsActive(id);
+  // };
 
   function blockRenderer(block: FilterItem) {
     switch (block.type) {
@@ -30,6 +39,14 @@ export const Filter = ({ data }: { data: FilterItems }) => {
     setOpenFilter(!openFilter);
   };
 
+  const toggleActiveId = (id: string) => {
+    if (activeIds.includes(id)) {
+      setActiveIds(activeIds.filter((activeId) => activeId !== id));
+    } else {
+      setActiveIds([...activeIds, id]);
+    }
+  };
+
   return (
     <div className={styles.root}>
       <div
@@ -41,22 +58,30 @@ export const Filter = ({ data }: { data: FilterItems }) => {
       >
         <IconFilter width={24} height={24} />
         <span className={styles.title}>{data.title}</span>
-        <button>
-          <IconSmallArrow width={16} height={16} />
-        </button>
+        <IconSmallArrow width={16} height={16} />
       </div>
-      {openFilter &&
-        data.items
-          .sort((a, b) => parseInt(a.id) - parseInt(b.id))
-          .map((block: FilterItem) => (
-            <div className={styles.block} key={block.id}>
-              <div className={styles.title}>
-                <span>{block.title}</span>
-                <IconSmallArrow width={12} height={7} />
+      {openFilter && (
+        <>
+          {data.items
+            .sort((block, blocks) => parseInt(block.id) - parseInt(blocks.id))
+            .map((block: FilterItem) => (
+              <div className={clsx(styles.block)} key={block.id}>
+                <div
+                  onClick={() => toggleActiveId(block.id)}
+                  className={clsx(
+                    activeIds.includes(block.id) ? styles.active : null,
+                    styles.title,
+                  )}
+                >
+                  <span>{block.title}</span>
+                  <IconSmallArrow width={12} height={7} />
+                </div>
+                <div className={styles.content}>{blockRenderer(block)}</div>
               </div>
-              {blockRenderer(block)}
-            </div>
-          ))}
+            ))}
+          <ButtonUi>Искать</ButtonUi>
+        </>
+      )}
     </div>
   );
 };

@@ -6,8 +6,7 @@
   top: 50px;
   left: 48px;
   width: 100%;
-  max-width: 320px;
-  // height: 100%;
+  max-width: 370px;
   max-height: calc(100vh - 100px);
   overflow: hidden;
   overflow-y: auto;
@@ -16,6 +15,10 @@
   padding: var(--gap-sm);
   display: flex;
   flex-direction: column;
+
+  button {
+    width: 100%;
+  }
 }
 
 .header {
@@ -26,6 +29,9 @@
 
   svg {
     fill: var(--primary);
+    &:last-child {
+      margin-left: auto;
+    }
   }
 
   transition:
@@ -65,11 +71,10 @@
     }
   }
 
-  button {
+  span {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: auto;
     background-color: transparent;
     border: none;
   }
@@ -85,10 +90,39 @@
     margin-bottom: var(--gap-sm);
     border-bottom: 1px solid rgb(209, 213, 219);
   }
+
+  .content {
+    display: none;
+
+    & > div {
+      flex: 1;
+    }
+  }
+}
+
+.active {
+  & ~ .content {
+    display: flex;
+  }
+
+  svg {
+    transform: rotate(180deg);
+  }
 }
 
 .title {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 550px) {
+  .root {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    max-width: 100%;
+  }
 }
