@@ -1,0 +1,28 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-sm);
+}
+
+.input {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #d1d5db;
+
+  &:checked:not(:disabled) {
+    border-color: var(--primary);
+
+    & ~ .icon {
+      color: var(--primary);
+      top: -2px;
+      left: -2px;
+      width: 10px;
+    }
+  }
+}
+
+.label {
+  padding-left: var(--gap-base);
+  font-size: var(--fs-sm);
+  cursor: pointer;
+}

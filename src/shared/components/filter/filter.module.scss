@@ -1,0 +1,128 @@
+@import '../../../shared/styles/extends.scss';
+@import '../../../shared/styles/mixins.scss';
+
+.root {
+  position: absolute;
+  top: 50px;
+  left: 48px;
+  width: 100%;
+  max-width: 370px;
+  max-height: calc(100vh - 100px);
+  overflow: hidden;
+  overflow-y: auto;
+  z-index: 101;
+  background-color: var(--white);
+  padding: var(--gap-sm);
+  display: flex;
+  flex-direction: column;
+
+  button {
+    width: 100%;
+  }
+}
+
+.header {
+  @extend %flex-align;
+  gap: var(--gap-sm);
+  padding: calc(var(--gap-sm) - 4px);
+  cursor: pointer;
+
+  svg {
+    fill: var(--primary);
+    &:last-child {
+      margin-left: auto;
+    }
+  }
+
+  transition:
+    color var(--slow-transition),
+    background-color var(--slow-transition),
+    fill var(--slow-transition),
+    transform 0.3s ease;
+
+  &:hover {
+    background-color: var(--primary);
+    color: var(--white);
+
+    svg {
+      fill: var(--white);
+    }
+
+    span {
+      color: var(--white);
+    }
+  }
+
+  &_active {
+    background-color: var(--primary);
+    color: var(--white);
+    margin-bottom: var(--gap-sm);
+
+    svg {
+      fill: var(--white);
+
+      &:last-child {
+        transform: rotate(180deg);
+      }
+    }
+
+    span {
+      color: var(--white);
+    }
+  }
+
+  span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+  }
+}
+
+.block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-sm);
+
+  &:not(:last-child) {
+    padding-bottom: var(--gap-sm);
+    margin-bottom: var(--gap-sm);
+    border-bottom: 1px solid rgb(209, 213, 219);
+  }
+
+  .content {
+    display: none;
+
+    & > div {
+      flex: 1;
+    }
+  }
+}
+
+.active {
+  & ~ .content {
+    display: flex;
+  }
+
+  svg {
+    transform: rotate(180deg);
+  }
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 550px) {
+  .root {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    max-width: 100%;
+  }
+}

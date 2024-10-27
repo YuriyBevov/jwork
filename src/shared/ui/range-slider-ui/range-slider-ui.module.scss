@@ -1,0 +1,41 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-base);
+
+  span {
+    font-size: var(--gap-sm);
+    font-weight: 500;
+  }
+}
+
+.input_numeric {
+  display: flex;
+  gap: var(--gap-sm);
+
+  label {
+    width: 100%;
+  }
+
+  input {
+    border-radius: 0;
+    border: 1px solid rgb(209, 213, 219);
+    color: var(--site-color);
+    font-size: var(--gap-sm);
+  }
+}
+
+.bar {
+  height: 4px;
+  background-color: var(--primary);
+}
+
+.track {
+  height: 4px;
+}
+
+.thumb {
+  border: 1px solid var(--primary);
+  width: 15px;
+  height: 15px;
+}
