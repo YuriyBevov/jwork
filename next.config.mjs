@@ -12,6 +12,11 @@ const nextConfig = {
         port: '3002',
         pathname: '/assets/images/**',
       },
+      {
+        protocol: 'https', // Протокол для img.dmclk.ru
+        hostname: 'img.dmclk.ru', // Домен img.dmclk.ru
+        pathname: '/**', // Разрешить любые пути изображений с этого домена
+      },
     ],
   },
 };

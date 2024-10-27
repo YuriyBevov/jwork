@@ -59,8 +59,7 @@
     gap: clamp(var(--gap-base), 2vw, var(--gap-sm));
 
     @include container-down('root', $tablet-lg-width) {
-      grid-column: 1 / 3;
-      grid-row: 1 / 2;
+      display: none;
     }
 
     input {

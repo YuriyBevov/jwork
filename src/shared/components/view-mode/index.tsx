@@ -16,7 +16,7 @@ export const ViewMode = ({
   isContent,
 }: {
   title?: string;
-  quantity?: string;
+  quantity?: number;
   fillColor?: string;
   accent?: boolean;
   border?: boolean;
