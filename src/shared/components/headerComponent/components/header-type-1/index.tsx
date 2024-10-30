@@ -10,16 +10,31 @@ import { HeaderDTO } from '@/components/header/components/types';
 import { MainBtn } from '@/shared/components/main-btn';
 import { HeaderMenu } from '@/shared/components/navigation';
 
+// import { IconBurger } from '@/shared/icons/icon-burger';
 import common from '../header.module.scss';
 import custom from './header-type-1.module.scss';
 
 export const HeaderType_1 = ({ data }: { data: HeaderDTO }) => {
   const [navState, setNavState] = useState(false);
 
+  const onClickHandler = () => {
+    setNavState(!navState);
+    const body = document.querySelector('body');
+    if (body) {
+      body.style.overflow = navState ? '' : 'hidden';
+    }
+  };
+
   return (
     <header className={clsx(common.root, custom.root)}>
       <div className="container">
-        <div className={clsx(common.header_section, custom.header_section)}>
+        <div
+          className={clsx(
+            common.header_main,
+            custom.header_main,
+            navState ? common.header_main_active : '',
+          )}
+        >
           <div className={clsx(common.header_logo, custom.header_logo)}>
             <Link href="/" className={common.logo}>
               <Image
@@ -46,48 +61,23 @@ export const HeaderType_1 = ({ data }: { data: HeaderDTO }) => {
           </div>
 
           <button
-            className={clsx(
-              common.burger,
-              custom.burger,
-              navState ? common.burger_active : '',
-            )}
+            className={clsx(common.burger, custom.burger)}
             aria-label="Меню"
-            onClick={() => setNavState(!navState)}
+            onClick={() => onClickHandler()}
           >
             <span
-              className={clsx(
-                common.burger_line,
-                custom.burger_line,
-                common.burger_line_top,
-              )}
+              className={clsx(common.burger_line, common.burger_line_top)}
             ></span>
             <span
-              className={clsx(
-                common.burger_line,
-                custom.burger_line,
-                common.burger_line_middle,
-              )}
+              className={clsx(common.burger_line, common.burger_line_middle)}
             ></span>
             <span
-              className={clsx(
-                common.burger_line,
-                custom.burger_line,
-                common.burger_line_bottom,
-              )}
+              className={clsx(common.burger_line, common.burger_line_bottom)}
             ></span>
           </button>
         </div>
 
-        {/* <div
-          className={clsx(
-            common.header_section,
-            custom.header_section,
-            common.header_section_menu,
-            navState ? common.header_section_menu_active : '',
-          )}
-        > */}
-        <HeaderMenu align="center" data={data.navigation} active={navState} />
-        {/* </div> */}
+        <HeaderMenu align="center" data={data} active={navState} />
       </div>
     </header>
   );

@@ -10,8 +10,6 @@
   }
 
   &_contacts {
-    outline: 1px solid red;
-
     @include container-down('header', $tablet-lg-width) {
       flex-direction: column;
 
@@ -26,8 +24,6 @@
   }
 
   &_action {
-    outline: 1px solid red;
-
     @include container-down('header', $tablet-width) {
       display: none;
     }
@@ -35,7 +31,8 @@
 }
 
 .burger {
-  @include container-down('header', $tablet-width) {
+  display: none;
+  @include container-down('header', $nav-collapse-width) {
     display: flex;
   }
 }
