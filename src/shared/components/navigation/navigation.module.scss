@@ -1,6 +1,26 @@
 @import '../../styles/extends.scss';
 @import '../../styles/mixins.scss';
 
+.root_left {
+  .nav_list {
+    margin: 0;
+    margin-right: auto;
+  }
+}
+
+.root_center {
+  .nav_list {
+    margin: 0 auto;
+  }
+}
+
+.root_right {
+  .nav_list {
+    margin: 0;
+    margin-left: auto;
+  }
+}
+
 // desktop-nav
 @include container-up('header', $nav-collapse-width) {
   .root {

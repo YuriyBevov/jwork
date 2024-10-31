@@ -86,6 +86,10 @@
       @extend %main-hover;
     }
     z-index: 10;
+
+    @include container-down('header', $tablet-width) {
+      display: none;
+    }
   }
 
   &_action {
@@ -93,6 +97,10 @@
     flex-wrap: wrap;
     gap: 8px 24px;
     z-index: 10;
+
+    @include container-down('header', $tablet-width) {
+      display: none;
+    }
   }
 }
 

@@ -20,15 +20,5 @@
         width: 100%;
       }
     }
-
-    @include container-down('header', $tablet-width) {
-      display: none;
-    }
-  }
-
-  &_action {
-    @include container-down('header', $tablet-width) {
-      display: none;
-    }
   }
 }
