@@ -23,6 +23,27 @@
 }
 
 .header {
+  &_main {
+    @extend %flex-column;
+    gap: 12px;
+  }
+
+  &_top {
+    @extend %flex-align;
+    justify-content: space-between;
+    width: 100%;
+
+    @include container-down('header', $tablet-lg-width) {
+      display: none;
+    }
+  }
+
+  &_bottom {
+    @extend %flex-align;
+    width: 100%;
+    gap: 24px;
+  }
+
   &_logo {
     margin: 0 auto;
 
@@ -32,14 +53,27 @@
     }
   }
 
-  &_contacts {
-    flex-direction: column;
+  &_address {
+    display: flex;
+    gap: 8px;
+    flex-grow: 1;
 
+    span {
+      display: inline-block;
+      color: var(--white);
+    }
+  }
+
+  &_contacts {
     & > * {
       width: 100%;
     }
 
     a {
+      @extend %flex-center;
+      justify-content: flex-start;
+      gap: 8px;
+      width: fit-content;
       color: var(--white);
     }
   }

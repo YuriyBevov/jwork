@@ -39,6 +39,11 @@
         background-color: var(--white);
         border-bottom: 1px solid var(--primary);
 
+        .header_address span,
+        .header_contacts a {
+          color: var(--dark);
+        }
+
         .burger_line {
           &_top {
             transform: rotate(45deg);
