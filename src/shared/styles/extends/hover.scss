@@ -1,6 +1,6 @@
 %main-hover {
   opacity: 1;
-  transition: var(--base-transition);
+  transition: 0.2s linear;
 
   @media (hover: hover) {
     &:hover {

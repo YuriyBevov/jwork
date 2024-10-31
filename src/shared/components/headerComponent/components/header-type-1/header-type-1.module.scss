@@ -1,0 +1,24 @@
+@import '../../../../styles/extends.scss';
+@import '../../../../styles/mixins.scss';
+
+.root {
+  background-color: var(--white);
+  position: sticky;
+  top: 0;
+}
+
+.header {
+  &_logo {
+    margin-right: auto;
+  }
+
+  &_contacts {
+    @include container-down('header', $tablet-lg-width) {
+      flex-direction: column;
+
+      & > * {
+        width: 100%;
+      }
+    }
+  }
+}

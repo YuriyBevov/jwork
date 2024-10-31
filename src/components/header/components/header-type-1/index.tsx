@@ -1,13 +1,8 @@
-import clsx from 'clsx';
-import Image from 'next/image';
-import Link from 'next/link';
 import React from 'react';
 
 import { getLocalData } from '@/lib/localdata';
-import { MainBtn } from '@/shared/components/main-btn';
-import { HeaderMenu } from '@/shared/components/navigation';
+import { HeaderComponent } from '@/shared/components/headerComponent';
 
-import styles from '../header.module.scss';
 import { HeaderDTO } from '../types';
 
 export const HeaderType_1 = async () => {
@@ -15,28 +10,5 @@ export const HeaderType_1 = async () => {
     'src/components/header/components/data.json',
   );
 
-  return (
-    <header className={clsx(styles.root, styles.rounded_lg)}>
-      <div className="container">
-        <div className={styles.top}>
-          <Link href="/" className={styles.logo}>
-            <Image
-              src={data.logo.src}
-              width={data.logo.width}
-              height={data.logo.height}
-              alt={data.logo.alt}
-            />
-          </Link>
-
-          <a href={`mailto:${data.email}`}>{data.email}</a>
-          <a href={`tel:${data.phone.replace(/\s+/g, '')}`}>{data.phone}</a>
-
-          <MainBtn className={styles.btn} text="Кнопка" outlined />
-          <MainBtn className={styles.btn} text="Кнопка заявки" />
-        </div>
-
-        <HeaderMenu align="center" data={data.navigation} />
-      </div>
-    </header>
-  );
+  return <HeaderComponent data={data} type={'1'} />;
 };
