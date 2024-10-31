@@ -33,26 +33,27 @@
     @extend %flex-align;
     gap: clamp(24px, 4vw, 48px);
     padding: 16px 0;
-    background-color: var(--white);
-    z-index: 10;
 
-    &_active {
-      border-bottom: 1px solid var(--primary);
+    @include container-down('header', $nav-collapse-width) {
+      &_active {
+        background-color: var(--white);
+        border-bottom: 1px solid var(--primary);
 
-      .burger_line {
-        &_top {
-          transform: rotate(45deg);
-          top: 11px;
-        }
+        .burger_line {
+          &_top {
+            transform: rotate(45deg);
+            top: 11px;
+          }
 
-        &_middle {
-          width: 0;
-          opacity: 0;
-        }
+          &_middle {
+            width: 0;
+            opacity: 0;
+          }
 
-        &_bottom {
-          transform: rotate(-45deg);
-          top: -9px;
+          &_bottom {
+            transform: rotate(-45deg);
+            top: -9px;
+          }
         }
       }
     }
@@ -92,5 +93,12 @@
     flex-wrap: wrap;
     gap: 8px 24px;
     z-index: 10;
+  }
+}
+
+.burger {
+  display: none;
+  @include container-down('header', $nav-collapse-width) {
+    display: flex;
   }
 }

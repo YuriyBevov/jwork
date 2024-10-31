@@ -2,23 +2,33 @@
 @import '../../../../styles/mixins.scss';
 
 .root {
-  background-color: var(--white);
-  position: sticky;
+  background-color: transparent;
+  position: absolute;
   top: 0;
+  left: 0;
+  z-index: 101;
+  width: 100%;
+
+  & + section {
+    padding-top: 130px;
+  }
 }
 
 .header {
   &_logo {
-    margin-right: auto;
+    margin: 0 auto;
+
+    @include container-down('header', $tablet-width) {
+      margin: 0;
+      margin-right: auto;
+    }
   }
 
   &_contacts {
-    @include container-down('header', $tablet-lg-width) {
-      flex-direction: column;
+    flex-direction: column;
 
-      & > * {
-        width: 100%;
-      }
+    & > * {
+      width: 100%;
     }
 
     @include container-down('header', $tablet-width) {

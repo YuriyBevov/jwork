@@ -11,9 +11,9 @@ import { MainBtn } from '@/shared/components/main-btn';
 import { HeaderMenu } from '@/shared/components/navigation';
 
 import common from '../header.module.scss';
-import custom from './header-type-1.module.scss';
+import custom from './header-type-2.module.scss';
 
-export const HeaderType_1 = ({ data }: { data: HeaderDTO }) => {
+export const HeaderType_2 = ({ data }: { data: HeaderDTO }) => {
   const [navState, setNavState] = useState(false);
 
   const onClickHandler = () => {
@@ -34,6 +34,15 @@ export const HeaderType_1 = ({ data }: { data: HeaderDTO }) => {
             navState ? common.header_main_active : '',
           )}
         >
+          <div className={clsx(common.header_contacts, custom.header_contacts)}>
+            <Link href={`mailto:${data.email}`}>
+              <span>{data.email}</span>
+            </Link>
+            <Link href={`tel:${data.phone.replace(/\s+/g, '')}`}>
+              <span>{data.phone}</span>
+            </Link>
+          </div>
+
           <div className={clsx(common.header_logo, custom.header_logo)}>
             <Link href="/" className={common.logo}>
               <Image
@@ -45,18 +54,9 @@ export const HeaderType_1 = ({ data }: { data: HeaderDTO }) => {
             </Link>
           </div>
 
-          <div className={clsx(common.header_contacts, custom.header_contacts)}>
-            <Link href={`mailto:${data.email}`}>
-              <span>{data.email}</span>
-            </Link>
-            <Link href={`tel:${data.phone.replace(/\s+/g, '')}`}>
-              <span>{data.phone}</span>
-            </Link>
-          </div>
-
           <div className={clsx(common.header_action, custom.header_action)}>
-            <MainBtn text="Кнопка" outlined rounded="lg" />
-            <MainBtn text="Кнопка заявки" rounded="lg" />
+            <MainBtn text="Кнопка" outlined />
+            <MainBtn text="Кнопка заявки" />
           </div>
 
           <button

@@ -3,6 +3,11 @@
     {
       "id": "1",
       "type": "header",
+      "templateID": "2"
+    },
+    {
+      "id": "2",
+      "type": "offer",
       "templateID": "1"
     },
     {

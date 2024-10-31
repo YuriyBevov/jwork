@@ -37,7 +37,6 @@ export const HeaderMenu = ({
   };
 
   const onClickHandler = (target: HTMLElement) => {
-    // setState(!state);
     target.classList.toggle(styles.nav_list_item_arrow_active);
   };
 

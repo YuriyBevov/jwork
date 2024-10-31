@@ -8,6 +8,7 @@ import React from 'react';
 import { HeaderDTO } from '@/components/header/components/types';
 
 import { HeaderType_1 } from './components/header-type-1/index';
+import { HeaderType_2 } from './components/header-type-2/index';
 
 export const HeaderComponent = ({
   data,
@@ -19,8 +20,8 @@ export const HeaderComponent = ({
   switch (type) {
     case '1':
       return <HeaderType_1 data={data} />;
-    // case '2':
-    //   return <HeaderType_3 />;
+    case '2':
+      return <HeaderType_2 data={data} />;
     // case '4':
     //   return <HeaderType_4 />;
     // case '6':
