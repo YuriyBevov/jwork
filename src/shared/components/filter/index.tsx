@@ -16,12 +16,6 @@ export const Filter = ({ data }: { data: FilterItems }) => {
 
   const [activeIds, setActiveIds] = useState<string[]>([]);
 
-  // const [isActive, setIsActive] = useState(false);
-
-  // const handleClick = (id) => {
-  //   setIsActive(id);
-  // };
-
   function blockRenderer(block: FilterItem) {
     switch (block.type) {
       case 'range':

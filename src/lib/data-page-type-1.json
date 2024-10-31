@@ -3,16 +3,11 @@
     {
       "id": "1",
       "type": "header",
-      "templateID": "7"
-    },
-    {
-      "id": "2",
-      "type": "offer",
       "templateID": "1"
     },
     {
       "id": "2",
-      "type": "news",
+      "type": "hero",
       "templateID": "1"
     }
   ]
