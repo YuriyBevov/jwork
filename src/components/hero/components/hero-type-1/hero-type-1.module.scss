@@ -118,6 +118,16 @@
   width: 100%;
 }
 
+.hero {
+  &-type-2 {
+    .root {
+      &::after {
+        border-radius: 0;
+      }
+    }
+  }
+}
+
 @media (max-width: 1190px) {
   .tab {
     &_content {
