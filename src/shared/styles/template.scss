@@ -8,7 +8,7 @@ html,
 body {
   width: 100%;
   min-height: 100vh;
-  // overflow-x: hidden; // !! position sticky dont work with overflow
+  // scrollbar-gutter: stable;
 }
 
 body {
@@ -20,7 +20,6 @@ body {
   line-height: var(--line-height);
   color: var(--site-color);
   background-color: var(--site-bg-color);
-  scrollbar-gutter: stable;
 }
 
 footer {

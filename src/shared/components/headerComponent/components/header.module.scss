@@ -21,16 +21,10 @@
     width: 100%;
     height: 4px;
     background-color: var(--dark);
-
-    &_top {
-      width: 100%;
-    }
-
-    &_middle {
-    }
-
-    &_bottom {
-    }
+    transform-origin: center;
+    transition: all 0.15s ease-in;
+    position: relative;
+    border-radius: 2px;
   }
 }
 
@@ -45,16 +39,22 @@
     &_active {
       border-bottom: 1px solid var(--primary);
 
-      // .burger_line {
-      //   &_top {
-      //   }
+      .burger_line {
+        &_top {
+          transform: rotate(45deg);
+          top: 11px;
+        }
 
-      //   &_middle {
-      //   }
+        &_middle {
+          width: 0;
+          opacity: 0;
+        }
 
-      //   &_bottom {
-      //   }
-      // }
+        &_bottom {
+          transform: rotate(-45deg);
+          top: -9px;
+        }
+      }
     }
   }
 
