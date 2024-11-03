@@ -31,49 +31,47 @@ const selectItem = (item: HeroItem) => {
 
 export const HeroType_2 = ({ data }: { data: HeroDTO }) => {
   return (
-    <section className={clsx('container', styles.container)}>
+    <section className={styles.root}>
       <div
+        className={styles.background}
         style={{ backgroundImage: 'url(' + data.backgroundImagePath + ')' }}
-        className={styles.root}
-      >
-        <div className={styles.content}>
-          <h1>{data.title}</h1>
-          <p>{data.description}</p>
-          <Tab className={styles.tab}>
-            <TabList className={styles.tab_list}>
+      ></div>
+      <div className={clsx('container', styles.content)}>
+        <h1>{data.title}</h1>
+        <p>{data.description}</p>
+        <Tab className={styles.tab}>
+          <TabList className={styles.tab_list}>
+            {data.tabs.map((tab) => (
+              <React.Fragment key={tab.id}>{tab.title}</React.Fragment>
+            ))}
+          </TabList>
+          <div className={styles.tab_content_wrapper}>
+            <TabContent className={styles.tab_content}>
               {data.tabs.map((tab) => (
-                <React.Fragment key={tab.id}>{tab.title}</React.Fragment>
+                <div key={tab.id}>
+                  {tab.items.map((item) => (
+                    <React.Fragment key={item.id}>
+                      {selectItem(item)}
+                    </React.Fragment>
+                  ))}
+                </div>
               ))}
-            </TabList>
-            <div className={styles.tab_content_wrapper}>
-              <TabContent className={styles.tab_content}>
-                {data.tabs.map((tab) => (
-                  <div key={tab.id}>
-                    {tab.items.map((item) => (
-                      <React.Fragment key={item.id}>
-                        {selectItem(item)}
-                      </React.Fragment>
-                    ))}
-                  </div>
-                ))}
-              </TabContent>
+            </TabContent>
 
-              <ButtonUi
-                icon={<IconPin fill="#1a57db" width={16} height={20} />}
-                radius="xs"
-                outline
-                height="lg"
-                style={{ backgroundColor: '#fff' }}
-                className={styles.button}
-              >
-                На карте
-              </ButtonUi>
-              <ButtonUi radius="xs" height="lg" className={styles.button}>
-                Искать
-              </ButtonUi>
-            </div>
-          </Tab>
-        </div>
+            <ButtonUi
+              icon={<IconPin fill="#1a57db" width={16} height={20} />}
+              outline
+              height="lg"
+              style={{ backgroundColor: '#fff' }}
+              className={styles.button}
+            >
+              На карте
+            </ButtonUi>
+            <ButtonUi height="lg" className={styles.button}>
+              Искать
+            </ButtonUi>
+          </div>
+        </Tab>
       </div>
     </section>
   );

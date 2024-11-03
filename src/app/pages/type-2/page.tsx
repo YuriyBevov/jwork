@@ -50,7 +50,7 @@ function blockRenderer(block: Block) {
 }
 
 const Home = async () => {
-  const data = await getLocalData('src/lib/data-page-type-1.json');
+  const data = await getLocalData('src/lib/data-page-type-2.json');
 
   const { blocks }: { blocks: Block[] } = data;
   if (!blocks) return <div>Блоки не найдены</div>;

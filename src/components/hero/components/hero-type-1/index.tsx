@@ -17,13 +17,13 @@ import styles from './hero-type-1.module.scss';
 const selectItem = (item: HeroItem) => {
   switch (item.type) {
     case 'select':
-      return <SelectUi className={styles.select} item={item} />;
+      return <SelectUi radius="lg" className={styles.select} item={item} />;
     case 'multi_select':
-      return <MultiSelectUi item={item} />;
+      return <MultiSelectUi radius="lg" item={item} />;
     case 'search':
-      return <AutocompleteUi item={item} />;
+      return <AutocompleteUi radius="lg" item={item} />;
     case 'price_range':
-      return <PriceRangeDropdownUi />;
+      return <PriceRangeDropdownUi radius="lg" />;
     default:
       return null;
   }
