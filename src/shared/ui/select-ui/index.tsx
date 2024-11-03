@@ -11,7 +11,7 @@ export const SelectUi = ({
   item,
   className,
 }: {
-  radius?: 'xs' | 'lg';
+  radius?: 'xs' | 'sm' | 'lg';
   item: HeroItem;
   className?: string;
 }) => {

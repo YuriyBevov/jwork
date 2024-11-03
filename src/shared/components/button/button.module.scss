@@ -28,6 +28,10 @@
     border-radius: calc(var(--gap-base) + 2px);
   }
 
+  &__sm {
+    border-radius: 5px;
+  }
+
   &__lg {
     border-radius: var(--gap-lg);
   }

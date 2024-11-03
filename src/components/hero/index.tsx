@@ -2,7 +2,7 @@ import React from 'react';
 
 import { getLocalData } from '@/lib/localdata';
 
-import { HeroType_1, HeroType_2 } from './components';
+import { HeroType_1, HeroType_2, HeroType_3 } from './components';
 import { HeroDTO } from './types';
 
 export const Hero = async ({ templateID }: { templateID: string }) => {
@@ -15,6 +15,8 @@ export const Hero = async ({ templateID }: { templateID: string }) => {
       return <HeroType_1 data={data} />;
     case '2':
       return <HeroType_2 data={data} />;
+    case '3':
+      return <HeroType_3 data={data} />;
     default:
       return null;
   }

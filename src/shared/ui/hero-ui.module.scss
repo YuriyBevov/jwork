@@ -23,6 +23,15 @@
     }
   }
 
+  &__sm {
+    div,
+    input,
+    button,
+    &.dropdown {
+      border-radius: 5px;
+    }
+  }
+
   &__lg {
     div,
     input,
