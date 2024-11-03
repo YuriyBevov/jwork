@@ -1,14 +1,17 @@
 import { Autocomplete } from '@mantine/core';
+import clsx from 'clsx';
 
+import { HeroItem } from '@/components/hero/types';
 import { IconSearch } from '@/shared/icons/icon-set-1/icon_search';
 
-import { HeroItem } from '../../types';
 import styles from '../hero-ui.module.scss';
 
 export const AutocompleteUi = ({
+  radius = 'xs',
   item,
   className,
 }: {
+  radius?: 'xs' | 'lg';
   item: HeroItem;
   className?: string;
 }) => {
@@ -18,10 +21,10 @@ export const AutocompleteUi = ({
       rightSection={<IconSearch width={15} height={15} fill="#000" />}
       classNames={{
         input: styles.input,
-        dropdown: styles.dropdown,
+        dropdown: clsx(styles.dropdown, radius && styles[`radius__${radius}`]),
         option: styles.option,
       }}
-      className={className}
+      className={clsx(className, radius && styles[`radius__${radius}`])}
       data={
         item.content &&
         item.content.map((contentItem) => ({

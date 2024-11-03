@@ -10,7 +10,7 @@
   width: 100%;
 
   & + section {
-    padding-top: 130px;
+    padding-top: 80px;
   }
 
   @include container-up('header', $nav-collapse-width) {
