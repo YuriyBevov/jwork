@@ -40,6 +40,15 @@
       border-radius: calc(var(--gap-base) + 2px);
     }
   }
+
+  &__xl {
+    div,
+    input,
+    button,
+    &.dropdown {
+      border-radius: 30px;
+    }
+  }
 }
 
 .test {
