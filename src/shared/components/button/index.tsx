@@ -14,7 +14,7 @@ export const ButtonUi = ({
 }: {
   icon?: React.ReactNode;
   children: React.ReactNode;
-  radius?: 'xs' | 'lg';
+  radius?: 'xs' | 'sm' | 'lg';
   height?: 'xs' | 'lg';
   className?: string;
   outline?: boolean;

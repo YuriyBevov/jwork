@@ -11,7 +11,7 @@ export const AutocompleteUi = ({
   item,
   className,
 }: {
-  radius?: 'xs' | 'lg';
+  radius?: 'xs' | 'sm' | 'lg' | 'xl';
   item: HeroItem;
   className?: string;
 }) => {

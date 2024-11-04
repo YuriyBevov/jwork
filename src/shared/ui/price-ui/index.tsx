@@ -9,7 +9,7 @@ export const PriceRangeDropdownUi = ({
   radius = 'xs',
   className,
 }: {
-  radius?: 'xs' | 'lg';
+  radius?: 'xs' | 'sm' | 'lg' | 'xl';
   className?: string;
 }) => {
   const combobox = useCombobox();
