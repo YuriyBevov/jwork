@@ -55,7 +55,7 @@ export const HeaderType_2 = ({ data }: { data: HeaderDTO }) => {
           </div>
 
           <div className={clsx(common.header_action, custom.header_action)}>
-            <MainBtn text="Кнопка" outlined />
+            <MainBtn text="Кнопка" outlined_white />
             <MainBtn text="Кнопка заявки" />
           </div>
 
