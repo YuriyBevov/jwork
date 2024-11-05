@@ -1,15 +1,14 @@
-import { About } from '@/components/about';
-import { Advantages } from '@/components/advantages';
-import { ApartDetail } from '@/components/apart-detail';
-import { BlogDetail } from '@/components/blog-detail';
-import { Header } from '@/components/header';
-import { Hero } from '@/components/hero';
-import { ItemDetail } from '@/components/item-detail';
-import { Map } from '@/components/map';
-import { News } from '@/components/news';
-import { Offer } from '@/components/offer';
-import { Services } from '@/components/services';
-import { Staff } from '@/components/staff';
+import {
+  About,
+  Advantages,
+  Footer,
+  Header,
+  Hero,
+  News,
+  Offer,
+  Services,
+  Staff,
+} from '@/components';
 import { getLocalData } from '@/lib/localdata';
 
 interface Block {
@@ -32,18 +31,12 @@ function blockRenderer(block: Block) {
       return <Services key={block.id} templateID={block.templateID} />;
     case 'staff':
       return <Staff key={block.id} templateID={block.templateID} />;
-    case 'news':
-      return <News key={block.id} templateID={block.templateID} />;
-    case 'itemDetailType_1':
-      return <ItemDetail key={block.id} templateID={block.templateID} />;
-    case 'apartDetailType_1':
-      return <ApartDetail key={block.id} templateID={block.templateID} />;
     case 'offer':
       return <Offer key={block.id} templateID={block.templateID} />;
-    case 'blog':
-      return <BlogDetail key={block.id} templateID={block.templateID} />;
-    case 'map':
-      return <Map key={block.id} templateID={block.templateID} />;
+    case 'news':
+      return <News key={block.id} templateID={block.templateID} />;
+    case 'footer':
+      return <Footer key={block.id} templateID={block.templateID} />;
     default:
       return null;
   }

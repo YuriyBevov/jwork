@@ -9,6 +9,41 @@
       "id": "2",
       "type": "hero",
       "templateID": "3"
+    },
+    {
+      "id": "3",
+      "type": "advantages",
+      "templateID": "3"
+    },
+    {
+      "id": "4",
+      "type": "services",
+      "templateID": "3"
+    },
+    {
+      "id": "5",
+      "type": "about",
+      "templateID": "3"
+    },
+    {
+      "id": "6",
+      "type": "staff",
+      "templateID": "3"
+    },
+    {
+      "id": "7",
+      "type": "offer",
+      "templateID": "3"
+    },
+    {
+      "id": "8",
+      "type": "news",
+      "templateID": "3"
+    },
+    {
+      "id": "9",
+      "type": "footer",
+      "templateID": "3"
     }
   ]
 }
