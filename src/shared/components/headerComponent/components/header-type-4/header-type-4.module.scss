@@ -14,10 +14,12 @@
   }
 
   @include container-up('header', $nav-collapse-width) {
-    nav {
-      ul a {
-        color: var(--white);
-      }
+    nav a:not(nav a + ul a) {
+      color: var(--white);
+    }
+
+    nav a svg {
+      fill: var(--white);
     }
   }
 }
