@@ -12,24 +12,24 @@ import {
 } from '@/shared/ui';
 
 import { HeroDTO, HeroItem } from '../../types';
-import styles from './hero-type-4.module.scss';
+import styles from './hero-type-7.module.scss';
 
 const selectItem = (item: HeroItem) => {
   switch (item.type) {
     case 'select':
-      return <SelectUi radius="xl" className={styles.select} item={item} />;
+      return <SelectUi radius="lg" className={styles.select} item={item} />;
     case 'multi_select':
-      return <MultiSelectUi radius="xl" item={item} />;
+      return <MultiSelectUi radius="lg" item={item} />;
     case 'search':
-      return <AutocompleteUi radius="xl" item={item} />;
+      return <AutocompleteUi radius="lg" item={item} />;
     case 'price_range':
-      return <PriceRangeDropdownUi radius="xl" />;
+      return <PriceRangeDropdownUi radius="lg" />;
     default:
       return null;
   }
 };
 
-export const HeroType_4 = ({ data }: { data: HeroDTO }) => {
+export const HeroType_7 = ({ data }: { data: HeroDTO }) => {
   return (
     <section className={styles.root}>
       <div
@@ -61,14 +61,14 @@ export const HeroType_4 = ({ data }: { data: HeroDTO }) => {
             <ButtonUi
               icon={<IconPin fill="#1a57db" width={16} height={20} />}
               outline
-              radius="xl"
+              radius="xs"
               height="lg"
               style={{ backgroundColor: '#fff' }}
               className={styles.button}
             >
               На карте
             </ButtonUi>
-            <ButtonUi radius="xl" height="lg" className={styles.button}>
+            <ButtonUi radius="xs" height="lg" className={styles.button}>
               Искать
             </ButtonUi>
           </div>

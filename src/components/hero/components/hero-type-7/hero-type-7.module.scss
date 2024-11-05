@@ -37,6 +37,8 @@
   z-index: 1;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 24px;
 
   h1 {
@@ -56,10 +58,12 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+  align-items: center;
   &_list {
     display: flex;
     align-items: center;
-    gap: var(--gap-sm);
+    width: fit-content;
+    gap: 16px;
 
     button {
       border: none;
@@ -70,7 +74,7 @@
       padding: 16px 24px;
       color: var(--gray);
       font-size: var(--fs-sm);
-      border-radius: 30px;
+      border-radius: 10px;
       background-color: #fff;
       border: 1px solid var(--primary);
       transition:
