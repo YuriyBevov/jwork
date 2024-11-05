@@ -14,8 +14,6 @@ type Props = {
   data: ResultListDTO;
   visibleCounts: Record<number, number>; // Объект, где ключ — это id элемента, а значение — количество видимых элементов
   handleShowMore: (id: number) => void; // Функция, которая принимает id элемента для показа дополнительных данных
-  visibleCountsMetros: Record<number, number>;
-  handleShowMoreMetro: (id: number) => void;
 };
 
 export const ResultListColumnItemType_1: React.FC<Props> = ({ data }) => {

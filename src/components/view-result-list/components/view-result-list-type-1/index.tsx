@@ -22,9 +22,6 @@ export const ViewResultListType_1 = () => {
   const [visibleCountsAlt, setVisibleCountsAlt] = useState<
     Record<number, number>
   >({});
-  const [visibleCountsMetros, setVisibleCountsMetros] = useState<
-    Record<number, number>
-  >({});
 
   // Функция для обработки нажатия кнопки "Показать ещё"
   const handleShowMore = (id: number) => {
@@ -39,14 +36,6 @@ export const ViewResultListType_1 = () => {
     setVisibleCountsAlt((prevCounts) => ({
       ...prevCounts,
       [id]: (prevCounts[id] || 4) + 4,
-    }));
-  };
-
-  // Функция для обработки нажатия кнопки "Показать ещё"
-  const handleShowMoreMetro = (id: number) => {
-    setVisibleCountsMetros((prevCounts) => ({
-      ...prevCounts,
-      [id]: (prevCounts[id] || 1) + 1,
     }));
   };
 
@@ -92,9 +81,7 @@ export const ViewResultListType_1 = () => {
         <ResultListColumnType_1
           data={data}
           handleShowMore={handleShowMore}
-          handleShowMoreMetro={handleShowMoreMetro}
           visibleCounts={visibleCounts}
-          visibleCountsMetros={visibleCountsMetros}
         />
       )}
       {isPopup && <FilterPopup closePopup={closePopup} />}
