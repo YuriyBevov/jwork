@@ -9,6 +9,16 @@
       "id": "2",
       "type": "hero",
       "templateID": "1"
+    },
+    {
+      "id": "3",
+      "type": "advantages",
+      "templateID": "1"
+    },
+    {
+      "id": "4",
+      "type": "services",
+      "templateID": "1"
     }
   ]
 }
