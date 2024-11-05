@@ -1,4 +1,4 @@
-export interface MapDTO {
+export interface FilterDTO {
   name: string;
   coords: [];
   type: string;
@@ -7,6 +7,8 @@ export interface MapDTO {
 
 export interface Data {
   block: Block;
+  type: string;
+  filter: FilterItems;
 }
 
 interface Block {
@@ -30,6 +32,7 @@ interface Apartment {
   decoration?: string;
   space_total: number;
   space_room: string;
+  base_price: number;
   space_kitchen: string;
   number: string;
   price: number;
@@ -52,4 +55,22 @@ interface BlockInfo {
   building_corps: string[];
   max_floors: number;
   deadlines: string[];
+  coords: [number, number];
 }
+
+export interface FilterItems {
+  title: string;
+  items: FilterItem[];
+}
+
+export type FilterItem = {
+  id: string;
+  title: string;
+  type: string;
+  value: FilterItemValue[];
+};
+
+export type FilterItemValue = {
+  id: string;
+  value: [number, number];
+};

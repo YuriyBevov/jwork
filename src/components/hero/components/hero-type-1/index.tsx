@@ -1,8 +1,9 @@
+import clsx from 'clsx';
 import React from 'react';
 
-import { HeaderType_1 } from '@/components/header/components';
-import { getLocalData } from '@/lib/localdata';
-import { HeroTab } from '@/shared/components/hero-tab';
+import { ButtonUi } from '@/shared/components/button';
+import { Tab, TabContent, TabList } from '@/shared/components/tab';
+import { IconPin } from '@/shared/icons/icon-set-1/icon_pin';
 import {
   AutocompleteUi,
   MultiSelectUi,
@@ -11,32 +12,69 @@ import {
 } from '@/shared/ui';
 
 import { HeroDTO, HeroItem } from '../../types';
-import styles from '../hero.module.scss';
+import styles from './hero-type-1.module.scss';
 
-export const HeroType_1 = async () => {
-  const data: HeroDTO = await getLocalData(
-    'src/components/hero/components/data.json',
-  );
+const selectItem = (item: HeroItem) => {
+  switch (item.type) {
+    case 'select':
+      return <SelectUi radius="lg" className={styles.select} item={item} />;
+    case 'multi_select':
+      return <MultiSelectUi radius="lg" item={item} />;
+    case 'search':
+      return <AutocompleteUi radius="lg" item={item} />;
+    case 'price_range':
+      return <PriceRangeDropdownUi radius="lg" />;
+    default:
+      return null;
+  }
+};
 
-  const selectItem = (item: HeroItem) => {
-    switch (item.type) {
-      case 'select':
-        return <SelectUi className={styles.select} item={item} />;
-      case 'multi_select':
-        return <MultiSelectUi item={item} />;
-      case 'search':
-        return <AutocompleteUi item={item} />;
-      case 'price_range':
-        return <PriceRangeDropdownUi />;
-      default:
-        return null;
-    }
-  };
-
+export const HeroType_1 = ({ data }: { data: HeroDTO }) => {
   return (
-    <>
-      <HeaderType_1 />
-      <HeroTab data={data} selectItem={selectItem} />
-    </>
+    <section className={clsx('container', styles.container)}>
+      <div
+        style={{ backgroundImage: 'url(' + data.backgroundImagePath + ')' }}
+        className={styles.root}
+      >
+        <div className={styles.content}>
+          <h1>{data.title}</h1>
+          <p>{data.description}</p>
+          <Tab className={styles.tab}>
+            <TabList className={styles.tab_list}>
+              {data.tabs.map((tab) => (
+                <React.Fragment key={tab.id}>{tab.title}</React.Fragment>
+              ))}
+            </TabList>
+            <div className={styles.tab_content_wrapper}>
+              <TabContent className={styles.tab_content}>
+                {data.tabs.map((tab) => (
+                  <div key={tab.id}>
+                    {tab.items.map((item) => (
+                      <React.Fragment key={item.id}>
+                        {selectItem(item)}
+                      </React.Fragment>
+                    ))}
+                  </div>
+                ))}
+              </TabContent>
+
+              <ButtonUi
+                icon={<IconPin fill="#1a57db" width={16} height={20} />}
+                radius="xs"
+                outline
+                height="lg"
+                style={{ backgroundColor: '#fff' }}
+                className={styles.button}
+              >
+                На карте
+              </ButtonUi>
+              <ButtonUi radius="xs" height="lg" className={styles.button}>
+                Искать
+              </ButtonUi>
+            </div>
+          </Tab>
+        </div>
+      </div>
+    </section>
   );
 };

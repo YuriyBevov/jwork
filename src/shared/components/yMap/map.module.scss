@@ -1,20 +1,8 @@
-// .root {
-//   background-color: blue;
-// }
-
-// .componentMapWrapper {
-//   background-color: green;
-// }
-
-// .componentMap {
-//   background-color: yellow;
-// }
-
-// .componentMap {
-//   width: 100vw;
-//   height: 600px;
-
-//   ymaps {
-//     height: 600px !important;
-//   }
-// }
+.componentMap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+}

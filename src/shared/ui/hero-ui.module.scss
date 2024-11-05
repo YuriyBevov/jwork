@@ -1,6 +1,6 @@
 .input {
   padding-block: 0;
-  border-radius: 10px;
+  border-radius: 0;
   color: var(--gray);
   outline: none;
   height: 48px;
@@ -11,14 +11,58 @@
   font-size: 16px;
   white-space: nowrap;
   text-overflow: ellipsis;
-  // max-width: 213px;
+}
+
+.radius {
+  &__xs {
+    div,
+    input,
+    button,
+    &.dropdown {
+      border-radius: 0;
+    }
+  }
+
+  &__sm {
+    div,
+    input,
+    button,
+    &.dropdown {
+      border-radius: 5px;
+    }
+  }
+
+  &__lg {
+    div,
+    input,
+    button,
+    &.dropdown {
+      border-radius: calc(var(--gap-base) + 2px);
+    }
+  }
+
+  &__xl {
+    div,
+    input,
+    button,
+    &.dropdown {
+      border-radius: 30px;
+    }
+  }
+}
+
+.test {
+  background-color: red;
 }
 
 .dropdown {
   border: 1px solid rgb(107, 114, 128);
-  border-radius: 10px;
   background: rgb(255, 255, 255);
   padding: 12px;
+
+  &_radius_xs {
+    border-radius: 0;
+  }
 
   &_item {
     display: flex;
@@ -63,7 +107,4 @@
 .pillsList {
   flex-wrap: nowrap;
   overflow: hidden;
-}
-
-@media screen and (max-width: 767px) {
 }

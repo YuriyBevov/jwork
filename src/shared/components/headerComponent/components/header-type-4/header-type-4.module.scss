@@ -1,0 +1,80 @@
+@import '../../../../styles/extends.scss';
+@import '../../../../styles/mixins.scss';
+
+.root {
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 101;
+  width: 100%;
+
+  & + section {
+    padding-top: 80px;
+  }
+
+  @include container-up('header', $nav-collapse-width) {
+    nav {
+      ul a {
+        color: var(--white);
+      }
+    }
+  }
+}
+
+.header {
+  &_main {
+    @extend %flex-column;
+    gap: 12px;
+  }
+
+  &_top {
+    @extend %flex-align;
+    justify-content: space-between;
+    width: 100%;
+
+    @include container-down('header', $tablet-lg-width) {
+      display: none;
+    }
+  }
+
+  &_bottom {
+    @extend %flex-align;
+    width: 100%;
+    gap: 24px;
+  }
+
+  &_logo {
+    margin: 0 auto;
+
+    @include container-down('header', $tablet-width) {
+      margin: 0;
+      margin-right: auto;
+    }
+  }
+
+  &_address {
+    display: flex;
+    gap: 8px;
+    flex-grow: 1;
+
+    span {
+      display: inline-block;
+      color: var(--white);
+    }
+  }
+
+  &_contacts {
+    & > * {
+      width: 100%;
+    }
+
+    a {
+      @extend %flex-center;
+      justify-content: flex-start;
+      gap: 8px;
+      width: fit-content;
+      color: var(--white);
+    }
+  }
+}

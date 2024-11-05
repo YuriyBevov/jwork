@@ -5,6 +5,7 @@ import styles from './main-btn.module.scss';
 
 type Props = {
   outlined?: boolean;
+  outlined_white?: boolean;
   bordered?: boolean;
   simple?: boolean;
   rounded?: 'xs' | 'lg';
@@ -16,6 +17,7 @@ type Props = {
 
 export const MainBtn: React.FC<Props> = ({
   outlined,
+  outlined_white,
   rounded,
   bordered,
   simple,
@@ -27,6 +29,7 @@ export const MainBtn: React.FC<Props> = ({
     <button
       className={clsx(
         outlined ? styles.outlined : null,
+        outlined_white ? styles.outlined_white : null,
         bordered ? styles.bordered : null,
         displayBtn ? styles.displayBtn : null,
         simple ? styles.simple : null,

@@ -1,4 +1,5 @@
 import { Select } from '@mantine/core';
+import clsx from 'clsx';
 import React from 'react';
 
 import { HeroItem } from '@/components/hero/types';
@@ -6,9 +7,11 @@ import { HeroItem } from '@/components/hero/types';
 import styles from '../hero-ui.module.scss';
 
 export const SelectUi = ({
+  radius = 'xs',
   item,
   className,
 }: {
+  radius?: 'xs' | 'sm' | 'lg' | 'xl';
   item: HeroItem;
   className?: string;
 }) => {
@@ -16,10 +19,10 @@ export const SelectUi = ({
     <Select
       classNames={{
         input: styles.input,
-        dropdown: styles.dropdown,
+        dropdown: clsx(styles.dropdown, radius && styles[`radius__${radius}`]),
         option: styles.option,
       }}
-      className={className}
+      className={clsx(className, radius && styles[`radius__${radius}`])}
       data={
         item.content &&
         item.content.map((value) => ({
@@ -27,6 +30,7 @@ export const SelectUi = ({
           value: value.value,
         }))
       }
+      radius={styles[`radius__${radius}`]}
       checkIconPosition="right"
       defaultValue={item.content?.[0].value}
       allowDeselect={false}

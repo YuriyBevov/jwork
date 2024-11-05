@@ -1,0 +1,49 @@
+@import '../../../../styles/extends.scss';
+@import '../../../../styles/mixins.scss';
+
+.root {
+  background-color: var(--white);
+  position: sticky;
+  top: 0;
+}
+
+.header {
+  &_logo {
+    margin: 0 auto;
+
+    @include container-down('header', 1080px) {
+      margin: 0;
+      margin-right: auto;
+    }
+  }
+
+  &_address {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+    max-width: 280px;
+
+    span {
+      display: inline-block;
+    }
+
+    @include container-down('header', 1080px) {
+      display: none;
+    }
+  }
+
+  &_contacts {
+    flex-direction: column;
+
+    & > * {
+      width: 100%;
+    }
+
+    a {
+      @extend %flex-center;
+      justify-content: flex-start;
+      gap: 8px;
+      color: var(--dark);
+    }
+  }
+}

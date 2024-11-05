@@ -1,0 +1,13 @@
+{
+  "blocks": [{
+      "id": "1",
+      "type": "header",
+      "templateID": "1"
+    },
+    {
+      "id": "2",
+      "type": "hero",
+      "templateID": "1"
+    }
+  ]
+}
