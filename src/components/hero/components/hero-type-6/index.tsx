@@ -12,7 +12,7 @@ import {
 } from '@/shared/ui';
 
 import { HeroDTO, HeroItem } from '../../types';
-import styles from './hero-type-5.module.scss';
+import styles from './hero-type-6.module.scss';
 
 const selectItem = (item: HeroItem) => {
   switch (item.type) {
@@ -29,7 +29,7 @@ const selectItem = (item: HeroItem) => {
   }
 };
 
-export const HeroType_5 = ({ data }: { data: HeroDTO }) => {
+export const HeroType_6 = ({ data }: { data: HeroDTO }) => {
   return (
     <section className={clsx('container', styles.container)}>
       <div
