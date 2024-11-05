@@ -3,47 +3,47 @@
     {
       "id": "1",
       "type": "header",
-      "templateID": "2"
+      "templateID": "5"
     },
     {
       "id": "2",
       "type": "hero",
-      "templateID": "2"
+      "templateID": "5"
     },
     {
       "id": "3",
       "type": "advantages",
-      "templateID": "2"
+      "templateID": "5"
     },
     {
       "id": "4",
       "type": "services",
-      "templateID": "2"
+      "templateID": "5"
     },
     {
       "id": "5",
       "type": "about",
-      "templateID": "2"
+      "templateID": "5"
     },
     {
       "id": "6",
       "type": "staff",
-      "templateID": "2"
+      "templateID": "5"
     },
     {
       "id": "7",
       "type": "offer",
-      "templateID": "2"
+      "templateID": "5"
     },
     {
       "id": "8",
       "type": "news",
-      "templateID": "2"
+      "templateID": "5"
     },
     {
       "id": "9",
       "type": "footer",
-      "templateID": "2"
+      "templateID": "5"
     }
   ]
 }

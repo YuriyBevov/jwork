@@ -19,6 +19,31 @@
       "id": "4",
       "type": "services",
       "templateID": "1"
+    },
+    {
+      "id": "5",
+      "type": "about",
+      "templateID": "1"
+    },
+    {
+      "id": "6",
+      "type": "staff",
+      "templateID": "1"
+    },
+    {
+      "id": "7",
+      "type": "offer",
+      "templateID": "1"
+    },
+    {
+      "id": "8",
+      "type": "news",
+      "templateID": "1"
+    },
+    {
+      "id": "9",
+      "type": "footer",
+      "templateID": "1"
     }
   ]
 }
