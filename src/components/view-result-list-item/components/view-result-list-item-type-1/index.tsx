@@ -19,23 +19,12 @@ export const ViewResultListItemType_1 = () => {
   const [visibleCounts, setVisibleCounts] = useState<Record<number, number>>(
     {},
   );
-  const [visibleCountsMetros, setVisibleCountsMetros] = useState<
-    Record<number, number>
-  >({});
 
   // Функция для обработки нажатия кнопки "Показать ещё"
   const handleShowMore = (id: number) => {
     setVisibleCounts((prevCounts) => ({
       ...prevCounts,
       [id]: (prevCounts[id] || 2) + 2,
-    }));
-  };
-
-  // Функция для обработки нажатия кнопки "Показать ещё"
-  const handleShowMoreMetro = (id: number) => {
-    setVisibleCountsMetros((prevCounts) => ({
-      ...prevCounts,
-      [id]: (prevCounts[id] || 1) + 1,
     }));
   };
 
@@ -49,7 +38,7 @@ export const ViewResultListItemType_1 = () => {
     async function fetchData() {
       const response = await fetch('/data.json');
       const result = await response.json();
-      setData(result);
+      setData(result.data);
     }
 
     fetchData();
@@ -77,9 +66,7 @@ export const ViewResultListItemType_1 = () => {
         <ResultListColumnItemType_1
           data={data}
           handleShowMore={handleShowMore}
-          handleShowMoreMetro={handleShowMoreMetro}
           visibleCounts={visibleCounts}
-          visibleCountsMetros={visibleCountsMetros}
         />
       )}
       {isPopup && <FilterPopup closePopup={closePopup} />}

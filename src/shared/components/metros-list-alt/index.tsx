@@ -1,6 +1,7 @@
-//'use client';
+'use client';
+
 import clsx from 'clsx';
-import React from 'react';
+import React, { useState } from 'react';
 
 import { IconMan } from '@/shared/icons/icon-set-1/icon-man';
 import { IconMetro } from '@/shared/icons/icon-set-1/icon-metro';
@@ -16,22 +17,20 @@ type Metro = {
 
 type Props = {
   metros: Metro[]; // массив объектов типа Metro
-  visibleCountsMetro: number;
-  itemId: number;
-  handleShowMoreMetro: (id: number) => void;
 };
 
-export const MetrosListAlt: React.FC<Props> = ({
-  metros,
-  visibleCountsMetro,
-  itemId,
-  handleShowMoreMetro,
-}) => {
+export const MetrosListAlt: React.FC<Props> = ({ metros }) => {
+  const [visibleCountsMetros, setVisibleCountsMetros] = useState<number>(1); // Показываем 2 станции по умолчанию
+
+  // Функция для обработки нажатия кнопки "Показать ещё"
+  const handleShowMoreMetro = () => {
+    setVisibleCountsMetros((prevCount) => prevCount + 1); // При каждом нажатии показываем ещё 2 элемента
+  };
   return (
     <div className={clsx(styles.content_section)}>
       <ul className={clsx(styles.content_section_metros)}>
         {metros
-          .slice(0, visibleCountsMetro) // Показываем только два элемента по умолчанию
+          .slice(0, visibleCountsMetros) // Показываем количество элементов согласно состоянию
           .map((elem, index) => (
             <li
               key={`${elem.subway_id}-${index}`}
@@ -80,15 +79,15 @@ export const MetrosListAlt: React.FC<Props> = ({
               )}
             </li>
           ))}
-        {metros.length > visibleCountsMetro && (
-          <button
-            className={clsx(styles.content_section_show_more)}
-            onClick={() => handleShowMoreMetro(itemId)} // При клике передаем id для конкретного элемента
-          >
-            Показать ещё...
-          </button>
-        )}
       </ul>
+      {metros.length > visibleCountsMetros && (
+        <button
+          className={clsx(styles.content_section_show_more)}
+          onClick={handleShowMoreMetro} // Без передачи itemId, так как увеличиваем общее количество видимых элементов
+        >
+          Показать ещё...
+        </button>
+      )}
     </div>
   );
 };
