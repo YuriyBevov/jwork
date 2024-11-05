@@ -1,7 +1,6 @@
 {
   "count_blocks": 3466,
-  "blocks": [
-    {
+  "blocks": [{
       "id": 1,
       "apartment_count": 745,
       "badge": {
@@ -292,8 +291,7 @@
       "deleted": 0,
       "updated_dt": "2024-08-22 06:08:25",
       "region_name": "Гагаринский р-он",
-      "apartments": [
-        {
+      "apartments": [{
           "badge": {
             "text": "Жилые комплексы",
             "text2": "Есть сданные дома"

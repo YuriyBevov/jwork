@@ -64,7 +64,7 @@ export const ResultListColumnItemType_1: React.FC<Props> = ({ data }) => {
                       key={`картина-${index}`}
                       src={img}
                       alt={`slider-${index}`}
-                      width={420}
+                      width={600}
                       height={410}
                       className={clsx(styles.content_section_gallery_slide)}
                     />
@@ -85,7 +85,10 @@ export const ResultListColumnItemType_1: React.FC<Props> = ({ data }) => {
                     </div>
                   )}
                 </div>
-                <span className={clsx(styles.base_title)}>{item.name}</span>
+                <span className={clsx(styles.base_title)}>
+                  {' '}
+                  {item?.apartment?.room_type_name}, {item?.name}
+                </span>
                 <span className={clsx('base_subtitle', styles.base_subtitle)}>
                   {item?.address}
                 </span>

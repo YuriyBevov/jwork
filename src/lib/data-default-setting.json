@@ -1,7 +1,7 @@
 {
   "blocks": [{
     "id": "1",
-    "type": "map",
+    "type": "viewresultListItem",
     "templateID": "1"
   }]
 }
