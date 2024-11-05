@@ -61,13 +61,14 @@ export const HeroType_4 = ({ data }: { data: HeroDTO }) => {
             <ButtonUi
               icon={<IconPin fill="#1a57db" width={16} height={20} />}
               outline
+              radius="xl"
               height="lg"
               style={{ backgroundColor: '#fff' }}
               className={styles.button}
             >
               На карте
             </ButtonUi>
-            <ButtonUi height="lg" className={styles.button}>
+            <ButtonUi radius="xl" height="lg" className={styles.button}>
               Искать
             </ButtonUi>
           </div>
