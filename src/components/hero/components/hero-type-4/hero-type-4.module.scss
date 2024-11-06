@@ -70,7 +70,7 @@
       padding: 16px 24px;
       color: var(--gray);
       font-size: var(--fs-sm);
-      border-radius: 30px;
+      border-radius: 10px;
       background-color: #fff;
       border: 1px solid var(--primary);
       transition:
@@ -162,6 +162,12 @@
         grid-template-columns: repeat(2, 1fr);
       }
     }
+    &_list {
+      button {
+        width: 100%;
+        flex: 1;
+      }
+    }
   }
 }
 
@@ -184,5 +190,15 @@
   .multi_select,
   .select {
     width: 100%;
+  }
+}
+
+@media (max-width: 350px) {
+  .tab {
+    &_list {
+      button {
+        flex: 100%;
+      }
+    }
   }
 }

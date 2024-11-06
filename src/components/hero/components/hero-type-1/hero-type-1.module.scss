@@ -159,6 +159,14 @@
         grid-template-columns: repeat(2, 1fr);
       }
     }
+
+    &_list {
+      padding: 5px;
+
+      button {
+        width: 50%;
+      }
+    }
   }
 }
 
@@ -181,5 +189,15 @@
   .multi_select,
   .select {
     width: 100%;
+  }
+}
+
+@media (max-width: 350px) {
+  .tab {
+    &_list {
+      button {
+        width: 100%;
+      }
+    }
   }
 }
