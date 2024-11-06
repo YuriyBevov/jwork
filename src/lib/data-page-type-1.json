@@ -6,7 +6,7 @@
     },
     {
       "id": "2",
-      "type": "hero",
+      "type": "ViewresultList",
       "templateID": "1"
     },
     {

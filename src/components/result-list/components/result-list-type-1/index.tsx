@@ -73,7 +73,7 @@ export const ResultListType_1: React.FC<Props> = ({
                       key={`картина-${index}`}
                       src={img}
                       alt={`slider-${index}`}
-                      width={1000}
+                      width={420}
                       height={410}
                       className={clsx(styles.content_section_gallery_slide)}
                     />

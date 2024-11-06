@@ -24,6 +24,7 @@
     &_metros {
       @extend %list-reset;
       display: flex;
+      align-items: center;
       gap: var(--gap-xxl);
       margin-bottom: 8px;
       width: 100%;
