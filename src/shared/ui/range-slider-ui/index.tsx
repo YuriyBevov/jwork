@@ -8,7 +8,7 @@ import { FilterItem } from '@/components/map/types';
 import styles from './range-slider-ui.module.scss';
 
 export const RangeSliderUi = ({ data }: { data: FilterItem }) => {
-  const [MIN, MAX] = data.value as number[];
+  const [MIN, MAX] = data.value as unknown as number[];
 
   const [value, setValue] = useState<[number, number]>([MIN, MAX]);
 

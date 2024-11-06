@@ -1,13 +1,13 @@
-import React from 'react';
+// import React from 'react';
 
-import { ResultListColumnType_1 } from './components';
+// import { ResultListColumnType_1 } from './components';
 
-export const ResultListColumn = ({ templateID }: { templateID: string }) => {
-  switch (templateID) {
-    case '1':
-      return <ResultListColumnType_1 />;
-    case '2':
-    default:
-      return null;
-  }
-};
+// export const ResultListColumn = ({ templateID }: { templateID: string }) => {
+//   switch (templateID) {
+//     case '1':
+//       return <ResultListColumnType_1 />;
+//     case '2':
+//     default:
+//       return null;
+//   }
+// };
