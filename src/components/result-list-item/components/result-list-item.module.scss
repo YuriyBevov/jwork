@@ -28,10 +28,18 @@
 
     &_gallery {
       max-width: 420px;
-      // min-width: 290px;
+      height: 100%;
+      // max-height: 410px;
+      img {
+        aspect-ratio: 1 / 1;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+      }
 
       @include container-down('root', $tablet-lg-width) {
-        max-width: 1000px;
+        width: 100%;
+        max-width: calc(100vw - (var(--container-offset) * 2));
       }
     }
 

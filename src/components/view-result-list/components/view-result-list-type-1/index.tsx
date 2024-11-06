@@ -1,5 +1,6 @@
 'use client';
 
+import clsx from 'clsx';
 import React, { useEffect, useState } from 'react';
 
 import { MainSectionLayout } from '@/layouts/main-section-layout';
@@ -10,6 +11,7 @@ import { ViewMode } from '@/shared/components/view-mode';
 import { ResultListColumnType_1 } from '../../../result-list-column/components/result-list-column-type-1';
 import { ResultListType_1 } from '../../../result-list/components/result-list-type-1';
 import { ResultListDTO } from '../../types';
+import styles from '../view-result-list.module.scss';
 
 export const ViewResultListType_1 = () => {
   const [data, setData] = useState<ResultListDTO | null>(null);
@@ -56,7 +58,7 @@ export const ViewResultListType_1 = () => {
   }, []);
 
   if (!data) {
-    return <div>Loading...</div>; // Отображение загрузки, пока данные не загружены
+    return <div className={clsx(styles.Loading)}>Loading...</div>; // Отображение загрузки, пока данные не загружены
   }
 
   return (

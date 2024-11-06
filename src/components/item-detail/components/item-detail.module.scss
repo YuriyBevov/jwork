@@ -22,7 +22,10 @@
       height: 100%;
       min-height: 210px;
       max-height: 500px;
-      object-fit: cover;
+      aspect-ratio: 1 / 1;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
     }
 
     &_badge {
