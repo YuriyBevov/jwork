@@ -11,6 +11,10 @@
   align-items: center;
   margin-bottom: var(--gap-xxl);
 
+  &::before {
+    display: none;
+  }
+
   button {
     cursor: pointer;
     padding: 11px 20px;

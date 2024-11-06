@@ -59,7 +59,7 @@
       background-color: #fff;
       cursor: pointer;
       padding: 16px 24px;
-      border-radius: 8px;
+      border-radius: 5px;
       color: var(--gray);
       font-size: var(--fs-sm);
       transition:
@@ -152,6 +152,13 @@
         grid-template-columns: repeat(2, 1fr);
       }
     }
+
+    &_list {
+      button {
+        flex: 1;
+        width: 100%;
+      }
+    }
   }
 }
 
@@ -174,5 +181,15 @@
   .multi_select,
   .select {
     width: 100%;
+  }
+}
+
+@media (max-width: 350px) {
+  .tab {
+    &_list {
+      button {
+        flex: 100%;
+      }
+    }
   }
 }

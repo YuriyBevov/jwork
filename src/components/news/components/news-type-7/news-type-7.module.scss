@@ -12,6 +12,10 @@
   align-items: center;
   margin-bottom: var(--gap-lg);
 
+  &::before {
+    display: none;
+  }
+
   button {
     cursor: pointer;
     padding: var(--gap-xs) var(--gap-sm);
