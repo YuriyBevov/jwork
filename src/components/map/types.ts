@@ -72,5 +72,5 @@ export type FilterItem = {
 
 export type FilterItemValue = {
   id: string;
-  value: [number, number];
+  value: string | number[];
 };

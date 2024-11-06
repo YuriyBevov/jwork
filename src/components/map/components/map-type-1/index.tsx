@@ -1,17 +1,17 @@
 // 'use client';
 import clsx from 'clsx';
-import Image from 'next/image';
 
+// import Image from 'next/image';
 // import { MainSectionLayout } from '@/layouts/main-section-layout';
 import { getLocalData } from '@/lib/localdata';
-import { Badge } from '@/shared/components/badge';
+// import { Badge } from '@/shared/components/badge';
 import { Filter } from '@/shared/components/filter';
-import { MainLink } from '@/shared/components/main-link';
-import { MetrosListAlt } from '@/shared/components/metros-list-alt';
-import { SliderResultList } from '@/shared/components/slider/slider-result-list/slider-result-list';
+// import { MainLink } from '@/shared/components/main-link';
+// import { MetrosListAlt } from '@/shared/components/metros-list-alt';
+// import { SliderResultList } from '@/shared/components/slider/slider-result-list/slider-result-list';
 import { YMap } from '@/shared/components/yMap';
-import { IconFilter } from '@/shared/icons/icon-filter';
 
+// import { IconFilter } from '@/shared/icons/icon-filter';
 import { FilterDTO } from '../../types';
 import styles from '../map.module.scss';
 
@@ -24,7 +24,7 @@ export const MapType_1 = async () => {
     <section>
       {/* <div className="container-fluid"> */}
       <div className={clsx(styles.root)}>
-        <div className={styles.sidebar}>
+        {/* <div className={styles.sidebar}>
           <div className={styles.sidebar_header}>
             <button className={styles.sidebar_opener}>
               <IconFilter width={32} height={32} />
@@ -118,7 +118,7 @@ export const MapType_1 = async () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
         <div className={styles.root}>
           <Filter data={data?.data?.filter} />
           <YMap />
