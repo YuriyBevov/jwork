@@ -10,6 +10,7 @@
   color: var(--dark);
   cursor: pointer;
   @extend %main-hover;
+  font-size: 14px;
 }
 
 .outlined {

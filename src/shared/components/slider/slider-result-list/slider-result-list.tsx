@@ -14,18 +14,52 @@ import styles from './slider-result-list.module.scss';
 
 export const SliderResultList = ({
   children,
+  slidesPerView,
+  slidesPerViewXs = 1,
+  slidesPerViewMobile = 1,
+  slidesPerViewTablet = 2,
+  slidesPerViewTabletLg = 2,
+  spaceBetween,
 }: {
   children?: React.ReactNode;
+  slidesPerView: number;
+  slidesPerViewXs?: number;
+  slidesPerViewMobile?: number;
+  slidesPerViewTablet?: number;
+  slidesPerViewTabletLg?: number;
+
+  spaceBetween?: number;
 }) => {
   return (
     <Swiper
       modules={[Navigation, Pagination]}
       loop={false}
       className={styles.root}
-      pagination={{ el: '.slider-result-list-pagination', clickable: true }}
+      slidesPerView={slidesPerView}
+      spaceBetween={spaceBetween}
+      pagination={{
+        el: '.slider-result-list-pagination',
+        clickable: true,
+        // dynamicBullets: true,
+        // dynamicMainBullets: 3,
+      }}
       navigation={{
         nextEl: '.slider-result-list-button-next',
         prevEl: '.slider-result-list-button-prev',
+      }}
+      breakpoints={{
+        534: {
+          slidesPerView: slidesPerViewXs,
+        },
+        768: {
+          slidesPerView: slidesPerViewMobile,
+        },
+        960: {
+          slidesPerView: slidesPerViewTablet,
+        },
+        1360: {
+          slidesPerView: slidesPerViewTabletLg,
+        },
       }}
     >
       {React.Children.map(children, (child: ReactNode) => (

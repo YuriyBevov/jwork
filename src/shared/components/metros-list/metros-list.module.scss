@@ -31,6 +31,7 @@
 
       @include container-down('root', 590px) {
         flex-direction: column;
+        align-items: flex-start;
         gap: var(--gap-sm);
       }
 
@@ -57,15 +58,19 @@
 
         &_show_more {
           width: fit-content;
-          padding: 0px 8px;
-          height: 24px;
-          background: #f3f4f6;
-          border: 1px solid #d1d5db;
+          padding: 3px 8px;
           font-weight: 400;
           font-size: 16px;
-          color: #111928;
           cursor: pointer;
           white-space: nowrap;
+          margin-left: auto;
+          border: 1px solid var(--primary);
+          background-color: transparent;
+          color: var(--primary);
+
+          @include container-down('root', 590px) {
+            margin-left: 0;
+          }
         }
 
         .base_text {
@@ -73,6 +78,10 @@
 
           &_margin_r {
             margin-right: auto;
+            -webkit-line-clamp: 2;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
           }
 
           &_time {
@@ -83,6 +92,8 @@
 
       &_btn_wrapper {
         position: relative;
+        width: 100%;
+        display: flex;
       }
     }
   }

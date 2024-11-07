@@ -165,8 +165,8 @@ export const ApartDetailType_1 = async () => {
                     key={`картина-${index}`}
                     src={img}
                     alt={`slider-${index}`}
-                    width={420}
-                    height={410}
+                    width={1440}
+                    height={480}
                     className={clsx(styles.content_row_gallery_slide)}
                   />
                 ))}

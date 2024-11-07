@@ -74,14 +74,21 @@ export const ItemDetailType_1 = async () => {
         <div className={clsx(styles.content)}>
           <div className={clsx(styles.content_row)}>
             <div className={clsx(styles.content_row_gallery)}>
-              <SliderResultList>
+              <SliderResultList
+                slidesPerView={1}
+                slidesPerViewXs={1}
+                slidesPerViewMobile={1}
+                slidesPerViewTablet={1}
+                slidesPerViewTabletLg={1}
+                spaceBetween={24}
+              >
                 {data?.data?.block?.block_img.map((img, index) => (
                   <Image
                     key={`картина-${index}`}
                     src={img}
                     alt={`slider-${index}`}
-                    width={420}
-                    height={410}
+                    width={1440}
+                    height={500}
                     className={clsx(styles.content_row_gallery_slide)}
                   />
                 ))}

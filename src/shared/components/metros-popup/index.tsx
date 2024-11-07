@@ -8,9 +8,5 @@ interface MetrosPopupProps {
 }
 
 export const MetrosPopup = ({ children }: MetrosPopupProps) => {
-  return (
-    <div className={clsx(styles.root)}>
-      <div className={clsx(styles.modal)}>{children}</div>
-    </div>
-  );
+  return <div className={clsx(styles.modal)}>{children}</div>;
 };
