@@ -22,7 +22,7 @@ export const SliderResultList = ({
   spaceBetween,
 }: {
   children?: React.ReactNode;
-  slidesPerView: number;
+  slidesPerView?: number;
   slidesPerViewXs?: number;
   slidesPerViewMobile?: number;
   slidesPerViewTablet?: number;
