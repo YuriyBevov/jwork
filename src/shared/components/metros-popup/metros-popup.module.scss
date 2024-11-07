@@ -18,12 +18,14 @@
   background: #ffffff;
   border: 1px solid #d1d5db;
 
-  // @include container-down('root', 630px) {
-  //   left: -50px;
-  // }
   @include container-down('root', 590px) {
     left: 0;
     right: auto;
+    min-width: auto;
+  }
+
+  @include container-down('root', $mobile-width) {
+    max-width: 100%;
   }
 }
 

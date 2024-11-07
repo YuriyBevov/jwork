@@ -49,7 +49,14 @@ export const ResultListItemType_1 = ({ data }: { data: ResultListDTO }) => {
         {data?.blocks.map((item) => (
           <li key={item?.id} className={clsx(styles.list_item)}>
             <div className={clsx(styles.list_item_gallery)}>
-              <SliderResultList>
+              <SliderResultList
+                slidesPerView={1}
+                slidesPerViewXs={1}
+                slidesPerViewMobile={1}
+                slidesPerViewTablet={1}
+                slidesPerViewTabletLg={1}
+                spaceBetween={24}
+              >
                 {item?.block_img.map((img, index) => (
                   <Image
                     key={`картина-${index}`}

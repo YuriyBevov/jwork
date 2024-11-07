@@ -77,11 +77,27 @@ a {
   background: var(--primary);
 }
 
+// .slider-result-list-pagination {
+//   width: 224px !important;
+//   margin: 0 auto !important;
+// }
+
 .slider-result-list-pagination .swiper-pagination-bullet {
   width: 24px !important;
   height: 2px !important;
   background: #d1d5db !important;
 }
+
+// .slider-result-list-pagination
+//   .swiper-horizontal
+//   > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic,
+// .swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
+//   left: auto !important; // Убираем смещение по центру
+//   transform: none !important; // Убираем трансформацию
+//   white-space: normal !important; // Позволяет точкам переноситься
+//   display: flex !important; // Устанавливаем flex для центрирования
+//   justify-content: center !important; // Центрируем содержимое
+// }
 
 .menu-container {
   display: flex;

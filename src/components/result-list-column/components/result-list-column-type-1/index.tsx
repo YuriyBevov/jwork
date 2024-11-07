@@ -67,14 +67,21 @@ export const ResultListColumnType_1: React.FC<Props> = ({
           return (
             <li key={item.id} className={clsx(styles.list_item)}>
               <div className={clsx(styles.list_item_gallery)}>
-                <SliderResultList>
+                <SliderResultList
+                  slidesPerView={1}
+                  slidesPerViewXs={1}
+                  slidesPerViewMobile={1}
+                  slidesPerViewTablet={1}
+                  slidesPerViewTabletLg={1}
+                  spaceBetween={24}
+                >
                   {item?.block_img.map((img, index) => (
                     <Image
                       key={`картина-${index}`}
                       src={img}
                       alt={`slider-${index}`}
-                      width={420}
-                      height={410}
+                      width={336}
+                      height={334}
                       className={clsx(styles.content_section_gallery_slide)}
                     />
                   ))}
