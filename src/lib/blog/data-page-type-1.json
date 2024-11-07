@@ -1,0 +1,19 @@
+{
+  "blocks": [
+    {
+      "id": "1",
+      "type": "header",
+      "templateID": "1"
+    },
+    {
+      "id": "2",
+      "type": "blog",
+      "templateID": "1"
+    },
+    {
+      "id": "3",
+      "type": "footer",
+      "templateID": "1"
+    }
+  ]
+}

@@ -7,3 +7,4 @@ export { News } from './news';
 export { Offer } from './offer';
 export { Services } from './services';
 export { Staff } from './staff';
+export { BlogDetail } from './blog-detail';
