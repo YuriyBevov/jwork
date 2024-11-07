@@ -35,6 +35,7 @@
         width: 100%;
         height: auto;
         object-fit: contain;
+        max-height: 400px;
       }
 
       @include container-down('root', $tablet-lg-width) {
@@ -52,6 +53,7 @@
 
       &_headers {
         @extend %flex-align;
+        flex-wrap: wrap;
         gap: var(--gap-base);
         width: 100%;
         margin-bottom: 8px;
@@ -60,7 +62,6 @@
           font-weight: var(--fw-r);
           font-size: var(--fs-sm);
           color: var(--secondary);
-          margin-left: auto;
         }
       }
 
@@ -71,6 +72,7 @@
         width: fit-content;
         background-color: var(--lighter);
         border-radius: 5px;
+        margin-right: auto;
       }
 
       &_badge_alt {

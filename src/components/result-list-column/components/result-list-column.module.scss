@@ -42,21 +42,21 @@
         aspect-ratio: 1 / 1;
         width: 100%;
         height: auto;
-        min-height: 320px;
+        max-height: 400px;
         object-fit: contain;
       }
     }
 
     &_content {
       @extend %flex-column;
-      max-height: fit-content;
       gap: var(--gap-base);
       height: 100%;
-      min-height: 533px;
       padding: 16px;
+      flex-grow: 1;
 
       &_headers {
         @extend %flex-align;
+        flex-wrap: wrap;
         gap: var(--gap-base);
         width: 100%;
         margin-bottom: 8px;
@@ -65,8 +65,6 @@
           font-weight: var(--fw-r);
           font-size: var(--fs-sm);
           color: var(--secondary);
-          margin-left: auto;
-          white-space: nowrap;
         }
       }
 
@@ -75,7 +73,7 @@
         width: fit-content;
         background-color: var(--lighter);
         border-radius: 5px;
-        white-space: nowrap;
+        margin-right: auto;
       }
 
       &_badge_alt {
@@ -169,7 +167,6 @@
       }
 
       &_details span:last-child {
-        // margin-left: auto;
         font-weight: var(--fw-m);
         color: var(--gray);
         -webkit-line-clamp: 1;
