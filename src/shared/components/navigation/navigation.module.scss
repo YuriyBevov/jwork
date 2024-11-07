@@ -178,6 +178,10 @@
 
     a {
       color: var(--dark);
+
+      svg {
+        fill: var(--dark);
+      }
     }
 
     &_item {
