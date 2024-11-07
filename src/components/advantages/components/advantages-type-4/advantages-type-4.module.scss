@@ -4,11 +4,11 @@
 .list {
   grid-template-columns: repeat(4, 1fr);
 
-  @include container-down('root', $laptop-width) {
+  @include media-down($laptop-width) {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  @include container-down('root', $tablet-width) {
+  @include media-down($tablet-width) {
     grid-template-columns: 1fr;
   }
 
