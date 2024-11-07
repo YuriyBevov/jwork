@@ -7,51 +7,44 @@
 
 .list {
   @extend %list-reset;
-  display: grid;
-  gap: clamp(var(--gap-lg), 4vw, var(--gap-xxl)) var(--gap-lg);
-  grid-template-columns: repeat(4, 1fr);
-
-  @include container-down('root', $laptop-lg-width) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  @include container-down('root', $tablet-width) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @include container-down('root', $mobile-width) {
-    grid-template-columns: 1fr;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  overflow: hidden;
 
   &_item {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 333px 1fr;
+    display: flex;
+    flex-direction: column;
+    width: calc((100% / 4) - calc(60px / 4));
     gap: var(--gap-md);
+    border: 1px solid var(--lighter);
+
+    @include media-down(1300px) {
+      width: calc((100% / 3) - calc(40px / 3));
+    }
+
+    @include media-down(1050px) {
+      width: calc((100% / 2) - calc(40px / 2));
+    }
+
+    @include media-down($tablet-width) {
+      width: 100%;
+    }
 
     &_price {
       color: var(--primary);
     }
 
     &_gallery {
-      max-width: 540px;
-      min-width: 200px;
-      height: 100%;
-      max-height: 333px;
+      width: 100%;
 
       img {
         aspect-ratio: 1 / 1;
         width: 100%;
         height: auto;
+        min-height: 320px;
         object-fit: contain;
       }
-    }
-
-    &_gallery_slide {
-      width: 100%;
-      height: 100%;
-      max-height: 333px;
-      object-fit: cover;
     }
 
     &_content {
@@ -60,25 +53,20 @@
       gap: var(--gap-base);
       height: 100%;
       min-height: 533px;
+      padding: 16px;
+      max-height: 100vh;
 
       &_headers {
         @extend %flex-align;
         gap: var(--gap-base);
         width: 100%;
 
-        @include container-down('root', 400px) {
-          flex-direction: column;
-        }
-
         span {
           font-weight: var(--fw-r);
           font-size: var(--fs-sm);
           color: var(--secondary);
           margin-left: auto;
-
-          @include container-down('root', 400px) {
-            margin-left: 0;
-          }
+          white-space: nowrap;
         }
       }
 
@@ -87,6 +75,7 @@
         width: fit-content;
         background-color: var(--lighter);
         border-radius: 5px;
+        white-space: nowrap;
         margin-bottom: 8px;
       }
 
@@ -121,6 +110,7 @@
     &_wrapper {
       @extend %flex-column;
       gap: var(--gap-base);
+      margin-top: auto;
     }
 
     &_apart {
@@ -183,14 +173,14 @@
 
     &_show_more {
       width: fit-content;
-      padding: 0px 8px;
-      height: 24px;
-      background: #f3f4f6;
-      border: 1px solid #d1d5db;
+      padding: 3px 8px;
       font-weight: 400;
       font-size: 16px;
-      color: #111928;
       cursor: pointer;
+      white-space: nowrap;
+      border: 1px solid var(--primary);
+      background-color: transparent;
+      color: var(--primary);
     }
   }
 }
