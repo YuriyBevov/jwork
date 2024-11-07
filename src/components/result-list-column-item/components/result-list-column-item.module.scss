@@ -49,12 +49,10 @@
 
     &_content {
       @extend %flex-column;
-      max-height: fit-content;
       gap: var(--gap-base);
       height: 100%;
-      min-height: 533px;
       padding: 16px;
-      max-height: 100vh;
+      flex-grow: 1;
 
       &_headers {
         @extend %flex-align;
