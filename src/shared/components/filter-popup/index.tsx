@@ -1,6 +1,7 @@
 import clsx from 'clsx';
-import Image from 'next/image';
 import React from 'react';
+
+import { IconCloseFilter } from '@/shared/icons/icon-close-filter';
 
 import { MainBtn } from '../main-btn';
 import { MainInput } from '../main-input';
@@ -102,12 +103,7 @@ export const FilterPopup = ({ closePopup }: { closePopup: () => void }) => {
         <div className={clsx(styles.modal_header)}>
           <span>Фильтр</span>
           <button type="button" onClick={closePopup}>
-            <Image
-              src="/assets/images/result-list/close.svg"
-              alt="close"
-              width={40}
-              height={40}
-            />
+            <IconCloseFilter fill={'white'} />
           </button>
         </div>
         <div className={clsx(styles.modal_list)}>

@@ -1,0 +1,10 @@
+@import '../../../shared/styles/extends.scss';
+@import '../../../shared/styles/mixins.scss';
+
+.root {
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+}

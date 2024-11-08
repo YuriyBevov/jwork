@@ -58,7 +58,7 @@ export const ViewResultListType_1 = () => {
   }, []);
 
   if (!data) {
-    return <div className={clsx(styles.Loading)}>Loading...</div>; // Отображение загрузки, пока данные не загружены
+    return <div className={clsx(styles.loading)}>Loading...</div>; // Отображение загрузки, пока данные не загружены
   }
 
   return (
