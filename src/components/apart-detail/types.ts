@@ -11,6 +11,7 @@ export interface ItemDetailDTO {
   apartment: Apartment;
   metros: MetrosList[];
   block_info: BlockInfo;
+  type: string;
 }
 
 interface ApartmentsList {

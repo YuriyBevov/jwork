@@ -310,7 +310,7 @@ export const ItemDetailType_1 = async () => {
                       <span>{item.space_room}</span>
                     </li>
                   </ul>
-                  <MainBtn text="Искать" />
+                  <MainBtn text="Подробнее" />
                 </li>
               ))}
             </ul>

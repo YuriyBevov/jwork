@@ -1,13 +1,15 @@
 'use client';
 
 import clsx from 'clsx';
-import React, { ReactNode } from 'react';
+import React, { ReactNode, useRef, useState } from 'react';
+import { Swiper as SwiperType } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
+// Импортируем тип Swiper
 import { IconArrow } from '@/shared/icons/view-mode/icon-arrow';
 
 import styles from './slider-result-list.module.scss';
@@ -27,9 +29,24 @@ export const SliderResultList = ({
   slidesPerViewMobile?: number;
   slidesPerViewTablet?: number;
   slidesPerViewTabletLg?: number;
-
   spaceBetween?: number;
 }) => {
+  // Типизируем реф
+  const swiperRef = useRef<SwiperType | null>(null); // Указываем, что реф может быть либо SwiperType, либо null
+
+  const [activeSlide, setActiveSlide] = useState<number>(0);
+
+  // Типизируем swiper в обработчике
+  const handleSlideChange = (swiper: SwiperType) => {
+    setActiveSlide(swiper.activeIndex);
+  };
+
+  const handleSlideClick = () => {
+    if (swiperRef.current) {
+      swiperRef.current.swiper.slideNext(); // Переход к следующему слайду
+    }
+  };
+
   return (
     <Swiper
       modules={[Navigation, Pagination]}
@@ -40,8 +57,6 @@ export const SliderResultList = ({
       pagination={{
         el: '.slider-result-list-pagination',
         clickable: true,
-        // dynamicBullets: true,
-        // dynamicMainBullets: 3,
       }}
       navigation={{
         nextEl: '.slider-result-list-button-next',
@@ -61,10 +76,36 @@ export const SliderResultList = ({
           slidesPerView: slidesPerViewTabletLg,
         },
       }}
+      ref={swiperRef}
+      onSlideChange={handleSlideChange}
     >
-      {React.Children.map(children, (child: ReactNode) => (
-        <SwiperSlide className={styles.slide}>{child}</SwiperSlide>
-      ))}
+      {React.Children.map(children, (child: ReactNode, index) => {
+        // Проверяем, является ли child валидным React элементом
+        if (React.isValidElement(child)) {
+          return (
+            <SwiperSlide
+              onClick={handleSlideClick} // Обработчик клика на картинку
+              className={clsx(
+                styles.slide,
+                activeSlide === index ? styles.activeSlide : '',
+              )}
+              style={{
+                backgroundImage:
+                  activeSlide === index ? `url(${child.props.src})` : '',
+                height: '100%',
+                width: '100%',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+              }}
+            >
+              {child}
+            </SwiperSlide>
+          );
+        }
+
+        // Если child не является валидным React элементом, возвращаем его как есть
+        return <>{child}</>;
+      })}
       <div
         className={clsx(
           'slider-result-list-pagination',
@@ -79,7 +120,7 @@ export const SliderResultList = ({
           styles.slider_result_list_button_prev,
         )}
       >
-        <IconArrow width={48} height={48} fill="white" rect_fill="black" />
+        <IconArrow width={48} height={48} fill="#111111" />
       </button>
       <button
         className={clsx(
@@ -88,7 +129,7 @@ export const SliderResultList = ({
           styles.slider_result_list_button_next,
         )}
       >
-        <IconArrow width={48} height={48} fill="white" rect_fill="black" />
+        <IconArrow width={48} height={48} fill="#111111" />
       </button>
     </Swiper>
   );

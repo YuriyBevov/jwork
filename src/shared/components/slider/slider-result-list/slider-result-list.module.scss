@@ -17,6 +17,11 @@
   height: auto;
 }
 
+.slide img {
+  backdrop-filter: blur(17px);
+  display: block;
+}
+
 .slider_result_list_button {
   position: absolute;
   top: 50%;
@@ -27,7 +32,8 @@
   align-items: center;
   justify-content: center;
   border: none;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
   cursor: pointer;
   transition: opacity var(--base-transition);
   z-index: 10;

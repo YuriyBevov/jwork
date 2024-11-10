@@ -49,6 +49,13 @@ export const ApartDetailType_1 = async () => {
     <MainSectionLayout>
       <div className={clsx(styles.root)}>
         <div className={clsx(styles.content)}>
+          <div className={clsx(styles.breadcrumb)}>
+            <span>Главная</span>
+            <span>/</span>
+            <span>ЖК “Тестовый”</span>
+            <span>/</span>
+            <span>Квартира 250</span>
+          </div>
           <div className={clsx(styles.content_row)}>
             {data?.apartment && (
               <div className={clsx(styles.content_row_info_top)}>
@@ -60,13 +67,15 @@ export const ApartDetailType_1 = async () => {
                   className={clsx(styles.content_row_info_top_image)}
                 />
                 <div className={clsx(styles.content_row_info_top_content)}>
-                  <div className={clsx(styles.content_row_info_top_badge)}>
-                    <Badge
-                      text={data?.apartment?.badge?.text}
-                      outlined={true}
-                      accent={true}
-                    />
-                  </div>
+                  {data?.type === 'newbuilding' && (
+                    <div className={clsx(styles.content_row_info_top_badge)}>
+                      <Badge
+                        text={data?.type === 'newbuilding' ? 'Новостройка' : ''}
+                        outlined={true}
+                        accent={true}
+                      />
+                    </div>
+                  )}
                   <div className={clsx(styles.content_row_info_top_header)}>
                     <span
                       className={clsx('base_subtitle', styles.base_subtitle)}
@@ -159,7 +168,14 @@ export const ApartDetailType_1 = async () => {
           </div>
           <div className={clsx(styles.content_row)}>
             <div className={clsx(styles.content_row_gallery)}>
-              <SliderResultList>
+              <SliderResultList
+                slidesPerView={1}
+                slidesPerViewXs={1}
+                slidesPerViewMobile={1}
+                slidesPerViewTablet={1}
+                slidesPerViewTabletLg={1}
+                spaceBetween={24}
+              >
                 {data?.block_img.map((img, index) => (
                   <Image
                     key={`картина-${index}`}
@@ -293,7 +309,7 @@ export const ApartDetailType_1 = async () => {
                 width="560"
                 height="400"
                 allowFullScreen
-                style={{ position: 'relative', width: '100%' }}
+                style={{ position: 'relative', width: '100%', border: 'none' }}
               ></iframe>
             </div>
           </div>
