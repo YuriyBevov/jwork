@@ -1,6 +1,5 @@
 {
-  "blocks": [
-    {
+  "blocks": [{
       "id": "1",
       "type": "header",
       "templateID": "1"

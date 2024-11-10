@@ -77,12 +77,18 @@
   }
 }
 
-@include container-down('root', 440px) {
+@include media-down(768px) {
   .btn_group {
-    margin-left: 0;
-    width: 100%;
+    display: none;
   }
 }
+
+// @include container-down('root', 440px) {
+//   .btn_group {
+//     margin-left: 0;
+//     width: 100%;
+//   }
+// }
 
 .btn {
   border: none;
