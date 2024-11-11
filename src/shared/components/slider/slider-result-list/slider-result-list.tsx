@@ -43,7 +43,7 @@ export const SliderResultList = ({
 
   const handleSlideClick = () => {
     if (swiperRef.current) {
-      swiperRef.current.swiper.slideNext(); // Переход к следующему слайду
+      swiperRef.current.slideNext(); // Переход к следующему слайду
     }
   };
 
@@ -76,7 +76,6 @@ export const SliderResultList = ({
           slidesPerView: slidesPerViewTabletLg,
         },
       }}
-      ref={swiperRef}
       onSlideChange={handleSlideChange}
     >
       {React.Children.map(children, (child: ReactNode, index) => {
