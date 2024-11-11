@@ -1,44 +1,103 @@
 import clsx from 'clsx';
 import React from 'react';
 
+import { HeroItem } from '@/components/hero/types';
+import { AutocompleteUi, PriceRangeDropdownUi, SelectUi } from '@/shared/ui';
+
 import { FilterIcon } from '../../icons/view-mode/filter-icon';
 import { MainBtn } from '../main-btn';
-import { MainInput } from '../main-input';
+// import { MainInput } from '../main-input';
 import { MainLink } from '../main-link';
 import styles from './result-list-filters.module.scss';
+
+// const data = [
+//   {
+//     id: '1',
+//     type: 'text',
+//     name: 'Вторичка',
+//     placeholder: 'Вторичка',
+//   },
+//   {
+//     id: '2',
+//     type: 'text',
+//     name: 'Комнатность',
+//     placeholder: 'Комнатность',
+//   },
+//   {
+//     id: '3',
+//     type: 'text',
+//     name: 'Площадь',
+//     placeholder: 'Площадь',
+//   },
+//   {
+//     id: '4',
+//     type: 'text',
+//     name: 'Адрес',
+//     placeholder: 'Адрес',
+//   },
+//   {
+//     id: '5',
+//     type: 'text',
+//     name: 'Стоимость',
+//     placeholder: 'Стоимость',
+//   },
+// ];
 
 const data = [
   {
     id: '1',
-    type: 'text',
-    name: 'Вторичка',
-    placeholder: 'Вторичка',
+    type: 'select',
+    title: 'Новостройки и вторичка',
+    content: [
+      { value: 'Новостройки и вторичка' },
+      { value: 'Коммерческая недвижимость' },
+      { value: 'Аренда' },
+      { value: 'Продажа' },
+    ],
   },
   {
     id: '2',
-    type: 'text',
-    name: 'Комнатность',
-    placeholder: 'Комнатность',
+    type: 'square_range',
+    title: 'Площадь',
   },
   {
     id: '3',
-    type: 'text',
-    name: 'Площадь',
-    placeholder: 'Площадь',
+    type: 'search',
+    title: 'Адрес, метро, местоположение',
+    content: [
+      { value: 'Москва ' },
+      { value: 'Санкт-Петербург' },
+      { value: 'Казань' },
+    ],
   },
   {
     id: '4',
-    type: 'text',
-    name: 'Адрес',
-    placeholder: 'Адрес',
+    type: 'price_range',
+    title: 'Стоимость',
   },
   {
     id: '5',
-    type: 'text',
-    name: 'Стоимость',
-    placeholder: 'Стоимость',
+    type: 'size_range',
+    title: 'Комнатность',
   },
 ];
+
+const selectItem = (item: HeroItem) => {
+  switch (item.type) {
+    case 'select':
+      return <SelectUi item={item} />;
+    case 'square_range':
+      return <PriceRangeDropdownUi item={item} />;
+    case 'search':
+      return <AutocompleteUi item={item} />;
+    case 'price_range':
+      return <PriceRangeDropdownUi item={item} />;
+    case 'size_range':
+      return <PriceRangeDropdownUi item={item} />;
+    default:
+      return null;
+  }
+};
 
 export const ResultListFilter = ({ openPopup }: { openPopup: () => void }) => {
   return (
@@ -54,7 +113,7 @@ export const ResultListFilter = ({ openPopup }: { openPopup: () => void }) => {
           <span>1</span>
         </button>
         <div className={clsx(styles.wrapper_selects)}>
-          {data.map((field, index) => (
+          {/* {data.map((field, index) => (
             <MainInput
               key={`${field.id}-${index}`}
               type={field.type}
@@ -62,7 +121,14 @@ export const ResultListFilter = ({ openPopup }: { openPopup: () => void }) => {
               placeholder={field.placeholder}
               id={field.id}
             />
-          ))}
+          ))} */}
+          {data.map((item: HeroItem) => {
+            return (
+              <div className={styles.select__item} key={item.id}>
+                {selectItem(item)}
+              </div>
+            );
+          })}
         </div>
         <div className={clsx(styles.wrapper_btns)}>
           <MainLink

@@ -3,12 +3,16 @@
 import { Combobox, Input, useCombobox } from '@mantine/core';
 import clsx from 'clsx';
 
+import { HeroItem } from '@/components/hero/types';
+
 import styles from '../hero-ui.module.scss';
 
 export const PriceRangeDropdownUi = ({
+  item,
   radius = 'xs',
   className,
 }: {
+  item: HeroItem;
   radius?: 'xs' | 'sm' | 'lg' | 'xl';
   className?: string;
 }) => {
@@ -26,7 +30,7 @@ export const PriceRangeDropdownUi = ({
           onClick={() => combobox.toggleDropdown()}
           rightSection={<Combobox.Chevron />}
         >
-          Стоимость
+          {item?.title}
         </Input>
       </Combobox.Target>
 
