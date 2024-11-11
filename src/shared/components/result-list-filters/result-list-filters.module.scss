@@ -5,6 +5,10 @@
   container: root / inline-size;
 }
 
+.select__item {
+  flex: 1;
+}
+
 .wrapper {
   @extend %flex-align;
   gap: clamp(var(--gap-base), 2vw, var(--gap-sm));
