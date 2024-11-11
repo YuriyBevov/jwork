@@ -113,15 +113,6 @@ export const ResultListFilter = ({ openPopup }: { openPopup: () => void }) => {
           <span>1</span>
         </button>
         <div className={clsx(styles.wrapper_selects)}>
-          {/* {data.map((field, index) => (
-            <MainInput
-              key={`${field.id}-${index}`}
-              type={field.type}
-              name={field.name}
-              placeholder={field.placeholder}
-              id={field.id}
-            />
-          ))} */}
           {data.map((item: HeroItem) => {
             return (
               <div className={styles.select__item} key={item.id}>

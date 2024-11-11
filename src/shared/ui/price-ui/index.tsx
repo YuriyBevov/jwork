@@ -12,7 +12,7 @@ export const PriceRangeDropdownUi = ({
   radius = 'xs',
   className,
 }: {
-  item: HeroItem;
+  item?: HeroItem;
   radius?: 'xs' | 'sm' | 'lg' | 'xl';
   className?: string;
 }) => {
