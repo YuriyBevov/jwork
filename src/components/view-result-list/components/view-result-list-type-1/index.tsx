@@ -64,6 +64,11 @@ export const ViewResultListType_1 = () => {
   return (
     <MainSectionLayout>
       <ResultListFilter openPopup={openPopup} />
+      <div className={clsx(styles.breadcrumb)}>
+        <span>Главная</span>
+        <span>/</span>
+        <span>Жилые комплексы</span>
+      </div>
       <ViewMode
         title="Жилые комплексы"
         quantity={data?.count_blocks}

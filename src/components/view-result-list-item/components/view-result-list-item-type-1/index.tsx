@@ -53,6 +53,11 @@ export const ViewResultListItemType_1 = () => {
   return (
     <MainSectionLayout>
       <ResultListFilter openPopup={openPopup} />
+      <div className={clsx(styles.breadcrumb)}>
+        <span>Главная</span>
+        <span>/</span>
+        <span>Квартиры во вторичке</span>
+      </div>
       <ViewMode
         title="Купить квартиру Москве и Московской области"
         quantity={data?.count_blocks}
