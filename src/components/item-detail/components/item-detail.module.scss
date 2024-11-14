@@ -293,3 +293,22 @@
     }
   }
 }
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+
+.breadcrumb span {
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--gray);
+}
+
+.breadcrumb span:last-child {
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--primary);
+}

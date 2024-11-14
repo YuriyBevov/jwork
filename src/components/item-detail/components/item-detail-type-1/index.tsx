@@ -72,6 +72,11 @@ export const ItemDetailType_1 = async () => {
     <MainSectionLayout>
       <div className={clsx(styles.root)}>
         <div className={clsx(styles.content)}>
+          <div className={clsx(styles.breadcrumb)}>
+            <span>Главная</span>
+            <span>/</span>
+            <span>Список квартир</span>
+          </div>
           <div className={clsx(styles.content_row)}>
             <div className={clsx(styles.content_row_gallery)}>
               <SliderResultList
