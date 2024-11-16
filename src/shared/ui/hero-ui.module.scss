@@ -3,6 +3,7 @@
   border-radius: 0;
   color: var(--gray);
   outline: none;
+  line-height: 48px;
   height: 48px;
   display: flex;
   align-items: center;
@@ -87,25 +88,33 @@
 }
 
 .option {
-  padding: 0 0 10px 0;
-  border-bottom: 1px solid rgb(209, 213, 219);
-  margin-bottom: 10px;
+  padding: 10px;
+  margin-bottom: 5px;
   border-radius: 0;
   font-size: 16px;
 
   &:hover {
-    background-color: transparent;
+    background-color: #f1f3f5;
+  }
+
+  svg {
+    display: none;
   }
 
   &:last-child {
-    padding-bottom: 0;
     border: none;
     margin-bottom: 0;
+  }
+
+  &[aria-selected='true'] {
+    background-color: var(--primary-lighten-35);
+    color: var(--primary);
+    cursor: auto;
   }
 }
 
 .pillsList {
   flex-wrap: nowrap;
   overflow: hidden;
-  max-width: 200px;
+  max-width: 168px;
 }

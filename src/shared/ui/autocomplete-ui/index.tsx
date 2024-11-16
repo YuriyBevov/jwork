@@ -34,6 +34,7 @@ export const AutocompleteUi = ({
       }
       comboboxProps={{
         shadow: 'md',
+        dropdownPadding: 12,
       }}
     />
   );
