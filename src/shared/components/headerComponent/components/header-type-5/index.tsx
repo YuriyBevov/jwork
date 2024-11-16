@@ -3,7 +3,7 @@
 import clsx from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useState } from 'react';
 
 import { HeaderDTO } from '@/components/header/components/types';
@@ -19,6 +19,28 @@ import custom from './header-type-5.module.scss';
 export const HeaderType_5 = ({ data }: { data: HeaderDTO }) => {
   const [navState, setNavState] = useState(false);
 
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const headerElement = document.querySelector('header');
+      const headerHeight = headerElement?.offsetHeight || 0;
+
+      if (scrollPosition > headerHeight) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   const onClickHandler = () => {
     setNavState(!navState);
     const body = document.querySelector('body');
@@ -28,7 +50,9 @@ export const HeaderType_5 = ({ data }: { data: HeaderDTO }) => {
   };
 
   return (
-    <header className={clsx(common.root, custom.root)}>
+    <header
+      className={clsx(common.root, custom.root, isVisible ? custom.sticky : '')}
+    >
       <div className="container">
         <div
           className={clsx(
