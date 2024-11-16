@@ -13,13 +13,13 @@ import styles from '../result-list-item.module.scss';
 export const ResultListItemType_1 = ({ data }: { data: ResultListDTO }) => {
   // Получаем минимальную цену
   const minPrice = data?.blocks
-    ? (Math.min(
+    ? Math.min(
         ...data.blocks.reduce<number[]>((acc, elem) => {
           return acc.concat(
             elem.apartments.map((apartment) => apartment.price),
           );
         }, []),
-      ) ?? Infinity) // Устанавливаем значение по умолчанию
+      ) ?? Infinity // Устанавливаем значение по умолчанию
     : Infinity; // Если data или blocks не определены
 
   // Форматируем минимальную цену
@@ -28,13 +28,13 @@ export const ResultListItemType_1 = ({ data }: { data: ResultListDTO }) => {
 
   // Получаем минимальную цену за квадратный метр
   const minMeterPrice = data?.blocks
-    ? (Math.min(
+    ? Math.min(
         ...data.blocks.reduce<number[]>((acc, elem) => {
           return acc.concat(
             elem.apartments.map((apartment) => apartment.meter_price),
           );
         }, []),
-      ) ?? Infinity) // Устанавливаем значение по умолчанию
+      ) ?? Infinity // Устанавливаем значение по умолчанию
     : Infinity; // Если data или blocks не определены
 
   // Форматируем минимальную цену
