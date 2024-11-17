@@ -23,6 +23,11 @@
   nav span,
   ul li a {
     color: var(--white);
+    transition: opacity 0.3s ease;
+
+    &:hover {
+      opacity: 0.8;
+    }
   }
 }
 
@@ -56,6 +61,11 @@
 
   a {
     @extend %flex-center;
+    transition: opacity 0.3s ease;
+
+    &:hover {
+      opacity: 0.8;
+    }
   }
 
   svg {
@@ -115,4 +125,14 @@
 
 .bottom_menu {
   margin-right: auto;
+
+  a {
+    color: var(--white);
+
+    transition: opacity 0.3s ease;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
 }

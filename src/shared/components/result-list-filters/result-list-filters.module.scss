@@ -61,6 +61,7 @@
   &_selects {
     @extend %flex-align;
     gap: clamp(var(--gap-base), 2vw, var(--gap-sm));
+    flex: 1;
 
     @include container-down('root', $tablet-lg-width) {
       display: none;
@@ -69,14 +70,12 @@
     input {
       width: 100%;
       max-width: 200px;
-      border: 1px solid #d1d5db;
     }
   }
 
   &_btns {
     @extend %flex-align;
     gap: clamp(var(--gap-base), 2vw, var(--gap-sm));
-    flex-grow: 1;
 
     @include container-down('root', $tablet-lg-width) {
       margin-left: auto;

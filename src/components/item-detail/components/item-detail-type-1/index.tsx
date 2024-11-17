@@ -1,40 +1,22 @@
 // 'use client';
 import clsx from 'clsx';
 import Image from 'next/image';
+import React from 'react';
 
+import { HeroItem } from '@/components/hero/types';
 import { MainSectionLayout } from '@/layouts/main-section-layout';
 import { getLocalData } from '@/lib/localdata';
 import { Badge } from '@/shared/components/badge';
+import { ButtonUi } from '@/shared/components/button';
 import { MainBtn } from '@/shared/components/main-btn';
-import { MainInput } from '@/shared/components/main-input';
 import { MainLink } from '@/shared/components/main-link';
 import { MetrosList } from '@/shared/components/metros-list';
 import { SliderResultList } from '@/shared/components/slider/slider-result-list/slider-result-list';
 import { ByDetails } from '@/shared/icons/view-mode/by-details';
+import { MultiSelectUi, PriceRangeDropdownUi } from '@/shared/ui';
 
 import { ItemDetailDTO } from '../../types';
 import styles from '../item-detail.module.scss';
-
-const inputsData = [
-  {
-    id: '1',
-    type: 'text',
-    name: 'Комнатность',
-    placeholder: 'Комнатность',
-  },
-  {
-    id: '2',
-    type: 'text',
-    name: 'Площадь',
-    placeholder: 'Площадь',
-  },
-  {
-    id: '3',
-    type: 'text',
-    name: 'Стоимость',
-    placeholder: 'Стоимость',
-  },
-];
 
 export const ItemDetailType_1 = async () => {
   const data: ItemDetailDTO = await getLocalData(
@@ -63,6 +45,38 @@ export const ItemDetailType_1 = async () => {
 
     return `${quarter} квартал ${year}`;
   }
+
+  const dataSelectItem = [
+    {
+      id: '1',
+      type: 'multi_select',
+      title: 'Комнатность',
+      content: [{ value: '1' }, { value: '2' }, { value: '3' }, { value: '4' }],
+    },
+    {
+      id: '2',
+      type: 'sq_range',
+      title: 'Площадь',
+    },
+    {
+      id: '3',
+      type: 'price_range',
+      title: 'Стоимость',
+    },
+  ];
+
+  const selectItem = (item: HeroItem) => {
+    switch (item.type) {
+      case 'multi_select':
+        return <MultiSelectUi title="Комнатность" item={item} />;
+      case 'sq_range':
+        return <PriceRangeDropdownUi item={item} />;
+      case 'price_range':
+        return <PriceRangeDropdownUi item={item} />;
+      default:
+        return null;
+    }
+  };
 
   // Преобразование массива deadlines
   const deadlines =
@@ -199,16 +213,16 @@ export const ItemDetailType_1 = async () => {
           </div>
           <div className={clsx(styles.content_row)}>
             <div className={clsx(styles.content_row_filters)}>
-              {inputsData.map((field, index) => (
-                <MainInput
-                  key={`${field.id}-${index}`}
-                  type={field.type}
-                  name={field.name}
-                  placeholder={field.placeholder}
-                  id={field.id}
-                />
-              ))}
-              <MainBtn text="Искать" />
+              <div className={styles.filter_wrapper}>
+                {dataSelectItem.map((item: HeroItem, index) => (
+                  <React.Fragment key={index}>
+                    {selectItem(item)}
+                  </React.Fragment>
+                ))}
+              </div>
+              <ButtonUi height="lg" className={styles.button}>
+                Искать
+              </ButtonUi>
             </div>
           </div>
           <div className={clsx(styles.content_row)}>

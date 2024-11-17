@@ -50,7 +50,6 @@ export const OfferType_3 = async () => {
                     placeholder={field.placeholder}
                     rounded={'xs'}
                     bordered
-                    id={field.id}
                   />
                 ))}
                 <SubmitBtn

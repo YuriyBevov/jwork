@@ -23,7 +23,7 @@ const selectItem = (item: HeroItem) => {
     case 'search':
       return <AutocompleteUi radius="sm" item={item} />;
     case 'price_range':
-      return <PriceRangeDropdownUi radius="sm" />;
+      return <PriceRangeDropdownUi radius="sm" item={item} />;
     default:
       return null;
   }

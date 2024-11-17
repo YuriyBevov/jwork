@@ -70,7 +70,7 @@
       padding: 16px 24px;
       color: var(--gray);
       font-size: var(--fs-sm);
-      border-radius: 10px;
+      border-radius: 30px;
       background-color: #fff;
       border: 1px solid var(--primary);
       transition:
@@ -129,6 +129,14 @@
       }
     }
   }
+}
+
+.dropdown {
+  border-radius: 10px !important;
+}
+
+.dropdown > div {
+  border-radius: 0 !important;
 }
 
 @media (max-width: 1190px) {

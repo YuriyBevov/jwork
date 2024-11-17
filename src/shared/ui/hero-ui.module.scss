@@ -16,7 +16,6 @@
 
 .radius {
   &__xs {
-    div,
     input,
     button,
     &.dropdown {
@@ -25,7 +24,6 @@
   }
 
   &__sm {
-    div,
     input,
     button,
     &.dropdown {
@@ -34,7 +32,6 @@
   }
 
   &__lg {
-    div,
     input,
     button,
     &.dropdown {
@@ -43,7 +40,6 @@
   }
 
   &__xl {
-    div,
     input,
     button,
     &.dropdown {
@@ -116,5 +112,5 @@
 .pillsList {
   flex-wrap: nowrap;
   overflow: hidden;
-  max-width: 168px;
+  max-width: 150px;
 }

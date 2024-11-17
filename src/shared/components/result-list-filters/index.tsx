@@ -2,46 +2,18 @@ import clsx from 'clsx';
 import React from 'react';
 
 import { HeroItem } from '@/components/hero/types';
-import { AutocompleteUi, PriceRangeDropdownUi, SelectUi } from '@/shared/ui';
+import {
+  AutocompleteUi,
+  MultiSelectUi,
+  PriceRangeDropdownUi,
+  SelectUi,
+} from '@/shared/ui';
 
 import { FilterIcon } from '../../icons/view-mode/filter-icon';
 import { MainBtn } from '../main-btn';
 // import { MainInput } from '../main-input';
 import { MainLink } from '../main-link';
 import styles from './result-list-filters.module.scss';
-
-// const data = [
-//   {
-//     id: '1',
-//     type: 'text',
-//     name: 'Вторичка',
-//     placeholder: 'Вторичка',
-//   },
-//   {
-//     id: '2',
-//     type: 'text',
-//     name: 'Комнатность',
-//     placeholder: 'Комнатность',
-//   },
-//   {
-//     id: '3',
-//     type: 'text',
-//     name: 'Площадь',
-//     placeholder: 'Площадь',
-//   },
-//   {
-//     id: '4',
-//     type: 'text',
-//     name: 'Адрес',
-//     placeholder: 'Адрес',
-//   },
-//   {
-//     id: '5',
-//     type: 'text',
-//     name: 'Стоимость',
-//     placeholder: 'Стоимость',
-//   },
-// ];
 
 const data = [
   {
@@ -57,8 +29,9 @@ const data = [
   },
   {
     id: '2',
-    type: 'square_range',
-    title: 'Площадь',
+    type: 'multi_select',
+    title: 'Комнатность',
+    content: [{ value: '1' }, { value: '2' }, { value: '3' }, { value: '4' }],
   },
   {
     id: '3',
@@ -72,13 +45,13 @@ const data = [
   },
   {
     id: '4',
-    type: 'price_range',
-    title: 'Стоимость',
+    type: 'sq_range',
+    title: 'Площадь',
   },
   {
     id: '5',
-    type: 'size_range',
-    title: 'Комнатность',
+    type: 'price_range',
+    title: 'Стоимость',
   },
 ];
 
@@ -86,13 +59,13 @@ const selectItem = (item: HeroItem) => {
   switch (item.type) {
     case 'select':
       return <SelectUi item={item} />;
-    case 'square_range':
-      return <PriceRangeDropdownUi item={item} />;
+    case 'multi_select':
+      return <MultiSelectUi title="Комнатность" item={item} />;
     case 'search':
       return <AutocompleteUi item={item} />;
-    case 'price_range':
+    case 'sq_range':
       return <PriceRangeDropdownUi item={item} />;
-    case 'size_range':
+    case 'price_range':
       return <PriceRangeDropdownUi item={item} />;
     default:
       return null;

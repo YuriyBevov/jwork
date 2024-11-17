@@ -43,7 +43,6 @@ export const OfferType_5 = async () => {
                     name={field.name}
                     placeholder={field.placeholder}
                     bordered
-                    id={field.id}
                   />
                 ))}
                 <SubmitBtn text={data.content.form.submitBtn.text} />

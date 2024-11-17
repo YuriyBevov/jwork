@@ -1,5 +1,8 @@
+'use client';
+
 import clsx from 'clsx';
-import React from 'react';
+import React, { useState } from 'react';
+import InputMask from 'react-input-mask';
 
 import styles from './main-input.module.scss';
 
@@ -9,7 +12,6 @@ type Props = {
   placeholder?: string;
   type?: string;
   name?: string;
-  id: string;
 };
 
 export const MainInput: React.FC<Props> = ({
@@ -17,24 +19,31 @@ export const MainInput: React.FC<Props> = ({
   bordered,
   placeholder,
   name,
-  id,
   type = 'text',
 }) => {
+  const [phoneNumber, setPhoneNumber] = useState('');
+
   return (
-    <input
-      type={type}
-      name={name}
-      id={id}
-      className={clsx(
-        bordered ? styles.bordered : null,
-        rounded === 'xs'
-          ? styles.rounded_xs
-          : rounded === 'lg'
-            ? styles.rounded_lg
-            : null,
-        styles.root,
-      )}
-      placeholder={placeholder}
-    />
+    <>
+      <InputMask
+        mask={type === 'tel' ? '+7 (999) 999-99-99' : ''}
+        type={type}
+        name={name}
+        value={phoneNumber}
+        className={clsx(
+          bordered ? styles.bordered : null,
+          rounded === 'xs'
+            ? styles.rounded_xs
+            : rounded === 'lg'
+              ? styles.rounded_lg
+              : null,
+          styles.root,
+        )}
+        onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+          setPhoneNumber(event.target.value)
+        }
+        placeholder={placeholder}
+      />
+    </>
   );
 };

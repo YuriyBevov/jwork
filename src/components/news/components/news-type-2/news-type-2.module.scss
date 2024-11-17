@@ -11,6 +11,12 @@
   @extend %flex-wrap;
   align-items: center;
   margin-bottom: var(--gap-lg);
+  justify-content: center;
+  gap: 10px;
+
+  &::before {
+    display: none;
+  }
 
   button {
     cursor: pointer;

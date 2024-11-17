@@ -17,13 +17,23 @@ import styles from './hero-type-4.module.scss';
 const selectItem = (item: HeroItem) => {
   switch (item.type) {
     case 'select':
-      return <SelectUi radius="lg" className={styles.select} item={item} />;
+      return <SelectUi className={styles.dropdown} radius="xl" item={item} />;
     case 'multi_select':
-      return <MultiSelectUi radius="lg" item={item} />;
+      return (
+        <MultiSelectUi className={styles.dropdown} radius="xl" item={item} />
+      );
     case 'search':
-      return <AutocompleteUi radius="lg" item={item} />;
+      return (
+        <AutocompleteUi className={styles.dropdown} radius="xl" item={item} />
+      );
     case 'price_range':
-      return <PriceRangeDropdownUi radius="lg" />;
+      return (
+        <PriceRangeDropdownUi
+          className={styles.dropdown}
+          radius="xl"
+          item={item}
+        />
+      );
     default:
       return null;
   }
@@ -61,14 +71,14 @@ export const HeroType_4 = ({ data }: { data: HeroDTO }) => {
             <ButtonUi
               icon={<IconPin fill="#1a57db" width={16} height={20} />}
               outline
-              radius="xs"
+              radius="lg"
               height="lg"
               style={{ backgroundColor: '#fff' }}
               className={styles.button}
             >
               На карте
             </ButtonUi>
-            <ButtonUi radius="xs" height="lg" className={styles.button}>
+            <ButtonUi radius="lg" height="lg" className={styles.button}>
               Искать
             </ButtonUi>
           </div>
