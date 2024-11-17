@@ -53,7 +53,14 @@ export const AboutType_4 = async () => {
               ))}
             </ul>
 
-            <MainBtn rounded={'lg'} />
+            <div className={custom.btn_row}>
+              <MainBtn rounded={'lg'} />
+              <MainBtn
+                rounded={'lg'}
+                outlined={true}
+                text={'Оставить заявку'}
+              />
+            </div>
           </div>
           <div
             className={clsx(common.grid_layout_item, custom.grid_layout_item)}

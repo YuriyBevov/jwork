@@ -27,7 +27,7 @@ export const AboutType_3 = async () => {
             <p className={clsx('base_text', custom.base_text)}>
               {data.content.description}
             </p>
-            <MainBtn outlined={true} />
+            <MainBtn outlined={true} rounded={'xs'} />
           </div>
 
           <div

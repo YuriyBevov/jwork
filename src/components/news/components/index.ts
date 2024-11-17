@@ -5,3 +5,4 @@ export { NewsType_4 } from './news-type-4';
 export { NewsType_5 } from './news-type-5';
 export { NewsType_6 } from './news-type-6';
 export { NewsType_7 } from './news-type-7';
+export { NewsType_8 } from './news-type-8';

@@ -7,6 +7,7 @@ import { NewsType_4 } from './components';
 import { NewsType_5 } from './components';
 import { NewsType_6 } from './components';
 import { NewsType_7 } from './components';
+import { NewsType_8 } from './components';
 
 export const News = ({ templateID }: { templateID: string }) => {
   switch (templateID) {
@@ -24,6 +25,8 @@ export const News = ({ templateID }: { templateID: string }) => {
       return <NewsType_6 />;
     case '7':
       return <NewsType_7 />;
+    case '8':
+      return <NewsType_8 />;
     default:
       return null;
   }

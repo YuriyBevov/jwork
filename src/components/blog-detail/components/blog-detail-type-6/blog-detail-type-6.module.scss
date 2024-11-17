@@ -4,7 +4,7 @@
 .root {
   &_content {
     display: grid;
-    grid-template-columns: auto minmax(400px, 15vw);
+    grid-template-columns: 5fr 3fr;
     gap: var(--gap-lg);
 
     @include media-down($laptop-width) {
