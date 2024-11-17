@@ -52,7 +52,7 @@ export const ServicesType_3 = async () => {
                     {item.description}
                   </p>
 
-                  <MainBtn />
+                  <MainBtn rounded={'xs'} />
                 </div>
               </div>
             </li>

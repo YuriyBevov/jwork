@@ -6,11 +6,15 @@
 
   &_item {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 2fr;
     gap: clamp(var(--gap-lg), 4vw, var(--gap-xxl)) var(--gap-lg);
 
     align-items: center;
     width: 100%;
+
+    @include media-down($laptop-width) {
+      grid-template-columns: repeat(2, 1fr);
+    }
 
     @include media-down($tablet-width) {
       grid-template-columns: 1fr;

@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import Image from 'next/image';
 import React from 'react';
 
-import { NewsType_7 } from '@/components/news/components';
+import { NewsType_8 } from '@/components/news/components';
 import { getLocalData } from '@/lib/localdata';
 import { AuthorBlock } from '@/shared/components/author-block/author-block';
 import { BadgeBlock } from '@/shared/components/badge-block/badge-block';
@@ -46,7 +46,7 @@ export const BlogDetail_6 = async () => {
             <ContentBlock content={data.content} />
           </div>
           <div className={custom.root_content_side}>
-            <NewsType_7
+            <NewsType_8
               title={'Рекомендации'}
               titleAlign={'left'}
               cls={'side'}

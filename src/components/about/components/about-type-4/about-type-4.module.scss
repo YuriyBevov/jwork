@@ -22,3 +22,9 @@
     }
   }
 }
+
+.btn_row {
+  @extend %flex-align;
+  flex-wrap: wrap;
+  gap: 24px;
+}
