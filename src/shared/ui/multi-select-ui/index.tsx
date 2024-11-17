@@ -7,17 +7,19 @@ import { HeroItem } from '@/components/hero/types';
 import styles from '../hero-ui.module.scss';
 
 export const MultiSelectUi = ({
+  title = '1,2 комнаты',
   radius = 'xs',
   item,
   className,
 }: {
+  title?: string;
   radius?: 'xs' | 'sm' | 'lg' | 'xl';
   item: HeroItem;
   className?: string;
 }) => {
   return (
     <MultiSelect
-      placeholder="1,2 комнаты"
+      placeholder={title}
       checkIconPosition="right"
       classNames={{
         input: styles.input,

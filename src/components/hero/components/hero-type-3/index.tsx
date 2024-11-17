@@ -23,7 +23,7 @@ const selectItem = (item: HeroItem) => {
     case 'search':
       return <AutocompleteUi radius="sm" item={item} />;
     case 'price_range':
-      return <PriceRangeDropdownUi radius="sm" />;
+      return <PriceRangeDropdownUi radius="sm" item={item} />;
     default:
       return null;
   }
@@ -31,7 +31,7 @@ const selectItem = (item: HeroItem) => {
 
 export const HeroType_3 = ({ data }: { data: HeroDTO }) => {
   return (
-    <section>
+    <section className={styles.section}>
       <div
         style={{ backgroundImage: 'url(' + data.backgroundImagePath + ')' }}
         className={styles.root}

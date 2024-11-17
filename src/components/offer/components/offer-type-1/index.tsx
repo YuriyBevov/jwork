@@ -41,7 +41,6 @@ export const OfferType_1 = async () => {
                   name={field.name}
                   placeholder={field.placeholder}
                   rounded={'lg'}
-                  id={field.id}
                 />
               ))}
               <SubmitBtn

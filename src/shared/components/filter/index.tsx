@@ -13,7 +13,13 @@ import { CheckboxBtnUi, CheckboxUi, RangeSliderUi } from '@/shared/ui';
 import { ButtonUi } from '../button';
 import styles from './filter.module.scss';
 
-export const Filter = ({ data }: { data: FilterItems }) => {
+export const Filter = ({
+  data,
+  className,
+}: {
+  data: FilterItems;
+  className?: string;
+}) => {
   const [openFilter, setOpenFilter] = useState(false);
 
   const [activeIds, setActiveIds] = useState<string[]>([]);
@@ -44,7 +50,7 @@ export const Filter = ({ data }: { data: FilterItems }) => {
   };
 
   return (
-    <div className={styles.root}>
+    <div className={clsx(styles.root, className)}>
       <div
         className={clsx(
           styles.header,

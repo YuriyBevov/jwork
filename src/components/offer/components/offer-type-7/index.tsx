@@ -42,7 +42,6 @@ export const OfferType_7 = async () => {
                   type={field.type}
                   name={field.name}
                   placeholder={field.placeholder}
-                  id={field.id}
                   bordered
                   rounded={'xs'}
                 />

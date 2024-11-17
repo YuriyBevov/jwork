@@ -56,6 +56,10 @@
 .subscribe {
   color: var(--dark);
 
+  span {
+    color: var(--dark);
+  }
+
   input {
     border: 1px solid var(--primary);
     border-radius: 0;
@@ -91,6 +95,12 @@
 .bottom_menu {
   ul li a {
     color: var(--dark);
+
+    transition: opacity 0.3s ease;
+
+    &:hover {
+      opacity: 0.8;
+    }
   }
 }
 
@@ -98,6 +108,12 @@
   nav span,
   ul li a {
     color: var(--dark);
+
+    transition: opacity 0.3s ease;
+
+    &:hover {
+      opacity: 0.8;
+    }
   }
 }
 
@@ -130,6 +146,12 @@
 
       span {
         font-weight: var(--fw-r);
+      }
+
+      transition: opacity 0.3s ease;
+
+      &:hover {
+        opacity: 0.8;
       }
     }
   }

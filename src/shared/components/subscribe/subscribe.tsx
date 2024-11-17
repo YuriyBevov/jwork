@@ -25,7 +25,6 @@ export const Subscribe = ({
           type="text"
           name="E-mail"
           placeholder="Введите Ваш e-mail"
-          id="subscribe"
           rounded={'lg'}
         />
         <SubmitBtn text="Подписаться" rounded={'lg'} outlined />

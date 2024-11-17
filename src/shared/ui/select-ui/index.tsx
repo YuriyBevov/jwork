@@ -19,10 +19,14 @@ export const SelectUi = ({
     <Select
       classNames={{
         input: styles.input,
-        dropdown: clsx(styles.dropdown, radius && styles[`radius__${radius}`]),
-        option: styles.option,
+        dropdown: clsx(
+          styles.dropdown,
+          className,
+          radius && styles[`radius__${radius}`],
+        ),
+        option: clsx(styles.option, className),
       }}
-      className={clsx(className, radius && styles[`radius__${radius}`])}
+      className={clsx(radius && styles[`radius__${radius}`])}
       data={
         item.content &&
         item.content.map((value) => ({

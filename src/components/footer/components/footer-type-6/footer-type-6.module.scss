@@ -4,6 +4,14 @@
 .root {
   margin-right: 0;
 
+  a {
+    transition: opacity 0.3s ease;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
   &_top {
     @extend %flex-wrap;
     gap: var(--gap-sm);

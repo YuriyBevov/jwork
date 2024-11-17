@@ -87,7 +87,7 @@
 
     &_filters {
       @extend %flex-align;
-      gap: var(--gap-base);
+      gap: 16px;
       width: 100%;
       margin-bottom: 32px;
 
@@ -234,6 +234,15 @@
     font-weight: var(--fw-m);
     font-size: var(--base-subtitle);
     color: var(--dark);
+  }
+
+  .filter_wrapper {
+    display: flex;
+    flex: 1;
+    gap: 16px;
+    div {
+      flex: 1;
+    }
   }
 
   @include container-down('root', 900px) {
