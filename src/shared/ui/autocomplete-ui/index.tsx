@@ -21,8 +21,12 @@ export const AutocompleteUi = ({
       rightSection={<IconSearch width={15} height={15} fill="#000" />}
       classNames={{
         input: styles.input,
-        dropdown: clsx(styles.dropdown, radius && styles[`radius__${radius}`]),
-        option: styles.option,
+        dropdown: clsx(
+          styles.dropdown,
+          className,
+          radius && styles[`radius__${radius}`],
+        ),
+        option: clsx(styles.option, className),
       }}
       className={clsx(className, radius && styles[`radius__${radius}`])}
       data={

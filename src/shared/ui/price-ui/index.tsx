@@ -35,7 +35,11 @@ export const PriceRangeDropdownUi = ({
       </Combobox.Target>
 
       <Combobox.Dropdown
-        className={clsx(styles.dropdown, radius && styles[`radius__${radius}`])}
+        className={clsx(
+          styles.dropdown,
+          className,
+          radius && styles[`radius__${radius}`],
+        )}
       >
         <div className={styles.dropdown_item}>
           <label htmlFor="">От</label>

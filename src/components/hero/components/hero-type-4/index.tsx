@@ -20,7 +20,12 @@ const selectItem = (item: HeroItem) => {
       return <SelectUi className={styles.dropdown} radius="xl" item={item} />;
     case 'multi_select':
       return (
-        <MultiSelectUi className={styles.dropdown} radius="xl" item={item} />
+        <MultiSelectUi
+          classNameInput={styles.multi_input}
+          className={styles.dropdown}
+          radius="xl"
+          item={item}
+        />
       );
     case 'search':
       return (

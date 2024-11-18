@@ -11,21 +11,27 @@ export const MultiSelectUi = ({
   radius = 'xs',
   item,
   className,
+  classNameInput,
 }: {
   title?: string;
   radius?: 'xs' | 'sm' | 'lg' | 'xl';
   item: HeroItem;
   className?: string;
+  classNameInput?: string;
 }) => {
   return (
     <MultiSelect
       placeholder={title}
       checkIconPosition="right"
       classNames={{
-        input: styles.input,
+        input: clsx(styles.input, classNameInput),
         pillsList: styles.pillsList,
-        dropdown: clsx(styles.dropdown, radius && styles[`radius__${radius}`]),
-        option: styles.option,
+        dropdown: clsx(
+          styles.dropdown,
+          className,
+          radius && styles[`radius__${radius}`],
+        ),
+        option: clsx(styles.option, className),
       }}
       className={clsx(className, radius && styles[`radius__${radius}`])}
       data={
