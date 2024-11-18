@@ -19,7 +19,13 @@ const selectItem = (item: HeroItem) => {
     case 'select':
       return <SelectUi radius="lg" className={styles.select} item={item} />;
     case 'multi_select':
-      return <MultiSelectUi radius="lg" item={item} />;
+      return (
+        <MultiSelectUi
+          classNameInput={styles.multi_input}
+          radius="lg"
+          item={item}
+        />
+      );
     case 'search':
       return <AutocompleteUi radius="lg" item={item} />;
     case 'price_range':
