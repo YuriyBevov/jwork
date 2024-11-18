@@ -29,13 +29,13 @@ export const ResultListColumnType_1: React.FC<Props> = ({
 
   const minPrice =
     data && data.blocks
-      ? Math.min(
+      ? (Math.min(
           ...data.blocks.reduce<number[]>((acc, elem) => {
             return acc.concat(
               elem.apartments.map((apartment) => apartment.price),
             );
           }, []),
-        ) ?? Infinity
+        ) ?? Infinity)
       : Infinity;
 
   // Форматируем минимальную цену
@@ -44,13 +44,13 @@ export const ResultListColumnType_1: React.FC<Props> = ({
 
   // Получаем минимальную цену за квадратный метр
   const minMeterPrice = data?.blocks
-    ? Math.min(
+    ? (Math.min(
         ...data.blocks.reduce<number[]>((acc, elem) => {
           return acc.concat(
             elem.apartments.map((apartment) => apartment.meter_price),
           );
         }, []),
-      ) ?? Infinity // Устанавливаем значение по умолчанию
+      ) ?? Infinity) // Устанавливаем значение по умолчанию
     : Infinity; // Если data или blocks не определены
 
   // Форматируем минимальную цену

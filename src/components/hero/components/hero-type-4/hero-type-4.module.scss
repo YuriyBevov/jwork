@@ -133,10 +133,18 @@
 
 .dropdown {
   border-radius: 10px !important;
+
+  .mantine-MultiSelect-input {
+    border-radius: 30px !important;
+  }
 }
 
 .dropdown > div {
   border-radius: 0 !important;
+}
+
+.multi_input {
+  border-radius: 30px;
 }
 
 @media (max-width: 1190px) {
