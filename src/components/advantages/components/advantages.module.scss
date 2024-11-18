@@ -8,7 +8,7 @@
 .list {
   @extend %list-reset;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+
   grid-gap: clamp(var(--gap-lg), 4vw, var(--gap-xxl))
     clamp(var(--gap-lg), 4vw, var(--gap-xxl));
   container: list / inline-size;

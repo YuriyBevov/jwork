@@ -2,6 +2,7 @@
 @import '../../../../shared/styles/mixins.scss';
 
 .list {
+  grid-template-columns: repeat(2, 1fr);
   @include media-down($tablet-width) {
     grid-template-columns: 1fr;
   }
