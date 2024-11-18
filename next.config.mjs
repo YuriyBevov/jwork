@@ -3,6 +3,7 @@ import path from 'path';
 const nextConfig = {
   sassOptions: {
     includePaths: [path.dirname('styles')],
+    cascade: true,
   },
   images: {
     remotePatterns: [
