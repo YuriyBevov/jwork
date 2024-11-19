@@ -7,12 +7,8 @@
 
 .grid_layout {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--gap-lg);
 
-  @include container-down('root', $tablet-width) {
-    grid-template-columns: 1fr;
-  }
+  gap: var(--gap-lg);
 
   &_item {
     @extend %sticky-lg;

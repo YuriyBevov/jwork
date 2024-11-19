@@ -4,7 +4,9 @@
 .grid_layout {
   grid-template-columns: repeat(3, 1fr);
   gap: clamp(var(--gap-sm), 4vw, var(--gap-lg));
-
+  @include container-down('root', $tablet-width) {
+    grid-template-columns: 1fr;
+  }
   img {
     width: 100%;
     height: auto;
