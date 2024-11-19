@@ -39,6 +39,7 @@ export const HeroType_2 = ({ data }: { data: HeroDTO }) => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 500);
     };
+    handleResize();
     window.addEventListener('resize', handleResize);
     return () => {
       window.removeEventListener('resize', handleResize);

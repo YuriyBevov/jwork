@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { HeroDTO, HeroItem } from '@/components/hero/types';
 import { IconPin } from '@/shared/icons/icon-set-1/icon_pin';
@@ -48,6 +48,23 @@ export const SelectTabType_2 = ({
     }
     setIsOpen(false);
   };
+
+  useEffect(() => {
+    const handleDocumentClick = (event: MouseEvent) => {
+      if (
+        !(event.target as Element).closest(`.${styles.options}`) &&
+        !(event.target as Element).closest(`.${styles.select_button}`)
+      ) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener('click', handleDocumentClick);
+
+    return () => {
+      document.removeEventListener('click', handleDocumentClick);
+    };
+  }, []);
 
   return (
     <section className={clsx(styles.root, className)}>

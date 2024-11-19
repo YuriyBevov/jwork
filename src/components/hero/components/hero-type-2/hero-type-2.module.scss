@@ -217,6 +217,12 @@
   }
 }
 
+@media (max-width: 500px) {
+  .tab {
+    display: none;
+  }
+}
+
 @media (max-width: 350px) {
   .tab {
     &_list {
