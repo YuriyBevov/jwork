@@ -137,6 +137,21 @@
   }
 }
 
+.select_tab {
+  ul,
+  button {
+    border-radius: 0;
+  }
+
+  > div > div > div {
+    border-radius: 0 !important;
+
+    input {
+      border-radius: 0 !important;
+    }
+  }
+}
+
 @media (max-width: 1190px) {
   .tab {
     &_content {

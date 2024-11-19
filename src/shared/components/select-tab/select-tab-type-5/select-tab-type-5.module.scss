@@ -1,0 +1,97 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-sm);
+  width: 100%;
+}
+
+.select_button {
+  background-color: var(--primary-lighten-35);
+  color: var(--primary);
+  border-radius: 5px;
+  line-height: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  border: 1px solid rgb(107, 114, 128);
+  font-size: 16px;
+  width: 100%;
+  border-radius: 5px;
+  justify-content: space-between;
+  padding: 0 6px 0 10px;
+
+  span {
+    flex: 1;
+    text-align: left;
+  }
+
+  svg {
+    width: 17px;
+    height: 17px;
+  }
+}
+
+.wrapper {
+  position: relative;
+}
+
+.options {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 58px;
+  z-index: 100;
+  width: 100%;
+  border: 1px solid rgb(107, 114, 128);
+  background: rgb(255, 255, 255);
+  padding: 12px;
+  border-radius: 5px;
+  li {
+    list-style-type: none;
+
+    span {
+      padding: 10px;
+      margin-bottom: 5px;
+      border-radius: 5px;
+      font-size: 16px;
+      display: flex;
+      width: 100%;
+      cursor: pointer;
+
+      &:hover {
+        background-color: var(--primary-lighten-35);
+        color: var(--primary);
+      }
+    }
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-sm);
+}
+
+.active {
+  background-color: var(--primary-lighten-35);
+  color: var(--primary);
+  cursor: auto;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-sm);
+  button {
+    width: 100%;
+    border-radius: 5px;
+  }
+}
+
+.multi_input {
+  border-radius: 5px;
+
+  > div {
+    max-width: 200px;
+  }
+}

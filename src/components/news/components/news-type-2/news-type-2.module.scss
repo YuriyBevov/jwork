@@ -24,6 +24,7 @@
     background-color: transparent;
     border: 1px solid transparent;
     font-size: var(--fs-sm);
+    border-radius: 0;
     transition:
       background-color var(--slow-transition),
       color var(--slow-transition);

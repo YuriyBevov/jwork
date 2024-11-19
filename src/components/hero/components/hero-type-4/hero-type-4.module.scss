@@ -73,6 +73,8 @@
       border-radius: 30px;
       background-color: #fff;
       border: 1px solid var(--primary);
+      max-width: 180px;
+      width: 100%;
       transition:
         color 0.2s ease-in-out,
         background-color 0.2s ease-in-out;
