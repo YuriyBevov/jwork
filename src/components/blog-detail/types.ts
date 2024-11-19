@@ -2,6 +2,7 @@ export interface BlogDetailDTO {
   title: string;
   subtitle: string;
   content: string;
+  contentClass: string;
   timestamp: string;
   cathegory: string;
   image: {

@@ -8,6 +8,12 @@
     margin-bottom: var(--gap-xs);
     color: var(--gray);
   }
+
+  &_content {
+    img {
+      border-radius: 20px;
+    }
+  }
 }
 
 .base_title {

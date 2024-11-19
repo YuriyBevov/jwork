@@ -24,7 +24,7 @@ export const BlogDetail_1 = async () => {
               {data.title}
             </h2>
           </div>
-          <div className="root_content">
+          <div className={custom.root_content}>
             <ContentBlock content={data.content} />
           </div>
         </div>
