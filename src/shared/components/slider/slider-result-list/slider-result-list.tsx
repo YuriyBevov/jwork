@@ -89,8 +89,7 @@ export const SliderResultList = ({
                 activeSlide === index ? styles.activeSlide : '',
               )}
               style={{
-                backgroundImage:
-                  activeSlide === index ? `url(${child.props.src})` : '',
+                backgroundImage: `url(${child.props.src})`,
                 height: '100%',
                 width: '100%',
                 backgroundSize: 'cover',
