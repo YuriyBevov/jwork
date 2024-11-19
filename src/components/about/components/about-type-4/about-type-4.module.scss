@@ -1,6 +1,12 @@
 @import '../../../../shared/styles/extends.scss';
 @import '../../../../shared/styles/mixins.scss';
 
+.grid_layout {
+  grid-template-columns: repeat(2, 1fr);
+  @include container-down('root', $tablet-width) {
+    grid-template-columns: 1fr;
+  }
+}
 .list {
   @extend %flex-wrap;
   flex-direction: row;
