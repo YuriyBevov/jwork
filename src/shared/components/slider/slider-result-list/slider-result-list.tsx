@@ -119,7 +119,7 @@ export const SliderResultList = ({
           styles.slider_result_list_button_prev,
         )}
       >
-        <IconArrow width={48} height={48} fill="#111111" />
+        <IconArrow width={48} height={48} fill="#ffffff" />
       </button>
       <button
         className={clsx(
@@ -128,7 +128,7 @@ export const SliderResultList = ({
           styles.slider_result_list_button_next,
         )}
       >
-        <IconArrow width={48} height={48} fill="#111111" />
+        <IconArrow width={48} height={48} fill="#ffffff" />
       </button>
     </Swiper>
   );
