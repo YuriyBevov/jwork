@@ -7,6 +7,7 @@ import { getLocalData } from '@/lib/localdata';
 import { AuthorBlock } from '@/shared/components/author-block/author-block';
 import { BadgeBlock } from '@/shared/components/badge-block/badge-block';
 import { ContentBlock } from '@/shared/components/content-block/content-block';
+import { MainLink } from '@/shared/components/main-link';
 
 import { BlogDetailDTO } from '../../types';
 import common from '../blog-detail.module.scss';
@@ -51,6 +52,7 @@ export const BlogDetail_6 = async () => {
               titleAlign={'left'}
               cls={'side'}
             />
+            <MainLink text={'Подробнее'} rounded={'xs'} />
           </div>
         </div>
       </div>

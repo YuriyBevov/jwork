@@ -43,14 +43,11 @@
 .list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  gap: var(--gap-md) var(--gap-lg);
 
   @include container-down('root', $tablet-width) {
     grid-template-columns: 1fr;
   }
-
-  // @include container-down('root', $mobile-width) {
-  //   grid-template-columns: 1fr;
-  // }
 
   &_item {
     @extend %flex-column;
@@ -103,6 +100,10 @@
       .base_text {
         @include text-truncate(3);
       }
+    }
+
+    &_author {
+      margin-top: auto;
     }
   }
 }

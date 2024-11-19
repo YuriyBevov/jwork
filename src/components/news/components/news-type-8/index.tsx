@@ -78,12 +78,14 @@ export const NewsType_8 = async ({
                     {item.title}
                   </span>
 
-                  <AuthorBlock
-                    user={item.author.name}
-                    avatar={item.author.image.url}
-                    date={item.author.createFrom}
-                    note={item.author.note}
-                  />
+                  <div className={custom.list_item_content_author}>
+                    <AuthorBlock
+                      user={item.author.name}
+                      avatar={item.author.image.url}
+                      date={item.author.createFrom}
+                      note={item.author.note}
+                    />
+                  </div>
                 </div>
               </Link>
             </li>
