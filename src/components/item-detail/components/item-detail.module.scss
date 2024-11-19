@@ -90,9 +90,19 @@
       gap: 16px;
       width: 100%;
       margin-bottom: 32px;
+      flex-wrap: wrap;
 
       @include container-down('root', $mobile-width) {
         flex-direction: column;
+      }
+
+      @include container-down('root', 798px) {
+        flex-direction: column;
+        width: 100%;
+
+        button {
+          width: 100%;
+        }
       }
 
       input {
@@ -238,10 +248,16 @@
 
   .filter_wrapper {
     display: flex;
+    flex-wrap: wrap;
     flex: 1;
     gap: 16px;
     div {
       flex: 1;
+    }
+
+    @include container-down('root', 799px) {
+      flex-direction: column;
+      width: 100%;
     }
   }
 

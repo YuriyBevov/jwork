@@ -11,10 +11,6 @@
   cursor: pointer;
   transition: opacity var(--base-transition);
 
-  &:hover {
-    opacity: 0.8;
-  }
-
   span {
     display: flex;
     align-items: center;
