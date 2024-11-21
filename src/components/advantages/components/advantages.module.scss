@@ -13,10 +13,6 @@
     clamp(var(--gap-lg), 4vw, var(--gap-xxl));
   container: list / inline-size;
 
-  @include media-down($tablet-width) {
-    grid-template-columns: 1fr;
-  }
-
   &_item {
     @extend %flex-column;
     gap: var(--gap-sm);

@@ -23,6 +23,7 @@
 }
 
 .list {
+  @extend %flex-column;
   margin-left: var(--gap-sm);
 
   &_item {

@@ -33,6 +33,8 @@
 }
 
 .list {
+  @extend %flex-column;
+
   &_item {
     padding-left: 76px;
 
