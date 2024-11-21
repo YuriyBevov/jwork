@@ -31,7 +31,7 @@ export const FooterType_6 = async () => {
             className={styles.footer_top_menu}
             data={data.topMenu}
           />
-          <Social className={styles.social} title data={data?.social} />
+          <Social className={styles.social} data={data?.social} />
         </div>
         <div className={styles.root_bottom}>
           <div className={styles.copyright}>

@@ -18,6 +18,11 @@
     justify-content: space-between;
     padding: var(--gap-lg) 0;
 
+    @include media-down(768px) {
+      flex-direction: column;
+      align-items: center;
+    }
+
     @include media-down($mobile-width) {
       gap: var(--gap-xxl);
     }
@@ -61,6 +66,9 @@
 }
 
 .footer_top_menu {
+  @include media-down($mobile-width) {
+    justify-content: center;
+  }
   ul {
     gap: var(--gap-xxl);
 
