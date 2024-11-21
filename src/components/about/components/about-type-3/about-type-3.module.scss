@@ -15,3 +15,7 @@
     }
   }
 }
+
+.list {
+  @extend %flex-column;
+}

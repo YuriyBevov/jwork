@@ -7,7 +7,6 @@
 
 .grid_layout {
   display: grid;
-
   gap: var(--gap-lg);
 
   &_item {
@@ -35,7 +34,6 @@
 
 .list {
   @extend %list-reset;
-  @extend %flex-column;
 
   gap: var(--gap-lg);
   container: list-grid / inline-size;

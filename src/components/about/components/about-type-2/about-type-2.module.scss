@@ -3,11 +3,20 @@
 
 .grid_layout {
   grid-template-columns: repeat(2, 1fr);
+
   @include container-down('root', $tablet-width) {
     grid-template-columns: 1fr;
   }
+
+  @include container-down('root', $tablet-width) {
+    &_item:first-child {
+      order: 2;
+    }
+  }
 }
+
 .list {
+  @extend %flex-column;
   container: list-grid / inline-size;
 
   &_item {
