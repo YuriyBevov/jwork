@@ -7,9 +7,10 @@
     grid-template-columns: 1fr;
   }
 }
+
 .list {
   @extend %flex-wrap;
-  flex-direction: row;
+
   &_item {
     width: calc(50% - calc(var(--gap-lg) / 2));
 

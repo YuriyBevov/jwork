@@ -37,9 +37,10 @@
 }
 
 .list {
-  @include container-down('root', $mobile-width) {
-    grid-template-columns: 1fr;
-  }
+  grid-template-columns: repeat(2, 1fr);
+  // @include container-down('root', $mobile-width) {
+  //   grid-template-columns: 1fr;
+  // }
 
   &_item {
     .base_subtitle {
