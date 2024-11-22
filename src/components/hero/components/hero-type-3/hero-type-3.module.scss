@@ -60,6 +60,7 @@
     align-items: center;
     width: fit-content;
     gap: var(--gap-sm);
+    width: 100%;
 
     button {
       border: none;
@@ -72,6 +73,8 @@
       border-radius: 5px;
       color: var(--black);
       font-size: var(--fs-sm);
+      max-width: 180px;
+      width: 100%;
       transition:
         color 0.2s ease-in-out,
         background-color 0.2s ease-in-out;
