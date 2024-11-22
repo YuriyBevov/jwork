@@ -99,7 +99,7 @@
 
 .footer_top_menu {
   ul {
-    gap: var(--gap-xxl);
+    column-gap: 90px;
 
     @include media-down($mobile-width) {
       gap: var(--gap-sm);
