@@ -26,6 +26,24 @@
     @include media-down($mobile-width) {
       gap: var(--gap-xxl);
     }
+
+    .footer_top_menu {
+      @include media-down($mobile-width) {
+        justify-content: center;
+      }
+      ul {
+        column-gap: 90px;
+
+        @include media-down($mobile-width) {
+          gap: var(--gap-sm);
+        }
+        li {
+          a {
+            color: var(--dark);
+          }
+        }
+      }
+    }
   }
 
   &_bottom {
@@ -62,24 +80,6 @@
 .bottom_menu {
   ul li a {
     color: var(--dark);
-  }
-}
-
-.footer_top_menu {
-  @include media-down($mobile-width) {
-    justify-content: center;
-  }
-  ul {
-    column-gap: 90px;
-
-    @include media-down($mobile-width) {
-      gap: var(--gap-sm);
-    }
-    li {
-      a {
-        color: var(--dark);
-      }
-    }
   }
 }
 

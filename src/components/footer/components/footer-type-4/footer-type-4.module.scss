@@ -22,6 +22,21 @@
     @include media-down($mobile-width) {
       gap: var(--gap-xxl);
     }
+
+    .footer_top_menu {
+      ul {
+        column-gap: 90px;
+
+        @include media-down($mobile-width) {
+          gap: var(--gap-sm);
+        }
+        li {
+          a {
+            color: var(--dark);
+          }
+        }
+      }
+    }
   }
 
   &_info {
@@ -94,21 +109,6 @@
 
   @include media-down($mobile-width) {
     grid-template-columns: 1fr;
-  }
-}
-
-.footer_top_menu {
-  ul {
-    column-gap: 90px;
-
-    @include media-down($mobile-width) {
-      gap: var(--gap-sm);
-    }
-    li {
-      a {
-        color: var(--dark);
-      }
-    }
   }
 }
 
