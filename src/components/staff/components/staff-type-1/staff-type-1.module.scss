@@ -9,7 +9,11 @@
 
 .list {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+
+  @include container-down('root', 1360px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
   @include container-down('root', 640px) {
     grid-template-columns: 1fr;
