@@ -5,14 +5,14 @@
   --fs-xs: 14px;
   --fs-sm: 16px;
   --fs-md: 18px;
-  --fs-lg: 24px;
+  --fs-lg: 22px;
   --fs-xl: 28px;
   --fs-xxl: 32px;
-  --fs-xxxl: 56px;
+  --fs-xxxl: 48px;
 
   --main-title: clamp(var(--fs-lg), 3.6vw, var(--fs-xxxl));
   --main-text: clamp(var(--fs-sm), 2.8vw, var(--fs-md));
-  --base-title: clamp(var(--fs-lg), 5vw, var(--fs-xxxl));
+  --base-title: clamp(var(--fs-lg), 4vw, var(--fs-xxxl));
   --base-text: clamp(var(--fs-sm), 2.8vw, var(--fs-md));
   --base-subtitle: clamp(var(--fs-md), 2.2vw, var(--fs-lg));
 
