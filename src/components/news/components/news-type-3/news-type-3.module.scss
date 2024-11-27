@@ -61,6 +61,7 @@
     & > img {
       aspect-ratio: 3/2;
       object-fit: cover;
+      max-height: 300px;
     }
 
     &_wrapper {

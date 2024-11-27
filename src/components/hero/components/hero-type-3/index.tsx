@@ -43,7 +43,7 @@ export const HeroType_3 = ({ data }: { data: HeroDTO }) => {
 
   useLayoutEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 501);
+      setIsMobile(window.innerWidth < 991);
     };
     handleResize();
     window.addEventListener('resize', handleResize);
