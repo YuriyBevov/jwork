@@ -29,13 +29,19 @@ export const FooterType_2 = async () => {
                 alt={data.logo.alt}
               />
             </Link>
-            <Subscribe className={styles.subscribe} data={data?.subscribe} />
+            <Subscribe
+              className={styles.subscribe}
+              title="Подписка на рассылку"
+              data={data?.subscribe}
+            />
           </div>
-          <TopMenu className={styles.main_menu} data={data.mainMenu} />
-          <nav className={styles.social}>
-            <span>Соц.сети</span>
-            <Social title data={data?.social} />
-          </nav>
+          <div className={styles.root_menu}>
+            <TopMenu title className={styles.main_menu} data={data.mainMenu} />
+            <nav className={styles.social}>
+              <span>Соц.сети</span>
+              <Social title data={data?.social} />
+            </nav>
+          </div>
         </div>
         <div className={styles.root_bottom}>
           <div className={styles.copyright}>

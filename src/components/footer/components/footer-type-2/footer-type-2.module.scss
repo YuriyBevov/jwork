@@ -4,14 +4,35 @@
 .root {
   margin-right: 0;
 
+  &_menu {
+    display: flex;
+    // margin-left: 200px;
+    gap: var(--gap-xxl);
+    flex: 1;
+
+    @include media-down($mobile-width) {
+      flex-direction: column;
+    }
+
+    div {
+      @include media-down($mobile-width) {
+        flex-direction: column;
+      }
+    }
+  }
+
   &_top {
     @extend %flex-wrap;
-    gap: var(--gap-sm);
+    gap: clamp(var(--gap-lg), 7vw, 180px);
     padding: var(--gap-lg) 0;
     border-top: 1px solid var(--dark);
 
     @include media-down($mobile-width) {
       gap: var(--gap-xxl);
+    }
+
+    @include media-down(1180px) {
+      flex-direction: column;
     }
   }
 
@@ -19,7 +40,7 @@
     display: flex;
     flex-direction: column;
     gap: var(--gap-md);
-    margin-right: auto;
+    max-width: 600px;
   }
 
   &_bottom {
@@ -53,8 +74,9 @@
   }
 }
 
-.subscribe {
+div.subscribe {
   color: var(--dark);
+  max-width: 100%;
 
   span {
     color: var(--dark);
@@ -63,6 +85,11 @@
   input {
     border: 1px solid var(--primary);
     border-radius: 0;
+  }
+
+  button {
+    border-color: var(--primary);
+    color: var(--primary);
   }
 
   fieldset {
