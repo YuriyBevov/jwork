@@ -25,6 +25,21 @@
 }
 
 .header {
+  &_main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    @include container-down('header', 1080px) {
+      display: flex;
+    }
+  }
+
+  &_wrapper {
+    @extend %flex-align;
+    gap: 20px;
+    justify-content: flex-end;
+  }
+
   &_logo {
     margin: 0 auto;
 
@@ -38,6 +53,7 @@
     display: flex;
     gap: 8px;
     width: fit-content;
+    align-items: center;
 
     span {
       display: inline-block;

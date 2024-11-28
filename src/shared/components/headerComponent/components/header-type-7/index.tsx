@@ -39,7 +39,7 @@ export const HeaderType_7 = ({ data }: { data: HeaderDTO }) => {
         >
           <div className={clsx(common.header_address, custom.header_address)}>
             <IconPin width={20} height={20} />
-            <span>г. Санкт - Петербург, ул. Комсомольская, д. 345 стр 5</span>
+            <span>{data.address}</span>
           </div>
 
           <div className={clsx(common.header_logo, custom.header_logo)}>
@@ -53,34 +53,38 @@ export const HeaderType_7 = ({ data }: { data: HeaderDTO }) => {
             </Link>
           </div>
 
-          <div className={clsx(common.header_contacts, custom.header_contacts)}>
-            <Link href={`mailto:${data.email}`}>
-              <IconEmail width={20} height={20} />
-            </Link>
-            <Link href={`tel:${data.phone.replace(/\s+/g, '')}`}>
-              <IconPhone2 width={20} height={20} />
-            </Link>
-          </div>
+          <div className={custom.header_wrapper}>
+            <div
+              className={clsx(common.header_contacts, custom.header_contacts)}
+            >
+              <Link href={`mailto:${data.email}`}>
+                <IconEmail width={20} height={20} />
+              </Link>
+              <Link href={`tel:${data.phone.replace(/\s+/g, '')}`}>
+                <IconPhone2 width={20} height={20} />
+              </Link>
+            </div>
 
-          <div className={clsx(common.header_action, custom.header_action)}>
-            <MainBtn text="Кнопка заявки" rounded={'lg'} />
-          </div>
+            <div className={clsx(common.header_action, custom.header_action)}>
+              <MainBtn text="Кнопка заявки" rounded={'lg'} />
+            </div>
 
-          <button
-            className={clsx(common.burger, custom.burger)}
-            aria-label="Меню"
-            onClick={() => onClickHandler()}
-          >
-            <span
-              className={clsx(common.burger_line, common.burger_line_top)}
-            ></span>
-            <span
-              className={clsx(common.burger_line, common.burger_line_middle)}
-            ></span>
-            <span
-              className={clsx(common.burger_line, common.burger_line_bottom)}
-            ></span>
-          </button>
+            <button
+              className={clsx(common.burger, custom.burger)}
+              aria-label="Меню"
+              onClick={() => onClickHandler()}
+            >
+              <span
+                className={clsx(common.burger_line, common.burger_line_top)}
+              ></span>
+              <span
+                className={clsx(common.burger_line, common.burger_line_middle)}
+              ></span>
+              <span
+                className={clsx(common.burger_line, common.burger_line_bottom)}
+              ></span>
+            </button>
+          </div>
         </div>
 
         <HeaderMenu align="center" data={data} active={navState} />
