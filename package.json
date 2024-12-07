@@ -21,13 +21,15 @@
     "normalize.css": "^8.0.1",
     "react": "^18",
     "react-dom": "^18",
-    "react-input-mask": "^2.0.4"
+    "react-input-mask": "^2.0.4",
+    "ymap3-components": "^1.1.8"
   },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "@types/react-input-mask": "^3.0.6",
+    "@yandex/ymaps3-types": "^1.0.15457591",
     "eslint": "^8",
     "eslint-config-next": "14.2.4",
     "eslint-config-prettier": "^9.1.0",
