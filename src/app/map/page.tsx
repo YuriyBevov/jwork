@@ -1,4 +1,4 @@
-import { YandexMap } from '@/components';
+import { YandexMap } from '@/components/yandex-map';
 
 const MapPage = () => {
   return <YandexMap />;
