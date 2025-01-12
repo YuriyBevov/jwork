@@ -1,16 +1,44 @@
 'use client';
 
 import Script from 'next/script';
+import { useState } from 'react';
 
+import { ToggleItems } from './components/toggle-items/';
 import data from './data.json';
 import style from './yandex-map.module.scss';
 
 export const YandexMap = () => {
   const yandexUrl = `https://api-maps.yandex.ru/2.1/?apikey=${process.env.NEXT_PUBLIC_YANDEX_MAP_KEY}&lang=ru_RU`;
 
+  const [clickedData, setClickedData] = useState([]);
+
+  const handleClusterClick = (e) => {
+    const target = e.get('target');
+    const objects = target.properties.get('geoObjects');
+
+    if (objects) {
+      const clickedObjects = objects.map((obj) => {
+        return {
+          data: obj.options.get('data'),
+          coordinates: obj.geometry.getCoordinates(),
+        };
+      });
+
+      setClickedData(clickedObjects);
+    } else {
+      setClickedData([
+        {
+          data: target.options.get('data'),
+          coordinates: target.geometry.getCoordinates(),
+        },
+      ]);
+    }
+  };
   return (
-    <>
-      <div className={style.root} id="map"></div>
+    <section className={style.root}>
+      <ToggleItems data={clickedData} />
+
+      <main className={style.wrapper} id="map"></main>
 
       <Script
         src={yandexUrl}
@@ -68,11 +96,11 @@ export const YandexMap = () => {
               // getPointData = function (index) {
               //   return {
               //     // balloonContentHeader:
-              //     //   '<font size=3><b><a target="_blank" href="https://yandex.ru">БАЛУН</a></b></font>',
+              //     //   '<font size=3><b><a target="_blank" href="https://yandex.ru"></a></b></font>',
               //     // balloonContentBody:
-              //     //   '<p>Ваше имяв: <input name="login"></p><p>Телефон в формате 2xxx-xxx:  <input></p><p><input type="submit" value="Отправить"></p>',
+              //     //   '<p>Ваше имя: <input name="login"></p><p>Телефон в формате 2xxx-xxx:  <input></p><p><input type="submit" value="Отправить"></p>',
               //     // balloonContentFooter:
-              //     //   '<font size=1>Информация предоставлена: </font> балуном <strong>метки ' +
+              //     //   '<font size=1>Информация предоставлена: </font>  <strong>метки ' +
               //     //   index +
               //     //   '</strong>',
               //     // clusterCaption: 'метка <strong>' + index + '</strong>',
@@ -97,7 +125,7 @@ export const YandexMap = () => {
                 {},
                 {
                   preset: 'islands#greenCircleIcon',
-                  htmlContent: placemark.options,
+                  data: placemark.options,
                 },
               );
             });
@@ -106,7 +134,7 @@ export const YandexMap = () => {
             // }
 
             /**
-             * Можно менять опции кластеризатора после создания.
+             * Можно менять опции кластеризатор после создания.
              */
             // clusterer.options.set({
             //   gridSize: 80,
@@ -120,35 +148,8 @@ export const YandexMap = () => {
             clusterer.add(geoObjects);
             myMap.geoObjects.add(clusterer);
 
-            clusterer.events.add('click', function (e) {
-              console.log('Клик на кластер', myMap.getZoom());
-              const target = e.get('target');
-              const objects = target.properties.get('geoObjects');
-
-              if (objects) {
-                console.log('CLUSTER', objects);
-                objects.forEach((obj) => {
-                  console.log(obj.options.get('htmlContent'));
-                  console.log(obj.geometry.getCoordinates());
-                  console.log(myMap.getZoom() === data.maxZoom);
-                });
-              } else {
-                console.log(target.options.get('htmlContent'));
-              }
-              // setTimeout(() => {
-              //   let zoom = myMap.getZoom();
-              //   console.log(zoom);
-              //   zoom > 18 ? (zoom = 18) : zoom;
-
-              //   myMap.setZoom(zoom);
-              // }, 100);
-
-              // myMap.setZoom(16).then(() => {
-              //   // myMap.setCenter(e.get('target').geometry.getCoordinates());
-              //   // myMap.checkZoomRange();
-              // });
-              // myMap.setCenter(e.get('target').geometry.getCoordinates());
-            });
+            // Сюда добавляем обработчик клика на кластер
+            clusterer.events.add('click', handleClusterClick);
 
             /**
              * Спозиционируем карту так, чтобы на ней были видны все объекты.
@@ -160,6 +161,6 @@ export const YandexMap = () => {
           });
         }}
       />
-    </>
+    </section>
   );
 };
