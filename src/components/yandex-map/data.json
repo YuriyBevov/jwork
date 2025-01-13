@@ -10,21 +10,24 @@
         "imgs": [
           {
             "id": 1,
-            "url": "./assets/images/map/map-icon-1.png",
+            "url": "result-list_img_2.png",
             "width": 600,
-            "height": 400
+            "height": 400,
+            "alt": "Картинка 1"
           },
           {
             "id": 2,
-            "url": "./assets/images/map/map-icon-1.png",
+            "url": "result-list_img_2.png",
             "width": 600,
-            "height": 400
+            "height": 400,
+            "alt": "Картинка 1"
           },
           {
             "id": 3,
-            "url": "./assets/images/map/map-icon-1.png",
+            "url": "result-list_img_2.png",
             "width": 600,
-            "height": 400
+            "height": 400,
+            "alt": "Картинка 1"
           }
         ],
         "badges": [
@@ -93,21 +96,24 @@
         "imgs": [
           {
             "id": 1,
-            "url": "./assets/images/map/map-icon-1.png",
             "width": 600,
-            "height": 400
+            "height": 400,
+            "alt": "Картинка 1",
+            "url": "result-list_img_2.png"
           },
           {
             "id": 2,
-            "url": "./assets/images/map/map-icon-1.png",
             "width": 600,
-            "height": 400
+            "height": 400,
+            "url": "result-list_img_2.png",
+            "alt": "Картинка 1"
           },
           {
             "id": 3,
-            "url": "./assets/images/map/map-icon-1.png",
             "width": 600,
-            "height": 400
+            "height": 400,
+            "url": "result-list_img_2.png",
+            "alt": "Картинка 1"
           }
         ],
         "badges": [
@@ -176,21 +182,24 @@
         "imgs": [
           {
             "id": 1,
-            "url": "./assets/images/map/map-icon-1.png",
+            "url": "result-list_img_2.png",
             "width": 600,
-            "height": 400
+            "height": 400,
+            "alt": "Картинка 1"
           },
           {
             "id": 2,
-            "url": "./assets/images/map/map-icon-1.png",
+            "url": "result-list_img_2.png",
             "width": 600,
-            "height": 400
+            "height": 400,
+            "alt": "Картинка 1"
           },
           {
             "id": 3,
-            "url": "./assets/images/map/map-icon-1.png",
+            "url": "result-list_img_2.png",
             "width": 600,
-            "height": 400
+            "height": 400,
+            "alt": "Картинка 1"
           }
         ],
         "badges": [
