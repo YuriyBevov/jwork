@@ -13,27 +13,49 @@ export const YandexMap = () => {
   const [clickedData, setClickedData] = useState([]);
 
   const handleClusterClick = (e) => {
-    const target = e.get('target');
-    const objects = target.properties.get('geoObjects');
+    // const target = e.get('target');
+    // const objects = target.properties.get('geoObjects');
+    console.log('CLICKED', e.get('target'));
 
-    if (objects) {
-      const clickedObjects = objects.map((obj) => {
-        return {
-          data: obj.options.get('data'),
-          coordinates: obj.geometry.getCoordinates(),
-        };
-      });
+    // if (objects) {
+    //   const clickedObjects = objects.map((obj) => {
+    //     return {
+    //       data: obj.options.get('data'),
+    //       coordinates: obj.geometry.getCoordinates(),
+    //     };
+    //   });
 
-      setClickedData(clickedObjects);
-    } else {
-      setClickedData([
-        {
-          data: target.options.get('data'),
-          coordinates: target.geometry.getCoordinates(),
-        },
-      ]);
-    }
+    //   setClickedData(clickedObjects);
+    // } else {
+    //   setClickedData([
+    //     {
+    //       data: target.options.get('data'),
+    //       coordinates: target.geometry.getCoordinates(),
+    //     },
+    //   ]);
+    // }
   };
+
+  // формируем коллекцию объектов карты
+  const features = data.placemarks.map((element) => {
+    // console.log(element.coords, element.options.price);
+    return {
+      type: 'Feature',
+      geometry: {
+        type: 'Point',
+        coordinates: element.coords,
+      },
+      data: {
+        order: Number(element.options.price.replaceAll(' ', '')),
+      },
+    };
+  });
+
+  const collection = {
+    type: 'FeatureCollection',
+    features,
+  };
+
   return (
     <section className={style.root}>
       <ToggleItems data={clickedData} />
@@ -43,122 +65,76 @@ export const YandexMap = () => {
       <Script
         src={yandexUrl}
         onReady={() => {
-          const ymaps = window.ymaps;
-          ymaps.ready(function () {
-            var myMap = new ymaps.Map(
-                'map',
-                {
-                  center: data.center,
-                  zoom: data.zoom,
-                  behaviors: ['default', 'scrollZoom'],
-                },
-                {
-                  searchControlProvider: 'yandex#search',
-                  maxZoom: data.maxZoom,
-                },
-              ),
-              /**
-               * Создадим кластеризатор, вызвав функцию-конструктор.
-               * Список всех опций доступен в документации.
-               * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/Clusterer.xml#constructor-summary
-               */
-              clusterer = new ymaps.Clusterer({
-                /**
-                 * Через кластеризатор можно указать только стили кластеров,
-                 * стили для меток нужно назначать каждой метке отдельно.
-                 * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/option.presetStorage.xml
-                 */
-                preset: 'islands#invertedGreenClusterIcons',
-                /**
-                 * Ставим true, если хотим кластеризовать только точки с одинаковыми координатами.
-                 */
-                groupByCoordinates: false,
-                /**
-                 * Опции кластеров указываем в кластеризаторе с префиксом "cluster".
-                 * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/ClusterPlacemark.xml
-                 */
-                // clusterDisableClickZoom: true,
-                // clusterHideIconOnBalloonOpen: false,
-                // geoObjectHideIconOnBalloonOpen: false,
-                hasBalloon: false,
-                // clusterDisableClickZoom: true,
-                zoomMargin: 100,
-              }),
-              /**
-               * Функция возвращает объект, содержащий данные метки.
-               * Поле данных clusterCaption будет отображено в списке геообъектов в балуне кластера.
-               * Поле balloonContentBody - источник данных для контента балуна.
-               * Оба поля поддерживают HTML-разметку.
-               * Список полей данных, которые используют стандартные макеты содержимого иконки метки
-               * и балуна геообъектов, можно посмотреть в документации.
-               * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/GeoObject.xml
-               */
-              // getPointData = function (index) {
-              //   return {
-              //     // balloonContentHeader:
-              //     //   '<font size=3><b><a target="_blank" href="https://yandex.ru"></a></b></font>',
-              //     // balloonContentBody:
-              //     //   '<p>Ваше имя: <input name="login"></p><p>Телефон в формате 2xxx-xxx:  <input></p><p><input type="submit" value="Отправить"></p>',
-              //     // balloonContentFooter:
-              //     //   '<font size=1>Информация предоставлена: </font>  <strong>метки ' +
-              //     //   index +
-              //     //   '</strong>',
-              //     // clusterCaption: 'метка <strong>' + index + '</strong>',
-              //   };
-              // },
-              /**
-               * Функция возвращает объект, содержащий опции метки.
-               * Все опции, которые поддерживают геообъекты, можно посмотреть в документации.
-               * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/GeoObject.xml
-               */
+          ymaps.ready(init);
 
-              geoObjects = [];
+          function init() {
+            // определяем объект кары
+            const myMap = new ymaps.Map(
+              'map',
+              {
+                center: [55.751574, 37.573856],
+                zoom: 10,
+              },
+              {
+                maxZoom: 16,
+              },
+            );
 
-            /**
-             * Данные передаются вторым параметром в конструктор метки, опции - третьим.
-             * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/Placemark.xml#constructor-summary
-             */
+            // определяем шаблон вывода суммы в иконке кластера
+            // const MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+            //   "<div style='background-color: #000000; color: #ffffff; display: flex; width:200px; height: fit-content;'>{{ orderSum }}</div>",
+            // );
 
-            data.placemarks.forEach((placemark, i) => {
-              geoObjects[i] = new ymaps.Placemark(
-                placemark.coords,
-                {},
-                {
-                  preset: 'islands#greenCircleIcon',
-                  data: placemark.options,
-                },
-              );
+            const MyIconLayout = ymaps.templateLayoutFactory.createClass(
+              "<div style='background-color: red; color: #ffffff; display: flex; width:50px; height: fit-content;'>{{orderSum}}</div>",
+            );
+
+            // определяем ObjectManager
+            const objectManager = new ymaps.ObjectManager({
+              clusterize: true,
+              groupByCoordinates: false,
+              gridSize: 64,
+              hasBalloon: false,
+              // clusterIconContentLayout: MyIconContentLayout,
+              clusterIconLayout: MyIconLayout,
             });
-            // for (var i = 0, len = points.length; i < len; i++) {
-            //   geoObjects[i] =
-            // }
 
-            /**
-             * Можно менять опции кластеризатор после создания.
-             */
-            // clusterer.options.set({
-            //   gridSize: 80,
-            //   clusterDisableClickZoom: false, // отменяем проваливание в кластер при клике
-            // });
+            // добаляем коллекцию объектов в манагер
+            objectManager.add(collection);
 
-            /**
-             * В кластеризатор можно добавить javascript-массив меток (не геоколлекцию) или одну метку.
-             * @see https://api.yandex.ru/maps/doc/jsapi/2.1/ref/reference/Clusterer.xml#add
-             */
-            clusterer.add(geoObjects);
-            myMap.geoObjects.add(clusterer);
+            // добавляем манагер на карту для вывода объектов
+            myMap.geoObjects.add(objectManager);
 
-            // Сюда добавляем обработчик клика на кластер
-            clusterer.events.add('click', handleClusterClick);
+            // проходимся по всем видимым кластерам, производим суммирование data.order во всех объектах и записываем полученное значение в options кластера
+            objectManager.clusters.each((cluster) => {
+              let orderSum = 0;
+              cluster.features.forEach((pin) => {
+                orderSum += parseFloat(pin.data.order);
+              });
+            });
 
-            /**
-             * Спозиционируем карту так, чтобы на ней были видны все объекты.
-             */
+            // тоже самое что и выше только при изменении кластера
+            objectManager.clusters.events.add('add', (evt) => {
+              console.log('ADDED', evt, features);
+              let orderSum = 777;
+              // console.log(evt.get('child'));
+              // let orderSum = 0;
+              evt.get('child').features.forEach((pin) => {
+                console.log(pin);
+                orderSum += parseFloat(pin.data.order);
+                pin.orderSum = orderSum;
+              });
 
-            // myMap.setBounds(clusterer.getBounds(), {
-            //   checkZoomRange: true,
-            // });
-          });
+              // objectManager.clusters.setClusterOptions(evt.get('child').id, {
+              //   orderSum,
+              // });
+
+              console.log(orderSum);
+            });
+
+            // обрабатываем клик по кластеру
+            objectManager.clusters.events.add('click', handleClusterClick);
+          }
         }}
       />
     </section>
