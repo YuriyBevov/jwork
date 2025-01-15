@@ -12,20 +12,22 @@ export const YandexMap = () => {
 
   const [clickedData, setClickedData] = useState([]);
 
-  const handleClusterClick = (e) => {
+  const handleClusterClick = (objects) => {
     // const target = e.get('target');
     // const objects = target.properties.get('geoObjects');
-    console.log('CLICKED', e.get('target'));
+    // console.log('CLICKED', e.get('target'));
 
-    // if (objects) {
-    //   const clickedObjects = objects.map((obj) => {
-    //     return {
-    //       data: obj.options.get('data'),
-    //       coordinates: obj.geometry.getCoordinates(),
-    //     };
-    //   });
+    if (objects) {
+      const clickedObjects = objects.map((obj) => {
+        console.log(obj.data, obj.geometry.coordinates);
+        return {
+          data: obj.data,
+          coordinates: obj.geometry.coordinates,
+        };
+      });
 
-    //   setClickedData(clickedObjects);
+      // setClickedData(clickedObjects);
+    }
     // } else {
     //   setClickedData([
     //     {
@@ -81,59 +83,82 @@ export const YandexMap = () => {
             );
 
             // определяем шаблон вывода суммы в иконке кластера
-            // const MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
-            //   "<div style='background-color: #000000; color: #ffffff; display: flex; width:200px; height: fit-content;'>{{ orderSum }}</div>",
-            // );
-
-            const MyIconLayout = ymaps.templateLayoutFactory.createClass(
-              "<div style='background-color: red; color: #ffffff; display: flex; width:50px; height: fit-content;'>{{orderSum}}</div>",
+            const MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+              "<div class='lw-custom-icon' style='background-color: #000000; width: 200px; height: 80px; color: #ffffff; display: flex; width:200px; height: fit-content;'>{{ orderSum }}</div>",
             );
 
+            // const MyIconLayout = ymaps.templateLayoutFactory.createClass(
+            //   "<div style='background-color: red; color: #ffffff; display: flex; width:50px; height: fit-content;'>{{orderSum|default:'Title'}}</div>",
+            // );
+            // let orderSum = 0;
+            // const MyIconLayout = ymaps.templateLayoutFactory.createClass(
+            //   "<div style='background-color: red; color: #ffffff; display: flex; width:150px; height: fit-content;'>{{orderSum|default:'title'}}</div>",
+            // );
+
+            // const MyIconLayout2 = ymaps.templateLayoutFactory.createClass(
+            //   "<div class='CUSTOM-ICON' style='border: 2px solid blue;background-color: blue; color: #ffffff; display: flex; width:150px; height: fit-content;'>icon</div>",
+            // );
+
             // определяем ObjectManager
-            const objectManager = new ymaps.ObjectManager({
-              clusterize: true,
-              groupByCoordinates: false,
-              gridSize: 64,
-              hasBalloon: false,
-              // clusterIconContentLayout: MyIconContentLayout,
-              clusterIconLayout: MyIconLayout,
-            });
+            const objectManager = new ymaps.ObjectManager(
+              {
+                clusterize: true,
+                groupByCoordinates: false,
+                gridSize: 64,
+                hasBalloon: false,
+                clickable: true,
+                // clusterIconContentLayout: MyIconContentLayout,
+                // clusterIconLayout: MyIconContentLayout,
+              },
+              {
+                id: 'test',
+                data: {
+                  1: 'test1',
+                },
+              },
+            );
 
             // добаляем коллекцию объектов в манагер
             objectManager.add(collection);
-
             // добавляем манагер на карту для вывода объектов
             myMap.geoObjects.add(objectManager);
 
             // проходимся по всем видимым кластерам, производим суммирование data.order во всех объектах и записываем полученное значение в options кластера
             objectManager.clusters.each((cluster) => {
               let orderSum = 0;
-              cluster.features.forEach((pin) => {
-                orderSum += parseFloat(pin.data.order);
+              cluster.features.forEach((placemark) => {
+                orderSum += parseFloat(placemark.data.order);
+              });
+
+              cluster.orderSum = orderSum;
+            });
+
+            objectManager.clusters.events.add('add', function () {
+              objectManager.clusters.each((cluster) => {
+                let orderSum = 0;
+                cluster.features.forEach((placemark) => {
+                  orderSum += parseFloat(placemark.data.order);
+                });
+
+                cluster.orderSum = orderSum;
               });
             });
 
-            // тоже самое что и выше только при изменении кластера
-            objectManager.clusters.events.add('add', (evt) => {
-              console.log('ADDED', evt, features);
-              let orderSum = 777;
-              // console.log(evt.get('child'));
-              // let orderSum = 0;
-              evt.get('child').features.forEach((pin) => {
-                console.log(pin);
-                orderSum += parseFloat(pin.data.order);
-                pin.orderSum = orderSum;
-              });
+            objectManager.objects.events.add(['click'], (evt) => {
+              console.log('CLICK по плейсмарку', evt, evt.get('target'));
+            });
 
-              // objectManager.clusters.setClusterOptions(evt.get('child').id, {
-              //   orderSum,
-              // });
+            objectManager.clusters.events.add(['click'], function (evt) {
+              const cluster = objectManager.clusters.getById(
+                evt.get('objectId'),
+              );
+              const objects = cluster.properties.geoObjects;
 
-              console.log(orderSum);
+              handleClusterClick(objects);
             });
 
             // обрабатываем клик по кластеру
-            objectManager.clusters.events.add('click', handleClusterClick);
+            // objectManager.clusters.events.add('click', handleClusterClick);
           }
         }}
       />
