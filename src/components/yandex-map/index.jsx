@@ -1,5 +1,6 @@
 'use client';
 
+/* global ymaps */
 import Script from 'next/script';
 import { useState } from 'react';
 
@@ -10,23 +11,21 @@ import style from './yandex-map.module.scss';
 export const YandexMap = () => {
   const yandexUrl = `https://api-maps.yandex.ru/2.1/?apikey=${process.env.NEXT_PUBLIC_YANDEX_MAP_KEY}&lang=ru_RU`;
 
-  // const [clickedData, setClickedData] = useState([]);
+  const [clickedData, setClickedData] = useState([]);
 
-  const handleObjectClick = (object) => {
-    console.log('ДАННЫЕ ОБЪЕКТА ИЛИ ОБЪЕКТОВ:', object);
-    // if (object) {
-    //   return {
-    //     data: object.data,
-    //     coordinates: object.geometry.coordinates,
-    //   };
-    // }
+  const handleObjectClick = (objects) => {
+    if (objects && objects.length > 0) {
+      setClickedData(objects);
+    } else {
+      setClickedData([objects]);
+    }
   };
 
   return (
     <section className={style.root}>
-      {/* <ToggleItems data={clickedData} /> */}
-      <main className={style.wrapper} id="map"></main>
+      {clickedData.length > 0 && <ToggleItems data={clickedData} />}
 
+      <main className={style.wrapper} id="map"></main>
       <Script
         src={yandexUrl}
         onReady={() => {
@@ -59,7 +58,6 @@ export const YandexMap = () => {
             myMap.geoObjects.add(objectManager);
 
             setTimeout(() => {
-              console.log(data, 'типо пришло с сервера...');
               objectManager.add(data.placemarks);
             }, 500);
 
@@ -74,9 +72,7 @@ export const YandexMap = () => {
               );
               const objects = cluster.properties.geoObjects;
 
-              objects.map((object) => {
-                handleObjectClick(object);
-              });
+              handleObjectClick(objects);
             };
 
             objectManager.objects.events.add(['click'], onObjectEvent);

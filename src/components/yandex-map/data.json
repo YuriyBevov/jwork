@@ -16,19 +16,22 @@
               "id": 1,
               "url": "./assets/images/map/map-icon-1.png",
               "width": 600,
-              "height": 400
+              "height": 400,
+              "alt": "Какая то тестовая квартира 1111"
             },
             {
               "id": 2,
               "url": "./assets/images/map/map-icon-1.png",
               "width": 600,
-              "height": 400
+              "height": 400,
+              "alt": "Какая то тестовая квартира 1111"
             },
             {
               "id": 3,
               "url": "./assets/images/map/map-icon-1.png",
               "width": 600,
-              "height": 400
+              "height": 400,
+              "alt": "Какая то тестовая квартира 1111"
             }
           ],
           "badges": [
@@ -101,19 +104,22 @@
               "id": 1,
               "url": "./assets/images/map/map-icon-1.png",
               "width": 600,
-              "height": 400
+              "height": 400,
+              "alt": "Какая то тестовая квартира 1111"
             },
             {
               "id": 2,
               "url": "./assets/images/map/map-icon-1.png",
               "width": 600,
-              "height": 400
+              "height": 400,
+              "alt": "Какая то тестовая квартира 1111"
             },
             {
               "id": 3,
               "url": "./assets/images/map/map-icon-1.png",
               "width": 600,
-              "height": 400
+              "height": 400,
+              "alt": "Какая то тестовая квартира 1111"
             }
           ],
           "badges": [
@@ -166,7 +172,7 @@
               "value": "50,69 м2"
             },
             {
-              "id": 5,
+              "id": 6,
               "title": "Площадь комнат",
               "value": "50,69 м2"
             }
@@ -186,19 +192,22 @@
               "id": 1,
               "url": "./assets/images/map/map-icon-1.png",
               "width": 600,
-              "height": 400
+              "height": 400,
+              "alt": "Какая то тестовая квартира 1111"
             },
             {
               "id": 2,
               "url": "./assets/images/map/map-icon-1.png",
               "width": 600,
-              "height": 400
+              "height": 400,
+              "alt": "Какая то тестовая квартира 1111"
             },
             {
               "id": 3,
               "url": "./assets/images/map/map-icon-1.png",
               "width": 600,
-              "height": 400
+              "height": 400,
+              "alt": "Какая то тестовая квартира 1111"
             }
           ],
           "badges": [
@@ -251,7 +260,7 @@
               "value": "50,69 м2"
             },
             {
-              "id": 5,
+              "id": 6,
               "title": "Площадь комнат",
               "value": "50,69 м2"
             }

@@ -1,13 +1,10 @@
-export interface MapDataDto {
-  coords: [number, number];
-  data: MapOptions[];
+export interface MapDto {
+  geometry: { coordinates: number[]; type: string };
+  id: number;
+  properties: MapProperties;
 }
 
-export interface MapDataItem {
-  data: MapOptions;
-}
-
-export interface MapOptions {
+export interface MapProperties {
   id: number;
   url: string;
   imgs: Image[];
@@ -24,6 +21,7 @@ interface Image {
   url: string;
   width: number;
   height: number;
+  alt: string;
 }
 
 interface Badge {
