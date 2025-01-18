@@ -34,9 +34,10 @@ export const YandexMap = () => {
       ]);
     }
   };
+
   return (
     <section className={style.root}>
-      <ToggleItems data={clickedData} />
+      {clickedData.length > 0 && <ToggleItems data={clickedData} />}
 
       <main className={style.wrapper} id="map"></main>
 
