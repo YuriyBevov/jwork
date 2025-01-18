@@ -2,26 +2,42 @@
 @import '../../../../shared/styles/mixins.scss';
 
 .root {
-  max-width: 384px;
-  width: 100%;
   position: relative;
+  max-width: 384px;
+  height: 100vh;
+  z-index: 10;
+  max-height: calc(100vh - 155px);
+  z-index: 10;
+  height: 100vh;
+  transform: translateX(-120%);
+  transition: transform 0.3s ease;
+
+  @include media-down(1256px) {
+    max-height: calc(100vh - 74px);
+  }
+
+  @include media-down($mobile-width) {
+    max-width: 80%;
+  }
 }
 
 .items {
-  max-width: 384px;
   display: flex;
   flex-direction: column;
   gap: 16px;
-  position: fixed;
-  left: 0;
-  top: 155px;
-  bottom: 0;
-  background-color: #fff;
-  z-index: 10;
   width: 100%;
   padding: 16px;
+  width: 100%;
+  position: relative;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 10;
   overflow-y: scroll;
   overflow-x: hidden;
+  transition: transform 0.3s ease-in-out;
+  background-color: #fff;
 }
 
 .item {
@@ -87,5 +103,5 @@
 }
 
 .open {
-  display: none;
+  transform: translateX(0);
 }

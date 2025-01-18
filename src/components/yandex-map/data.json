@@ -2,264 +2,273 @@
   "center": [55.751574, 37.573856],
   "zoom": 10,
   "maxZoom": 17,
-  "placemarks": [
-    {
-      "coords": [55.831903, 37.411961],
-      "options": {
-        "url": "#",
-        "imgs": [
-          {
-            "id": 1,
-            "url": "result-list_img_2.png",
-            "width": 600,
-            "height": 400,
-            "alt": "Картинка 1"
-          },
-          {
-            "id": 2,
-            "url": "result-list_img_2.png",
-            "width": 600,
-            "height": 400,
-            "alt": "Картинка 1"
-          },
-          {
-            "id": 3,
-            "url": "result-list_img_2.png",
-            "width": 600,
-            "height": 400,
-            "alt": "Картинка 1"
-          }
-        ],
-        "badges": [
-          {
-            "id": 1,
-            "title": "Новостройка или вторичка"
-          },
-          {
-            "id": 2,
-            "title": "вторичка"
-          }
-        ],
-        "title": "Какая то тестовая квартира 1111",
-        "metros": [
-          {
-            "subway_id": 1,
-            "distance": "17 минут пешком",
-            "metro": "Новоясеневская"
-          },
-          {
-            "subway_id": 2,
-            "distance": "17 минут пешком",
-            "metro": "Беговая"
-          }
-        ],
-        "chars": [
-          {
-            "id": 1,
-            "title": "Тип квартиры",
-            "value": "2-ккв"
-          },
-          {
-            "id": 2,
-            "title": "Этаж",
-            "value": "10 / 25"
-          },
-          {
-            "id": 3,
-            "title": "Площадь",
-            "value": "2 050,69 м2"
-          },
-          {
-            "id": 4,
-            "title": "Площадь кухни",
-            "value": "150,69 м2"
-          },
-          {
-            "id": 5,
-            "title": "Общая площадь",
-            "value": "50,69 м2"
-          },
-          {
-            "id": 6,
-            "title": "Площадь комнат",
-            "value": "50,69 м2"
-          }
-        ],
-        "price": "23 584 000",
-        "price_per": "254 542"
+  "placemarks": {
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "id": 1,
+        "geometry": { "type": "Point", "coordinates": [55.763338, 37.565466] },
+        "properties": {
+          "url": "#",
+          "imgs": [
+            {
+              "id": 1,
+              "url": "./assets/images/map/map-icon-1.png",
+              "width": 600,
+              "height": 400,
+              "alt": "Какая то тестовая квартира 1111"
+            },
+            {
+              "id": 2,
+              "url": "./assets/images/map/map-icon-1.png",
+              "width": 600,
+              "height": 400,
+              "alt": "Какая то тестовая квартира 1111"
+            },
+            {
+              "id": 3,
+              "url": "./assets/images/map/map-icon-1.png",
+              "width": 600,
+              "height": 400,
+              "alt": "Какая то тестовая квартира 1111"
+            }
+          ],
+          "badges": [
+            {
+              "id": 1,
+              "title": "Новостройка или вторичка"
+            },
+            {
+              "id": 2,
+              "title": "Новостройка или вторичка 2"
+            }
+          ],
+          "title": "Какая то тестовая квартира 1111",
+          "metros": [
+            {
+              "subway_id": 1,
+              "distance": "17 минут пешком",
+              "metro": "Новоясеневская"
+            },
+            {
+              "subway_id": 2,
+              "distance": "17 минут пешком",
+              "metro": "Беговая"
+            }
+          ],
+          "chars": [
+            {
+              "id": 1,
+              "title": "Тип квартиры",
+              "value": "2-ккв"
+            },
+            {
+              "id": 2,
+              "title": "Этаж",
+              "value": "10 / 25"
+            },
+            {
+              "id": 3,
+              "title": "Площадь",
+              "value": "2 050,69 м2"
+            },
+            {
+              "id": 4,
+              "title": "Площадь кухни",
+              "value": "150,69 м2"
+            },
+            {
+              "id": 5,
+              "title": "Общая площадь",
+              "value": "50,69 м2"
+            },
+            {
+              "id": 6,
+              "title": "Площадь комнат",
+              "value": "50,69 м2"
+            }
+          ],
+          "price": "23 584 000",
+          "price_per": "254 542"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": 0,
+        "geometry": { "type": "Point", "coordinates": [55.831903, 37.411961] },
+        "properties": {
+          "url": "#",
+          "imgs": [
+            {
+              "id": 1,
+              "url": "./assets/images/map/map-icon-1.png",
+              "width": 600,
+              "height": 400,
+              "alt": "Какая то тестовая квартира 1111"
+            },
+            {
+              "id": 2,
+              "url": "./assets/images/map/map-icon-1.png",
+              "width": 600,
+              "height": 400,
+              "alt": "Какая то тестовая квартира 1111"
+            },
+            {
+              "id": 3,
+              "url": "./assets/images/map/map-icon-1.png",
+              "width": 600,
+              "height": 400,
+              "alt": "Какая то тестовая квартира 1111"
+            }
+          ],
+          "badges": [
+            {
+              "id": 1,
+              "title": "Новостройка или вторичка"
+            },
+            {
+              "id": 2,
+              "title": "Новостройка или вторичка 2"
+            }
+          ],
+          "title": "Какая то тестовая квартира 12222",
+          "metros": [
+            {
+              "subway_id": 1,
+              "distance": "17 минут пешком",
+              "metro": "Новоясеневская"
+            },
+            {
+              "subway_id": 2,
+              "distance": "17 минут пешком",
+              "metro": "Беговая"
+            }
+          ],
+          "chars": [
+            {
+              "id": 1,
+              "title": "Тип квартиры",
+              "value": "2-ккв"
+            },
+            {
+              "id": 2,
+              "title": "Этаж",
+              "value": "10 / 25"
+            },
+            {
+              "id": 3,
+              "title": "Площадь",
+              "value": "2 050,69 м2"
+            },
+            {
+              "id": 4,
+              "title": "Площадь кухни",
+              "value": "150,69 м2"
+            },
+            {
+              "id": 5,
+              "title": "Общая площадь",
+              "value": "50,69 м2"
+            },
+            {
+              "id": 6,
+              "title": "Площадь комнат",
+              "value": "50,69 м2"
+            }
+          ],
+          "price": "23 584 000",
+          "price_per": "254 542"
+        }
+      },
+      {
+        "type": "Feature",
+        "id": 2,
+        "geometry": { "type": "Point", "coordinates": [55.763338, 37.565466] },
+        "properties": {
+          "url": "#",
+          "imgs": [
+            {
+              "id": 1,
+              "url": "./assets/images/map/map-icon-1.png",
+              "width": 600,
+              "height": 400,
+              "alt": "Какая то тестовая квартира 1111"
+            },
+            {
+              "id": 2,
+              "url": "./assets/images/map/map-icon-1.png",
+              "width": 600,
+              "height": 400,
+              "alt": "Какая то тестовая квартира 1111"
+            },
+            {
+              "id": 3,
+              "url": "./assets/images/map/map-icon-1.png",
+              "width": 600,
+              "height": 400,
+              "alt": "Какая то тестовая квартира 1111"
+            }
+          ],
+          "badges": [
+            {
+              "id": 1,
+              "title": "Новостройка или вторичка"
+            },
+            {
+              "id": 2,
+              "title": "Новостройка или вторичка 2"
+            }
+          ],
+          "title": "Какая то тестовая квартира 2",
+          "metros": [
+            {
+              "subway_id": 1,
+              "distance": "17 минут пешком",
+              "metro": "Новоясеневская"
+            },
+            {
+              "subway_id": 2,
+              "distance": "17 минут пешком",
+              "metro": "Беговая"
+            }
+          ],
+          "chars": [
+            {
+              "id": 1,
+              "title": "Тип квартиры",
+              "value": "2-ккв"
+            },
+            {
+              "id": 2,
+              "title": "Этаж",
+              "value": "10 / 25"
+            },
+            {
+              "id": 3,
+              "title": "Площадь",
+              "value": "2 050,69 м2"
+            },
+            {
+              "id": 4,
+              "title": "Площадь кухни",
+              "value": "150,69 м2"
+            },
+            {
+              "id": 5,
+              "title": "Общая площадь",
+              "value": "50,69 м2"
+            },
+            {
+              "id": 6,
+              "title": "Площадь комнат",
+              "value": "50,69 м2"
+            }
+          ],
+          "price": "23 584 000",
+          "price_per": "254 542"
+        }
       }
-    },
-    {
-      "coords": [55.831903, 37.411961],
-      "options": {
-        "url": "#",
-        "imgs": [
-          {
-            "id": 1,
-            "width": 600,
-            "height": 400,
-            "alt": "Картинка 1",
-            "url": "result-list_img_2.png"
-          },
-          {
-            "id": 2,
-            "width": 600,
-            "height": 400,
-            "url": "result-list_img_2.png",
-            "alt": "Картинка 1"
-          },
-          {
-            "id": 3,
-            "width": 600,
-            "height": 400,
-            "url": "result-list_img_2.png",
-            "alt": "Картинка 1"
-          }
-        ],
-        "badges": [
-          {
-            "id": 1,
-            "title": "Новостройка или вторичка"
-          },
-          {
-            "id": 2,
-            "title": "вторичка"
-          }
-        ],
-        "title": "Какая то тестовая квартира 12222",
-        "metros": [
-          {
-            "subway_id": 1,
-            "distance": "17 минут пешком",
-            "metro": "Новоясеневская"
-          },
-          {
-            "subway_id": 2,
-            "distance": "17 минут пешком",
-            "metro": "Беговая"
-          }
-        ],
-        "chars": [
-          {
-            "id": 1,
-            "title": "Тип квартиры",
-            "value": "2-ккв"
-          },
-          {
-            "id": 2,
-            "title": "Этаж",
-            "value": "10 / 25"
-          },
-          {
-            "id": 3,
-            "title": "Площадь",
-            "value": "2 050,69 м2"
-          },
-          {
-            "id": 4,
-            "title": "Площадь кухни",
-            "value": "150,69 м2"
-          },
-          {
-            "id": 5,
-            "title": "Общая площадь",
-            "value": "50,69 м2"
-          },
-          {
-            "id": 5,
-            "title": "Площадь комнат",
-            "value": "50,69 м2"
-          }
-        ],
-        "price": "23 584 000",
-        "price_per": "254 542"
-      }
-    },
-    {
-      "coords": [55.831903, 37.511961],
-      "options": {
-        "url": "#",
-        "imgs": [
-          {
-            "id": 1,
-            "url": "result-list_img_2.png",
-            "width": 600,
-            "height": 400,
-            "alt": "Картинка 1"
-          },
-          {
-            "id": 2,
-            "url": "result-list_img_2.png",
-            "width": 600,
-            "height": 400,
-            "alt": "Картинка 1"
-          },
-          {
-            "id": 3,
-            "url": "result-list_img_2.png",
-            "width": 600,
-            "height": 400,
-            "alt": "Картинка 1"
-          }
-        ],
-        "badges": [
-          {
-            "id": 1,
-            "title": "Новостройка или вторичка"
-          },
-          {
-            "id": 2,
-            "title": "вторичка"
-          }
-        ],
-        "title": "Какая то тестовая квартира 2",
-        "metros": [
-          {
-            "subway_id": 1,
-            "distance": "17 минут пешком",
-            "metro": "Новоясеневская"
-          },
-          {
-            "subway_id": 2,
-            "distance": "17 минут пешком",
-            "metro": "Беговая"
-          }
-        ],
-        "chars": [
-          {
-            "id": 1,
-            "title": "Тип квартиры",
-            "value": "2-ккв"
-          },
-          {
-            "id": 2,
-            "title": "Этаж",
-            "value": "10 / 25"
-          },
-          {
-            "id": 3,
-            "title": "Площадь",
-            "value": "2 050,69 м2"
-          },
-          {
-            "id": 4,
-            "title": "Площадь кухни",
-            "value": "150,69 м2"
-          },
-          {
-            "id": 5,
-            "title": "Общая площадь",
-            "value": "50,69 м2"
-          },
-          {
-            "id": 5,
-            "title": "Площадь комнат",
-            "value": "50,69 м2"
-          }
-        ],
-        "price": "23 584 000",
-        "price_per": "254 542"
-      }
-    }
-  ]
+    ]
+  }
 }
