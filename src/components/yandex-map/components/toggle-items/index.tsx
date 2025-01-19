@@ -6,6 +6,7 @@ import React, { useEffect, useState } from 'react';
 import { Badge } from '@/shared/components/badge';
 import { MetrosListAlt } from '@/shared/components/metros-list-alt';
 import { SliderResultList } from '@/shared/components/slider';
+import { IconClose } from '@/shared/icons/icon-close';
 
 import styles from './toggle-sidebar.module.scss';
 import { MapDto } from './types';
@@ -28,7 +29,7 @@ export const ToggleItems = ({ data }: { data: MapDto[] }) => {
   return (
     <aside className={clsx(open ? styles.open : '', styles.root)}>
       <div onClick={closeAsideHandler} className={styles.close}>
-        X
+        <IconClose />
       </div>
 
       <div className={styles.items}>

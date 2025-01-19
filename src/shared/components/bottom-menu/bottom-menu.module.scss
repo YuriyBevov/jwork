@@ -9,6 +9,12 @@
     width: 100%;
   }
 
+  p {
+    background-color: red;
+    color: red;
+    font-size: 12px;
+  }
+
   ul {
     @extend %list-reset;
     @extend %flex-align;
