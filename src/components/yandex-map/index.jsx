@@ -4,6 +4,8 @@
 import Script from 'next/script';
 import { useState } from 'react';
 
+import { IconInsta } from '@/shared/icons/icon-insta';
+
 import { ToggleItems } from './components/toggle-items/';
 import data from './data.json';
 import style from './yandex-map.module.scss';
@@ -37,6 +39,8 @@ export const YandexMap = () => {
                 {
                   center: [55.76, 37.64],
                   zoom: 10,
+                  controls: [],
+                  // behaviors: [], //'drag',
                 },
                 {
                   searchControlProvider: 'yandex#search',
@@ -53,6 +57,7 @@ export const YandexMap = () => {
                 hasBalloon: false,
                 clickable: true,
                 viewportMargin: 128,
+                clusterDisableClickZoom: true,
               });
 
             myMap.geoObjects.add(objectManager);
@@ -77,6 +82,75 @@ export const YandexMap = () => {
 
             objectManager.objects.events.add(['click'], onObjectEvent);
             objectManager.clusters.events.add(['click'], onClusterEvent);
+
+            // ZOOM-CONTROL
+            let ZoomLayout = ymaps.templateLayoutFactory.createClass(
+              //Шаблон html кнопок зума
+              `<div class='zoom-btns'>
+                  <button id='zoom-in' class='zoom-btn zoom-btn-in' aria-label='Увеличить масштаб'>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M19 13H13V19H11V13H5V11H11V5H13V11H19V13Z"/>
+                    </svg>
+                  </button>
+                  <button id='zoom-out' class='zoom-btn zoom-btn-out' aria-label='Уменьшить масштаб'>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M19 13H5V11H19V13Z"/>
+                    </svg>
+                  </button>
+                </div>`,
+              {
+                // Переопределяем методы макета, чтобы выполнять дополнительные действия
+                // при построении и очистке макета.
+                build: function () {
+                  // Вызываем родительский метод build.
+                  ZoomLayout.superclass.build.call(this);
+
+                  // Привязываем функции-обработчики к контексту и сохраняем ссылки
+                  // на них, чтобы потом отписаться от событий.
+                  this.zoomInCallback = ymaps.util.bind(this.zoomIn, this);
+                  this.zoomOutCallback = ymaps.util.bind(this.zoomOut, this);
+
+                  // Начинаем слушать клики на кнопках макета.
+                  let zoomInBtn = document.getElementById('zoom-in');
+                  let zoomOutBtn = document.getElementById('zoom-out');
+
+                  zoomInBtn.addEventListener('click', this.zoomInCallback);
+                  zoomOutBtn.addEventListener('click', this.zoomOutCallback);
+                },
+
+                clear: function () {
+                  let zoomInBtn = document.getElementById('zoom-in');
+                  let zoomOutBtn = document.getElementById('zoom-out');
+                  // Снимаем обработчики кликов.
+                  zoomInBtn.removeEventListener('click', this.zoomInCallback);
+                  zoomOutBtn.removeEventListener('click', this.zoomOutCallback);
+                  // Вызываем родительский метод clear.
+                  ZoomLayout.superclass.clear.call(this);
+                },
+
+                zoomIn: function () {
+                  myMap.balloon.close();
+
+                  let map = this.getData().control.getMap();
+                  map.setZoom(map.getZoom() + 1, { checkZoomRange: true });
+                },
+
+                zoomOut: function () {
+                  myMap.balloon.close();
+
+                  let map = this.getData().control.getMap();
+                  map.setZoom(map.getZoom() - 1, { checkZoomRange: true });
+                },
+              },
+            );
+
+            let zoomControl = new ymaps.control.ZoomControl({
+              options: {
+                layout: ZoomLayout,
+                position: { right: '30px', top: '50vh' },
+              },
+            });
+            myMap.controls.add(zoomControl);
           }
         }}
       />
