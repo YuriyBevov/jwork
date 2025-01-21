@@ -28,7 +28,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/components/yandex-map/index.jsx"
+    "src/components/yandex-map/index.jsx",
+    "src/shared/components/yMap/index.jsx"
   ],
   "exclude": ["node_modules"]
 }
