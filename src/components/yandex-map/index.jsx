@@ -4,8 +4,6 @@
 import Script from 'next/script';
 import { useState } from 'react';
 
-import { IconInsta } from '@/shared/icons/icon-insta';
-
 import { ToggleItems } from './components/toggle-items/';
 import data from './data.json';
 import style from './yandex-map.module.scss';
