@@ -1,8 +1,12 @@
 'use client';
 
 /* global ymaps */
+import clsx from 'clsx';
 import Script from 'next/script';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+
+import { Filter } from '@/shared/components/filter';
+import { IconClose } from '@/shared/icons/icon-close';
 
 import { ToggleItems } from './components/toggle-items/';
 import data from './data.json';
@@ -21,9 +25,32 @@ export const YandexMap = () => {
     }
   };
 
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    if (clickedData.length > 0) {
+      setOpen(true);
+    } else {
+      setOpen(false);
+    }
+  }, [clickedData]);
+
+  const closeAsideHandler = () => {
+    setOpen(false);
+    setClickedData([]);
+  };
+
   return (
     <section className={style.root}>
-      {clickedData.length > 0 && <ToggleItems data={clickedData} />}
+      {clickedData.length > 0 && (
+        <aside className={clsx(open ? style.open : '', style.aside)}>
+          <div onClick={closeAsideHandler} className={style.close}>
+            <IconClose />
+          </div>
+          <ToggleItems data={clickedData} />
+        </aside>
+      )}
+      {clickedData.length === 0 && <Filter data={data?.filter} />}
 
       <main className={style.wrapper} id="map"></main>
       <Script
