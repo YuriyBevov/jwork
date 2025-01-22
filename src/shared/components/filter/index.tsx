@@ -50,13 +50,8 @@ export const Filter = ({
   };
 
   return (
-    <div className={clsx(styles.root, className)}>
-      <div
-        className={clsx(
-          styles.header,
-          openFilter ? styles.header_active : null,
-        )}
-      >
+    <div className={clsx(styles.root, className, openFilter && styles.open)}>
+      <div className={clsx(styles.header, openFilter && styles.header_active)}>
         <div className={styles.opener} onClick={filterStateHandler}>
           <IconFilter width={32} height={32} />
           <span className={styles.opener_count}>5</span>
@@ -69,23 +64,25 @@ export const Filter = ({
       </div>
       {openFilter && (
         <>
-          {data.items
-            .sort((block, blocks) => parseInt(block.id) - parseInt(blocks.id))
-            .map((block: FilterItem) => (
-              <div className={clsx(styles.block)} key={block.id}>
-                <div
-                  onClick={() => toggleActiveId(block.id)}
-                  className={clsx(
-                    activeIds.includes(block.id) ? styles.active : null,
-                    styles.title,
-                  )}
-                >
-                  <span>{block.title}</span>
-                  <IconSmallArrow width={12} height={7} />
+          <div className={styles.content}>
+            {data.items
+              .sort((block, blocks) => parseInt(block.id) - parseInt(blocks.id))
+              .map((block: FilterItem) => (
+                <div className={clsx(styles.block)} key={block.id}>
+                  <div
+                    onClick={() => toggleActiveId(block.id)}
+                    className={clsx(
+                      activeIds.includes(block.id) ? styles.active : null,
+                      styles.title,
+                    )}
+                  >
+                    <span>{block.title}</span>
+                    <IconSmallArrow width={12} height={7} />
+                  </div>
+                  <div className={styles.content}>{blockRenderer(block)}</div>
                 </div>
-                <div className={styles.content}>{blockRenderer(block)}</div>
-              </div>
-            ))}
+              ))}
+          </div>
           <div className={styles.footer}>
             <ButtonUi>Искать</ButtonUi>
           </div>
