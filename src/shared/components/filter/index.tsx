@@ -2,13 +2,24 @@
 
 import clsx from 'clsx';
 import Link from 'next/link';
-import { useState } from 'react';
+import React, { useState } from 'react';
 
-import { FilterItem, FilterItems } from '@/components/map/types';
+import {
+  FilterItem,
+  FilterItemSelect,
+  FilterItems,
+} from '@/components/map/types';
 import { IconFilter } from '@/shared/icons/icon-filter';
 import { IconListType } from '@/shared/icons/icon-list-type';
 import { IconSmallArrow } from '@/shared/icons/icon-small-arrow';
-import { CheckboxBtnUi, CheckboxUi, RangeSliderUi } from '@/shared/ui';
+import {
+  AutocompleteUi,
+  CheckboxBtnUi,
+  CheckboxUi,
+  MultiSelectUi,
+  RangeSliderUi,
+  SelectUi,
+} from '@/shared/ui';
 
 import { ButtonUi } from '../button';
 import styles from './filter.module.scss';
@@ -32,6 +43,15 @@ export const Filter = ({
         return <CheckboxBtnUi key={block.id} data={block} />;
       case 'checkbox':
         return <CheckboxUi key={block.id} data={block} />;
+      case 'select':
+        return <SelectUi className={styles.select} item={block} />;
+      case 'multi_select':
+        return (
+          <MultiSelectUi classNameInput={styles.multi_input} item={block} />
+        );
+      case 'search':
+        return <AutocompleteUi item={block} />;
+
       default:
         return null;
     }
@@ -65,6 +85,13 @@ export const Filter = ({
       {openFilter && (
         <>
           <div className={styles.content}>
+            <div className={styles.selects}>
+              {data.select.map((item: FilterItemSelect) => (
+                <React.Fragment key={item.id}>
+                  {blockRenderer(item as FilterItem)}
+                </React.Fragment>
+              ))}
+            </div>
             {data.items
               .sort((block, blocks) => parseInt(block.id) - parseInt(blocks.id))
               .map((block: FilterItem) => (

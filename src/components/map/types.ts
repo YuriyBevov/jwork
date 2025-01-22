@@ -61,6 +61,7 @@ interface BlockInfo {
 export interface FilterItems {
   title: string;
   items: FilterItem[];
+  select: FilterItemSelect[];
 }
 
 export type FilterItem = {
@@ -68,6 +69,13 @@ export type FilterItem = {
   title: string;
   type: string;
   value: FilterItemValue[];
+};
+
+export type FilterItemSelect = {
+  id: string;
+  title: string;
+  type: string;
+  content?: { value: string }[];
 };
 
 export type FilterItemValue = {
